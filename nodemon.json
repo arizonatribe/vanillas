@@ -1,0 +1,8 @@
+{
+  "quiet": true,
+  "ignore": ["node_modules"],
+  "watch": ["./test", "./lib"],
+  "execMap": {
+    "js": "clear && cross-env NODE_ENV=test node test | faucet"
+  }
+}

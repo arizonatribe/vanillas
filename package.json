@@ -1,0 +1,29 @@
+{
+  "name": "futilities",
+  "version": "1.0.0",
+  "description": "Dependency-free, low-level JavaScript function helpers",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon test/index.js"
+  },
+  "keywords": [
+    "helpers",
+    "futilities",
+    "function",
+    "functional",
+    "object",
+    "compose",
+    "curry",
+    "composition",
+    "utils",
+    "utilities"
+  ],
+  "author": "David Nunez <arizonatribe@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "5.1.4",
+    "faucet": "0.0.1",
+    "nodemon": "1.11.0",
+    "tape": "4.9.1"
+  }
+}
