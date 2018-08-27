@@ -1,5 +1,8 @@
 require('./is.test')
 require('./map.test')
+require('./omit.test')
+require('./pick.test')
+require('./size.test')
 require('./prop.test')
 require('./uniq.test')
 require('./curry.test')
