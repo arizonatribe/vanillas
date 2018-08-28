@@ -21,8 +21,11 @@
   "author": "David Nunez <arizonatribe@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "benchmark": "2.1.4",
     "cross-env": "5.1.4",
     "faucet": "0.0.1",
+    "lodash": "^4.17.10",
+    "ramda": "^0.25.0",
     "nodemon": "1.11.0",
     "tape": "4.9.1"
   }
