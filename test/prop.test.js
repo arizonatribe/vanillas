@@ -2,6 +2,11 @@ const test = require('tape')
 const propAt = require('../lib/propAt')
 const propOr = require('../lib/propOr')
 const propIs = require('../lib/propIs')
+const {
+  propOr: propOrCurried,
+  propAt: propAtCurried,
+  propIs: propIsCurried
+} = require('../lib/curried')
 
 class Scrooge {
   constructor(props) {
@@ -46,8 +51,8 @@ test('"propAt" safely retrieves nested props', t => {
     'deep path traversal'
   )
   t.doesNotThrow(() => propAt('angus.mallard', mcDucks), 'safely handles non-existing props at deep paths')
-  t.equal(propAt('dingus.fergus.occupation')(mcDucks), 'Mill Worker', 'can be curried')
-  t.equal(propAt(['dingus', 'fergus', 'occupation'])(mcDucks), 'Mill Worker', 'mmm curry')
+  t.equal(propAtCurried('dingus.fergus.occupation')(mcDucks), 'Mill Worker', 'can be curried')
+  t.equal(propAtCurried(['dingus', 'fergus', 'occupation'])(mcDucks), 'Mill Worker', 'mmm curry')
   t.end()
 })
 
@@ -64,8 +69,8 @@ test('"propOr" safely retrieves nested props and can use a fallback value', t =>
     'deep path traversal'
   )
   t.doesNotThrow(() => propOr('', 'angus.mallard', mcDucks), 'safely handles non-existing props at deep paths')
-  t.equal(propOr('swimmer', 'dingus.fergus.occupation')(mcDucks), 'Mill Worker', 'can be curried')
-  t.equal(propOr('swimmer', ['dingus', 'fergus', 'occupation'])(mcDucks), 'Mill Worker', 'mmm curry')
+  t.equal(propOrCurried('swimmer', 'dingus.fergus.occupation')(mcDucks), 'Mill Worker', 'can be curried')
+  t.equal(propOrCurried('swimmer', ['dingus', 'fergus', 'occupation'])(mcDucks), 'Mill Worker', 'mmm curry')
   t.end()
 })
 
@@ -90,8 +95,8 @@ test('"propIs" safely retrieves nested props and can use a fallback value', t =>
     'Custom class type'
   )
   t.doesNotThrow(() => propIs(String, 'angus.mallard', mcDucks), 'safely handles non-existing props at deep paths')
-  t.equal(propIs(String, 'dingus.fergus.occupation')(mcDucks), true, 'can be curried')
-  t.equal(propIs(String, ['dingus', 'fergus', 'occupation'])(mcDucks), true, 'mmm curry')
+  t.equal(propIsCurried(String, 'dingus.fergus.occupation')(mcDucks), true, 'can be curried')
+  t.equal(propIsCurried(String, ['dingus', 'fergus', 'occupation'])(mcDucks), true, 'mmm curry')
   t.end()
 })
 

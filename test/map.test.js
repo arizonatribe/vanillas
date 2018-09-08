@@ -1,5 +1,6 @@
 const tape = require('tape')
 const map = require('../lib/map')
+const { map: mapCurried } = require('../lib/curried')
 
 tape('"map" can apply a function to an Object, String, or something that is Array-like', t => {
   t.deepEqual(
@@ -78,7 +79,7 @@ tape('"map" can apply a function to an Object, String, or something that is Arra
     'map over the chars in a string'
   )
   t.equal(
-    map(str => str.toLowerCase())('SHOUTING'),
+    mapCurried(str => str.toLowerCase())('SHOUTING'),
     'shouting',
     'can also be curried'
   )
