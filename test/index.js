@@ -10,3 +10,6 @@ require('./case.test')
 require('./getType.test')
 require('./composeAndPipe.test')
 require('./memoize.test')
+require('./has.test');
+require('./shim.test');
+require('./isPrimitive.test');
