@@ -17,12 +17,17 @@ tape('"map" can apply a function to an Object, String, or something that is Arra
     },
     'map over the values of an object'
   )
+  let actors = ['dustin', 'robin', 'julia', 'bob']
+  const actorsLoudly = map(str => str.toUpperCase(), actors)
   t.deepEqual(
-    map(
-      str => str.toUpperCase(),
-      ['dustin', 'robin', 'julia', 'bob']
-    ), ['DUSTIN', 'ROBIN', 'JULIA', 'BOB'],
+    actorsLoudly,
+    ['DUSTIN', 'ROBIN', 'JULIA', 'BOB'],
     'map over the contents of an array'
+  )
+  t.deepEqual(
+    actors,
+    ['dustin', 'robin', 'julia', 'bob'],
+    'previous array was not mutated'
   )
   t.deepEqual(
     map(
