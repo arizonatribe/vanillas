@@ -14,7 +14,7 @@ suite
     _.each(arr, str => str.toUpperCase())
   )
   .add('Array.forEach (native)', () =>
-    arr.map(str => str.toUpperCase())
+    arr.forEach(str => str.toUpperCase())
   )
   .on('cycle', event => console.log(String(event.target)))
   .on('complete', function() {

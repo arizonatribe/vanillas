@@ -1,5 +1,6 @@
 require('./is.test')
 require('./map.test')
+require('./merge.test')
 require('./omit.test')
 require('./pick.test')
 require('./size.test')
