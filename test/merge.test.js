@@ -1,23 +1,32 @@
 const tape = require('tape')
 const merge = require('../lib/merge')
-const { merge: mergeCurried } = require('../lib/curried')
 
-tape('"merge" can apply a function to an Object, String, or something that is Array-like', t => {
+tape('"merge" can blend two Object together', t => {
   const hook = {
-    Hoffman: 'dustin',
+    Hoffman: {
+      Dustin: 'Captain',
+      John: 'I dunno'
+    },
     Williams: 'robin',
     Roberts: 'julia',
     Hoskins: 'bob'
   }
   const sphere = {
-    Hoffman: 'dustin',
+    Hoffman: {
+      Albert: 'LSD',
+      Dustin: 'Psychiatrist'
+    },
     Jackson: 'samuel',
     Stone: 'sharon',
     Latifah: 'queen'
   }
   t.deepEqual(
     merge(hook, sphere), {
-      Hoffman: 'dustin',
+      Hoffman: {
+        John: 'I dunno',
+        Albert: 'LSD',
+        Dustin: 'Psychiatrist'
+      },
       Williams: 'robin',
       Roberts: 'julia',
       Hoskins: 'bob',
@@ -29,7 +38,10 @@ tape('"merge" can apply a function to an Object, String, or something that is Ar
   )
   t.deepEqual(
     hook, {
-      Hoffman: 'dustin',
+      Hoffman: {
+        Dustin: 'Captain',
+        John: 'I dunno'
+      },
       Williams: 'robin',
       Roberts: 'julia',
       Hoskins: 'bob'
