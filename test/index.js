@@ -1,6 +1,8 @@
 require('./is.test')
 require('./map.test')
 require('./merge.test')
+require('./clone.test')
+require('./assign.test')
 require('./omit.test')
 require('./pick.test')
 require('./entries.test')

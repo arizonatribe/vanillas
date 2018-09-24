@@ -1,26 +1,8 @@
 const Benchmark = require('benchmark')
 const assign = require('../lib/assign')
+const { hook, sphere, jurrassicPark } = require('./__mocks__')
 
 const suite = new Benchmark.Suite
-
-const hook = {
-  Hoffman: 'dustin',
-  Williams: 'robin',
-  Roberts: 'julia',
-  Hoskins: 'bob'
-}
-const sphere = {
-  Hoffman: 'dustin',
-  Jackson: 'samuel',
-  Stone: 'sharon',
-  Latifah: 'queen'
-}
-const jurrassicPark = {
-  Neill: 'sam',
-  Jackson: 'samuel',
-  Knight: 'wayne',
-  Goldblum: 'jeff'
-}
 
 suite
   .add('Futilities "assign"', () =>
