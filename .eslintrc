@@ -1,0 +1,55 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "extends": "airbnb-base",
+    "overrides": {
+      "files": [ "test/**.js" ],
+      "rules": {
+        "no-console": "off"
+      }
+    },
+    "rules": {
+        "arrow-parens": "off",
+        "no-bitwise": 0,        
+        "class-methods-use-this": "off",
+        "comma-dangle": [ "error", "never" ],
+        "no-underscore-dangle": "off",
+        "consistent-return": "off",
+        "function-paren-newline": "off",
+        "global-require": "off",
+        "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+        "import/no-named-as-default": "off",
+        "indent": [ "error", 2 ],
+        "linebreak-style": [ "error", "unix" ],
+        "func-names": "off",
+        "no-plusplus": "off",
+        "object-curly-spacing": "off",
+        "quotes": [ "error", "single" ],
+        "semi-spacing": "error",
+        "semi": [ "error", "never" ],
+        "no-confusing-arrow": "off",
+        "no-else-return": "off",
+        "implicit-arrow-linebreak": "off",
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "prefer-arrow-callback": [ "error", { "allowNamedFunctions": true } ],
+        "space-before-function-paren": [
+          "error",
+          {
+            "anonymous": "never",
+            "named": "never",
+            "asyncArrow": "always"
+          }
+        ],
+        "import/no-named-default": "off",
+        "arrow-body-style": "off",
+        "no-multi-assign": "off",
+        "no-lonely-if": "off",
+        "no-param-reassign": "off",
+        "no-return-assign": "warn",
+        "max-len": "off"
+    }
+}

@@ -1,7 +1,7 @@
 const Benchmark = require('benchmark')
 const map = require('../lib/map')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 suite
   .add('Futilities "map"', () =>

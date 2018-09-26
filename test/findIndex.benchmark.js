@@ -3,7 +3,7 @@ const R = require('ramda')
 const Benchmark = require('benchmark')
 const findIndex = require('../lib/findIndex')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const arr = ['dustin', 'robin', 'julia', 'bob']
 const predicate = val => /uli/.test(val)

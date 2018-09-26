@@ -3,7 +3,7 @@ const R = require('ramda')
 const Benchmark = require('benchmark')
 const merge = require('../lib/merge')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const hook = {
   Hoffman: 'dustin',

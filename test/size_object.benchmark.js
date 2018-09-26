@@ -2,7 +2,7 @@ const _ = require('lodash')
 const Benchmark = require('benchmark')
 const size = require('../lib/size')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const val = {
   lorem: '',

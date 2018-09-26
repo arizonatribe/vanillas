@@ -3,7 +3,7 @@ const Benchmark = require('benchmark')
 const { compose: reduxCompose } = require('redux')
 const compose = require('../lib/compose')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const add4 = a => a + 4
 const subtract7 = a => a - 7
@@ -25,4 +25,3 @@ suite
     console.log(`Fastest is ${this.filter('fastest').map('name')}`)
   })
   .run({ async: true })
-

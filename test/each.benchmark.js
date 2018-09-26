@@ -2,7 +2,7 @@ const _ = require('lodash')
 const Benchmark = require('benchmark')
 const each = require('../lib/each')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const arr = ['dustin', 'robin', 'julia', 'bob']
 

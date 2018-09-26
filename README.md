@@ -25,19 +25,19 @@ Fastest is Array.some (native)
 #### Assign
 
 ```
-Futilities "assign" x 3,628,381 ops/sec ±0.59% (87 runs sampled)
-Object.assign (native) x 614,575 ops/sec ±0.60% (91 runs sampled)
+Futilities "assign" x 3,310,409 ops/sec ±0.63% (88 runs sampled)
+Object.assign (native) x 629,694 ops/sec ±0.47% (91 runs sampled
 Fastest is Futilities "assign"
 ```
 
 #### Clone
 
 ```
-Futilities "clone" x 5,743,248 ops/sec ±0.57% (84 runs sampled)
-Lodash "clone" x 1,524,330 ops/sec ±0.51% (88 runs sampled)
-Ramda "clone" x 751,037 ops/sec ±0.67% (88 runs sampled)
-clone by destructuring (native) x 1,812,816 ops/sec ±0.55% (92 runs sampled)
-Object.assign({}, ..) (native) x 1,745,695 ops/sec ±0.76% (86 runs sampled)
+Futilities "clone" x 7,257,434 ops/sec ±0.49% (89 runs sampled)
+Lodash "clone" x 1,530,008 ops/sec ±0.56% (88 runs sampled)
+Ramda "clone" x 754,609 ops/sec ±0.74% (88 runs sampled)
+clone by destructuring (native) x 1,826,349 ops/sec ±0.51% (91 runs sampled)
+Object.assign({}, ..) (native) x 1,994,250 ops/sec ±0.55% (88 runs sampled)
 Fastest is Futilities "clone"
 ```
 
@@ -124,11 +124,11 @@ Fastest is Array.map (native)
 #### MapObject
 
 ```
-Futilities "mapObject" x 3,925,692 ops/sec ±0.59% (89 runs sampled)
-Lodash "mapValues" x 2,160,212 ops/sec ±1.12% (92 runs sampled)
-Ramda "map" x 903,181 ops/sec ±0.84% (87 runs sampled)
-Object.keys( ).reduce() (native) x 529,472 ops/sec ±0.53% (91 runs sampled)
-Object.entries().reduce() (native) x 517,010 ops/sec ±0.61% (89 runs sampled)
+Futilities "mapObject" x 3,141,917 ops/sec ±0.58% (89 runs sampled)
+Lodash "mapValues" x 2,182,519 ops/sec ±0.45% (87 runs sampled)
+Ramda "map" x 924,442 ops/sec ±0.93% (88 runs sampled)
+Object.keys( ).reduce() (native) x 535,165 ops/sec ±0.62% (91 runs sampled)
+Object.entries().reduce() (native) x 533,170 ops/sec ±0.63% (89 runs sampled)
 Fastest is Futilities "mapObject"
 ```
 
@@ -143,10 +143,10 @@ Fastest is Futilities "map"
 #### Merge
 
 ```
-Futilities "merge" x 2,415,790 ops/sec ±0.53% (89 runs sampled)
-Lodash "merge" x 2,377,733 ops/sec ±0.81% (90 runs sampled)
-Ramda "merge" x 699,282 ops/sec ±0.66% (88 runs sampled)
-Object.assign({}, ..) (native) x 743,047 ops/sec ±0.53% (92 runs sampled
+Futilities "merge" x 2,869,548 ops/sec ±1.08% (87 runs sampled)
+Lodash "merge" x 2,533,053 ops/sec ±0.45% (91 runs sampled)
+Ramda "merge" x 701,610 ops/sec ±0.63% (88 runs sampled)
+Object.assign({}, ..) (native) x 754,347 ops/sec ±0.49% (90 runs sampled)
 Fastest is Futilities "merge"
 ```
 

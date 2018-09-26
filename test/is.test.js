@@ -59,11 +59,11 @@ tape('"isObject" can properly identify a wide range of types as Object or not', 
   t.equal(isObject(undefined), false, 'Undefined is not an object')
   t.equal(isObject(false), false, 'Booleans are not objects')
   t.equal(isObject(Symbol('Ƭ̵̬̊')), false, 'Symbols are not objects')
-  t.equal(isObject(new Boolean('true')), false, 'not even ugly Booleans are objects')
+  t.equal(isObject(Boolean('true')), false, 'not even ugly Booleans are objects')
   t.equal(isObject(0), false, 'Numbers are not objects')
-  t.equal(isObject(new Number('1')), false, 'not even ugly Numbers are objects')
+  t.equal(isObject(Number('1')), false, 'not even ugly Numbers are objects')
   t.equal(isObject(' '), false, 'Strings are not objects')
-  t.equal(isObject(new String('stringie')), false, 'not even ugly Strings are objects')
+  t.equal(isObject(String('stringie')), false, 'not even ugly Strings are objects')
   t.equal(isObject(new Date()), false, 'Dates are not objects')
   t.equal(isObject(new RegExp()), false, 'RegExps are not objects')
   t.equal(isObject([1, 2, 3]), false, 'Arrays are not objects')
@@ -161,7 +161,7 @@ tape('"isEqual" performs deep equality testing of two values', t => {
       }
     }
   }
-   
+
   t.equal(
     isEqual(
       cFamilyOfLanguages, {

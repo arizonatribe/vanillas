@@ -3,7 +3,7 @@ const R = require('ramda')
 const Benchmark = require('benchmark')
 const entries = require('../lib/entries')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const obj = {
   Hoffman: 'dustin',

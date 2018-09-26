@@ -3,7 +3,7 @@ const R = require('ramda')
 const Benchmark = require('benchmark')
 const clone = require('../lib/clone')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const movies = {
   hook: {

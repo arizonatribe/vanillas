@@ -3,9 +3,7 @@ const compose = require('../lib/compose')
 const pipe = require('../lib/pipe')
 
 const uppercase = str => str.toUpperCase()
-const lowercase = str => str.toLowerCase()
 const addSpaces = str => str.split('').map(s => ` ${s}`).join('')
-const count = str => str.split('').length
 const add = (a, b) => a + b
 const divideByTwo = a => a / 2
 
@@ -40,4 +38,3 @@ tape('"pipe" creates a chain of functions to execute on some input (left to righ
   t.throws(() => pipe(null)(7), 'any arg passed to pipe has to be a function')
   t.end()
 })
-

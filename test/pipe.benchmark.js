@@ -2,7 +2,7 @@ const R = require('ramda')
 const Benchmark = require('benchmark')
 const pipe = require('../lib/pipe')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const add4 = a => a + 4
 const subtract7 = a => a - 7

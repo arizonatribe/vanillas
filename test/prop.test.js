@@ -10,7 +10,7 @@ const {
 
 class Scrooge {
   constructor(props) {
-    Object.keys(props).forEach(k => this[k] = props[k])
+    Object.keys(props).forEach(k => { this[k] = props[k] })
   }
 }
 
@@ -25,7 +25,7 @@ const mcDucks = {
         donald: {
           occupation: 'Navy',
           huey: {
-            occupation: 'unemployed',
+            occupation: 'unemployed'
           },
           dewey: {
             occupation: 'unemployed'
@@ -99,4 +99,3 @@ test('"propIs" safely retrieves nested props and can use a fallback value', t =>
   t.equal(propIsCurried(String, ['dingus', 'fergus', 'occupation'])(mcDucks), true, 'mmm curry')
   t.end()
 })
-

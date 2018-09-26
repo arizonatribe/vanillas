@@ -3,7 +3,7 @@ const R = require('ramda')
 const Benchmark = require('benchmark')
 const size = require('../lib/size')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const val = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 

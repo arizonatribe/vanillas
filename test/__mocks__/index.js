@@ -19,16 +19,16 @@ module.exports = {
   },
   magicWithoutKids: {
     Black: {
-      'Regulus': {},
-      'Sirius': {}
+      Regulus: {},
+      Sirius: {}
     },
     Dumbledore: {
-      'Albus': {},
-      'Adriana': {},
-      'Aberforth': {}
+      Albus: {},
+      Adriana: {},
+      Aberforth: {}
     },
     Snape: {
-      'Severus': {}
+      Severus: {}
     }
   },
   hook: {

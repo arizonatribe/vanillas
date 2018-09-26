@@ -3,7 +3,7 @@ const R = require('ramda')
 const Benchmark = require('benchmark')
 const reduce = require('../lib/reduce')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const arr = ['dustin', 'robin', 'julia', 'bob']
 const reducer = (obj, val) => ({ ...obj, [val]: val })

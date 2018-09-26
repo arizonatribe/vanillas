@@ -3,7 +3,7 @@ const R = require('ramda')
 const Benchmark = require('benchmark')
 const omit = require('../lib/omit')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const obj = {
   lorem: '',
@@ -36,4 +36,3 @@ suite
     console.log(`Fastest is ${this.filter('fastest').map('name')}`)
   })
   .run({ async: true })
-

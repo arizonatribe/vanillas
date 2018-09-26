@@ -3,7 +3,7 @@ const R = require('ramda')
 const Benchmark = require('benchmark')
 const size = require('../lib/size')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const val = 'lorem ipsum dolor sit amet'
 

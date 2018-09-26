@@ -3,7 +3,7 @@ const R = require('ramda')
 const Benchmark = require('benchmark')
 const map = require('../lib/map')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const arr = ['dustin', 'robin', 'julia', 'bob']
 

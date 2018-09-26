@@ -17,7 +17,7 @@ tape('"map" can apply a function to an Object, String, or something that is Arra
     },
     'map over the values of an object'
   )
-  let actors = ['dustin', 'robin', 'julia', 'bob']
+  const actors = ['dustin', 'robin', 'julia', 'bob']
   const actorsLoudly = map(str => str.toUpperCase(), actors)
   t.deepEqual(
     actorsLoudly,

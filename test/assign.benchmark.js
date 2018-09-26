@@ -2,7 +2,7 @@ const Benchmark = require('benchmark')
 const assign = require('../lib/assign')
 const { hook, sphere, jurrassicPark } = require('./__mocks__')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 suite
   .add('Futilities "assign"', () =>

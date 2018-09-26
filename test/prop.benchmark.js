@@ -3,7 +3,7 @@ const R = require('ramda')
 const Benchmark = require('benchmark')
 const propAt = require('../lib/propAt')
 
-const suite = new Benchmark.Suite
+const suite = new Benchmark.Suite()
 
 const obj = {
   lorem: {
