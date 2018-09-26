@@ -1,5 +1,5 @@
-const tape = require('tape')
-const entries = require('../lib/entries')
+import tape from 'tape'
+import entries from '../src/entries'
 
 tape('"entries" extracts key/value pairs from an object and returns them as an Array of key/value pairs', t => {
   const hook = {

@@ -1,6 +1,6 @@
-const tape = require('tape')
-const compose = require('../lib/compose')
-const pipe = require('../lib/pipe')
+import tape from 'tape'
+import compose from '../src/compose'
+import pipe from '../src/pipe'
 
 const uppercase = str => str.toUpperCase()
 const addSpaces = str => str.split('').map(s => ` ${s}`).join('')

@@ -1,6 +1,6 @@
 const _ = require('lodash')
 const Benchmark = require('benchmark')
-const size = require('../lib/size')
+const size = require('../src/size')
 
 const suite = new Benchmark.Suite()
 

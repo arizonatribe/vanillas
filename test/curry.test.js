@@ -1,5 +1,5 @@
-const tape = require('tape')
-const curry = require('../lib/curry')
+import tape from 'tape'
+import curry from '../src/curry'
 
 tape('"curry" can transform a function of any arity into a function that can be partially applied until all arguments have been provided', t => {
   function one(a, b, c) {

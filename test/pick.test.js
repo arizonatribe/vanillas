@@ -1,5 +1,5 @@
-const tape = require('tape')
-const pick = require('../lib/pick')
+import tape from 'tape'
+import pick from '../src/pick'
 
 tape('"pick" removes specified props from an object', t => {
   t.deepEqual(pick(['lorem'], {lorem: 'ipsum', dolor: 'sit amet'}), {lorem: 'ipsum'})

@@ -1,6 +1,6 @@
 const R = require('ramda')
 const Benchmark = require('benchmark')
-const pipe = require('../lib/pipe')
+const pipe = require('../src/pipe')
 
 const suite = new Benchmark.Suite()
 

@@ -1,5 +1,5 @@
-const tape = require('tape')
-const omit = require('../lib/omit')
+import tape from 'tape'
+import omit from '../src/omit'
 
 tape('"omit" removes specified props from an object', t => {
   t.deepEqual(omit(['lorem'], {lorem: 'ipsum'}), {})

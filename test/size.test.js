@@ -1,5 +1,5 @@
-const tape = require('tape')
-const size = require('../lib/size')
+import tape from 'tape'
+import size from '../src/size'
 
 tape('"size" checks the length of strings, objects, and arrays', t => {
   t.equal(size('lorem ipsum dolor sit amet'), 26, 'measures the size of strings')

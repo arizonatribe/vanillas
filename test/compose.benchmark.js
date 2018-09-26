@@ -1,7 +1,7 @@
 const R = require('ramda')
 const Benchmark = require('benchmark')
 const { compose: reduxCompose } = require('redux')
-const compose = require('../lib/compose')
+const compose = require('../src/compose')
 
 const suite = new Benchmark.Suite()
 

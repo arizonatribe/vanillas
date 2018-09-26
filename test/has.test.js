@@ -1,6 +1,6 @@
-const tape = require('tape')
-const has = require('../lib/has')
-const { has: hasCurried } = require('../lib/curried')
+import tape from 'tape'
+import has from '../src/has'
+import { has as hasCurried } from '../src/curried'
 
 tape('"has" inspects own props on a given object for a specified key', t => {
   t.equal(has('orange', {red: 'blue', orange: 'purple'}), true)

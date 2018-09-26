@@ -1,5 +1,5 @@
-const tape = require('tape')
-const memoize = require('../lib/memoize')
+import tape from 'tape'
+import memoize from '../src/memoize'
 
 tape('"memoize" can apply a function to an Object, String, or something that is Array-like', t => {
   let numOfCalls = 0

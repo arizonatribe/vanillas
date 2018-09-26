@@ -1,6 +1,6 @@
-const tape = require('tape')
-const clone = require('../lib/clone')
-const { magic, magicWithoutKids } = require('./__mocks__')
+import tape from 'tape'
+import clone from '../src/clone'
+import { magic, magicWithoutKids } from './__mocks__'
 
 tape('"clone" copies an object from another', t => {
   const { Malfoy, Potter, Weasley } = magic

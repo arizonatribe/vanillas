@@ -1,5 +1,5 @@
-const tape = require('tape')
-const toTitleCase = require('../lib/toTitleCase')
+import tape from 'tape'
+import toTitleCase from '../src/toTitleCase'
 
 tape('"capitalize" will convert the first letter of a word to uppercase', t => {
   t.equal(toTitleCase('lorem'), 'Lorem')

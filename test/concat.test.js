@@ -1,5 +1,5 @@
-const tape = require('tape')
-const concat = require('../lib/concat')
+import tape from 'tape'
+import concat from '../src/concat'
 
 tape('"concat" can blend two Array-like objects together', t => {
   const hook = [

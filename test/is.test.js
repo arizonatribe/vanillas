@@ -1,9 +1,9 @@
-const tape = require('tape')
-const isArrayish = require('../lib/isArrayish')
-const isEmpty = require('../lib/isEmpty')
-const isEqual = require('../lib/isEqual')
-const isObject = require('../lib/isObject')
-const isObjectish = require('../lib/isObjectish')
+import tape from 'tape'
+import isArrayish from '../src/isArrayish'
+import isEmpty from '../src/isEmpty'
+import isEqual from '../src/isEqual'
+import isObject from '../src/isObject'
+import isObjectish from '../src/isObjectish'
 
 tape('"isObjectish" can inspect any array-like object in JavaScript', t => {
   t.equal(isObjectish(null), false, 'Null is not objectish')

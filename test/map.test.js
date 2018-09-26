@@ -1,6 +1,6 @@
-const tape = require('tape')
-const map = require('../lib/map')
-const { map: mapCurried } = require('../lib/curried')
+import tape from 'tape'
+import map from '../src/map'
+import { map as mapCurried } from '../src/curried'
 
 tape('"map" can apply a function to an Object, String, or something that is Array-like', t => {
   t.deepEqual(

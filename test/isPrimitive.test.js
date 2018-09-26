@@ -1,5 +1,5 @@
-const tape = require('tape')
-const isPrimitive = require('../lib/isPrimitive')
+import tape from 'tape'
+import isPrimitive from '../src/isPrimitive'
 
 tape('"isPrimitive" checks for JavaScript primitives', t => {
   t.equal(isPrimitive(true), true, 'Booleans are primitive')

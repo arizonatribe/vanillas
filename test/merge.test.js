@@ -1,5 +1,5 @@
-const tape = require('tape')
-const merge = require('../lib/merge')
+import tape from 'tape'
+import merge from '../src/merge'
 
 tape('"merge" can blend two Object together', t => {
   const hook = {

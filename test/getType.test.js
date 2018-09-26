@@ -1,5 +1,5 @@
-const tape = require('tape')
-const getType = require('../lib/getType')
+import tape from 'tape'
+import getType from '../src/getType'
 
 tape('"getType" can handle native and non-native type lookup', t => {
   t.equal(getType(null), 'null')

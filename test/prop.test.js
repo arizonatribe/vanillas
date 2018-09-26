@@ -1,12 +1,12 @@
-const test = require('tape')
-const propAt = require('../lib/propAt')
-const propOr = require('../lib/propOr')
-const propIs = require('../lib/propIs')
-const {
-  propOr: propOrCurried,
-  propAt: propAtCurried,
-  propIs: propIsCurried
-} = require('../lib/curried')
+import test from 'tape'
+import propAt from '../src/propAt'
+import propOr from '../src/propOr'
+import propIs from '../src/propIs'
+import {
+  propOr as propOrCurried,
+  propAt as propAtCurried,
+  propIs as propIsCurried
+} from '../src/curried'
 
 class Scrooge {
   constructor(props) {

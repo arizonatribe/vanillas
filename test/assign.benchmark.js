@@ -1,5 +1,5 @@
 const Benchmark = require('benchmark')
-const assign = require('../lib/assign')
+const assign = require('../src/assign')
 const { hook, sphere, jurrassicPark } = require('./__mocks__')
 
 const suite = new Benchmark.Suite()

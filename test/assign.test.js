@@ -1,6 +1,6 @@
-const tape = require('tape')
-const assign = require('../lib/assign')
-const { hook, sphere, jurrassicPark } = require('./__mocks__')
+import tape from 'tape'
+import assign from '../src/assign'
+import { hook, sphere, jurrassicPark } from './__mocks__'
 
 tape('"assign" copies one (or more) objects onto another', t => {
   const movies = {}

@@ -1,5 +1,5 @@
-const tape = require('tape')
-const shim = require('../lib/shim')
+import tape from 'tape'
+import shim from '../src/shim'
 
 tape('"shim" proxies objects several layers deep', t => {
   const shimdow = shim({location: { pathname: 'wrong one' }})

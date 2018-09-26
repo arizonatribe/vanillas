@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const R = require('ramda')
 const Benchmark = require('benchmark')
-const findIndex = require('../lib/findIndex')
+const findIndex = require('../src/findIndex')
 
 const suite = new Benchmark.Suite()
 

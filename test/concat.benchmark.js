@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const R = require('ramda')
 const Benchmark = require('benchmark')
-const concat = require('../lib/concat')
+const concat = require('../src/concat')
 
 const suite = new Benchmark.Suite()
 
