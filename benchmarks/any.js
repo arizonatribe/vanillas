@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const R = require('ramda')
 const Benchmark = require('benchmark')
-const find = require('../src/find')
+const { any } = require('../lib')
 
 const suite = new Benchmark.Suite()
 
@@ -9,17 +9,17 @@ const arr = ['dustin', 'robin', 'julia', 'bob']
 const predicate = val => /uli/.test(val)
 
 suite
-  .add('Futilities "find"', () =>
-    find(predicate, arr)
+  .add('Futilities "any"', () =>
+    any(predicate, arr)
   )
-  .add('Lodash "find"', () =>
-    _.find(arr, predicate)
+  .add('Lodash "some"', () =>
+    _.some(arr, predicate)
   )
-  .add('Ramda "find"', () =>
-    R.find(predicate, arr)
+  .add('Ramda "any"', () =>
+    R.any(predicate, arr)
   )
-  .add('Array.find (native)', () =>
-    arr.find(predicate)
+  .add('Array.some (native)', () =>
+    arr.some(predicate)
   )
   .on('cycle', event => console.log(String(event.target)))
   .on('complete', function() {

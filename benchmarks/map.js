@@ -1,25 +1,24 @@
 const _ = require('lodash')
 const R = require('ramda')
 const Benchmark = require('benchmark')
-const reduce = require('../src/reduce')
+const { map } = require('../lib')
 
 const suite = new Benchmark.Suite()
 
 const arr = ['dustin', 'robin', 'julia', 'bob']
-const reducer = (obj, val) => ({ ...obj, [val]: val })
 
 suite
-  .add('Futilities "reduce"', () =>
-    reduce(reducer, {}, arr)
+  .add('Futilities "map"', () =>
+    map(str => str.toUpperCase(), arr)
   )
-  .add('Lodash "reduce"', () =>
-    _.reduce(arr, reducer, {})
+  .add('Lodash "map"', () =>
+    _.map(arr, str => str.toUpperCase())
   )
-  .add('Ramda "reduce"', () =>
-    R.reduce(reducer, {}, arr)
+  .add('Ramda "map"', () =>
+    R.map(str => str.toUpperCase(), arr)
   )
-  .add('Array.reduce (native)', () =>
-    arr.reduce(reducer, {})
+  .add('Array.map (native)', () =>
+    arr.map(str => str.toUpperCase())
   )
   .on('cycle', event => console.log(String(event.target)))
   .on('complete', function() {

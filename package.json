@@ -9,11 +9,16 @@
   "scripts": {
     "start": "nodemon test/index.js",
     "test": "babel-tape-runner test/index.js | faucet",
+    "benchmark": "node benchmarks/index.js",
     "clean": "rimraf dist es lib",
     "lint": "eslint src test",
     "prepublish": "npm run build",
     "prebuild": "npm run clean && npm run lint && npm test",
-    "build": "rollup -c"
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --out-dir lib",
+    "build:umd": "cross-env NODE_ENV=development rollup -c",
+    "build:umd:min": "cross-env NODE_ENV=production rollup -c",
+    "build": "npm run build:es && npm run build:cjs && npm run build:umd && npm run build:umd:min"
   },
   "keywords": [
     "helpers",
@@ -34,6 +39,7 @@
     "url": "https://github.com/arizonatribe/futilities.git"
   },
   "devDependencies": {
+    "@babel/cli": "7.0.0",
     "@babel/core": "7.0.0",
     "@babel/node": "7.0.0",
     "@babel/plugin-external-helpers": "7.0.0",
@@ -46,6 +52,7 @@
     "babel-register": "6.26.0",
     "babel-tape-runner": "3.0.0",
     "benchmark": "2.1.4",
+    "chalk": "2.4.1",
     "cross-env": "5.1.4",
     "eslint": "5.5.0",
     "eslint-config-airbnb-base": "13.1.0",

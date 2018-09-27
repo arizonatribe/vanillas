@@ -1,21 +1,20 @@
-const _ = require('lodash')
 const R = require('ramda')
 const Benchmark = require('benchmark')
-const size = require('../src/size')
+const { pipe } = require('../lib')
 
 const suite = new Benchmark.Suite()
 
-const val = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const add4 = a => a + 4
+const subtract7 = a => a - 7
+const divide3 = a => a / 3
+const random = () => Math.random()
 
 suite
-  .add('Futilities "size"', () =>
-    size(val)
+  .add('Futilities "pipe"', () =>
+    pipe(random, add4, subtract7, divide3)
   )
-  .add('Lodash "size"', () =>
-    _.size(val)
-  )
-  .add('Ramda "length"', () =>
-    R.length(val)
+  .add('Ramda "pipe"', () =>
+    R.pipe(random, add4, subtract7, divide3)
   )
   .on('cycle', event => console.log(String(event.target)))
   .on('complete', function() {

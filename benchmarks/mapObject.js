@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const R = require('ramda')
 const Benchmark = require('benchmark')
-const mapObject = require('../src/mapObject')
+const { mapObject } = require('../lib')
 
 const suite = new Benchmark.Suite()
 

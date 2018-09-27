@@ -1,6 +1,7 @@
 const R = require('ramda')
 const Benchmark = require('benchmark')
-const pipe = require('../src/pipe')
+const { compose: reduxCompose } = require('redux')
+const { compose } = require('../lib')
 
 const suite = new Benchmark.Suite()
 
@@ -10,11 +11,14 @@ const divide3 = a => a / 3
 const random = () => Math.random()
 
 suite
-  .add('Futilities "pipe"', () =>
-    pipe(random, add4, subtract7, divide3)
+  .add('Futilities "compose"', () =>
+    compose(divide3, subtract7, add4, random)
   )
-  .add('Ramda "pipe"', () =>
-    R.pipe(random, add4, subtract7, divide3)
+  .add('Redux "compose"', () =>
+    reduxCompose(divide3, subtract7, add4, random)
+  )
+  .add('Ramda "compose"', () =>
+    R.compose(divide3, subtract7, add4, random)
   )
   .on('cycle', event => console.log(String(event.target)))
   .on('complete', function() {

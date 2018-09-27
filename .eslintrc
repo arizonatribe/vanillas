@@ -6,8 +6,9 @@
     },
     "extends": "airbnb-base",
     "overrides": {
-      "files": [ "test/**.js" ],
+      "files": [ "test/**.js", "benchmarks/**.js" ],
       "rules": {
+        "import/no-extraneous-dependencies": "off",
         "no-console": "off"
       }
     },

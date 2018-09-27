@@ -3,33 +3,9 @@ const nodeResolve = require('rollup-plugin-node-resolve')
 const replace = require('rollup-plugin-replace')
 const {terser} = require('rollup-plugin-terser')
 
-const configs = [{
-  input: 'src/index.js',
-  output: {
-    name: 'futilities',
-    exports: 'named',
-    indent: false,
-    file: 'lib/index.js',
-    format: 'cjs'
-  },
-  plugins: [
-    nodeResolve({jsnext: true}),
-    babel()
-  ]
-}, {
-  input: 'src/index.js',
-  output: {
-    name: 'futilities',
-    exports: 'named',
-    indent: false,
-    file: 'es/index.js',
-    format: 'es'
-  },
-  plugins: [
-    nodeResolve({jsnext: true}),
-    babel()
-  ]
-}, {
+const env = process.env.NODE_ENV
+
+const config = {
   input: 'src/index.js',
   output: {
     name: 'futilities',
@@ -41,21 +17,13 @@ const configs = [{
   plugins: [
     nodeResolve({jsnext: true}),
     babel({exclude: 'node_modules/**'}),
-    replace({'process.env.NODE_ENV': JSON.stringify('development')})
+    replace({'process.env.NODE_ENV': JSON.stringify(env)})
   ]
-}, {
-  input: 'src/index.js',
-  output: {
-    name: 'futilities',
-    exports: 'named',
-    indent: false,
-    file: 'dist/futilities.min.js',
-    format: 'umd'
-  },
-  plugins: [
-    nodeResolve({jsnext: true}),
-    babel({exclude: 'node_modules/**'}),
-    replace({'process.env.NODE_ENV': JSON.stringify('production')}),
+}
+
+if (env === 'production') {
+  config.output.file = 'dist/futilities.min.js'
+  config.plugins.push(
     terser({
       compress: {
         pure_getters: true,
@@ -64,7 +32,7 @@ const configs = [{
         warnings: false
       }
     })
-  ]
-}]
+  )
+}
 
-module.exports = configs
+module.exports = config

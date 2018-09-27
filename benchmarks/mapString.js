@@ -1,5 +1,5 @@
 const Benchmark = require('benchmark')
-const map = require('../src/map')
+const { map } = require('../lib')
 
 const suite = new Benchmark.Suite()
 

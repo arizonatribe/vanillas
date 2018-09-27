@@ -1,11 +1,11 @@
 const _ = require('lodash')
 const R = require('ramda')
 const Benchmark = require('benchmark')
-const size = require('../src/size')
+const { size } = require('../lib')
 
 const suite = new Benchmark.Suite()
 
-const val = 'lorem ipsum dolor sit amet'
+const val = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 suite
   .add('Futilities "size"', () =>

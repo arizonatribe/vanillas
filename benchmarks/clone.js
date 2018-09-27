@@ -1,11 +1,11 @@
 const _ = require('lodash')
 const R = require('ramda')
 const Benchmark = require('benchmark')
-const entries = require('../src/entries')
+const { clone } = require('../lib')
 
 const suite = new Benchmark.Suite()
 
-const obj = {
+const hook = {
   Hoffman: 'dustin',
   Williams: 'robin',
   Roberts: 'julia',
@@ -13,17 +13,21 @@ const obj = {
 }
 
 suite
-  .add('Futilities "entries"', () =>
-    entries(obj)
+  .add('Futilities "clone"', () =>
+    clone(hook)
   )
-  .add('Lodash "toPairs"', () =>
-    _.toPairs(obj)
+  .add('Lodash "clone"', () =>
+    _.clone(hook)
   )
-  .add('Ramda "toPairs"', () =>
-    R.toPairs(obj)
+  .add('Ramda "clone"', () =>
+    R.clone(hook)
   )
-  .add('Object.entries( ) (native)', () =>
-    Object.entries(obj)
+  .add('clone by destructuring (native)', () => {
+    const newObj = { ...hook }
+    return newObj
+  })
+  .add('Object.assign({}, ..) (native)', () =>
+    Object.assign({}, hook)
   )
   .on('cycle', event => console.log(String(event.target)))
   .on('complete', function() {

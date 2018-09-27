@@ -1,19 +1,11 @@
 const _ = require('lodash')
+const R = require('ramda')
 const Benchmark = require('benchmark')
-const size = require('../src/size')
+const { size } = require('../dist/futilities.min')
 
 const suite = new Benchmark.Suite()
 
-const val = {
-  lorem: '',
-  ipsum: '',
-  dolor: '',
-  sit: '',
-  amet: '',
-  consectetur: {
-    adipiscing: 'elit'
-  }
-}
+const val = 'lorem ipsum dolor sit amet'
 
 suite
   .add('Futilities "size"', () =>
@@ -21,6 +13,9 @@ suite
   )
   .add('Lodash "size"', () =>
     _.size(val)
+  )
+  .add('Ramda "length"', () =>
+    R.length(val)
   )
   .on('cycle', event => console.log(String(event.target)))
   .on('complete', function() {

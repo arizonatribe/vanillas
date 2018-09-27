@@ -1,6 +1,6 @@
 # Futilities
 
-Function utility helpers for JavaScript. Comparable to [Lodash](https://lodash.com) or [Ramda](https://ramdajs.com), but faster. Even outperforms native implementations (or leverages native implementations that are messy to type out).
+Function utility helpers for JavaScript. Comparable to [Lodash](https://lodash.com) or [Ramda](https://ramdajs.com), but faster. In some cases it even outperforms native implementations (or leverages native implementations that are messy to type out).
 
 ## Installation
 
@@ -10,7 +10,14 @@ npm install futilities
 
 ## Benchmarks
 
-Run any of the `*.benchmark.js` files in this repo's `test/` folder.
+Run any of the files in the `benchmarks/` folder.
+
+Examples:
+```
+npm run benchmark -- compose
+npm run benchmark -- propAt
+npm run benchmark -- mapObject
+```
 
 #### Any
 
@@ -172,7 +179,7 @@ Fastest is Futilities "pick"
 
 #### PropAt
 
-There's really no comparison to native in this type of functionality. It's recommended (if possible) you add the [babel-plugin-optional-chaining](https://www.npmjs.com/package/babel-plugin-transform-optional-chaining) to your `.babelrc` (or webpack `babel-loader`) since it transpiles down to the (very messy and typo-prone) native syntax from the `obj?.lorem?.consectetur?.adipiscing` syntax (which is currently a Stage 1 ECMAScript proposal).
+There's really no comparison to native in this type of functionality. It's recommended (if possible) to add the [babel-plugin-optional-chaining](https://www.npmjs.com/package/babel-plugin-transform-optional-chaining) to your `.babelrc` (or webpack `babel-loader`) since it gives you the speed of native without the very messy and typo-prone native syntax. The optional chaining syntax is currently a Stage 1 ECMAScript proposal and it's fairly straightforward: `obj?.lorem?.consectetur?.adipiscing`
 
 ```
 Futilities "propAt" x 41,396,072 ops/sec ±0.43% (90 runs sampled)

@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const R = require('ramda')
 const Benchmark = require('benchmark')
-const pick = require('../src/pick')
+const { pick } = require('../lib')
 
 const suite = new Benchmark.Suite()
 
