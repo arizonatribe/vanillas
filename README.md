@@ -10,13 +10,20 @@ npm install futilities
 
 ## Benchmarks
 
-Run any of the files in the `benchmarks/` folder.
+Run any of the files in the `benchmark/test/` directory.
 
-Examples:
+Examples (run one or more benchmark tests, space-delimited):
 ```
 npm run benchmark -- compose
 npm run benchmark -- propAt
 npm run benchmark -- mapObject
+npm run benchmark -- compose mapObject propAt
+```
+
+Or you can run all of them (grab a cup of coffee while you wait):
+
+```
+npm run benchmark
 ```
 
 #### Any
@@ -88,8 +95,6 @@ Fastest is Futilities "each"
 
 #### Entries
 
-Native is considerably faster than any other implementation, but if you're in a situation where you have to support older browsers or are running an older version of NodeJs, perhaps you can use this implementation.
-
 ```
 Futilities "entries" x 11,010,327 ops/sec ±0.73% (89 runs sampled)
 Lodash "toPairs" x 6,712,076 ops/sec ±2.55% (87 runs sampled)
@@ -97,6 +102,8 @@ Ramda "toPairs" x 5,070,977 ops/sec ±0.49% (90 runs sampled)
 Object.entries( ) (native) x 20,405,515 ops/sec ±8.88% (84 runs sampled)
 Fastest is Object.entries( ) (native)
 ```
+
+Native is considerably faster than any other implementation, but if you're in a situation where you have to support older browsers (or are running an older version of NodeJs) you can use futilities' `entries()` instead of creating a polyfill manually or messing with the babel core polyfills
 
 #### Find
 
@@ -179,8 +186,6 @@ Fastest is Futilities "pick"
 
 #### PropAt
 
-There's really no comparison to native in this type of functionality. It's recommended (if possible) to add the [babel-plugin-optional-chaining](https://www.npmjs.com/package/babel-plugin-transform-optional-chaining) to your `.babelrc` (or webpack `babel-loader`) since it gives you the speed of native without the very messy and typo-prone native syntax. The optional chaining syntax is currently a Stage 1 ECMAScript proposal and it's fairly straightforward: `obj?.lorem?.consectetur?.adipiscing`
-
 ```
 Futilities "propAt" x 41,396,072 ops/sec ±0.43% (90 runs sampled)
 Lodash "get" x 26,546,926 ops/sec ±0.51% (91 runs sampled)
@@ -188,6 +193,8 @@ Ramda "path" x 24,092,101 ops/sec ±0.50% (90 runs sampled)
 && until you find it (native) x 757,239,104 ops/sec ±1.65% (82 runs sampled)
 Fastest is && until you find it (native)
 ```
+
+There's really no comparison to native in this type of functionality. It's recommended (if possible) to add the [babel-plugin-optional-chaining](https://www.npmjs.com/package/babel-plugin-transform-optional-chaining) to your `.babelrc` (or webpack `babel-loader`) since it gives you the speed of native without the very messy and typo-prone native syntax. The optional chaining syntax is currently a Stage 1 ECMAScript proposal and it's fairly straightforward: `obj?.lorem?.consectetur?.adipiscing`
 
 #### Reduce
 

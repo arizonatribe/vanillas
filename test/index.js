@@ -1,5 +1,7 @@
 import './is.test'
 import './map.test'
+import './mapSpec.test'
+import './mapStateToProps.test'
 import './merge.test'
 import './clone.test'
 import './assign.test'

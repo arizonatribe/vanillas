@@ -9,7 +9,7 @@
   "scripts": {
     "start": "nodemon test/index.js",
     "test": "babel-tape-runner test/index.js | faucet",
-    "benchmark": "node benchmarks/index.js",
+    "benchmark": "node benchmark",
     "clean": "rimraf dist es lib",
     "lint": "eslint src test",
     "prepublish": "npm run build",
@@ -58,6 +58,7 @@
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14.0",
     "faucet": "0.0.1",
+    "fs-readdir-recursive": "1.1.0",
     "glob": "7.1.1",
     "lodash": "^4.17.10",
     "nodemon": "1.11.0",

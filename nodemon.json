@@ -1,7 +1,7 @@
 {
   "quiet": true,
   "ignore": ["node_modules"],
-  "watch": ["./test", "./lib"],
+  "watch": ["./test", "./src"],
   "execMap": {
     "js": "clear && cross-env NODE_ENV=test babel-tape-runner test | faucet"
   }
