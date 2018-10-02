@@ -13,12 +13,12 @@ const baseDir = path.resolve('benchmark', 'tests')
 
 if (!functionNames.length) {
   functionNames = readdirRecursive(baseDir).map(fn => fn.split('.')[0])
-  log(chalk`🚀 {white Running all tests}{red.bold :}`)
+  log(chalk`{white Running all tests}{red.bold :}`)
   log(chalk`{cyan You can always specify which test(s) to run using this syntax}:\n`)
   log(chalk`{red $} {yellow npm run benchmark }{white -- }{cyan <file1> <file2> <file3>}{white ...}`)
   log(chalk`{cyan (You can run one or more or all of the tests in the }{red benchmark/test/} {cyan directory)}\n`)
 } else {
-  log(chalk`🚀 {white Running benchmark tests for: "${functionNames.join(', ')}"}{red.bold  . . . }\n`)
+  log(chalk`{white Running benchmark tests for: "${functionNames.join(', ')}"}{red.bold  . . . }\n`)
 }
 
 async function benchmark() {
