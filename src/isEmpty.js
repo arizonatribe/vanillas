@@ -1,16 +1,21 @@
-import isUndefined from './isUndefined'
-import isArrayish from './isArrayish'
 import isObject from './isObject'
-import isNil from './isNil'
 
+/**
+ * Checks if a value is empty. Arrays, Objects, Strings, Sets, and
+ * Null/Undefined values are considered empty if their length (or size) prop is
+ * zero (or if they are Null or Undefined).
+ * Whitespace-only strings are NOT considered empty (use `isBlankString` instead).
+ *
+ * @func
+ * @isg * -> Boolean
+ * @param {*} val A value of any type which may be considered empty
+ * @returns {Boolean} Whether or not the value is empty
+ */
 function isEmpty(val) {
-  return isNil(val) ||
-    (Array.isArray(val) && !val.length) ||
-    (!isUndefined(val.size) && val.size === 0) ||
-    (!isUndefined(val.length) && val.length === 0) ||
-    (isObject(val) && !Object.keys(val).length) ||
-    (Array.from && isArrayish(val) && !Array.from(val).length) ||
-    /^\s*$/.test(val)
+  return val == null ||
+    val.length === 0 ||
+    val.size === 0 ||
+    (isObject(val) && Object.keys(val).length === 0)
 }
 
 export default isEmpty

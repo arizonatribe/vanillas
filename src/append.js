@@ -1,7 +1,5 @@
 import merge from './merge'
 import concat from './concat'
-import isString from './isString'
-import isNumber from './isNumber'
 
 /**
  * Blends two values together based on their type.
@@ -19,7 +17,7 @@ import isNumber from './isNumber'
  * @returns {} A new value that blends the first and second values together.
  */
 function append(firstVal, secondVal) {
-  if ([firstVal, secondVal].every(val => isString(val) || isNumber(val))) {
+  if ([firstVal, secondVal].every(val => typeof val === 'string' || typeof val === 'number')) {
     return `${firstVal}${secondVal}`
   }
   if (Array.isArray(firstVal)) {

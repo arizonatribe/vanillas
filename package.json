@@ -10,6 +10,7 @@
     "start": "nodemon test/index.js",
     "test": "babel-tape-runner test/index.js | faucet",
     "benchmark": "node benchmark",
+    "benchmark:docs": "node benchmark --update-docs",
     "clean": "rimraf dist es lib",
     "lint": "eslint src test",
     "prepublish": "npm run build",

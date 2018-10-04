@@ -17,7 +17,7 @@ const sphere = {
 
 const tests = [
   ['Futilities "merge"', () => merge(hook, sphere)],
-  ['Lodash "merge"', () => _.merge(hook, sphere)],
+  ['Lodash "merge"', () => _.merge(sphere, hook)],
   ['Ramda "merge"', () => R.merge(hook, sphere)],
   ['(native) "Object.assign({}, ..)"', () => Object.assign({}, hook, sphere)]
 ]

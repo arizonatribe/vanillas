@@ -1,9 +1,29 @@
 import tape from 'tape'
 import isArrayish from '../src/isArrayish'
+import is from '../src/is'
 import isEmpty from '../src/isEmpty'
 import isEqual from '../src/isEqual'
 import isObject from '../src/isObject'
 import isObjectish from '../src/isObjectish'
+
+tape('"is" checks a value is of a certain type', t => {
+  t.equal(is(Function, () => 42), true, 'functions')
+  t.equal(is(String, 'lorem ipsum'), true, 'strings')
+  t.equal(is(Boolean, false), true, 'booleans')
+  t.equal(is(Date, new Date()), true, 'dates')
+  t.equal(is(RegExp, new RegExp()), true, 'regexes')
+  t.equal(is('function', () => 42), true, 'functions')
+  t.equal(is('Function', () => 42), true, 'functions (case-insensitive)')
+  t.equal(is('string', 'lorem ipsum'), true, 'strings')
+  t.equal(is('String', 'lorem ipsum'), true, 'strings (case-insensitive)')
+  t.equal(is('boolean', false), true, 'booleans')
+  t.equal(is('Boolean', false), true, 'booleans (case-insensitive)')
+  t.equal(is('date', new Date()), true, 'dates')
+  t.equal(is('Date', new Date()), true, 'dates (case-insensitive)')
+  t.equal(is('regexp', new RegExp()), true, 'regexes')
+  t.equal(is('RegExp', new RegExp()), true, 'regexes (case-insensitive)')
+  t.end()
+})
 
 tape('"isObjectish" can inspect any array-like object in JavaScript', t => {
   t.equal(isObjectish(null), false, 'Null is not objectish')
@@ -99,7 +119,7 @@ tape('"isEmpty" checks a value to see if it is empty (null, undefined, or empty 
   t.equal(isEmpty(), true, 'undefined is considered empty')
   t.equal(isEmpty(null), true, 'null is considered empty')
   t.equal(isEmpty(''), true, 'empty strings are considered empty')
-  t.equal(isEmpty('  '), true, 'strings with only whitespace are considered empty')
+  t.equal(isEmpty('  '), false, 'strings with only whitespace are NOT considered empty (following behavior with Lodash and Ramda)')
   t.equal(isEmpty(), true, 'undefined is considered empty')
   t.equal(isEmpty({}), true, 'empty objects')
   t.equal(isEmpty([]), true, 'empty arrays')
@@ -117,7 +137,6 @@ tape('"isEmpty" checks a value to see if it is empty (null, undefined, or empty 
   t.equal(isEmpty(new Float64Array()), true, 'Float64Arrays can be checked')
   t.equal(isEmpty(new Map()), true, 'Maps can be checked')
   t.equal(isEmpty(new Set()), true, 'Sets can be checked')
-  t.equal(isEmpty(new WeakSet()), true, 'WeakSets can be checked')
   t.end()
 })
 

@@ -1,15 +1,14 @@
 import forIn from './forIn'
 import clone from './clone'
 import mapObject from './mapObject'
-import isFunction from './isFunction'
 
 function mapSpec(spec, obj) {
-  if (isFunction(spec)) {
+  if (typeof spec === 'function') {
     return mapObject(spec, obj)
   } else {
     const newObj = clone(obj)
     forIn((key, ob) => {
-      if (isFunction(ob[key])) {
+      if (typeof ob[key] === 'function') {
         newObj[key] = ob[key](newObj[key])
       } else {
         newObj[key] = ob[key]

@@ -1,10 +1,9 @@
 import forIn from './forIn'
-import isFunction from './isFunction'
 
 function mapStateToProps(spec, obj) {
   const newObj = {}
   forIn((key, ob) => {
-    if (isFunction(ob[key])) {
+    if (typeof ob[key] === 'function') {
       newObj[key] = ob[key](obj)
     } else {
       newObj[key] = ob[key]
