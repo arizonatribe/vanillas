@@ -4,9 +4,8 @@
       "loose": true,
       "targets": {
         "browsers": ["last 2 versions"]
-        }
       }
-    ]
+    }]
   ],
   "plugins": [
     "@babel/proposal-object-rest-spread"

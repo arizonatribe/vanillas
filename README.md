@@ -14,10 +14,10 @@ Run any of the files in the `benchmark/test/` directory.
 
 Examples (run one or more benchmark tests, space-delimited):
 ```
-npm run benchmark -- compose
-npm run benchmark -- propAt
-npm run benchmark -- mapObject
-npm run benchmark -- compose mapObject propAt
+npm run benchmark compose
+npm run benchmark propAt
+npm run benchmark mapObject
+npm run benchmark compose mapObject propAt
 ```
 
 Or you can run all of them (grab a cup of coffee while you wait):

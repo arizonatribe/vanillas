@@ -3,18 +3,37 @@ import isArrayish from './isArrayish'
 import isStrictEqual from './isStrictEqual'
 import isSameType from './isSameType'
 
+/**
+ * Checks if two provided values are deeply equal.
+ * If Objects or Arrays (or Array-like values) are provided,
+ * they are inspected recursively.
+ * Primitive values are checked to see if they are stricly equal
+ * (ie triple equals; no type coercion).
+ *
+ * @func
+ * @sig * -> * -> Boolean
+ * @param {*} firstVal A value which may be null, undefined, a JavaScript
+ * primitive value, an array of values, an array-like value, or an object
+ * @param {*} secondVal A value which may be null, undefined, a JavaScript
+ * @returns {Boolean} Whether or not the two values are deeply equal
+ */
 function isEqual(firstVal, secondVal) {
   if (isStrictEqual(firstVal, secondVal)) return true
   if (!isSameType(firstVal, secondVal)) return false
-  if (isArrayish(firstVal)) return firstVal.every((v, i) => isEqual(v, secondVal[i]))
+
+  if ([firstVal, secondVal].every(val => Array.isArray(val))) {
+    return firstVal.every((v, i) => isEqual(v, secondVal[i]))
+  }
+
   if (isObject(firstVal)) {
-    const firstKeys = Array.from(new Set(Object.keys(firstVal)))
-    const secondKeys = Array.from(new Set(Object.keys(secondVal)))
+    const firstKeys = Object.keys(firstVal)
+    const secondKeys = Object.keys(secondVal)
+    return (firstKeys.length === secondKeys.length) &&
+      firstKeys.every(key => isEqual(firstVal[key], secondVal[key]))
+  }
 
-    if (firstKeys.length !== secondKeys.length) return false
-    if ((new Set([...firstKeys, ...secondKeys])).size !== firstKeys.length) return false
-
-    return firstKeys.every(key => isEqual(firstVal[key], secondVal[key]))
+  if (isArrayish(firstVal)) {
+    return firstVal.every((v, i) => isEqual(v, secondVal[i]))
   }
 
   return false
