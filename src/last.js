@@ -1,6 +1,14 @@
-function last(val) {
-  const arrlen = val.length || 0
-  return (val || [])[arrlen - 1]
+/**
+ * Retrieves the last value from an Array
+ *
+ * @func
+ * @sig [a, b, ..., c] -> c
+ * @param {Array} arr An array of any kind of values
+ * @returns {*} The last value from a given array
+ */
+function last(arr) {
+  const arrlen = arr.length || 0
+  return (arr || [])[arrlen - 1]
 }
 
 export default last
