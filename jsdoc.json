@@ -1,0 +1,39 @@
+{
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc"]
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "source": {
+    "includePattern": ".js$",
+    "excludePattern": "(node_modules/|docs)",
+    "include": ["src", "package.json", "README.md"]
+  },
+  "templates": {
+    "name": "Futilities",
+    "cleverLinks": false,
+    "monospaceLinks": true,
+    "useLongnameInNav": false,
+    "useCollapsibles": true,
+    "footerText": "Dependency-free, low-level JavaScript function helpers",
+    "logo": {
+      "url": "http://nhnent.github.io/tui.component.tree/latest/styles/logo.png",
+      "width": "150px",
+      "height": "13px",
+      "link": "https://github.com/nhnent/tui.jsdoc-template"
+    },
+    "tabNames": {
+      "api": "API",
+      "tutorials": "Examples"
+    }
+  },
+  "opts": {
+    "destination": "./docs/",
+    "encoding": "utf8",
+    "private": true,
+    "recurse": true,
+    "template": "node_modules/tui-jsdoc-template"
+  }
+}
