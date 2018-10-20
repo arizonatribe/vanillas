@@ -15,6 +15,10 @@
     <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
 
     
+        
+            <link type="text/css" rel="stylesheet" href="styles/futilities.css">
+        
+    
 </head>
 <body>
 <nav class="lnb" id="lnb">
@@ -36,7 +40,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Global</h3><ul><li><a href="global.html#any">any</a></li><li><a href="global.html#append">append</a></li><li><a href="global.html#assign">assign</a></li><li><a href="global.html#chainRequests">chainRequests</a></li><li><a href="global.html#clone">clone</a></li><li><a href="global.html#compose">compose</a></li><li><a href="global.html#concat">concat</a></li><li><a href="global.html#converge">converge</a></li><li><a href="global.html#convergeZip">convergeZip</a></li><li><a href="global.html#curry">curry</a></li><li><a href="global.html#each">each</a></li><li><a href="global.html#entries">entries</a></li><li><a href="global.html#find">find</a></li><li><a href="global.html#findIndex">findIndex</a></li><li><a href="global.html#first">first</a></li><li><a href="global.html#forIn">forIn</a></li><li><a href="global.html#getType">getType</a></li><li><a href="global.html#has">has</a></li><li><a href="global.html#identity">identity</a></li><li><a href="global.html#is">is</a></li><li><a href="global.html#isArrayish">isArrayish</a></li><li><a href="global.html#isBlankString">isBlankString</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#isEqual">isEqual</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#isMap">isMap</a></li><li><a href="global.html#isNil">isNil</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isPrimitive">isPrimitive</a></li><li><a href="global.html#isSameType">isSameType</a></li><li><a href="global.html#isSet">isSet</a></li><li><a href="global.html#isStrictEqual">isStrictEqual</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#last">last</a></li><li><a href="global.html#shim">shim</a></li><li><a href="global.html#size">size</a></li></ul></div>
+    <div class="lnb-api hidden"><h3>Global</h3><ul><li><a href="global.html#any">any</a></li><li><a href="global.html#append">append</a></li><li><a href="global.html#assign">assign</a></li><li><a href="global.html#chainRequests">chainRequests</a></li><li><a href="global.html#clone">clone</a></li><li><a href="global.html#compose">compose</a></li><li><a href="global.html#concat">concat</a></li><li><a href="global.html#converge">converge</a></li><li><a href="global.html#convergeZip">convergeZip</a></li><li><a href="global.html#curry">curry</a></li><li><a href="global.html#each">each</a></li><li><a href="global.html#entries">entries</a></li><li><a href="global.html#find">find</a></li><li><a href="global.html#findIndex">findIndex</a></li><li><a href="global.html#first">first</a></li><li><a href="global.html#forIn">forIn</a></li><li><a href="global.html#getType">getType</a></li><li><a href="global.html#has">has</a></li><li><a href="global.html#identity">identity</a></li><li><a href="global.html#is">is</a></li><li><a href="global.html#isArrayish">isArrayish</a></li><li><a href="global.html#isBlankString">isBlankString</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#isEqual">isEqual</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#isMap">isMap</a></li><li><a href="global.html#isNil">isNil</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isPrimitive">isPrimitive</a></li><li><a href="global.html#isSameType">isSameType</a></li><li><a href="global.html#isSet">isSet</a></li><li><a href="global.html#isStrictEqual">isStrictEqual</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#last">last</a></li><li><a href="global.html#reduce">reduce</a></li><li><a href="global.html#shim">shim</a></li><li><a href="global.html#size">size</a></li><li><a href="global.html#toCamelCase">toCamelCase</a></li><li><a href="global.html#toKebabCase">toKebabCase</a></li><li><a href="global.html#toLowerCase">toLowerCase</a></li><li><a href="global.html#toTitleCase">toTitleCase</a></li><li><a href="global.html#toUpperCase">toUpperCase</a></li><li><a href="global.html#uniq">uniq</a></li><li><a href="global.html#unthunk">unthunk</a></li><li><a href="global.html#values">values</a></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -5948,6 +5952,214 @@ A very simple triple equals is all that is used.</p>
 
 <dt>
     
+        <h4 class="name" id="reduce">
+            
+                <span class="type-signature"></span>reduce<span class="signature">(fn, defaultVal, arr)</span><span class="type-signature"> &rarr; {*}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="reduce.js.html">reduce.js</a></code>,
+                <code><a href="reduce.js.html#line13">line 13</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>A simple wrapper around native Array.prototype.reduce(), for use in a
+compose/pipe chain of functions.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function to control the reducition of each item in the
+arram into the single output value</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>defaultVal</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A starting value for the reduction accumulator</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array of values of any type</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">*</span>
+
+
+
+
+
+- <p>The original Array somehow reduced to one value</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
         <h4 class="name" id="shim">
             
                 <span class="type-signature"></span>shim<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Proxy}</span>
@@ -6238,6 +6450,1299 @@ Array or Function</p></td>
 
 - <p>The length of the String or Array, OR the number of keys in
 the Object</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="toCamelCase">
+            
+                <span class="type-signature"></span>toCamelCase<span class="signature">(str)</span><span class="type-signature"> &rarr; {String}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="toCamelCase.js.html">toCamelCase.js</a></code>,
+                <code><a href="toCamelCase.js.html#line12">line 12</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Transforms a string value into one which is hyphenated.
+Hyphens and underscores are removed and interpred as the boundaries for new words.
+The first letter of each new word - not preceded by whitespace - is capitalized.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A string which may contain underscores and hyphens and/or may be title-cased.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">String</span>
+
+
+
+
+
+- <p>A new string that is without hyphens and underscores
+and the first letter of every new word boundary is capitalized, unless preceded by whitespace</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="toKebabCase">
+            
+                <span class="type-signature"></span>toKebabCase<span class="signature">(str)</span><span class="type-signature"> &rarr; {String}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="toKebabCase.js.html">toKebabCase.js</a></code>,
+                <code><a href="toKebabCase.js.html#line11">line 11</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Transforms a string value into one which is hyphenated.
+Whitespace and underscores are replaces with hyphens,
+and uppercase letters are interpreted as boundaries for new hyphenated words.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A string which may contain uppercase characters</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">String</span>
+
+
+
+
+
+- <p>A new string that is an lowercase representation of the original string</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="toLowerCase">
+            
+                <span class="type-signature"></span>toLowerCase<span class="signature">(str)</span><span class="type-signature"> &rarr; {String}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="toLowerCase.js.html">toLowerCase.js</a></code>,
+                <code><a href="toLowerCase.js.html#line11">line 11</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Simple wrapper around String.prototype.toLowerCase() that is provided for
+consistency with the non-native string case methods (<code>toKebabCase()</code>, <code>toCamelCase()</code>, etc)</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A string which may contain uppercase characters</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">String</span>
+
+
+
+
+
+- <p>A new string that is an lowercase representation of the
+original string</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="toTitleCase">
+            
+                <span class="type-signature"></span>toTitleCase<span class="signature">(str)</span><span class="type-signature"> &rarr; {String}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="toTitleCase.js.html">toTitleCase.js</a></code>,
+                <code><a href="toTitleCase.js.html#line9">line 9</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Transforms a string value into one which is title-cased. The first letter of any word is capitalized.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A string which may contain uppercase characters</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">String</span>
+
+
+
+
+
+- <p>A new string that is an lowercase representation of the original string</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="toUpperCase">
+            
+                <span class="type-signature"></span>toUpperCase<span class="signature">(str)</span><span class="type-signature"> &rarr; {String}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="toUpperCase.js.html">toUpperCase.js</a></code>,
+                <code><a href="toUpperCase.js.html#line11">line 11</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Simple wrapper around String.prototype.toUpperCase() that is provided for
+consistency with the non-native string case methods (<code>toKebabCase()</code>, <code>toCamelCase()</code>, etc)</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A string which may contain lowercase characters</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">String</span>
+
+
+
+
+
+- <p>A new string that is an uppercase representation of the
+original string</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="uniq">
+            
+                <span class="type-signature"></span>uniq<span class="signature">(list)</span><span class="type-signature"> &rarr; {Array}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="uniq.js.html">uniq.js</a></code>,
+                <code><a href="uniq.js.html#line10">line 10</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Filters an array of values down to only those which are unique</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>list</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An array of values which may or may not contain duplicates</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Array</span>
+
+
+
+
+
+- <p>A new list containing only the unique values from the
+original array</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="unthunk">
+            
+                <span class="type-signature"></span>unthunk<span class="signature">(thunk)</span><span class="type-signature"> &rarr; {function}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="unthunk.js.html">unthunk.js</a></code>,
+                <code><a href="unthunk.js.html#line12">line 12</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Transforms a thunk (of however many levels deep) into a single function that
+will received all the args at once</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>thunk</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function that returns a function (which may return
+a function, and so on)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">function</span>
+
+
+
+
+
+- <p>A single function that is ready to receive all the
+arguments at once</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="values">
+            
+                <span class="type-signature"></span>values<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Array.&lt;Array>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="values.js.html">values.js</a></code>,
+                <code><a href="values.js.html#line9">line 9</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>A simple polyfill for Object.values()</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An Object whose values need to be retrieved</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Array.&lt;Array></span>
+
+
+
+
+
+- <p>A list of all the values in the provided Object, ordered by keys</p>
 
 
 

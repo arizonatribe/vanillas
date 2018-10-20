@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: size.js | Futilities</title>
+    <title>Source: unthunk.js | Futilities</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,38 +54,24 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import isUndefined from './isUndefined'
-
-/**
- * Checks the length (or size) of many different types of values:
- *   - Array
- *   - Set
- *   - Map
- *   - Object (num of keys)
- *   - String (num of chars)
- *   - Function (num of params)
+            <pre class="prettyprint source linenums"><code>/**
+ * Transforms a thunk (of however many levels deep) into a single function that
+ * will received all the args at once
  *
  * @func
- * @sig Array|String|Object -> Number
- * @param {Object|String|Array|Function} val A value of type Object, String,
- * Array or Function
- * @returns {Number} The length of the String or Array, OR the number of keys in
- * the Object
+ * @sig (a -> b -> c) -> ((a, b) -> c)
+ * @param {Function} thunk A function that returns a function (which may return
+ * a function, and so on)
+ * @returns {Function} A single function that is ready to receive all the
+ * arguments at once
  */
-function size(val) {
-  if (!isUndefined(val.length)) {
-    return val.length
+function unthunk(thunk) {
+  return function inner(...args) {
+    return args.reduce((f, a) => f(a), thunk)
   }
-  if (!isUndefined(val.size)) {
-    return val.size
-  }
-  if (typeof val === 'object') {
-    return Object.keys(val).length
-  }
-  return undefined
 }
 
-export default size
+export default unthunk
 </code></pre>
         </article>
     </section>

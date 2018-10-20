@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: size.js | Futilities</title>
+    <title>Source: toUpperCase.js | Futilities</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,38 +54,21 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import isUndefined from './isUndefined'
-
-/**
- * Checks the length (or size) of many different types of values:
- *   - Array
- *   - Set
- *   - Map
- *   - Object (num of keys)
- *   - String (num of chars)
- *   - Function (num of params)
+            <pre class="prettyprint source linenums"><code>/**
+ * Simple wrapper around String.prototype.toUpperCase() that is provided for
+ * consistency with the non-native string case methods (`toKebabCase()`, `toCamelCase()`, etc)
  *
  * @func
- * @sig Array|String|Object -> Number
- * @param {Object|String|Array|Function} val A value of type Object, String,
- * Array or Function
- * @returns {Number} The length of the String or Array, OR the number of keys in
- * the Object
+ * @sig String -> String
+ * @param {String} str A string which may contain lowercase characters
+ * @returns {String} A new string that is an uppercase representation of the
+ * original string
  */
-function size(val) {
-  if (!isUndefined(val.length)) {
-    return val.length
-  }
-  if (!isUndefined(val.size)) {
-    return val.size
-  }
-  if (typeof val === 'object') {
-    return Object.keys(val).length
-  }
-  return undefined
+function toUpperCase(str) {
+  return str.toUpperCase()
 }
 
-export default size
+export default toUpperCase
 </code></pre>
         </article>
     </section>

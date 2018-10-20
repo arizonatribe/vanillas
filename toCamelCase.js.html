@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: size.js | Futilities</title>
+    <title>Source: toCamelCase.js | Futilities</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,38 +54,27 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import isUndefined from './isUndefined'
-
-/**
- * Checks the length (or size) of many different types of values:
- *   - Array
- *   - Set
- *   - Map
- *   - Object (num of keys)
- *   - String (num of chars)
- *   - Function (num of params)
+            <pre class="prettyprint source linenums"><code>/**
+ * Transforms a string value into one which is hyphenated.
+ * Hyphens and underscores are removed and interpred as the boundaries for new words.
+ * The first letter of each new word - not preceded by whitespace - is capitalized.
  *
  * @func
- * @sig Array|String|Object -> Number
- * @param {Object|String|Array|Function} val A value of type Object, String,
- * Array or Function
- * @returns {Number} The length of the String or Array, OR the number of keys in
- * the Object
+ * @sig String -> String
+ * @param {String} str A string which may contain underscores and hyphens and/or may be title-cased.
+ * @returns {String} A new string that is without hyphens and underscores
+ * and the first letter of every new word boundary is capitalized, unless preceded by whitespace
  */
-function size(val) {
-  if (!isUndefined(val.length)) {
-    return val.length
-  }
-  if (!isUndefined(val.size)) {
-    return val.size
-  }
-  if (typeof val === 'object') {
-    return Object.keys(val).length
-  }
-  return undefined
+function toCamelCase(str) {
+  return [
+    str.charAt(0).toLowerCase(),
+    str.slice(1)
+      .replace(/[_-]+[a-z]/ig, w => w.replace(/[_-]/g, '').toUpperCase())
+      .replace(/\s+[A-Z]/g, w => w.toLowerCase())
+  ].join('')
 }
 
-export default size
+export default toCamelCase
 </code></pre>
         </article>
     </section>
