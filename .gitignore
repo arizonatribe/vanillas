@@ -2,4 +2,5 @@ lib/
 es/
 dist/
 cjs/
+docs/
 .env

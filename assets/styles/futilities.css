@@ -1,0 +1,25 @@
+footer {
+  display: none;
+}
+
+#resizer {
+  display: none;
+}
+
+#main section header h2 {
+  border-left: 5px solid #c12f4e;
+}
+
+.lnb-api h3,
+.main section article h3.subsection-title {
+  color: #c12f4e;
+}
+
+.search-container > input:focus,
+.search-container:focus {
+  outline: none;
+}
+
+#lnb {
+  bottom: 0;
+}

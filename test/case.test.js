@@ -14,5 +14,6 @@ tape('"toKebabCase" will hyphenate a camelcased, titlecased, or snakecased strin
   t.equal(toKebabCase('loremIpsum'), 'lorem-ipsum')
   t.equal(toKebabCase(' lorem_ipsum_dolorSitAmet '), ' lorem-ipsum-dolor-sit-amet ')
   t.equal(toKebabCase('lorem99Ipsum'), 'lorem99-ipsum')
+  t.equal(toKebabCase('Lorem ipsum_dolor__Sit-amet'), 'lorem-ipsum-dolor-sit-amet')
   t.end()
 })
