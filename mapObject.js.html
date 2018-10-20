@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: curry.js | Futilities</title>
+    <title>Source: mapObject.js | Futilities</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,35 +54,27 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Takes a Function whose params are meant to be supplied all at once and
- * changes it so they can be supplied one at a time. As each argument is
- * supplied a new Function is returned that is ready to receive the next
- * argument. This continues until all arguments for your origianl function
- * have been supplied and then the actual result is returned.
- *
- * Note: you cannot set default values for curried function params
- * (again, you _cannot_ set default values for curried function params)
+            <pre class="prettyprint source linenums"><code>import forIn from './forIn'
+
+/**
+ * Applies a mapping function you provide over every value in a given Object.
  *
  * @func
- * @sig ((*,*, ...) -> *) -> (* -> * -> ... -> *)
- * @param {Function} fn A Function whose signature needs to changed from
- * requiring all at once to providing them one (or more) at a time.
- * @returns {Function} A new Function that will wait until all arguments have
- * been supplied before returning a result (otherwise it will continue to return a new
- * Function that is ready to receive the next argument)
+ * @sig (* -> *) -> {k: v} -> {k: v}
+ * @param {Function} fn A mapping function that is invoked on every value in the provided Object
+ * @param {Object} obj An Object whose values will be mapped over
+ * @returns {Object} A new Object that is the result of
+ * the mapping operation over all the values in the original Object
  */
-function curry(fn) {
-  const fnlen = fn.length
-  return function inner(...args) {
-    if (fnlen === args.length) {
-      return fn(...args)
-    }
-    return (...newArgs) => inner(...args, ...newArgs)
-  }
+function mapObject(fn, obj) {
+  const newObj = {}
+  forIn((key, ob) => {
+    newObj[key] = fn(ob[key], key, ob)
+  }, obj)
+  return newObj
 }
 
-export default curry
+export default mapObject
 </code></pre>
         </article>
     </section>

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: curry.js | Futilities</title>
+    <title>Source: omit.js | Futilities</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -55,34 +55,27 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Takes a Function whose params are meant to be supplied all at once and
- * changes it so they can be supplied one at a time. As each argument is
- * supplied a new Function is returned that is ready to receive the next
- * argument. This continues until all arguments for your origianl function
- * have been supplied and then the actual result is returned.
- *
- * Note: you cannot set default values for curried function params
- * (again, you _cannot_ set default values for curried function params)
+ * Removes specified keys from an object (after cloning the Object).
  *
  * @func
- * @sig ((*,*, ...) -> *) -> (* -> * -> ... -> *)
- * @param {Function} fn A Function whose signature needs to changed from
- * requiring all at once to providing them one (or more) at a time.
- * @returns {Function} A new Function that will wait until all arguments have
- * been supplied before returning a result (otherwise it will continue to return a new
- * Function that is ready to receive the next argument)
+ * @sig String[] -> {k: v} -> {k: v}
+ * @param {String[]} keys An array of keys to search for in the Object and
+ * exclude from the output
+ * @param {Object} obj An Object from which to copy and remove keys
+ * @returns {Object} A copy of the original Object, but without the specified keys
  */
-function curry(fn) {
-  const fnlen = fn.length
-  return function inner(...args) {
-    if (fnlen === args.length) {
-      return fn(...args)
+function omit(keys, obj) {
+  const newObj = {}
+  // eslint-disable-next-line no-restricted-syntax
+  for (const key in obj) {
+    if (!keys.includes(key)) {
+      newObj[key] = obj[key]
     }
-    return (...newArgs) => inner(...args, ...newArgs)
   }
+  return newObj
 }
 
-export default curry
+export default omit
 </code></pre>
         </article>
     </section>

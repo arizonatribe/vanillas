@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: curry.js | Futilities</title>
+    <title>Source: merge.js | Futilities</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,35 +54,43 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Takes a Function whose params are meant to be supplied all at once and
- * changes it so they can be supplied one at a time. As each argument is
- * supplied a new Function is returned that is ready to receive the next
- * argument. This continues until all arguments for your origianl function
- * have been supplied and then the actual result is returned.
- *
- * Note: you cannot set default values for curried function params
- * (again, you _cannot_ set default values for curried function params)
+            <pre class="prettyprint source linenums"><code>import isNil from './isNil'
+import isPrimitive from './isPrimitive'
+import concat from './concat'
+import forIn from './forIn'
+
+/**
+ * Merges the values from 2 or more Objects or Arrays together into a new Object/Array.
+ * Null and Undefined values are handled gracefully, and if the second value is
+ * a primitive it will be returned as-is, instead of trying to merge it onto the first.
  *
  * @func
- * @sig ((*,*, ...) -> *) -> (* -> * -> ... -> *)
- * @param {Function} fn A Function whose signature needs to changed from
- * requiring all at once to providing them one (or more) at a time.
- * @returns {Function} A new Function that will wait until all arguments have
- * been supplied before returning a result (otherwise it will continue to return a new
- * Function that is ready to receive the next argument)
+ * @sig {k: v} -> {k: v} -> ... -> {k: v}
+ * @param {Object|Array} val The first value to merge onto (will not get mutated though)
+ * @param {Object|Array} val2 A value to merge onto the first
+ * @returns {Object|Array} A new value that contains the combined values from
+ * all the values passed in
  */
-function curry(fn) {
-  const fnlen = fn.length
-  return function inner(...args) {
-    if (fnlen === args.length) {
-      return fn(...args)
-    }
-    return (...newArgs) => inner(...args, ...newArgs)
+function merge(...vals) {
+  const numOfVals = vals.length
+  if (isNil(vals[0]) || isNil(vals[1])) {
+    return vals[1] || vals[0]
   }
+  if (Array.isArray(vals[0])) {
+    return concat(vals[0], ...vals.slice(1).map(a => Array.isArray(a) ? a : [a]))
+  }
+  if (isPrimitive(vals[1]) &amp;&amp; numOfVals === 2) {
+    return vals[1]
+  }
+  const newObj = { }
+  forIn((key, obj) => { newObj[key] = obj[key] }, vals[0])
+  for (let i = 1; i &lt; numOfVals; i++) {
+    forIn((key, obj) => { newObj[key] = merge(newObj[key], obj[key]) }, vals[i])
+  }
+  return newObj
 }
 
-export default curry
+export default merge
 </code></pre>
         </article>
     </section>

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: curry.js | Futilities</title>
+    <title>Source: mapSpec.js | Futilities</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,35 +54,62 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Takes a Function whose params are meant to be supplied all at once and
- * changes it so they can be supplied one at a time. As each argument is
- * supplied a new Function is returned that is ready to receive the next
- * argument. This continues until all arguments for your origianl function
- * have been supplied and then the actual result is returned.
+            <pre class="prettyprint source linenums"><code>import forIn from './forIn'
+import isObject from './isObject'
+
+/**
+ * Applies one or more mapping functions to the value in a given Object.
+ * But rather than applying the same mapping function to every value in an
+ * Object, instead you use a "spec" object to link the appropriate mapping
+ * function to the key/val in the input Object.
  *
- * Note: you cannot set default values for curried function params
- * (again, you _cannot_ set default values for curried function params)
+ * If you want a mapping function to be applied to a prop called "description",
+ * then you would first pass in a spec object with a prop on it called
+ * "description" and the value would be the mapping function. Then the actual
+ * input object (with the desciption field) will have the matching mapping
+ * function from your spec applied to it directly.
  *
- * @func
- * @sig ((*,*, ...) -> *) -> (* -> * -> ... -> *)
- * @param {Function} fn A Function whose signature needs to changed from
- * requiring all at once to providing them one (or more) at a time.
- * @returns {Function} A new Function that will wait until all arguments have
- * been supplied before returning a result (otherwise it will continue to return a new
- * Function that is ready to receive the next argument)
+ * @example
+ *   mapSpec({
+ *     age: Number,
+ *     isAlive: Boolean,
+ *     name: str => `${str.charAt(0).toUpperCase()}${str.slice(1)}`
+ *   }, {
+ *     age: '20',
+ *     isAlive: 1,
+ *     name: 'john'
+ *   })
+ *
+ * This is similar to Ramda's `evolve()` however you can also set values
+ * in your spec that are _not_ functions
+ * (which will just override whatever matching key there might be on the input object).
+ * Addtionally, futulities supplies the key and the object as the 2nd and third
+ * params to your spec's transformation function, so that you can create props
+ * based on the entire input Object (with Ramda you'll need to also use
+ * `applySpec()` and in a separate operation to derived these kinds of values).
+ *
+ * @param {Object} spec An Object whose keys should correspond to keys in the
+ * input Object and whose values are mapping functions that will receive the
+ * matching input Object's prop as input
+ * @param {Object} inputObj The actual input to map over and transform
+ * @returns {Object} A new Object with all the mapping functions from the spec
+ * Object applied to the corresponding values in the input Object (if they exist)
  */
-function curry(fn) {
-  const fnlen = fn.length
-  return function inner(...args) {
-    if (fnlen === args.length) {
-      return fn(...args)
+function mapSpec(spec, obj) {
+  const newObj = {}
+  forIn((key, ob) => {
+    if (typeof ob[key] === 'function') {
+      newObj[key] = ob[key](obj[key], key, obj)
+    } else if (isObject(ob[key])) {
+      newObj[key] = mapSpec(ob[key], obj[key])
+    } else {
+      newObj[key] = ob[key]
     }
-    return (...newArgs) => inner(...args, ...newArgs)
-  }
+  }, spec)
+  return newObj
 }
 
-export default curry
+export default mapSpec
 </code></pre>
         </article>
     </section>

@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: curry.js | Futilities</title>
+    <title>Source: propOr.js | Futilities</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,35 +54,27 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Takes a Function whose params are meant to be supplied all at once and
- * changes it so they can be supplied one at a time. As each argument is
- * supplied a new Function is returned that is ready to receive the next
- * argument. This continues until all arguments for your origianl function
- * have been supplied and then the actual result is returned.
- *
- * Note: you cannot set default values for curried function params
- * (again, you _cannot_ set default values for curried function params)
+            <pre class="prettyprint source linenums"><code>import propAt from './propAt'
+import isUndefined from './isUndefined'
+
+/**
+ * Attempts to find a specified key on an Object you provide, and if not found
+ * will fall back to an additional value you specify.
  *
  * @func
- * @sig ((*,*, ...) -> *) -> (* -> * -> ... -> *)
- * @param {Function} fn A Function whose signature needs to changed from
- * requiring all at once to providing them one (or more) at a time.
- * @returns {Function} A new Function that will wait until all arguments have
- * been supplied before returning a result (otherwise it will continue to return a new
- * Function that is ready to receive the next argument)
+ * @sig * -> String -> {k: v} -> *
+ * @param {*} fallback A value to fall back on if the requested key does not
+ * exist on the provided Object
+ * @param {String} prop A key to search for on the Object
+ * @param {Object} obj An object which may contain a specified prop
+ * @returns {*} Either the requested prop (from the Object) or the fallback value
  */
-function curry(fn) {
-  const fnlen = fn.length
-  return function inner(...args) {
-    if (fnlen === args.length) {
-      return fn(...args)
-    }
-    return (...newArgs) => inner(...args, ...newArgs)
-  }
+function propOr(fallback, prop, obj) {
+  const val = propAt(prop, obj)
+  return isUndefined(val) ? fallback : val
 }
 
-export default curry
+export default propOr
 </code></pre>
         </article>
     </section>

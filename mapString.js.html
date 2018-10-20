@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: curry.js | Futilities</title>
+    <title>Source: mapString.js | Futilities</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -55,34 +55,26 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Takes a Function whose params are meant to be supplied all at once and
- * changes it so they can be supplied one at a time. As each argument is
- * supplied a new Function is returned that is ready to receive the next
- * argument. This continues until all arguments for your origianl function
- * have been supplied and then the actual result is returned.
- *
- * Note: you cannot set default values for curried function params
- * (again, you _cannot_ set default values for curried function params)
+ * Applies a mapping function you provide over every character in a given string.
  *
  * @func
- * @sig ((*,*, ...) -> *) -> (* -> * -> ... -> *)
- * @param {Function} fn A Function whose signature needs to changed from
- * requiring all at once to providing them one (or more) at a time.
- * @returns {Function} A new Function that will wait until all arguments have
- * been supplied before returning a result (otherwise it will continue to return a new
- * Function that is ready to receive the next argument)
+ * @sig (Char -> Char) -> String -> String
+ * @param {Function} fn A mapping function that is invoked on every char in the
+ * provided String value
+ * @param {String} str A string value to map over
+ * @returns {String} A new String value that is the result of
+ * the mapping operation over the original string
  */
-function curry(fn) {
-  const fnlen = fn.length
-  return function inner(...args) {
-    if (fnlen === args.length) {
-      return fn(...args)
-    }
-    return (...newArgs) => inner(...args, ...newArgs)
+function mapString(fn, str) {
+  const len = str.length
+  let newStr = ''
+  for (let i = 0; i &lt; len; i++) {
+    newStr += fn(str[i], i, str)
   }
+  return newStr
 }
 
-export default curry
+export default mapString
 </code></pre>
         </article>
     </section>
