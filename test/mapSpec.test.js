@@ -30,14 +30,5 @@ tape('"mapSpec" will run any function it finds', t => {
     },
     'does not mutate original object'
   )
-  t.deepEqual(
-    mapSpec(toTitleCase, sphere), {
-      Hoffman: 'Dustin',
-      Jackson: 'Samuel',
-      Stone: 'Sharon',
-      Latifah: 'Queen'
-    },
-    'will run mapObject() under-the-hood if the spec itself is a function'
-  )
   t.end()
 })

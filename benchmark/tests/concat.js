@@ -19,6 +19,7 @@ const tests = [
   ['Futilities "concat"', () => concat(hook, sphere)],
   ['Lodash "concat"', () => _.concat(hook, sphere)],
   ['Ramda "concat"', () => R.concat(hook, sphere)],
+  ['(native) "Array.concat()"', () => hook.concat(sphere)],
   ['(native) "[ ...val1, ...val2 ]"', () => [...hook, ...sphere]]
 ]
 

@@ -22,9 +22,10 @@ import getType from './getType'
  * @returns {Boolean} Whether or not the value matches the specified type
  */
 function is(ofType, val) {
-  return (typeof ofType === 'string' && getType(val).toLowerCase() === ofType.toLowerCase()) ||
-    (!ofType.name && getType(ofType) === getType(val)) ||
-    (ofType.name && getConstructorName(ofType) === 'Function' && getType(val) === ofType.name)
+  return ofType === val ||
+    (typeof ofType === 'string' && getType(val).toLowerCase() === ofType.toLowerCase()) ||
+    (ofType && !ofType.name && getType(ofType) === getType(val)) ||
+    (ofType && ofType.name && getConstructorName(ofType) === 'Function' && getType(val) === ofType.name)
 }
 
 export default is

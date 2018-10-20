@@ -31,6 +31,11 @@ module.exports = {
       Severus: {}
     }
   },
+  counterCultureIcons: {
+    Hoffman: 'albert',
+    Leary: 'timothy',
+    Ginsberg: 'allen'
+  },
   hook: {
     Hoffman: 'dustin',
     Williams: 'robin',

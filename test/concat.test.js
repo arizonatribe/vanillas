@@ -14,6 +14,18 @@ tape('"concat" can blend two Array-like objects together', t => {
     'sharon',
     'queen'
   ]
+  const jurassicPark = [
+    'wayne',
+    'sam',
+    'samuel',
+    'laura'
+  ]
+  const timeline = [
+    'paul',
+    'gerard',
+    'frances',
+    'david'
+  ]
   t.deepEqual(
     concat(hook, sphere), [
       'dustin',
@@ -35,6 +47,27 @@ tape('"concat" can blend two Array-like objects together', t => {
       'bob'
     ],
     'concat does not mutate the first array'
+  )
+  t.deepEqual(
+    concat(hook, sphere, jurassicPark, timeline), [
+      'dustin',
+      'robin',
+      'julia',
+      'bob',
+      'dustin',
+      'samuel',
+      'sharon',
+      'queen',
+      'wayne',
+      'sam',
+      'samuel',
+      'laura',
+      'paul',
+      'gerard',
+      'frances',
+      'david'
+    ],
+    'concatenates three or more array-like objects'
   )
   t.end()
 })

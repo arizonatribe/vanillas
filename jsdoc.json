@@ -19,10 +19,10 @@
     "useCollapsibles": true,
     "footerText": "Dependency-free, low-level JavaScript function helpers",
     "logo": {
-      "url": "http://nhnent.github.io/tui.component.tree/latest/styles/logo.png",
-      "width": "150px",
-      "height": "13px",
-      "link": "https://github.com/nhnent/tui.jsdoc-template"
+      "url": "https://arizonatribe.github.io/futilities/styles/logo.png",
+      "width": "1px",
+      "height": "1px",
+      "link": "https://github.com/arizonatribe/futilities"
     },
     "default": {
       "staticFiles": {

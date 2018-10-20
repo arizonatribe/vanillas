@@ -1,7 +1,7 @@
 import tape from 'tape'
 import merge from '../src/merge'
 
-tape('"merge" can blend two Object together', t => {
+tape('"merge" can blend two or more Objects together', t => {
   const hook = {
     Hoffman: {
       Dustin: 'Captain',
@@ -47,6 +47,31 @@ tape('"merge" can blend two Object together', t => {
       Hoskins: 'bob'
     },
     'merge does not mutate the first object'
+  )
+  const jurrassicPark = {
+    Neill: 'sam',
+    Jackson: 'samuel',
+    Knight: 'wayne',
+    Goldblum: 'jeff'
+  }
+  t.deepEqual(
+    merge(hook, sphere, jurrassicPark), {
+      Hoffman: {
+        John: 'I dunno',
+        Albert: 'LSD',
+        Dustin: 'Psychiatrist'
+      },
+      Williams: 'robin',
+      Roberts: 'julia',
+      Hoskins: 'bob',
+      Jackson: 'samuel',
+      Stone: 'sharon',
+      Latifah: 'queen',
+      Neill: 'sam',
+      Knight: 'wayne',
+      Goldblum: 'jeff'
+    },
+    'merge can blend three (or more) objects'
   )
   t.end()
 })

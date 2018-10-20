@@ -2,9 +2,9 @@ import areAllFunctions from './_internal/areAllFunctions'
 import identity from './identity'
 
 /**
- * Creates a chain of Functions that will be executed in order (with the value
- * from the previous Function fed into the next Function) on a value that will
- * be supplied later by the user.
+ * Creates a chain of Functions that will be executed in sequnce (from right to
+ * left), with the value from the previous Function fed into the next Function.
+ * The value that the chain of functions will executed on can be provided later.
  *
  * @func
  * @sig Function,...Function -> *

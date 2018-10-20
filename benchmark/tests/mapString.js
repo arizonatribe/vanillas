@@ -1,9 +1,9 @@
-import { map } from '../../src'
+import { mapString } from '../../src'
 
 const data = 'lorem ipsum dolor sit amet. consectetur adipiscing elit.'
 
 const tests = [
-  ['Futilities "map"', val => map(str => str.toUpperCase(), val)],
+  ['Futilities "mapString"', val => mapString(str => str.toUpperCase(), val)],
   ['(native) "String.split().map().join()"',
     val => val.split('')
       .map(str => str.toUpperCase())

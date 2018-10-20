@@ -1,3 +1,13 @@
+/**
+ * Removes everything _except_ the specified keys from an object (after cloning the Object).
+ *
+ * @func
+ * @sig String[] -> {k: v} -> {k: v}
+ * @param {String[]} keys An array of keys to search for in the Object and
+ * include from the output
+ * @param {Object} obj An Object from which to copy and remove keys
+ * @returns {Object} A copy of the original Object, but with _only_ the specified keys
+ */
 function pick(keys, obj) {
   const newObj = {}
   const numOfKeys = keys.length

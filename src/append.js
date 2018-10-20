@@ -1,5 +1,4 @@
 import merge from './merge'
-import concat from './concat'
 
 /**
  * Blends two values together based on their type.
@@ -11,17 +10,16 @@ import concat from './concat'
  * the second value added onto the first.
  *
  * @func
- * @sig * -> * -> *
+ * @sig Array|Object|String|Number -> Array|Object|String|Number -> Array|Object|String
  * @param {String|Number|Object|Array} firstVal A value that will have another appended onto
  * @param {String|Number|Object|Array} secondVal A value to append to the first value
- * @returns {} A new value that blends the first and second values together.
+ * @returns {Array|Object|String} A new Array, Object, or String that has the
+ * characters/values from the second provided value merged _after_ those from
+ * the first provided value
  */
 function append(firstVal, secondVal) {
   if ([firstVal, secondVal].every(val => typeof val === 'string' || typeof val === 'number')) {
     return `${firstVal}${secondVal}`
-  }
-  if (Array.isArray(firstVal)) {
-    return concat(firstVal, Array.isArray(secondVal) ? secondVal : [secondVal])
   }
   return merge(firstVal, secondVal)
 }

@@ -1,6 +1,7 @@
 /**
  * Adds the values from one Array onto another Array, returned as a new Array
- * (ie, it does not mutate the first Array).
+ * (ie, it does not mutate the first Array). This operation is recursive, so you
+ * can supply as many arrays as you wish.
  *
  * @func
  * @sig [*,...] -> [*,...] => [*,...]
@@ -9,7 +10,7 @@
  * @returns {Array} A new Array with the values from the second array
  * concatenated onto those from the first
  */
-function concat(firstArr, secondArr) {
+function concat(firstArr, secondArr, ...restOfArrs) {
   const firstLen = firstArr.length
   const len = secondArr.length + firstLen
   const newArr = new Array(len)
@@ -18,6 +19,9 @@ function concat(firstArr, secondArr) {
   }
   for (let i = firstLen; i < len; i++) {
     newArr[i] = secondArr[i - firstLen]
+  }
+  if (restOfArrs.length) {
+    return concat(newArr, restOfArrs[0], ...restOfArrs.slice(1))
   }
   return newArr
 }

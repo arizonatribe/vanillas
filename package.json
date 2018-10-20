@@ -1,6 +1,6 @@
 {
   "name": "futilities",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Dependency-free, low-level JavaScript function helpers",
   "main": "lib/index.js",
   "module": "es/index.js",

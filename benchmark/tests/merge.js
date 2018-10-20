@@ -17,7 +17,8 @@ const sphere = {
 
 const tests = [
   ['Futilities "merge"', () => merge(hook, sphere)],
-  ['Lodash "merge"', () => _.merge(sphere, hook)],
+  // Three arguments supplied here is because Lodash cheats: they mutate the first object
+  ['Lodash "merge"', () => _.merge({}, hook, sphere)],
   ['Ramda "merge"', () => R.merge(hook, sphere)],
   ['(native) "Object.assign({}, ..)"', () => Object.assign({}, hook, sphere)]
 ]
