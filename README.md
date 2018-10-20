@@ -2,6 +2,10 @@
 
 Function utility helpers for JavaScript. Comparable to [Lodash](https://lodash.com) or [Ramda](https://ramdajs.com), but faster. In some cases it even outperforms native implementations (or leverages native implementations that are messy to type out).
 
+## Docs
+
+View the [full docs](https://arizonatribe.github.io/futilities/). These are always in-sync with the JsDoc code annotations.
+
 ## Installation
 
 ```
