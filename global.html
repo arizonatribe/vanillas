@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Global | Futilities</title>
+    <title>Global | vanillas</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -16,7 +16,7 @@
 
     
         
-            <link type="text/css" rel="stylesheet" href="styles/futilities.css">
+            <link type="text/css" rel="stylesheet" href="styles/after.css">
         
     
 </head>
@@ -24,13 +24,13 @@
 <nav class="lnb" id="lnb">
     <div class="logo" style="width: 1px; height: 1px">
         
-            <a href="https://github.com/arizonatribe/futilities" rel="noopener noreferrer" target="_blank">
-                <img src="https://arizonatribe.github.io/futilities/styles/logo.png" width="100%" height="100%">
+            <a href="https://github.com/arizonatribe/vanillas" rel="noopener noreferrer" target="_blank">
+                <img src="https://arizonatribe.github.io/vanillas/styles/logo.png" width="100%" height="100%">
             </a>
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Futilities</a></h1>
+        <h1><a href="index.html" class="link">vanillas</a></h1>
         
             <span class="version">v0.1.0</span>
         
@@ -855,7 +855,7 @@ that return Promises) which need to be executed in sequential order</p></td>
 
     
     <div class="description">
-        <p>Creates a deep copy of an Object</p>
+        <p>Recursively copies the content of an Object into a new Object</p>
     </div>
     
 
@@ -6374,10 +6374,17 @@ the mapping operation over all the values in the original Object</p>
 But rather than applying the same mapping function to every value in an
 Object, instead you use a &quot;spec&quot; object to link the appropriate mapping
 function to the key/val in the input Object.</p>
-<p>If you want a mapping function to be applied to a prop called &quot;description&quot;,
-then you would first pass in a spec object with a prop on it called
-&quot;description&quot; and the value would be the mapping function. Then the actual
-input object (with the desciption field) will have the matching mapping
+<p>This is similar to Ramda's <code>evolve()</code> however you can also set values
+in your spec that are <em>not</em> functions
+(which will just override whatever matching key there might be on the input object).
+Addtionally, futulities supplies the key and the object as the 2nd and third
+params to your spec's transformation function, so that you can create props
+based on the entire input Object (with Ramda you'll need to also use
+<code>applySpec()</code> and in a separate operation to derived these kinds of values).</p>
+<p>As an example, If you want a mapping function to be applied to a prop called &quot;name&quot;,
+then you would first pass in a spec object with a prop on it called &quot;name&quot;
+and the value would be the mapping function.
+Then the actual input object (with the desciption field) will have the matching mapping
 function from your spec applied to it directly.</p>
     </div>
     
@@ -6547,15 +6554,7 @@ Object applied to the corresponding values in the input Object (if they exist)</
     age: '20',
     isAlive: 1,
     name: 'john'
-  })
-
-This is similar to Ramda's `evolve()` however you can also set values
-in your spec that are _not_ functions
-(which will just override whatever matching key there might be on the input object).
-Addtionally, futulities supplies the key and the object as the 2nd and third
-params to your spec's transformation function, so that you can create props
-based on the entire input Object (with Ramda you'll need to also use
-`applySpec()` and in a separate operation to derived these kinds of values).</code></pre>
+  })</code></pre>
 
     
 
@@ -10531,7 +10530,7 @@ arguments at once</p>
 </div>
 
 <footer>
-    <img class="logo" src="https://arizonatribe.github.io/futilities/styles/logo.png" style="width: 1px; height: 1px">
+    <img class="logo" src="https://arizonatribe.github.io/vanillas/styles/logo.png" style="width: 1px; height: 1px">
     <div class="footer-text">Dependency-free, low-level JavaScript function helpers</div>
 </footer>
 <script>prettyPrint();</script>
