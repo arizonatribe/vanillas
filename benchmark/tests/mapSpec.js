@@ -18,7 +18,7 @@ const spec = {
 }
 
 const tests = [
-  ['Futilities "mapSpec"', () => mapSpec(spec, hook)],
+  ['Vanillas "mapSpec"', () => mapSpec(spec, hook)],
   ['Ramda "evolve"', () => R.evolve(spec, hook)]
 ]
 

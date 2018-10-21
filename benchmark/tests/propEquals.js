@@ -1,7 +1,7 @@
 import R from 'ramda'
 import { propEquals } from '../../src'
 
-const data = {
+const val = {
   lorem: {
     ipsum: '',
     dolor: '',
@@ -14,10 +14,10 @@ const data = {
 }
 
 const tests = [
-  ['Futilities "propEquals"', val => propEquals(['lorem', 'consectetur', 'adipiscing'], 'elit', val)],
-  ['Ramda "pathEq"', val => R.pathEq(['lorem', 'consectetur', 'adipiscing'], 'elit', val)],
-  ['(native) "&& until you find it"', val =>
+  ['Vanillas "propEquals"', () => propEquals(['lorem', 'consectetur', 'adipiscing'], 'elit', val)],
+  ['Ramda "pathEq"', () => R.pathEq(['lorem', 'consectetur', 'adipiscing'], 'elit', val)],
+  ['(native) "&& until you find it"', () =>
     val && val.lorem && val.lorem.consectetur && val.lorem.consectetur.adipiscing === 'elit']
 ]
 
-export default { tests, data }
+export default { tests }

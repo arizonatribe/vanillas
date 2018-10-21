@@ -1,14 +1,14 @@
 import { mapString } from '../../src'
 
-const data = 'lorem ipsum dolor sit amet. consectetur adipiscing elit.'
+const val = 'lorem ipsum dolor sit amet. consectetur adipiscing elit.'
 
 const tests = [
-  ['Futilities "mapString"', val => mapString(str => str.toUpperCase(), val)],
+  ['Vanillas "mapString"', () => mapString(str => str.toUpperCase(), val)],
   ['(native) "String.split().map().join()"',
-    val => val.split('')
+    () => val.split('')
       .map(str => str.toUpperCase())
       .join('')
   ]
 ]
 
-export default { tests, data }
+export default { tests }

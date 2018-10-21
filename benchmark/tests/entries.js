@@ -2,7 +2,7 @@ import _ from 'lodash'
 import R from 'ramda'
 import { entries } from '../../src'
 
-const data = {
+const val = {
   Hoffman: 'dustin',
   Williams: 'robin',
   Roberts: 'julia',
@@ -10,10 +10,10 @@ const data = {
 }
 
 const tests = [
-  ['Futilities "entries"', entries],
-  ['Lodash "toPairs"', _.toPairs],
-  ['Ramda "toPairs"', R.toPairs],
-  ['(native) "Object.entries( )"', Object.entries]
+  ['Vanillas "entries"', () => entries(val)],
+  ['Lodash "toPairs"', () => _.toPairs(val)],
+  ['Ramda "toPairs"', () => R.toPairs(val)],
+  ['(native) "Object.entries( )"', () => Object.entries(val)]
 ]
 
-export default { data, tests }
+export default { tests }

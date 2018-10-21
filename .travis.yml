@@ -6,7 +6,7 @@ script: npm run docs
 deploy:
   name: Dave Bot
   local-dir: docs
-  project-name: futilities
+  project-name: vanillas
   email: arizonatribe@gmail
   provider: pages
   skip-cleanup: true

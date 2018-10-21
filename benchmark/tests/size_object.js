@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import { size } from '../../src'
 
-const data = {
+const val = {
   lorem: '',
   ipsum: '',
   dolor: '',
@@ -13,8 +13,8 @@ const data = {
 }
 
 const tests = [
-  ['Futilities "size"', val => size(val)],
-  ['Lodash "size"', val => _.size(val)]
+  ['Vanillas "size"', () => size(val)],
+  ['Lodash "size"', () => _.size(val)]
 ]
 
-export default { tests, data }
+export default { tests }

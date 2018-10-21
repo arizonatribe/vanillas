@@ -1,17 +1,19 @@
 {
-  "name": "futilities",
+  "name": "vanillas",
   "version": "0.1.0",
   "description": "Dependency-free, low-level JavaScript function helpers",
   "main": "lib/index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
-  "browser": "dist/futilities.js",
+  "browser": "dist/vanillas.js",
   "scripts": {
     "docs": "jsdoc --configure jsdoc.json",
-    "start": "nodemon test/index.js",
+    "start": "npm run test:watch",
     "prestart:docs": "npm run docs",
     "start:docs": "serve docs",
-    "test": "babel-tape-runner test/index.js | faucet",
+    "test:watch": "nodemon test/index.js",
+    "test:coverage": "nyc tape --require=@babel/register test/index.js | tap-nyc",
+    "test": "tape --require=@babel/register test/index.js | faucet",
     "benchmark": "node benchmark",
     "benchmark:docs": "node benchmark --update-docs",
     "clean": "rimraf dist es lib",
@@ -26,7 +28,7 @@
   },
   "keywords": [
     "helpers",
-    "futilities",
+    "vanillas",
     "function",
     "functional",
     "object",
@@ -40,7 +42,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arizonatribe/futilities.git"
+    "url": "https://github.com/arizonatribe/vanillas.git"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0",
@@ -67,6 +69,7 @@
     "jsdoc": "3.5.5",
     "lodash": "^4.17.10",
     "nodemon": "1.11.0",
+    "nyc": "13.1.0",
     "ramda": "^0.25.0",
     "redux": "4.0.0",
     "rimraf": "2.6.2",
@@ -76,6 +79,7 @@
     "rollup-plugin-replace": "2.0.0",
     "rollup-plugin-terser": "3.0.0",
     "serve": "10.0.2",
+    "tap-nyc": "1.0.3",
     "tape": "4.9.1",
     "tui-jsdoc-template": "1.2.2"
   }

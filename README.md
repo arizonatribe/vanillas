@@ -1,15 +1,15 @@
-# Futilities
+# vanillas
 
-Function utility helpers for JavaScript. Comparable to [Lodash](https://lodash.com) or [Ramda](https://ramdajs.com), but faster. In some cases it even outperforms native implementations (or leverages native implementations that are messy to type out).
+JavaScript utility functions. Comparable to [Lodash](https://lodash.com) or [Ramda](https://ramdajs.com), but faster. In some cases it even outperforms native implementations (or leverages native implementations that are messy to type out).
 
 ## Docs
 
-View the [full docs](https://arizonatribe.github.io/futilities/). These are always in-sync with the JsDoc code annotations.
+View the [full docs](https://arizonatribe.github.io/vanillas/). These are always in-sync with the JsDoc code annotations.
 
 ## Installation
 
 ```
-npm install futilities
+npm install vanillas
 ```
 
 ## Benchmarks
@@ -30,4 +30,4 @@ Or you can run all of them (grab a cup of coffee while you wait):
 npm run benchmark
 ```
 
-[View Current Benchmarks](https://github.com/arizonatribe/futilities/blob/master/BENCHMARKS.md)
+[View Current Benchmarks](https://github.com/arizonatribe/vanillas/blob/master/BENCHMARKS.md)

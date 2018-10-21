@@ -3,4 +3,6 @@ es/
 dist/
 cjs/
 docs/
+coverage/
+.nyc_output/
 .env

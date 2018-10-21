@@ -3,6 +3,6 @@
   "ignore": ["node_modules"],
   "watch": ["./test", "./src"],
   "execMap": {
-    "js": "clear && cross-env NODE_ENV=test babel-tape-runner test | faucet"
+    "js": "clear && cross-env NODE_ENV=test tape --require=@babel/register test | faucet"
   }
 }

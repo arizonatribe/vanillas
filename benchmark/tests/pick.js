@@ -2,7 +2,7 @@ import _ from 'lodash'
 import R from 'ramda'
 import { pick } from '../../src'
 
-const data = {
+const val = {
   lorem: '',
   ipsum: '',
   dolor: '',
@@ -14,12 +14,12 @@ const data = {
 }
 
 const tests = [
-  ['Futilities "pick"', val => pick(['lorem', 'consectetur', 'ipsum'], val)],
-  ['Lodash "pick"', val => _.pick(val, ['lorem', 'consectetur', 'ipsum'])],
-  ['Ramda "pick"', val => R.pick(['lorem', 'consectetur', 'ipsum'], val)],
-  ['(native) "Array.prototype.reduce"', val =>
+  ['Vanillas "pick"', () => pick(['lorem', 'consectetur', 'ipsum'], val)],
+  ['Lodash "pick"', () => _.pick(val, ['lorem', 'consectetur', 'ipsum'])],
+  ['Ramda "pick"', () => R.pick(['lorem', 'consectetur', 'ipsum'], val)],
+  ['(native) "Array.prototype.reduce"', () =>
     ['lorem', 'consectetur', 'ipsum'].reduce((newObj, key) => ({ ...newObj, [key]: val[key] }), {})
   ]
 ]
 
-export default { tests, data }
+export default { tests }

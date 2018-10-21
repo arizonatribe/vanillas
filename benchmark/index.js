@@ -28,20 +28,28 @@ if (!functionNames.length) {
 
 async function benchmark() {
   try {
+    const requests = []
     const logger = updateDocs ? logToDocs : log
-    await chainRequests(
-      functionNames.map(fnName => {
-        log(chalk`{white Benchmarking "${fnName}"}\n`)
-        const benchmarkScriptPath = path.resolve(baseDir, `${fnName}.js`)
-        // eslint-disable-next-line import/no-dynamic-require
-        const fnBenchmarks = require(benchmarkScriptPath).default
-        const { tests, data } = fnBenchmarks
-        if (!tests || !tests.length) {
-          throw new Error(`No tests found for "${fnName}"! Are you exporting them from the benchmark file?`)
-        }
-        return runBenchmarks(logger, tests, data)
+
+    functionNames.forEach(fnName => {
+      log(chalk`{white Benchmarking "${fnName}"}\n`)
+
+      const benchmarkScriptPath = path.resolve(baseDir, `${fnName}.js`)
+      // eslint-disable-next-line import/no-dynamic-require
+      const fnBenchmarks = require(benchmarkScriptPath).default
+
+      const suite = Object.values(fnBenchmarks).filter(v => Array.isArray(v))
+      if (!suite.length) {
+        throw new Error(`No tests found for "${fnName}"! Are you exporting them from the benchmark file?`)
+      }
+
+      suite.forEach(tests => {
+        requests.push(runBenchmarks(logger, tests))
       })
-    )
+    })
+
+    await chainRequests(requests)
+
     if (docs.length) {
       fs.writeFileSync(
         'BENCHMARKS.md',
