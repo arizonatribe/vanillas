@@ -8,7 +8,7 @@ const divide3 = a => a / 3
 const random = () => Math.random()
 
 const tests = [
-  ['Futilities "compose"', () => compose(divide3, subtract7, add4, random)()],
+  ['Vanillas "compose"', () => compose(divide3, subtract7, add4, random)()],
   ['Redux "compose"', () => reduxCompose(divide3, subtract7, add4, random)()],
   ['Ramda "compose"', () => R.compose(divide3, subtract7, add4, random)()]
 ]

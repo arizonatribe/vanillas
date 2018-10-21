@@ -2,7 +2,7 @@ import _ from 'lodash'
 import R from 'ramda'
 import { clone } from '../../src'
 
-const data = {
+const val = {
   hook: {
     Hoffman: 'dustin',
     Williams: 'robin',
@@ -24,10 +24,10 @@ const data = {
 }
 
 const tests = [
-  ['Futilities "clone"', clone],
-  ['Lodash "cloneDeep"', _.cloneDeep],
-  ['Ramda "clone"', R.clone],
-  ['(native) "clone by destructuring"', val => {
+  ['Vanillas "clone"', () => clone(val)],
+  ['Lodash "cloneDeep"', () => _.cloneDeep(val)],
+  ['Ramda "clone"', () => R.clone(val)],
+  ['(native) "clone by destructuring"', () => {
     const newObj = {
       ...val,
       hook: { ...val.hook },
@@ -38,4 +38,4 @@ const tests = [
   }]
 ]
 
-export default { tests, data }
+export default { tests }

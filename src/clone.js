@@ -3,7 +3,7 @@ import isObject from './isObject'
 import forIn from './forIn'
 
 /**
- * Creates a deep copy of an Object
+ * Recursively copies the content of an Object into a new Object
  *
  * @func
  * @sig {k: v} -> {k: v}
@@ -13,7 +13,7 @@ import forIn from './forIn'
 function clone(obj) {
   if (!isNil(obj)) {
     if (Array.isArray(obj)) {
-      return obj.map(v => v)
+      return obj.map(v => isObject(v) ? clone(v) : v)
     }
     if (isObject(obj)) {
       const newObj = {}

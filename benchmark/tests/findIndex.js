@@ -6,7 +6,7 @@ const arr = ['dustin', 'robin', 'julia', 'bob']
 const predicate = val => /uli/.test(val)
 
 const tests = [
-  ['Futilities "findIndex"', () => findIndex(predicate, arr)],
+  ['Vanillas "findIndex"', () => findIndex(predicate, arr)],
   ['Lodash "findIndex"', () => _.findIndex(arr, predicate)],
   ['Ramda "findIndex"', () => R.findIndex(predicate, arr)],
   ['(native) "Array.findIndex()"', () => arr.findIndex(predicate)]

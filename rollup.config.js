@@ -8,10 +8,10 @@ const env = process.env.NODE_ENV
 const config = {
   input: 'src/index.js',
   output: {
-    name: 'futilities',
+    name: 'vanillas',
     exports: 'named',
     indent: false,
-    file: 'dist/futilities.js',
+    file: 'dist/vanillas.js',
     format: 'umd'
   },
   plugins: [
@@ -22,7 +22,7 @@ const config = {
 }
 
 if (env === 'production') {
-  config.output.file = 'dist/futilities.min.js'
+  config.output.file = 'dist/vanillas.min.js'
   config.plugins.push(
     terser({
       compress: {

@@ -1,12 +1,12 @@
 import _ from 'lodash'
 import { each } from '../../src'
 
-const data = ['dustin', 'robin', 'julia', 'bob']
+const arr = ['dustin', 'robin', 'julia', 'bob']
 
 const tests = [
-  ['Futilities "each"', arr => each(str => str.toUpperCase(), arr)],
-  ['Lodash "each"', arr => _.each(arr, str => str.toUpperCase())],
-  ['(native) "Array.forEach"', arr => arr.forEach(str => str.toUpperCase())]
+  ['Vanillas "each"', () => each(str => str.toUpperCase(), arr)],
+  ['Lodash "each"', () => _.each(arr, str => str.toUpperCase())],
+  ['(native) "Array.forEach"', () => arr.forEach(str => str.toUpperCase())]
 ]
 
-export default { data, tests }
+export default { tests }

@@ -47,7 +47,7 @@ const pantheon = {
 }
 
 const tests = [
-  ['Futilities "isEqual"', () => isEqual(solarSystem, pantheon)],
+  ['Vanillas "isEqual"', () => isEqual(solarSystem, pantheon)],
   ['Lodash "isEqual"', () => _.isEqual(solarSystem, pantheon)],
   ['Ramda "equals"', () => R.equals(solarSystem, pantheon)]
 ]

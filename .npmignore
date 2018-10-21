@@ -6,6 +6,7 @@ docs/
 src/
 test/
 benchmark/
+coverage/
 jsdoc.json
 nodemon.json
 rollup.config.js
