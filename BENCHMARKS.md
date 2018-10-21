@@ -1,153 +1,158 @@
 ```
-Vanillas "any" x 9,654,489 ops/sec ±0.83% (86 runs sampled)
-Lodash "some" x 8,742,842 ops/sec ±1.07% (89 runs sampled)
-Ramda "any" x 3,497,293 ops/sec ±1.53% (89 runs sampled)
-(native) "Array.some()" x 9,801,633 ops/sec ±2.00% (90 runs sampled)
+Vanillas "any" x 10,079,213 ops/sec ±0.86% (93 runs sampled)
+Lodash "some" x 9,749,531 ops/sec ±0.46% (94 runs sampled)
+Ramda "any" x 4,088,328 ops/sec ±0.44% (92 runs sampled)
+(native) "Array.some()" x 10,361,659 ops/sec ±0.62% (92 runs sampled)
 Fastest is (native) "Array.some()"
 
-Vanillas "assign" x 3,490,040 ops/sec ±0.48% (91 runs sampled)
-(native) "Object.assign()" x 600,103 ops/sec ±0.80% (90 runs sampled)
+Vanillas "assign" x 3,635,201 ops/sec ±0.42% (95 runs sampled)
+(native) "Object.assign()" x 622,474 ops/sec ±0.37% (91 runs sampled)
 Fastest is Vanillas "assign"
 
-Vanillas "clone" x 6,396,225 ops/sec ±0.63% (93 runs sampled)
-Lodash "clone" x 1,576,525 ops/sec ±0.75% (92 runs sampled)
-Ramda "clone" x 814,888 ops/sec ±0.50% (92 runs sampled)
-(native) "clone by destructuring" x 2,128,693 ops/sec ±0.43% (96 runs sampled)
-(native) "Object.assign({}, ..)" x 1,926,228 ops/sec ±0.93% (91 runs sampled)
+Vanillas "clone" x 6,840,386 ops/sec ±0.60% (95 runs sampled)
+Lodash "clone" x 1,579,493 ops/sec ±0.40% (95 runs sampled)
+Ramda "clone" x 815,645 ops/sec ±0.90% (95 runs sampled)
+(native) "clone by destructuring" x 2,171,739 ops/sec ±0.42% (94 runs sampled)
+(native) "Object.assign({}, ..)" x 2,010,918 ops/sec ±0.69% (90 runs sampled)
 Fastest is Vanillas "clone"
 
-Vanillas "clone" x 1,153,816 ops/sec ±0.53% (95 runs sampled)
-Lodash "cloneDeep" x 286,435 ops/sec ±0.52% (96 runs sampled)
-Ramda "clone" x 261,734 ops/sec ±0.83% (93 runs sampled)
-(native) "clone by destructuring" x 336,158 ops/sec ±0.50% (95 runs sampled)
+Vanillas "clone" x 1,013,091 ops/sec ±0.60% (93 runs sampled)
+Lodash "cloneDeep" x 283,182 ops/sec ±1.05% (93 runs sampled)
+Ramda "clone" x 267,233 ops/sec ±0.47% (96 runs sampled)
+(native) "clone by destructuring" x 340,199 ops/sec ±0.39% (94 runs sampled)
 Fastest is Vanillas "clone"
 
-Vanillas "compose" x 11,693,068 ops/sec ±2.21% (93 runs sampled)
-Redux "compose" x 7,213,446 ops/sec ±0.35% (94 runs sampled)
-Ramda "compose" x 759,282 ops/sec ±0.49% (93 runs sampled)
+Vanillas "compose" x 12,401,855 ops/sec ±2.19% (91 runs sampled)
+Redux "compose" x 7,486,017 ops/sec ±0.20% (95 runs sampled)
+Ramda "compose" x 779,243 ops/sec ±0.98% (94 runs sampled)
 Fastest is Vanillas "compose"
 
-Vanillas "concat" x 30,797,580 ops/sec ±0.40% (94 runs sampled)
-Lodash "concat" x 2,821,031 ops/sec ±0.51% (91 runs sampled)
-Ramda "concat" x 6,303,379 ops/sec ±1.29% (93 runs sampled)
-(native) "Array.concat()" x 6,484,493 ops/sec ±1.01% (89 runs sampled)
-(native) "[ ...val1, ...val2 ]" x 6,214,862 ops/sec ±2.15% (85 runs sampled)
+Vanillas "concat" x 34,792,282 ops/sec ±0.24% (94 runs sampled)
+Lodash "concat" x 2,838,540 ops/sec ±0.50% (95 runs sampled)
+Ramda "concat" x 5,506,781 ops/sec ±1.20% (94 runs sampled)
+(native) "Array.concat()" x 6,915,402 ops/sec ±1.02% (94 runs sampled)
+(native) "[ ...val1, ...val2 ]" x 6,926,784 ops/sec ±1.38% (94 runs sampled)
 Fastest is Vanillas "concat"
 
-Executing Vanillas curried function x 2,026,040 ops/sec ±2.26% (93 runs sampled)
-Executing Lodash curried function x 259,720 ops/sec ±0.36% (96 runs sampled)
-Executing Ramda curried function x 1,967,305 ops/sec ±0.92% (94 runs sampled)
+Vanillas "curry" x 29,181,050 ops/sec ±0.49% (92 runs sampled)
+Lodash "curry" x 992,150 ops/sec ±0.90% (96 runs sampled)
+Ramda "curry" x 5,295,414 ops/sec ±0.39% (94 runs sampled)
+Fastest is Vanillas "curry"
+
+Executing Vanillas curried function x 2,056,993 ops/sec ±0.30% (95 runs sampled)
+Executing Lodash curried function x 243,082 ops/sec ±1.08% (97 runs sampled)
+Executing Ramda curried function x 1,996,693 ops/sec ±0.35% (95 runs sampled)
 Fastest is Executing Vanillas curried function
 
-Vanillas "each" x 72,267,857 ops/sec ±0.70% (92 runs sampled)
-Lodash "each" x 4,579,929 ops/sec ±0.70% (87 runs sampled)
-(native) "Array.forEach" x 70,762,089 ops/sec ±0.63% (94 runs sampled)
+Vanillas "each" x 73,984,897 ops/sec ±0.56% (94 runs sampled)
+Lodash "each" x 4,535,695 ops/sec ±0.47% (94 runs sampled)
+(native) "Array.forEach" x 70,664,821 ops/sec ±0.53% (95 runs sampled)
 Fastest is Vanillas "each"
 
-Vanillas "entries" x 10,652,626 ops/sec ±0.43% (96 runs sampled)
-Lodash "toPairs" x 5,360,516 ops/sec ±0.39% (94 runs sampled)
-Ramda "toPairs" x 4,736,914 ops/sec ±2.39% (94 runs sampled)
-(native) "Object.entries( )" x 20,092,159 ops/sec ±0.42% (93 runs sampled)
+Vanillas "entries" x 4,447,450 ops/sec ±1.86% (80 runs sampled)
+Lodash "toPairs" x 7,266,292 ops/sec ±0.27% (96 runs sampled)
+Ramda "toPairs" x 5,025,594 ops/sec ±0.36% (95 runs sampled)
+(native) "Object.entries( )" x 19,555,913 ops/sec ±0.40% (93 runs sampled)
 Fastest is (native) "Object.entries( )"
 
-Vanillas "find" x 9,754,899 ops/sec ±0.74% (92 runs sampled)
-Lodash "find" x 6,287,737 ops/sec ±0.41% (95 runs sampled)
-Ramda "find" x 3,597,226 ops/sec ±0.76% (94 runs sampled)
-(native) "Array.find()" x 9,908,906 ops/sec ±0.37% (95 runs sampled)
+Vanillas "find" x 10,039,032 ops/sec ±0.83% (94 runs sampled)
+Lodash "find" x 5,532,682 ops/sec ±0.62% (92 runs sampled)
+Ramda "find" x 3,856,716 ops/sec ±0.46% (93 runs sampled)
+(native) "Array.find()" x 10,378,524 ops/sec ±0.73% (95 runs sampled)
 Fastest is (native) "Array.find()"
 
-Vanillas "findIndex" x 9,933,882 ops/sec ±0.49% (94 runs sampled)
-Lodash "findIndex" x 7,413,689 ops/sec ±0.86% (93 runs sampled)
-Ramda "findIndex" x 3,687,513 ops/sec ±0.36% (92 runs sampled)
-(native) "Array.findIndex()" x 10,077,179 ops/sec ±0.68% (93 runs sampled)
-Fastest is (native) "Array.findIndex()"
+Vanillas "findIndex" x 10,326,278 ops/sec ±0.45% (97 runs sampled)
+Lodash "findIndex" x 7,704,056 ops/sec ±0.62% (93 runs sampled)
+Ramda "findIndex" x 3,835,179 ops/sec ±0.60% (94 runs sampled)
+(native) "Array.findIndex()" x 10,277,125 ops/sec ±0.74% (94 runs sampled)
+Fastest is Vanillas "findIndex",(native) "Array.findIndex()"
 
-Vanillas "isEmpty" x 83,870,953 ops/sec ±0.63% (94 runs sampled)
-Lodash "isEmpty" x 15,768,779 ops/sec ±0.64% (91 runs sampled)
-Ramda "isEmpty" x 539,066 ops/sec ±0.86% (94 runs sampled)
+Vanillas "isEmpty" x 86,233,089 ops/sec ±0.40% (95 runs sampled)
+Lodash "isEmpty" x 14,129,869 ops/sec ±0.60% (95 runs sampled)
+Ramda "isEmpty" x 530,306 ops/sec ±0.73% (94 runs sampled)
 Fastest is Vanillas "isEmpty"
 
-Vanillas "isEqual" x 567,478 ops/sec ±0.43% (94 runs sampled)
-Lodash "isEqual" x 187,153 ops/sec ±1.28% (92 runs sampled)
-Ramda "equals" x 58,490 ops/sec ±0.35% (95 runs sampled)
+Vanillas "isEqual" x 578,548 ops/sec ±0.34% (95 runs sampled)
+Lodash "isEqual" x 191,301 ops/sec ±1.15% (93 runs sampled)
+Ramda "equals" x 58,574 ops/sec ±0.32% (94 runs sampled)
 Fastest is Vanillas "isEqual"
 
-Vanillas "isObject" x 18,168,914 ops/sec ±0.82% (91 runs sampled)
-Lodash "isPlainObject" x 2,763,747 ops/sec ±0.51% (93 runs sampled)
+Vanillas "isObject" x 31,511,340 ops/sec ±0.56% (86 runs sampled)
+Lodash "isPlainObject" x 3,167,241 ops/sec ±1.34% (95 runs sampled)
 Fastest is Vanillas "isObject"
 
-Vanillas "map" x 5,596,225 ops/sec ±0.40% (93 runs sampled)
-Lodash "map" x 4,239,751 ops/sec ±1.57% (91 runs sampled)
-Ramda "map" x 2,561,048 ops/sec ±0.42% (95 runs sampled)
-(native) "Array.map()" x 5,526,590 ops/sec ±1.78% (90 runs sampled)
-Fastest is Vanillas "map",(native) "Array.map()"
+Vanillas "map" x 5,566,607 ops/sec ±0.51% (94 runs sampled)
+Lodash "map" x 4,407,500 ops/sec ±1.44% (95 runs sampled)
+Ramda "map" x 2,602,365 ops/sec ±0.45% (95 runs sampled)
+(native) "Array.map()" x 5,551,696 ops/sec ±2.41% (94 runs sampled)
+Fastest is Vanillas "map"
 
-Vanillas "mapObject" x 3,331,982 ops/sec ±0.47% (95 runs sampled)
-Lodash "mapValues" x 2,256,176 ops/sec ±0.55% (92 runs sampled)
-Ramda "map" x 938,972 ops/sec ±0.90% (95 runs sampled)
-(native) "Object.keys( ).reduce()" x 349,992 ops/sec ±0.51% (96 runs sampled)
-(native) "Object.entries().reduce()" x 344,129 ops/sec ±1.31% (92 runs sampled)
+Vanillas "mapObject" x 3,304,485 ops/sec ±0.67% (94 runs sampled)
+Lodash "mapValues" x 2,570,053 ops/sec ±1.53% (91 runs sampled)
+Ramda "map" x 1,015,219 ops/sec ±0.54% (94 runs sampled)
+(native) "Object.keys( ).reduce()" x 354,667 ops/sec ±0.33% (93 runs sampled)
+(native) "Object.entries().reduce()" x 352,553 ops/sec ±1.15% (93 runs sampled)
 Fastest is Vanillas "mapObject"
 
-Vanillas "mapSpec" x 1,034,817 ops/sec ±0.49% (95 runs sampled)
-Ramda "evolve" x 1,082,014 ops/sec ±1.29% (93 runs sampled)
-Fastest is Ramda "evolve"
+Vanillas "mapSpec" x 1,074,025 ops/sec ±0.48% (94 runs sampled)
+Ramda "evolve" x 1,060,846 ops/sec ±1.22% (93 runs sampled)
+Fastest is Vanillas "mapSpec"
 
-Vanillas "mapString" x 460,976 ops/sec ±0.51% (94 runs sampled)
-(native) "String.split().map().join()" x 319,169 ops/sec ±2.27% (92 runs sampled)
+Vanillas "mapString" x 468,953 ops/sec ±0.47% (92 runs sampled)
+(native) "String.split().map().join()" x 323,564 ops/sec ±0.34% (95 runs sampled)
 Fastest is Vanillas "mapString"
 
-Vanillas "merge" x 3,208,330 ops/sec ±0.75% (93 runs sampled)
-Lodash "merge" x 2,906,666 ops/sec ±0.48% (92 runs sampled)
-Ramda "merge" x 736,665 ops/sec ±0.72% (93 runs sampled)
-(native) "Object.assign({}, ..)" x 757,582 ops/sec ±0.76% (92 runs sampled)
+Vanillas "merge" x 2,390,259 ops/sec ±0.57% (93 runs sampled)
+Lodash "merge" x 1,241,154 ops/sec ±0.48% (95 runs sampled)
+Ramda "merge" x 893,076 ops/sec ±0.80% (93 runs sampled)
+(native) "Object.assign({}, ..)" x 939,338 ops/sec ±0.53% (94 runs sampled)
 Fastest is Vanillas "merge"
 
-Vanillas "omit" x 8,559,688 ops/sec ±0.90% (93 runs sampled)
-Lodash "omit" x 566,407 ops/sec ±0.50% (93 runs sampled)
-Ramda "omit" x 4,529,306 ops/sec ±0.61% (96 runs sampled)
-(native) "Object.keys().filter().reduce() (native) x 230,409 ops/sec ±1.04% (93 runs sampled)
+Vanillas "omit" x 8,888,844 ops/sec ±0.42% (95 runs sampled)
+Lodash "omit" x 564,051 ops/sec ±1.24% (91 runs sampled)
+Ramda "omit" x 4,786,172 ops/sec ±0.55% (95 runs sampled)
+(native) "Object.keys().filter().reduce() (native) x 233,201 ops/sec ±1.14% (93 runs sampled)
 Fastest is Vanillas "omit"
 
-Vanillas "pick" x 9,892,323 ops/sec ±0.63% (92 runs sampled)
-Lodash "pick" x 1,050,789 ops/sec ±1.21% (92 runs sampled)
-Ramda "pick" x 6,366,504 ops/sec ±0.56% (96 runs sampled)
-(native) "Array.prototype.reduce" x 514,070 ops/sec ±0.94% (94 runs sampled)
+Vanillas "pick" x 10,174,095 ops/sec ±0.46% (92 runs sampled)
+Lodash "pick" x 1,048,465 ops/sec ±1.04% (93 runs sampled)
+Ramda "pick" x 6,316,367 ops/sec ±0.50% (94 runs sampled)
+(native) "Array.prototype.reduce" x 521,094 ops/sec ±0.89% (94 runs sampled)
 Fastest is Vanillas "pick"
 
-Vanillas "pipe" x 19,739,729 ops/sec ±0.43% (96 runs sampled)
-Ramda "pipe" x 12,820,245 ops/sec ±0.54% (91 runs sampled)
+Vanillas "pipe" x 11,698,296 ops/sec ±2.07% (93 runs sampled)
+Ramda "pipe" x 1,066,861 ops/sec ±0.47% (95 runs sampled)
 Fastest is Vanillas "pipe"
 
-Vanillas "propAt" x 27,395,944 ops/sec ±1.57% (83 runs sampled)
-Lodash "get" x 19,425,895 ops/sec ±0.57% (91 runs sampled)
-Ramda "path" x 13,441,720 ops/sec ±0.44% (93 runs sampled)
-(native) "&& until you find it" x 76,207,320 ops/sec ±0.64% (94 runs sampled)
+Vanillas "propAt" x 31,891,434 ops/sec ±0.76% (90 runs sampled)
+Lodash "get" x 21,236,562 ops/sec ±0.48% (92 runs sampled)
+Ramda "path" x 14,100,819 ops/sec ±0.66% (91 runs sampled)
+(native) "&& until you find it" x 110,216,376 ops/sec ±0.53% (97 runs sampled)
 Fastest is (native) "&& until you find it"
 
-Vanillas "propEquals" x 24,885,633 ops/sec ±1.75% (85 runs sampled)
-Ramda "pathEq" x 5,089,509 ops/sec ±0.53% (94 runs sampled)
-(native) "&& until you find it" x 67,225,421 ops/sec ±0.45% (91 runs sampled)
+Vanillas "propEquals" x 28,712,651 ops/sec ±0.55% (91 runs sampled)
+Ramda "pathEq" x 5,097,387 ops/sec ±0.56% (93 runs sampled)
+(native) "&& until you find it" x 98,045,083 ops/sec ±0.59% (93 runs sampled)
 Fastest is (native) "&& until you find it"
 
-Vanillas "reduce" x 358,468 ops/sec ±0.55% (92 runs sampled)
-Lodash "reduce" x 375,003 ops/sec ±1.09% (91 runs sampled)
-Ramda "reduce" x 346,397 ops/sec ±0.50% (94 runs sampled)
-(native) "Array.reduce" x 384,788 ops/sec ±1.05% (92 runs sampled)
-Fastest is (native) "Array.reduce"
+Vanillas "reduce" x 387,996 ops/sec ±1.09% (91 runs sampled)
+Lodash "reduce" x 334,377 ops/sec ±0.49% (94 runs sampled)
+Ramda "reduce" x 348,058 ops/sec ±0.53% (95 runs sampled)
+(native) "Array.reduce" x 368,252 ops/sec ±1.06% (93 runs sampled)
+Fastest is Vanillas "reduce"
 
-Vanillas "size" x 91,534,999 ops/sec ±0.58% (93 runs sampled)
-Lodash "size" x 15,042,315 ops/sec ±0.49% (93 runs sampled)
-Ramda "length" x 6,732,059 ops/sec ±0.70% (93 runs sampled)
+Vanillas "size" x 96,491,036 ops/sec ±0.37% (90 runs sampled)
+Lodash "size" x 14,129,058 ops/sec ±0.57% (93 runs sampled)
+Ramda "length" x 6,986,057 ops/sec ±0.60% (91 runs sampled)
 Fastest is Vanillas "size"
 
-Vanillas "size" x 38,746,049 ops/sec ±0.37% (93 runs sampled)
-Lodash "size" x 11,398,215 ops/sec ±0.61% (94 runs sampled)
+Vanillas "size" x 44,127,130 ops/sec ±0.22% (96 runs sampled)
+Lodash "size" x 20,732,468 ops/sec ±0.57% (94 runs sampled)
 Fastest is Vanillas "size"
 
-Vanillas "size" x 85,802,529 ops/sec ±0.44% (95 runs sampled)
-Lodash "size" x 8,243,595 ops/sec ±0.56% (94 runs sampled)
-Ramda "length" x 6,913,292 ops/sec ±0.88% (93 runs sampled)
+Vanillas "size" x 98,345,617 ops/sec ±0.59% (92 runs sampled)
+Lodash "size" x 32,174,435 ops/sec ±0.65% (93 runs sampled)
+Ramda "length" x 7,182,394 ops/sec ±0.60% (93 runs sampled)
 Fastest is Vanillas "size"
 
 ```
