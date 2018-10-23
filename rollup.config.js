@@ -11,7 +11,7 @@ const config = {
     name: 'vanillas',
     exports: 'named',
     indent: false,
-    file: 'dist/vanillas.js',
+    file: 'build/dist/vanillas.js',
     format: 'umd'
   },
   plugins: [
@@ -22,7 +22,7 @@ const config = {
 }
 
 if (env === 'production') {
-  config.output.file = 'dist/vanillas.min.js'
+  config.output.file = 'build/dist/vanillas.min.js'
   config.plugins.push(
     terser({
       compress: {

@@ -1,7 +1,4 @@
-lib/
-es/
-dist/
-cjs/
+build/
 docs/
 coverage/
 .nyc_output/
