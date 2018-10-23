@@ -1,13 +1,9 @@
 import R from 'ramda'
 import { mapSpec, toTitleCase } from '../../src'
+import { mapSpec as curriedMapSpec } from '../../src/curried'
+import { hook } from '../../test/__mocks__'
 
-const hook = {
-  Hoffman: 'dustin',
-  Williams: 'robin',
-  Roberts: 'julia',
-  Hoskins: 'bob',
-  year: '1991'
-}
+const yearOfHook = { ...hook, year: '1991' }
 
 const spec = {
   Hoffman: toTitleCase,
@@ -17,9 +13,13 @@ const spec = {
   year: Number
 }
 
-const tests = [
-  ['Vanillas "mapSpec"', () => mapSpec(spec, hook)],
-  ['Ramda "evolve"', () => R.evolve(spec, hook)]
+const mapSpecTests = [
+  ['Vanillas "mapSpec"', () => mapSpec(spec, yearOfHook)],
+  ['Ramda "evolve"', () => R.evolve(spec, yearOfHook)]
+]
+const curriedMapSpecTests = [
+  ['Vanillas (curried) "mapSpec"', () => curriedMapSpec(spec)(yearOfHook)],
+  ['Ramda (curried) "evolve"', () => R.evolve(spec)(yearOfHook)]
 ]
 
-export default { tests }
+export default { mapSpecTests, curriedMapSpecTests }

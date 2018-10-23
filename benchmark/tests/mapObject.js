@@ -1,25 +1,19 @@
 import _ from 'lodash'
 import R from 'ramda'
 import { mapObject } from '../../src'
-
-const val = {
-  Hoffman: 'dustin',
-  Williams: 'robin',
-  Roberts: 'julia',
-  Hoskins: 'bob'
-}
+import { hook } from '../../test/__mocks__'
 
 const tests = [
-  ['Vanillas "mapObject"', () => mapObject(str => str.toUpperCase(), val)],
-  ['Lodash "mapValues"', () => _.mapValues(val, str => str.toUpperCase())],
-  ['Ramda "map"', () => R.map(str => str.toUpperCase(), val)],
+  ['Vanillas "mapObject"', () => mapObject(str => str.toUpperCase(), hook)],
+  ['Lodash "mapValues"', () => _.mapValues(hook, str => str.toUpperCase())],
+  ['Ramda "map"', () => R.map(str => str.toUpperCase(), hook)],
   ['(native) "Object.keys( ).reduce()"',
-    () => Object.keys(val).reduce(
-      (o, key) => ({ ...o, [key]: val[key].toUpperCase() }), {}
+    () => Object.keys(hook).reduce(
+      (o, key) => ({ ...o, [key]: hook[key].toUpperCase() }), {}
     )
   ],
   ['(native) "Object.entries().reduce()"',
-    () => Object.entries(val).reduce(
+    () => Object.entries(hook).reduce(
       (o, [key, v]) => ({ ...o, [key]: v.toUpperCase() }), {}
     )
   ]

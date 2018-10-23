@@ -1,19 +1,13 @@
 import _ from 'lodash'
 import R from 'ramda'
 import { entries } from '../../src'
-
-const val = {
-  Hoffman: 'dustin',
-  Williams: 'robin',
-  Roberts: 'julia',
-  Hoskins: 'bob'
-}
+import { hook } from '../../test/__mocks__'
 
 const tests = [
-  ['Vanillas "entries"', () => entries(val)],
-  ['Lodash "toPairs"', () => _.toPairs(val)],
-  ['Ramda "toPairs"', () => R.toPairs(val)],
-  ['(native) "Object.entries( )"', () => Object.entries(val)]
+  ['Vanillas "entries"', () => entries(hook)],
+  ['Lodash "toPairs"', () => _.toPairs(hook)],
+  ['Ramda "toPairs"', () => R.toPairs(hook)],
+  ['(native) "Object.entries( )"', () => Object.entries(hook)]
 ]
 
 export default { tests }

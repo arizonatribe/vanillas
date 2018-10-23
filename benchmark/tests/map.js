@@ -1,14 +1,20 @@
 import _ from 'lodash'
 import R from 'ramda'
 import { map } from '../../src'
+import { map as mapCurried } from '../../src/curried'
+import { hook } from '../../test/__mocks__'
 
-const val = ['dustin', 'robin', 'julia', 'bob']
+const arr = Object.values(hook)
 
-const tests = [
-  ['Vanillas "map"', () => map(str => str.toUpperCase(), val)],
-  ['Lodash "map"', () => _.map(val, str => str.toUpperCase())],
-  ['Ramda "map"', () => R.map(str => str.toUpperCase(), val)],
-  ['(native) "Array.map()"', () => val.map(str => str.toUpperCase())]
+const mapTests = [
+  ['Vanillas "map"', () => map(str => str.toUpperCase(), arr)],
+  ['Lodash "map"', () => _.map(arr, str => str.toUpperCase())],
+  ['Ramda "map"', () => R.map(str => str.toUpperCase(), arr)],
+  ['(native) "Array.map()"', () => arr.map(str => str.toUpperCase())]
+]
+const curriedMapTests = [
+  ['Vanillas (curried) "map"', () => mapCurried(str => str.toUpperCase())(arr)],
+  ['Ramda (curried) "map"', () => R.map(str => str.toUpperCase())(arr)]
 ]
 
-export default { tests }
+export default { mapTests, curriedMapTests }

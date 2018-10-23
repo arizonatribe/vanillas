@@ -1,20 +1,10 @@
 import _ from 'lodash'
 import { size } from '../../src'
-
-const val = {
-  lorem: '',
-  ipsum: '',
-  dolor: '',
-  sit: '',
-  amet: '',
-  consectetur: {
-    adipiscing: 'elit'
-  }
-}
+import { solarSystem } from '../../test/__mocks__'
 
 const tests = [
-  ['Vanillas "size"', () => size(val)],
-  ['Lodash "size"', () => _.size(val)]
+  ['Vanillas "size"', () => size(solarSystem)],
+  ['Lodash "size"', () => _.size(solarSystem)]
 ]
 
 export default { tests }

@@ -1,25 +1,19 @@
 import _ from 'lodash'
 import R from 'ramda'
 import { propAt } from '../../src'
+import { propAt as curriedPropAt } from '../../src/curried'
+import val from '../../test/__mocks__'
 
-const val = {
-  lorem: {
-    ipsum: '',
-    dolor: '',
-    sit: '',
-    amet: '',
-    consectetur: {
-      adipiscing: 'elit'
-    }
-  }
-}
-
-const tests = [
-  ['Vanillas "propAt"', () => propAt(['lorem', 'consectetur', 'adipiscing'], val)],
-  ['Lodash "get"', () => _.get(val, ['lorem', 'consectetur', 'adipiscing'])],
-  ['Ramda "path"', () => R.path(['lorem', 'consectetur', 'adipiscing'], val)],
+const propAtTests = [
+  ['Vanillas "propAt"', () => propAt(['pantheon', 'Jupiter', 'moons'], val)],
+  ['Lodash "get"', () => _.get(val, ['pantheon', 'Jupiter', 'moons'])],
+  ['Ramda "path"', () => R.path(['pantheon', 'Jupiter', 'moons'], val)],
   ['(native) "&& until you find it"', () =>
-    val && val.lorem && val.lorem.consectetur && val.lorem.consectetur.adipiscing]
+    val && val.pantheon && val.pantheon.Jupiter && val.pantheon.Jupiter.moons]
+]
+const curriedPropAtTests = [
+  ['Vanillas (curried) "propAt"', () => curriedPropAt(['pantheon', 'Jupiter', 'moons'])(val)],
+  ['Ramda (curried) "path"', () => R.path(['pantheon', 'Jupiter', 'moons'])(val)]
 ]
 
-export default { tests }
+export default { propAtTests, curriedPropAtTests }

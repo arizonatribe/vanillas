@@ -1,7 +1,8 @@
 import _ from 'lodash'
 import { each } from '../../src'
+import { hook } from '../../test/__mocks__'
 
-const arr = ['dustin', 'robin', 'julia', 'bob']
+const arr = Object.values(hook)
 
 const tests = [
   ['Vanillas "each"', () => each(str => str.toUpperCase(), arr)],

@@ -5,6 +5,8 @@ import isEmpty from '../src/isEmpty'
 import isEqual from '../src/isEqual'
 import isObject from '../src/isObject'
 import isObjectish from '../src/isObjectish'
+import { pantheon, solarSystem } from './__mocks__'
+
 
 tape('"is" checks a value is of a certain type', t => {
   t.equal(is(Function, () => 42), true, 'functions')
@@ -158,6 +160,7 @@ tape('"isEqual" performs deep equality testing of two values', t => {
   t.equal(isEqual({}, {}), true, 'two objects are both empty')
   t.equal(isEqual({lorem: 'ipsum'}, {lorem: 'ipsum'}), true, 'two objects that are equal')
   t.equal(isEqual({lorem: 'ipsum'}, {dolor: 'sit'}), false, 'two objects that are not equal')
+  t.equal(isEqual(pantheon, solarSystem), true, 'nested objects with re-arranged props')
 
   const cFamilyOfLanguages = {
     c: {

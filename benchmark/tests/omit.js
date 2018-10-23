@@ -1,25 +1,20 @@
 import _ from 'lodash'
 import R from 'ramda'
 import { omit } from '../../src'
+import { omit as curriedOmit } from '../../src/curried'
+import { pantheon } from '../../test/__mocks__'
 
-const val = {
-  lorem: '',
-  ipsum: '',
-  dolor: '',
-  sit: '',
-  amet: '',
-  consectetur: {
-    adipiscing: 'elit'
-  }
-}
-
-const tests = [
-  ['Vanillas "omit"', () => omit(['lorem', 'consectetur', 'ipsum'], val)],
-  ['Lodash "omit"', () => _.omit(val, ['lorem', 'consectetur', 'ipsum'])],
-  ['Ramda "omit"', () => R.omit(['lorem', 'consectetur', 'ipsum'], val)],
+const omitTests = [
+  ['Vanillas "omit"', () => omit(['Jupiter', 'Saturn', 'Neptune'], pantheon)],
+  ['Lodash "omit"', () => _.omit(pantheon, ['Jupiter', 'Saturn', 'Neptune'])],
+  ['Ramda "omit"', () => R.omit(['Jupiter', 'Saturn', 'Neptune'], pantheon)],
   ['(native) "Object.keys().filter().reduce() (native)', () =>
-    Object.keys(val).reduce((newObj, key) => ({ ...newObj, [key]: val[key] }), {})
+    Object.keys(pantheon).reduce((newObj, key) => ({ ...newObj, [key]: pantheon[key] }), {})
   ]
 ]
+const curriedOmitTests = [
+  ['Vanillas (curried) "omit"', () => curriedOmit(['Jupiter', 'Saturn', 'Neptune'])(pantheon)],
+  ['Ramda (curried) "omit"', () => R.omit(['Jupiter', 'Saturn', 'Neptune'])(pantheon)]
+]
 
-export default { tests }
+export default { omitTests, curriedOmitTests }

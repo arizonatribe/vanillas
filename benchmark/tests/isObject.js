@@ -1,14 +1,10 @@
 import _ from 'lodash'
 import { isObject } from '../../src'
-
-const val = {
-  lorem: 'ipsum',
-  dolor: 'sit'
-}
+import { hook } from '../../test/__mocks__'
 
 const tests = [
-  ['Vanillas "isObject"', () => isObject(val)],
-  ['Lodash "isPlainObject"', () => _.isPlainObject(val)]
+  ['Vanillas "isObject"', () => isObject(hook)],
+  ['Lodash "isPlainObject"', () => _.isPlainObject(hook)]
 ]
 
 export default { tests }

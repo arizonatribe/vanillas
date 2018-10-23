@@ -1,8 +1,9 @@
 import _ from 'lodash'
 import R from 'ramda'
 import { findIndex } from '../../src'
+import { hook } from '../../test/__mocks__'
 
-const arr = ['dustin', 'robin', 'julia', 'bob']
+const arr = Object.values(hook)
 const predicate = val => /uli/.test(val)
 
 const tests = [

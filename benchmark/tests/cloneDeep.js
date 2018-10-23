@@ -1,27 +1,9 @@
 import _ from 'lodash'
 import R from 'ramda'
 import { clone } from '../../src'
+import { hook, sphere, jurrassicPark } from '../../test/__mocks__'
 
-const val = {
-  hook: {
-    Hoffman: 'dustin',
-    Williams: 'robin',
-    Roberts: 'julia',
-    Hoskins: 'bob'
-  },
-  sphere: {
-    Hoffman: 'dustin',
-    Jackson: 'samuel',
-    Stone: 'sharon',
-    Latifah: 'queen'
-  },
-  jurrassicPark: {
-    Neill: 'sam',
-    Jackson: 'samuel',
-    Knight: 'wayne',
-    Goldblum: 'jeff'
-  }
-}
+const val = { hook, sphere, jurrassicPark }
 
 const tests = [
   ['Vanillas "clone"', () => clone(val)],

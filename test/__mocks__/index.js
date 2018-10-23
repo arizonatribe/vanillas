@@ -53,5 +53,58 @@ module.exports = {
     Jackson: 'samuel',
     Knight: 'wayne',
     Goldblum: 'jeff'
+  },
+  solarSystem: {
+    Saturn: {
+      greek: 'Kronos',
+      moons: ['Titan', 'Enceladus', 'Mimas']
+    },
+    Jupiter: {
+      greek: 'Zeuss',
+      moons: ['Europa', 'Ganymede', 'Lo']
+    },
+    Sun: 'Apollo',
+    Neptune: {
+      greek: 'Poseidon',
+      moons: ['Triton']
+    },
+    Venus: 'Aphrodite',
+    Mars: {
+      greek: 'Aries',
+      moons: ['Phobos', 'Deimos']
+    },
+    Mercury: {
+      greek: 'Hermes'
+    }
+  },
+  pantheon: {
+    Sun: 'Apollo',
+    Mercury: {
+      greek: 'Hermes'
+    },
+    Venus: 'Aphrodite',
+    Mars: {
+      greek: 'Aries',
+      moons: ['Phobos', 'Deimos']
+    },
+    Jupiter: {
+      greek: 'Zeuss',
+      moons: ['Europa', 'Ganymede', 'Lo']
+    },
+    Saturn: {
+      greek: 'Kronos',
+      moons: ['Titan', 'Enceladus', 'Mimas']
+    },
+    Neptune: {
+      greek: 'Poseidon',
+      moons: ['Triton']
+    }
+  },
+  spices: {
+    Brown: 'Scary Spice',
+    Chisholm: 'Sporty Spice',
+    Bunton: 'Baby Spice',
+    Halliwell: 'Ginger Spice',
+    Beckham: 'Posh Spice'
   }
 }
