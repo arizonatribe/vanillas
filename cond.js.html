@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: shim.js | vanillas</title>
+    <title>Source: cond.js | vanillas</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,39 +54,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import isNil from './isNil'
-import isObject from './isObject'
-
-const getter = {
-  get(target, key) {
-    if (isObject(target[key])) {
-      return new Proxy(target[key], getter)
-    }
-    if (isNil(target[key])) {
-      return new Proxy({[Symbol.toPrimitive]: String}, getter)
-    }
-    return target[key]
-  }
-}
-
-/**
- * Recursively shims an Object. Every time the getter is invoked
- * (which happens whenever prop paths are referenced in the consuming code),
- * the path is shimmed with another Proxy.
- * It is not a polyfill but rather a way to keep deep prop paths that may not
- * exist on the source object from throwing an error.
+            <pre class="prettyprint source linenums"><code>/**
+ * Several pieces of conditional logic to apply against a value and the _first_
+ * one which matches will have a corresponding transformation applied to it.
+ *
+ * Supply an Array of pairs:
+ *   - the first value is the conditional logic (`Function`) to match against the value
+ *   - the second value is the transformation (`Function`) to apply to the value if the condition was matched
+ *
+ * __Note__: if your tranformation is _not_ a function then it will returned
+ * as-is in response to a succesfully met condition
  *
  * @func
- * @sig {k: v} -> Proxy
- * @param {Object} obj An object that will be the Proxy's source
- * @returns {Proxy} An Object that will return props on the source Object if
- * they exist but safely handle missing prop paths without throwing errors.
+ * @sig [[* -> Boolean, * -> *], ..] -> * -> *
+ * @param {Array} conditionalTransforms An array of arrays (which have two
+ * values: the condition function and the transformation function)
+ * @param {*} val A value of any type that will be transformed according to the appropriate condition.
+ * @returns {*} The provided value transformed by the appropriate matching conditional transformation
  */
-function shim(obj) {
-  return new Proxy(obj, getter)
+function cond(conditionalTransforms, val) {
+  let result
+  conditionalTransforms.some(([ifCondition, transform = val]) => {
+    if (ifCondition(val)) {
+      result = typeof transform === 'function'
+        ? transform(val)
+        : transform
+      return true
+    }
+    return false
+  })
+  return result
 }
 
-export default shim
+export default cond
 </code></pre>
         </article>
     </section>
