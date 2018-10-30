@@ -79,6 +79,7 @@
     "spected": "^0.7.0",
     "tap-nyc": "1.0.3",
     "tape": "4.9.1",
-    "tui-jsdoc-template": "1.2.2"
+    "tui-jsdoc-template": "1.2.2",
+    "yup": "^0.26.6"
   }
 }

@@ -1,3 +1,4 @@
+import * as yup from 'yup'
 import Joi from 'joi'
 import spected from 'spected'
 import { validate } from '../../src'
@@ -61,6 +62,26 @@ const JoiEx = Joi.extend((joi) => ({
   }]
 }))
 
+const yupRules = yup.object().shape({
+  Scary: yup.string()
+    .test('is-melanie', 'Only Melanies are scary', firstNameShouldBe('Melanie'))
+    .test('is-brown', 'Last name for "Scary" should be "Brown"', lastNameShouldBe('Brown')),
+  Sporty: yup.string()
+    .test('is-melanie', 'Only Melanies are scary', firstNameShouldBe('Melanie'))
+    .test('is-chisolm', 'Last name for "Sporty" should be "Chisolm"', lastNameShouldBe('Chisolm')),
+  Baby: yup.string()
+    .test('is-emma', 'First name for "Baby" should be "Emma"', firstNameShouldBe('Emma'))
+    .test('is-burton', 'Last name for "Baby" should be "Burton"', lastNameShouldBe('Burton'))
+    .test('is-not-stephenson', 'Michelle Stephenson was replaced by Emma Burton', nameIsNot('Stephenson')),
+  Ginger: yup.string()
+    .test('is-geri', 'First name for "Ginger" should be "Geri"', firstNameShouldBe('Geri'))
+    .test('is-halliwell', 'Last name for "Ginger" should be "Halliwell"', lastNameShouldBe('Halliwell')),
+  Posh: yup.string()
+    .test('is-vicky', 'First name for "Posh" should be "Victoria"', firstNameShouldBe('Victoria'))
+    .test('is-beckham', 'Last name for "Posh" should be "Beckham"', lastNameShouldBe('Beckham'))
+    .test('is-not-adams', 'Victoria Adams is now Victoria Beckham (she married David Beckham).', nameIsNot('Adams'))
+})
+
 const joiRules = JoiEx.object().keys({
   Scary: [JoiEx.string().fname('Melanie'), JoiEx.string().lname('Brown')],
   Sporty: [JoiEx.string().fname('Melanie'), JoiEx.string().lname('Chisolm')],
@@ -97,6 +118,7 @@ const rules = {
 const tests = [
   ['Vanillas "validate"', () => validate(rules, formData)],
   ['Spected "validate"', () => spected(rules, formData)],
+  ['Yup "validate"', () => yupRules.validateSync(formData, { abortEarly: false })],
   ['Joi "validate"', () => JoiEx.validate(formData, joiRules)]
 ]
 
