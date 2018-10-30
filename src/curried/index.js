@@ -1,5 +1,7 @@
 import curry from '../curry'
 import uncurriedAppend from '../append'
+import uncurriedCond from '../cond'
+import uncurriedContains from '../contains'
 import uncurriedEach from '../each'
 import uncurriedFind from '../find'
 import uncurriedFindIndex from '../findIndex'
@@ -20,8 +22,11 @@ import uncurriedPropIs from '../propIs'
 import uncurriedPropOr from '../propOr'
 import uncurriedReduce from '../reduce'
 import uncurriedMerge from '../merge'
+import uncurriedValidate from '../validate'
 
 export const append = curry(uncurriedAppend)
+export const cond = curry(uncurriedCond)
+export const contains = curry(uncurriedContains)
 export const each = curry(uncurriedEach)
 export const find = curry(uncurriedFind)
 export const findIndex = curry(uncurriedFindIndex)
@@ -42,3 +47,4 @@ export const propIs = curry(uncurriedPropIs)
 export const propOr = curry(uncurriedPropOr)
 export const reduce = curry(uncurriedReduce)
 export const merge = curry(uncurriedMerge)
+export const validate = curry(uncurriedValidate)

@@ -36,6 +36,12 @@ module.exports = {
     Leary: 'timothy',
     Ginsberg: 'allen'
   },
+  composers: {
+    Williams: 'ralph vaughan',
+    SaintSaens: 'camille',
+    Mahler: 'gustav',
+    Wagner: 'richard'
+  },
   hook: {
     Hoffman: 'dustin',
     Williams: 'robin',
