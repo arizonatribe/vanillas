@@ -1,3 +1,5 @@
+import forIn from './forIn'
+
 /**
  * A simple polyfill for Object.values()
  *
@@ -7,7 +9,11 @@
  * @returns {Array[]} A list of all the values in the provided Object, ordered by keys
  */
 function values(obj) {
-  return Object.keys(obj).map(key => obj[key])
+  const arr = []
+  forIn((key, ob) => {
+    arr.push(ob[key])
+  }, obj)
+  return arr
 }
 
 export default values

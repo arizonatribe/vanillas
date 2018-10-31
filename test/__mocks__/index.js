@@ -1,4 +1,14 @@
 module.exports = {
+  profiles: [
+    { name: 'john', age: 82, favorites: { color: 'red', timeOfDay: 'mornings' } },
+    { name: 'jim', age: 72, favorites: { color: 'red', timeOfDay: 'naptime' } },
+    { name: 'jeff', age: 62, favorites: { color: 'blue', timeOfDay: 'naptime' } },
+    { name: 'giovanni', age: 52, favorites: { color: 'green', timeOfDay: 'evening' } },
+    { name: 'giancarlo', age: 42, favorites: { color: 'red', timeOfDay: 'evening' } },
+    { name: 'josef', age: 32, favorites: { color: 'red', timeOfDay: 'mornings' } },
+    { name: 'jan', age: 32, favorites: { color: 'yellow', timeOfDay: 'mornings' } },
+    { name: 'johnson', age: 22, favorites: { color: 'blue', timeOfDay: 'evening' } }
+  ],
   magic: {
     Malfoy: {
       'Lucius and Narcissa': {
