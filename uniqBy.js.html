@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: concat.js | vanillas</title>
+    <title>Source: uniqBy.js | vanillas</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,35 +54,48 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Adds the values from one Array onto another Array, returned as a new Array
- * (ie, it does not mutate the first Array). This operation is recursive, so you
- * can supply as many arrays as you wish.
+            <pre class="prettyprint source linenums"><code>import propAt from './propAt'
+import { _includes } from './_internal/_includes'
+
+/**
+ * Filters an array of values down to only those which are unique, based on a
+ * provided predicate function (or shorthand for retrieving a prop inside an object)
  *
  * @func
- * @sig [*,...] -> [*,...] => [*,...]
- * @param {Array} firstArr An Array of values (of any type)
- * @param {Array} secondArr An Array of values (of any type)
- * @returns {Array} A new Array with the values from the second array
- * concatenated onto those from the first
+ * @sig (* -> *) -> [a, b, b, b, ..] -> [a, b, ..]
+ * @param {Function|String} pred A predicate function
+ * @param {Array} list An array of values which may or may not contain duplicates
+ * @returns {Array} A new list containing only the unique values from the original array
  */
-function concat(firstArr, secondArr, ...restOfArrs) {
-  const firstLen = firstArr.length
-  const len = secondArr.length + firstLen
-  const newArr = new Array(len)
-  for (let i = 0; i &lt; firstLen; i++) {
-    newArr[i] = firstArr[i]
+function uniqBy(pred, list) {
+  let fn
+  if (typeof pred === 'string' &amp;&amp; pred.split('.').length === 1) {
+    fn = o => o[pred]
+  } else if (Array.isArray(pred) &amp;&amp; pred.length === 1) {
+    fn = o => o[pred[0]]
+  } else if (typeof pred === 'function') {
+    fn = pred
+  } else {
+    fn = o => propAt(pred, o)
   }
-  for (let i = firstLen; i &lt; len; i++) {
-    newArr[i] = secondArr[i - firstLen]
-  }
-  if (restOfArrs.length) {
-    return concat(newArr, restOfArrs[0], ...restOfArrs.slice(1))
+
+  let idx = -1
+  const newArr = []
+  const compared = []
+  const len = list.length
+
+  while (++idx &lt; len) {
+    const val = list[idx]
+    const valley = fn(val)
+    if (!_includes(valley, compared)) {
+      newArr.push(val)
+      compared.push(valley)
+    }
   }
   return newArr
 }
 
-export default concat
+export default uniqBy
 </code></pre>
         </article>
     </section>
