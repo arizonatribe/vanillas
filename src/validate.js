@@ -7,27 +7,6 @@ const isFunction = v => typeof v === 'function'
 const brokenValidator = (val, key) => `Validations for "${key}" are broken`
 const defaultMessageHandler = (val, key) => `"${val}" is not valid for "${key}"`
 
-/**
- * Converts an Array of validator functions and corresponding error messages
- * into a single function that process a single value against all those validators
- *
- * @func
- * @sig [[(* -> Boolean), String], ...] -> (* -> Boolean)
- * @example
- * _unpackValidator(isRequired)
- * _unpackValidator([isRequired, 'field is required'])
- * _unpackValidator([
- *   [isRequired, (_, key) => `${key} is required`],
- *   [isValidThing, val => `${val} is not a valid thing`],
- *   [mustBeBlue, 'Your favorite color must be blue'],
- *   [functionalOrObjectOriented]
- * ])
- * @param {Array} rawValidators An array of validator functions and
- * their corresponding error message
- * @returns {Function} A function that is ready to receive a value (and also the
- * key name), applying all the matching validators and returning an array of
- * error messages for failed validations (if any)
- */
 function _unpackValidator(rawValidators) {
   const validators = cond([
     [isFunction, [[rawValidators, defaultMessageHandler]]],
@@ -73,6 +52,15 @@ function _unpackValidator(rawValidators) {
  *
  * @func
  * @sig [[(* -> Boolean), String], ...] -> {k: v} -> {k: v}
+ * @example
+ * validate(isRequired, val)
+ * validate([isRequired, 'field is required'], val)
+ * validate([
+ *   [isRequired, (_, key) => `${key} is required`],
+ *   [isValidThing, val => `${val} is not a valid thing`],
+ *   [mustBeBlue, 'Your favorite color must be blue'],
+ *   [functionalOrObjectOriented]
+ * ], val)
  * @param {Array} validations An array of validator functions and their corresponding error message
  * @param {Object} values An Object of key value pairs, the keys should correspond to
  * validators and the values are that which is to be validated

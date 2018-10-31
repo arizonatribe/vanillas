@@ -46,6 +46,7 @@
           }
         ],
         "import/no-named-default": "off",
+        "import/prefer-default-export": "off",
         "arrow-body-style": "off",
         "no-multi-assign": "off",
         "no-lonely-if": "off",

@@ -1,4 +1,4 @@
-# vanillas
+# Vanillas
 
 JavaScript utility functions. Comparable to [Lodash](https://lodash.com) or [Ramda](https://ramdajs.com), but faster. In some cases it even outperforms native implementations (or leverages native implementations that are messy to type out).
 

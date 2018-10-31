@@ -1,4 +1,4 @@
-function _map(fn, arr) {
+export function _map(fn, arr) {
   const len = arr.length
   const newArr = new Array(len)
   for (let i = 0; i < len; i++) {
@@ -6,5 +6,3 @@ function _map(fn, arr) {
   }
   return newArr
 }
-
-export default _map

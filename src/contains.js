@@ -1,3 +1,5 @@
+import { _includes } from './_internal/_includes'
+
 /**
  * Checks if a given value is present in a String OR Array
  *
@@ -9,7 +11,7 @@
  */
 function contains(val, arr) {
   return Array.isArray(arr)
-    ? arr.includes(val)
+    ? _includes(val, arr)
     : arr.indexOf(val) !== -1
 }
 

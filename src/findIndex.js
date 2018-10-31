@@ -11,8 +11,9 @@
  * function or negative one (-1, if no match).
  */
 function findIndex(pred, arr) {
+  let i = -1
   const len = arr.length
-  for (let i = 0; i < len; i++) {
+  while (++i < len) {
     if (pred(arr[i])) return i
   }
   return -1
