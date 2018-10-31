@@ -8,7 +8,7 @@ const omitTests = [
   ['Vanillas "omit"', () => omit(['Jupiter', 'Saturn', 'Neptune'], pantheon)],
   ['Lodash "omit"', () => _.omit(pantheon, ['Jupiter', 'Saturn', 'Neptune'])],
   ['Ramda "omit"', () => R.omit(['Jupiter', 'Saturn', 'Neptune'], pantheon)],
-  ['(native) "Object.keys().filter().reduce() (native)', () =>
+  ['(native) "Object.keys().filter().reduce()"', () =>
     Object.keys(pantheon).reduce((newObj, key) => ({ ...newObj, [key]: pantheon[key] }), {})
   ]
 ]
