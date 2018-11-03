@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: validate.js | vanillas</title>
+    <title>Source: promiseAll.js | vanillas</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,89 +54,60 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import cond from './cond'
-import forIn from './forIn'
-import mapObject from './mapObject'
-import { toFunction } from './_internal/coerce'
-
-const isFunction = v => typeof v === 'function'
-const brokenValidator = (val, key) => `Validations for "${key}" are broken`
-const defaultMessageHandler = (val, key) => `"${val}" is not valid for "${key}"`
-
-function _unpackValidator(rawValidators) {
-  const validators = cond([
-    [isFunction, [[rawValidators, defaultMessageHandler]]],
-    [v => Array.isArray(v) &amp;&amp; v.length &lt;= 2 &amp;&amp; isFunction(v[0]),
-      ([validator, message = defaultMessageHandler]) => [[validator, toFunction(message)]]
-    ],
-    [v => Array.isArray(v) &amp;&amp; v.every(kv => Array.isArray(kv)),
-      v => v.map(([validator, message = defaultMessageHandler]) => [validator, toFunction(message)])
-    ],
-    [v => Array.isArray(v),
-      v => v.map(validator => {
-        if (Array.isArray(validator) &amp;&amp; isFunction(validator[0])) {
-          return [validator[0], toFunction(validator[1] || defaultMessageHandler)]
-        } else if (isFunction(validator)) {
-          return [validator, defaultMessageHandler]
-        }
-        return [() => true, brokenValidator]
-      })
-    ],
-    [() => true, [[() => false, brokenValidator]]]
-  ], rawValidators)
-
-  return (v, k) => validators
-    .map(([validator, createErrorMessage]) => validator(v, k) || createErrorMessage(v, k))
-    .filter(kv => kv !== true)
-}
-
-/**
- * Applies many validations to an object of values.
- * Those validations are written as Arrays of pairs:
- *   - for the value at the first index supply your validation function that _must_ pass
- *   - for the value at the second index supply a corresponding error message (OR function returning an error message)
- *     should the validation fail.
- *
- * If you do not supply a validation error message, a default one will be built that looks like:
- *   `"${val}" is not valid for "${key}"`
- * And of course, you can write your validation error message as a function that
- * will receive the value and key name as its first and second params (you should return a message as a string).
- *
- * If you do not supply valid input (Array of validator function and validation error message), rather than throwing
- * an error it will be replaced with a validation function that always returns `false` and a corresponding error message of:
- *   `Validations for "${key}" are broken`
+            <pre class="prettyprint source linenums"><code>/**
+ * Gathers an Array of Functions that return Promises and
+ * returns an Array of results, once they have all completed.
+ * The only difference between this and native Promise.all() is that these
+ * promises will _all_ be resolved/rejected before the final Promise (containing
+ * all the results) is returned. With native Promise.all(), the first unhandled
+ * rejection will cause the whole endeavor to be terminated.
+ * Addtionally you can pass in a flag to force caught errors to be ignored entirely.
  *
  * @func
- * @sig [[(* -> Boolean), String], ...] -> {k: v} -> {k: v}
- * @example
- * validate(isRequired, val)
- * validate([isRequired, 'field is required'], val)
- * validate([
- *   [isRequired, (_, key) => `${key} is required`],
- *   [isValidThing, val => `${val} is not a valid thing`],
- *   [mustBeBlue, 'Your favorite color must be blue'],
- *   [functionalOrObjectOriented]
- * ], val)
- * @param {Array} validations An array of validator functions and their corresponding error message
- * @param {Object} values An Object of key value pairs, the keys should correspond to
- * validators and the values are that which is to be validated
- * @returns {Object} An object containing the key names of the values and one or
- * more validation error messages (Only key names whose values were found to be
- * invalid will show up on this output Object; an empty Object means everything was valid)
+ * @sig [(() -> Promise)] -> Promise
+ * @param {Function[]} requests An array of Functions that return Promises
+ * @param {Boolean} ignoreErrors Whether or not to ignore errors entirely
+ * (this will cause all the results to be returned and any Errors
+ * will be returned in place of the results)
+ * @returns {Promise} A Promise that will resolve once all of the Promises are resolved/rejected
  */
-function validate(validations, values) {
-  const validators = mapObject(_unpackValidator, validations)
-  const invalids = {}
-  forIn((key, ob) => {
-    const validationResults = ob[key](values[key], key)
-    if (validationResults.length) {
-      invalids[key] = validationResults
+function promiseAll(requests, ignoreErrors) {
+  const errors = []
+  const len = requests.length
+  let resolvedRejectedCount = 0
+  const results = new Array(len)
+
+  return new Promise((resolve, reject) => {
+    function checkForFinalPromise() {
+      if (resolvedRejectedCount === len) {
+        if (ignoreErrors || !errors.length) {
+          resolve(results)
+        } else {
+          reject(errors)
+        }
+      }
     }
-  }, validators)
-  return invalids
+    function handleResult(result, index) {
+      resolvedRejectedCount++
+      results[index] = result
+      checkForFinalPromise()
+    }
+    function handleError(err, index) {
+      resolvedRejectedCount++
+      if (ignoreErrors) results[index] = err
+      errors.push(err)
+      checkForFinalPromise()
+    }
+
+    for (let i = 0; i &lt; len; i++) {
+      requests[i]
+        .then(result => handleResult(result, i))
+        .catch(err => handleError(err, i))
+    }
+  })
 }
 
-export default validate
+export default promiseAll
 </code></pre>
         </article>
     </section>
