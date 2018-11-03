@@ -1,9 +1,9 @@
 import Benchmark from 'benchmark'
 
-function runBenchmarks(log, tests = [], ...args) {
+function runBenchmarks(log, tests = []) {
   return tests
     .reduce(
-      (suite, [caption, benchmarkTest]) => suite.add(
+      (suite, [caption, benchmarkTest, ...args]) => suite.add(
         caption,
         () => benchmarkTest(...args)
       ),

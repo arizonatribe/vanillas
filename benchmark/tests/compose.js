@@ -5,7 +5,8 @@ import { compose } from '../../src'
 const add4 = a => a + 4
 const subtract7 = a => a - 7
 const divide3 = a => a / 3
-const random = () => Math.random()
+const randomNumber = Math.random()
+const random = () => randomNumber
 
 const tests = [
   ['Vanillas "compose"', () => compose(divide3, subtract7, add4, random)()],

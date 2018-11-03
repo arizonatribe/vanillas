@@ -253,6 +253,256 @@ Vanillas "validate" x 207,538 ops/sec ±0.11% (98 runs sampled)
 Spected "validate" x 101,090 ops/sec ±0.14% (94 runs sampled)
 Yup "validate" x 9,447 ops/sec ±0.59% (93 runs sampled)
 Joi "validate" x 149,775 ops/sec ±0.94% (92 runs sampled)
+=======
+Vanillas "any" x 9,893,928 ops/sec ±0.86% (91 runs sampled)
+Lodash "some" x 9,397,602 ops/sec ±0.69% (89 runs sampled)
+Ramda "any" x 3,945,578 ops/sec ±0.51% (93 runs sampled)
+(native) "Array.some()" x 10,182,460 ops/sec ±0.64% (91 runs sampled)
+Fastest is (native) "Array.some()"
+
+Vanillas "assign" x 3,545,353 ops/sec ±0.62% (88 runs sampled)
+(native) "Object.assign()" x 611,289 ops/sec ±0.86% (93 runs sampled)
+Fastest is Vanillas "assign"
+
+Vanillas "clone" x 6,551,288 ops/sec ±0.65% (92 runs sampled)
+Lodash "clone" x 1,446,721 ops/sec ±0.66% (92 runs sampled)
+Ramda "clone" x 759,415 ops/sec ±0.81% (94 runs sampled)
+(native) "clone by destructuring" x 2,072,737 ops/sec ±0.63% (94 runs sampled)
+(native) "Object.assign({}, ..)" x 1,547,728 ops/sec ±0.72% (91 runs sampled)
+Fastest is Vanillas "clone"
+
+Vanillas "clone" x 891,255 ops/sec ±0.76% (93 runs sampled)
+Lodash "cloneDeep" x 264,407 ops/sec ±0.64% (93 runs sampled)
+Ramda "clone" x 248,688 ops/sec ±0.86% (91 runs sampled)
+(native) "clone by destructuring" x 321,973 ops/sec ±0.71% (93 runs sampled)
+Fastest is Vanillas "clone"
+
+Vanillas "compose" x 14,028,031 ops/sec ±2.53% (92 runs sampled)
+Redux "compose" x 8,151,203 ops/sec ±0.45% (94 runs sampled)
+Ramda "compose" x 745,171 ops/sec ±0.57% (91 runs sampled)
+Fastest is Vanillas "compose"
+
+Vanillas "concat" x 34,497,626 ops/sec ±2.65% (93 runs sampled)
+Lodash "concat" x 2,702,409 ops/sec ±0.68% (94 runs sampled)
+Ramda "concat" x 5,247,332 ops/sec ±1.20% (89 runs sampled)
+(native) "Array.concat()" x 6,766,222 ops/sec ±0.52% (93 runs sampled)
+(native) "[ ...val1, ...val2 ]" x 6,480,457 ops/sec ±1.82% (91 runs sampled)
+Fastest is Vanillas "concat"
+
+Vanillas "cond" x 1,541,974 ops/sec ±3.17% (82 runs sampled)
+Ramda "cond" x 639,977 ops/sec ±0.89% (91 runs sampled)
+(native) "If/Else/ElseIf" x 1,953,576 ops/sec ±1.14% (92 runs sampled)
+Fastest is (native) "If/Else/ElseIf"
+
+Vanillas "contains" (array) x 91,383,993 ops/sec ±0.65% (91 runs sampled)
+Lodash "includes" (array) x 11,572,601 ops/sec ±0.85% (91 runs sampled)
+Ramda "contains" (array) x 26,094,916 ops/sec ±0.60% (92 runs sampled)
+(native) "Array.includes()" x 55,900,152 ops/sec ±0.67% (91 runs sampled)
+Fastest is Vanillas "contains" (array)
+
+Vanillas "contains" (string) x 37,806,984 ops/sec ±1.58% (89 runs sampled)
+Lodash "includes" (string) x 29,534,798 ops/sec ±0.55% (93 runs sampled)
+Ramda "contains" (string) x 18,330,606 ops/sec ±0.63% (90 runs sampled)
+(native) "String.includes()" x 25,894,502 ops/sec ±0.62% (94 runs sampled)
+Fastest is Vanillas "contains" (string)
+
+Vanillas "curry" x 33,426,620 ops/sec ±0.48% (91 runs sampled)
+Lodash "curry" x 998,358 ops/sec ±0.94% (95 runs sampled)
+Ramda "curry" x 5,101,280 ops/sec ±0.47% (93 runs sampled)
+Fastest is Vanillas "curry"
+
+Executing Vanillas 2-arg curried function x 13,010,347 ops/sec ±0.77% (92 runs sampled)
+Executing Lodash 2-arg curried function x 371,541 ops/sec ±1.18% (93 runs sampled)
+Executing Ramda 2-arg curried function x 2,133,817 ops/sec ±1.95% (86 runs sampled)
+Fastest is Executing Vanillas 2-arg curried function
+
+Executing Vanillas 3-arg curried function x 7,010,839 ops/sec ±1.32% (90 runs sampled)
+Executing Lodash 3-arg curried function x 208,288 ops/sec ±0.84% (89 runs sampled)
+Executing Ramda 3-arg curried function x 1,649,456 ops/sec ±1.47% (90 runs sampled)
+Fastest is Executing Vanillas 3-arg curried function
+
+Executing Vanillas 4-arg curried function x 4,972,954 ops/sec ±0.98% (92 runs sampled)
+Executing Lodash 4-arg curried function x 147,172 ops/sec ±1.47% (84 runs sampled)
+Executing Ramda 4-arg curried function x 1,407,553 ops/sec ±3.41% (86 runs sampled)
+Fastest is Executing Vanillas 4-arg curried function
+
+Executing Vanillas 5+arg curried function x 1,768,674 ops/sec ±0.48% (91 runs sampled)
+Executing Lodash 5+arg curried function x 118,200 ops/sec ±1.66% (87 runs sampled)
+Executing Ramda 5+arg curried function x 1,152,018 ops/sec ±0.50% (92 runs sampled)
+Fastest is Executing Vanillas 5+arg curried function
+
+Vanillas "each" x 73,133,211 ops/sec ±0.75% (90 runs sampled)
+Lodash "each" x 3,935,724 ops/sec ±3.62% (85 runs sampled)
+(native) "Array.forEach" x 72,742,709 ops/sec ±0.75% (89 runs sampled)
+Fastest is Vanillas "each",(native) "Array.forEach"
+
+Vanillas "entries" x 10,318,672 ops/sec ±3.15% (86 runs sampled)
+Lodash "toPairs" x 5,413,359 ops/sec ±0.88% (93 runs sampled)
+Ramda "toPairs" x 4,718,282 ops/sec ±2.72% (92 runs sampled)
+(native) "Object.entries( )" x 19,575,837 ops/sec ±0.74% (93 runs sampled)
+Fastest is (native) "Object.entries( )"
+
+Vanillas "find" x 9,868,492 ops/sec ±0.58% (92 runs sampled)
+Lodash "find" x 5,289,183 ops/sec ±0.73% (92 runs sampled)
+Ramda "find" x 3,654,380 ops/sec ±0.49% (94 runs sampled)
+(native) "Array.find()" x 9,944,980 ops/sec ±0.50% (93 runs sampled)
+Fastest is (native) "Array.find()",Vanillas "find"
+
+Vanillas "findIndex" x 10,049,268 ops/sec ±0.66% (93 runs sampled)
+Lodash "findIndex" x 7,601,249 ops/sec ±0.69% (92 runs sampled)
+Ramda "findIndex" x 2,873,502 ops/sec ±5.90% (74 runs sampled)
+(native) "Array.findIndex()" x 9,094,122 ops/sec ±4.52% (84 runs sampled)
+Fastest is Vanillas "findIndex"
+
+Vanillas "invert" x 7,328,763 ops/sec ±0.54% (92 runs sampled)
+Lodash "invert" x 4,725,321 ops/sec ±0.66% (93 runs sampled)
+Ramda "invertObj" x 1,950,172 ops/sec ±0.53% (91 runs sampled)
+(native) "Object.keys( ).reduce()" x 341,182 ops/sec ±1.25% (89 runs sampled)
+Fastest is Vanillas "invert"
+
+Vanillas "isEmpty" x 87,420,364 ops/sec ±0.59% (94 runs sampled)
+Lodash "isEmpty" x 13,595,339 ops/sec ±0.81% (92 runs sampled)
+Ramda "isEmpty" x 510,433 ops/sec ±0.60% (94 runs sampled)
+Fastest is Vanillas "isEmpty"
+
+Vanillas "isEqual" x 407,988 ops/sec ±0.55% (93 runs sampled)
+Lodash "isEqual" x 152,833 ops/sec ±1.40% (89 runs sampled)
+Ramda "equals" x 49,668 ops/sec ±0.79% (92 runs sampled)
+Fastest is Vanillas "isEqual"
+
+Vanillas (curried) "isEqual" x 402,104 ops/sec ±0.77% (91 runs sampled)
+Ramda (curried) "equals" x 50,358 ops/sec ±0.46% (92 runs sampled)
+Fastest is Vanillas (curried) "isEqual"
+
+Vanillas "isObject" x 19,213,921 ops/sec ±0.62% (93 runs sampled)
+Lodash "isPlainObject" x 2,677,050 ops/sec ±0.69% (92 runs sampled)
+Fastest is Vanillas "isObject"
+
+Vanillas "map" x 5,261,345 ops/sec ±1.49% (94 runs sampled)
+Lodash "map" x 4,088,593 ops/sec ±0.71% (91 runs sampled)
+Ramda "map" x 2,373,986 ops/sec ±1.35% (89 runs sampled)
+(native) "Array.map()" x 5,358,111 ops/sec ±0.72% (86 runs sampled)
+Fastest is (native) "Array.map()"
+
+Vanillas (curried) "map" x 3,927,158 ops/sec ±0.62% (93 runs sampled)
+Ramda (curried) "map" x 1,534,328 ops/sec ±0.58% (90 runs sampled)
+Fastest is Vanillas (curried) "map"
+
+Vanillas "mapObject" x 3,246,242 ops/sec ±1.43% (88 runs sampled)
+Lodash "mapValues" x 2,098,511 ops/sec ±0.90% (91 runs sampled)
+Ramda "map" x 886,935 ops/sec ±1.51% (85 runs sampled)
+(native) "Object.keys( ).reduce()" x 309,744 ops/sec ±1.60% (89 runs sampled)
+(native) "Object.entries().reduce()" x 324,913 ops/sec ±0.59% (93 runs sampled)
+Fastest is Vanillas "mapObject"
+
+Vanillas "mapSpec" x 1,015,815 ops/sec ±1.24% (93 runs sampled)
+Ramda "evolve" x 1,010,646 ops/sec ±0.61% (91 runs sampled)
+Fastest is Ramda "evolve"
+
+Vanillas (curried) "mapSpec" x 951,332 ops/sec ±0.79% (89 runs sampled)
+Ramda (curried) "evolve" x 798,663 ops/sec ±0.65% (93 runs sampled)
+Fastest is Vanillas (curried) "mapSpec"
+
+Vanillas "mapString" x 450,911 ops/sec ±0.79% (90 runs sampled)
+(native) "String.split().map().join()" x 310,226 ops/sec ±0.56% (95 runs sampled)
+Fastest is Vanillas "mapString"
+
+Vanillas "merge" x 2,392,649 ops/sec ±1.42% (94 runs sampled)
+Lodash "merge" x 1,174,692 ops/sec ±0.50% (94 runs sampled)
+Ramda "merge" x 815,933 ops/sec ±0.77% (92 runs sampled)
+(native) "Object.assign({}, ..)" x 861,073 ops/sec ±0.85% (91 runs sampled)
+Fastest is Vanillas "merge"
+
+Vanillas (curried) "merge" x 1,850,788 ops/sec ±0.48% (93 runs sampled)
+Ramda (curried) "merge" x 696,588 ops/sec ±0.83% (91 runs sampled)
+Fastest is Vanillas (curried) "merge"
+
+Vanillas "omit" x 7,170,675 ops/sec ±0.61% (90 runs sampled)
+Lodash "omit" x 638,812 ops/sec ±1.52% (93 runs sampled)
+Ramda "omit" x 3,519,201 ops/sec ±2.66% (83 runs sampled)
+(native) "Object.keys().filter().reduce()" x 325,390 ops/sec ±1.14% (89 runs sampled)
+Fastest is Vanillas "omit"
+
+Vanillas (curried) "omit" x 5,974,155 ops/sec ±1.34% (90 runs sampled)
+Ramda (curried) "omit" x 2,278,172 ops/sec ±0.49% (95 runs sampled)
+Fastest is Vanillas (curried) "omit"
+
+Vanillas "pick" x 9,980,614 ops/sec ±1.15% (89 runs sampled)
+Lodash "pick" x 1,032,251 ops/sec ±0.55% (94 runs sampled)
+Ramda "pick" x 5,959,441 ops/sec ±1.04% (91 runs sampled)
+(native) "Array.prototype.reduce" x 497,191 ops/sec ±0.68% (93 runs sampled)
+Fastest is Vanillas "pick"
+
+Vanillas (curried) "pick" x 8,076,349 ops/sec ±0.54% (92 runs sampled)
+Ramda (curried) "pick" x 2,839,602 ops/sec ±0.71% (94 runs sampled)
+Fastest is Vanillas (curried) "pick"
+
+Vanillas "pipe" x 12,808,833 ops/sec ±0.63% (92 runs sampled)
+Ramda "pipe" x 918,930 ops/sec ±1.15% (88 runs sampled)
+Fastest is Vanillas "pipe"
+
+Vanillas "propAt" x 30,447,029 ops/sec ±0.56% (90 runs sampled)
+Lodash "get" x 18,708,858 ops/sec ±1.84% (86 runs sampled)
+Ramda "path" x 13,405,207 ops/sec ±0.73% (91 runs sampled)
+(native) "&& until you find it" x 99,029,819 ops/sec ±0.85% (89 runs sampled)
+Fastest is (native) "&& until you find it"
+
+Vanillas (curried) "propAt" x 18,524,480 ops/sec ±0.80% (89 runs sampled)
+Ramda (curried) "path" x 4,015,712 ops/sec ±0.45% (94 runs sampled)
+Fastest is Vanillas (curried) "propAt"
+
+Vanillas "propEquals" x 27,194,930 ops/sec ±1.84% (87 runs sampled)
+Ramda "pathEq" x 4,394,921 ops/sec ±1.45% (86 runs sampled)
+(native) "&& until you find it" x 87,391,472 ops/sec ±1.46% (89 runs sampled)
+Fastest is (native) "&& until you find it"
+
+Vanillas (curried) "propEquals" x 8,164,818 ops/sec ±1.87% (87 runs sampled)
+Ramda (curried) "pathEq" x 2,476,603 ops/sec ±0.52% (94 runs sampled)
+Fastest is Vanillas (curried) "propEquals"
+
+Vanillas "reduce" x 363,112 ops/sec ±1.07% (89 runs sampled)
+Lodash "reduce" x 367,947 ops/sec ±0.54% (93 runs sampled)
+Ramda "reduce" x 329,913 ops/sec ±0.54% (94 runs sampled)
+(native) "Array.reduce" x 370,924 ops/sec ±1.13% (93 runs sampled)
+Fastest is (native) "Array.reduce"
+
+Vanillas (curried) "reduce" x 336,008 ops/sec ±0.91% (88 runs sampled)
+Ramda (curried) "reduce" x 276,076 ops/sec ±1.15% (89 runs sampled)
+Fastest is Vanillas (curried) "reduce"
+
+Vanillas "size" x 94,833,734 ops/sec ±0.95% (86 runs sampled)
+Lodash "size" x 12,422,830 ops/sec ±1.56% (85 runs sampled)
+Ramda "length" x 6,305,370 ops/sec ±0.75% (89 runs sampled)
+Fastest is Vanillas "size"
+
+Vanillas "size" x 40,605,950 ops/sec ±0.57% (93 runs sampled)
+Lodash "size" x 11,367,959 ops/sec ±0.64% (91 runs sampled)
+Fastest is Vanillas "size"
+
+Vanillas "size" x 101,949,758 ops/sec ±0.61% (91 runs sampled)
+Lodash "size" x 31,259,357 ops/sec ±0.92% (89 runs sampled)
+Ramda "length" x 7,057,993 ops/sec ±0.67% (93 runs sampled)
+Fastest is Vanillas "size"
+
+Vanillas "uniq" x 11,498,621 ops/sec ±0.49% (91 runs sampled)
+Lodash "uniq" x 10,408,205 ops/sec ±1.58% (93 runs sampled)
+Ramda "uniq" x 302,590 ops/sec ±0.45% (95 runs sampled)
+Fastest is Vanillas "uniq"
+
+Vanillas "uniqBy" (top-level prop) x 4,552,613 ops/sec ±0.43% (95 runs sampled)
+Lodash "uniqBy" (top-level prop) x 3,076,679 ops/sec ±1.25% (90 runs sampled)
+Ramda "uniqBy" (top-level prop) x 399,504 ops/sec ±0.68% (87 runs sampled)
+Fastest is Vanillas "uniqBy" (top-level prop)
+
+Vanillas "uniqBy" (nested prop) x 910,823 ops/sec ±1.02% (92 runs sampled)
+Lodash "uniqBy" (nested prop) x 475,099 ops/sec ±0.51% (93 runs sampled)
+Ramda "uniqBy" (nested prop) x 430,137 ops/sec ±0.47% (93 runs sampled)
+Fastest is Vanillas "uniqBy" (nested prop)
+
+Joi "validate" x 165,221 ops/sec ±0.79% (91 runs sampled)
+Yup "validate" x 9,138 ops/sec ±0.55% (91 runs sampled)
+Spected "validate" x 86,854 ops/sec ±1.06% (90 runs sampled)
+Vanillas "validate" x 234,856 ops/sec ±0.93% (90 runs sampled)
 Fastest is Vanillas "validate"
 
 ```

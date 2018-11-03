@@ -16,7 +16,7 @@ const containsStringTests = [
   ['Vanillas "contains" (string)', () => contains('Ronald', 'Ronald McDonald')],
   ['Lodash "includes" (string)', () => _.includes('Ronald McDonald', 'Ronald')],
   ['Ramda "contains" (string)', () => R.contains('Ronald', 'Ronald McDonald')],
-  ['(native) "String.includes()"', () => 'Ronalid McDonald'.includes('Ronald')]
+  ['(native) "String.includes()"', () => 'Ronald McDonald'.includes('Ronald')]
 ]
 
 export default { containsArrayTests, containsStringTests }

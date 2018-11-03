@@ -9,7 +9,7 @@
  * that return Promises) which need to be executed in sequential order
  * @returns {Promise} A Promise that will resolve when each of the requests completes
  */
-function chainRequests(requests) {
+function promiseChain(requests) {
   const len = requests.length
   const promisesPromises = new Array(len)
   const getNext = (req, lastVal) => (typeof req === 'function' ? req(lastVal) : req)
@@ -24,4 +24,4 @@ function chainRequests(requests) {
   return Promise.all(promisesPromises)
 }
 
-export default chainRequests
+export default promiseChain

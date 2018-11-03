@@ -6,7 +6,7 @@ const arr = Object.values(hook)
 
 const tests = [
   ['Vanillas "each"', () => each(str => str.toUpperCase(), arr)],
-  ['Lodash "each"', () => _.each(arr, str => str.toUpperCase())],
+  ['Lodash "each"', () => { _.each(arr, str => str.toUpperCase()) }],
   ['(native) "Array.forEach"', () => arr.forEach(str => str.toUpperCase())]
 ]
 

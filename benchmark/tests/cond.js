@@ -22,7 +22,7 @@ function nativeIfElsey(v) {
 
 const tests = [
   ['Vanillas "cond"', () => cond(conditionalTransforms, composers)],
-  ['Ramda "cond"', () => R.cond(conditionalTransforms, composers)],
+  ['Ramda "cond"', () => R.cond(conditionalTransforms)(composers)],
   ['(native) "If/Else/ElseIf"', () => nativeIfElsey(composers)]
 ]
 

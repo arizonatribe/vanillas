@@ -67,7 +67,7 @@ const yupRules = yup.object().shape({
     .test('is-melanie', 'Only Melanies are scary', firstNameShouldBe('Melanie'))
     .test('is-brown', 'Last name for "Scary" should be "Brown"', lastNameShouldBe('Brown')),
   Sporty: yup.string()
-    .test('is-melanie', 'Only Melanies are scary', firstNameShouldBe('Melanie'))
+    .test('is-melanie', 'Only Melanies are sporty', firstNameShouldBe('Melanie'))
     .test('is-chisolm', 'Last name for "Sporty" should be "Chisolm"', lastNameShouldBe('Chisolm')),
   Baby: yup.string()
     .test('is-emma', 'First name for "Baby" should be "Emma"', firstNameShouldBe('Emma'))
@@ -116,10 +116,20 @@ const rules = {
 }
 
 const tests = [
-  ['Vanillas "validate"', () => validate(rules, formData)],
-  ['Spected "validate"', () => spected(rules, formData)],
+  ['Joi "validate"', () => JoiEx.validate(formData, joiRules).value],
   ['Yup "validate"', () => yupRules.validateSync(formData, { abortEarly: false })],
-  ['Joi "validate"', () => JoiEx.validate(formData, joiRules)]
+  ['Spected "validate"', () => {
+    const result = spected(rules, formData)
+    return Object.values(result).some(v => v !== true)
+      ? result
+      : formData
+  }],
+  ['Vanillas "validate"', () => {
+    const result = validate(rules, formData)
+    return Object.keys(result).length
+      ? result
+      : formData
+  }]
 ]
 
 export default { tests }

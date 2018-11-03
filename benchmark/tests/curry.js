@@ -20,9 +20,9 @@ function whoAreThey(g1, g2, g3, g4, g5) {
 
 
 const curryTests = [
-  ['Vanillas "curry"', () => curry(calculateIncome)],
-  ['Lodash "curry"', () => _.curry(calculateIncome)],
-  ['Ramda "curry"', () => R.curry(calculateIncome)]
+  ['Vanillas "curry"', () => typeof curry(calculateIncome)],
+  ['Lodash "curry"', () => typeof _.curry(calculateIncome)],
+  ['Ramda "curry"', () => typeof R.curry(calculateIncome)]
 ]
 const twoArgCurryTests = [
   ['Executing Vanillas 2-arg curried function', () => curry(fullName)('George')('Washington')],

@@ -7,7 +7,8 @@ require('@babel/register')
 
 const { errorLog, log } = require('./helpers')
 const { default: runBenchmarks } = require('./run')
-const { default: chainRequests } = require('../src/chainRequests')
+const { default: isEqual } = require('../src/isEqual')
+const { default: promiseChain } = require('../src/promiseChain')
 
 const docs = []
 const logToDocs = (...l) => docs.push(...l)
@@ -24,6 +25,22 @@ if (!functionNames.length) {
   log(chalk`{cyan (You can run one or more or all of the tests in the }{red benchmark/test/} {cyan directory)}\n`)
 } else if (functionNames.length !== 1) {
   log(chalk`{white Running benchmark tests for: "${functionNames.join(', ')}"}{red.bold  . . . }\n`)
+}
+
+function allTestsReturnSameValue(tests = []) {
+  let messages
+  tests.map(([caption, benchmarkTest, ...args]) => [caption, benchmarkTest(...args)])
+    .every(([caption, result], index, arr) => {
+      if (!isEqual(result, arr[0][1])) {
+        messages = chalk`{red The result for ${
+          index > 1 ? caption : 'the second test'
+        } }{red doesn't match the first test:}`
+        messages += chalk`{green \n  ${JSON.stringify(arr[0][1])}}{yellow \n    vs}{green \n  ${JSON.stringify(result)}\n}`
+        return false
+      }
+      return true
+    })
+  return messages
 }
 
 async function benchmark() {
@@ -44,11 +61,16 @@ async function benchmark() {
       }
 
       suite.forEach(tests => {
+        const testsReturnDifferentValues = allTestsReturnSameValue(tests)
+        if (testsReturnDifferentValues) {
+          log(testsReturnDifferentValues)
+          throw new Error(`Unable to run benchmarks for "${fnName}" because one (or more) of the tests return different values`)
+        }
         requests.push(runBenchmarks(logger, tests))
       })
     })
 
-    await chainRequests(requests)
+    await promiseChain(requests)
 
     if (docs.length) {
       fs.writeFileSync(
