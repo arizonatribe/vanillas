@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: getType.js | vanillas</title>
+    <title>Source: flatten.js | vanillas</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,27 +54,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import isNil from './isNil'
-import toTitleCase from './toTitleCase'
-import getConstructorName from './_internal/getConstructorName'
+            <pre class="prettyprint source linenums"><code>import isArrayish from './isArrayish'
 
 /**
- * Gets the type for any value. If available will inspect the constructor name,
- * otherwise will use the typeof
+ * Extracts nested arrays (of any depth) from a provided array, placing them onto on single new array.
  *
  * @func
- * @sig * -> String
- * @param {*} val A value of any kind
- * @returns {String} The stringified representation of the value's type
+ * @sig [a, b, [c, d], ..] -> [a, b, c, d, ..]
+ * @param {Array} arr An array of values that may or may not be nested arrays
+ * themselves
+ * @returns {Array} A new array of values, but with any nested arrays from the
+ * original input extracted onto one single (flat) array
  */
-function getType(val) {
-  if (isNil(val)) {
-    return `${val}`
+function flatten(arr) {
+  const newArr = []
+  let i = -1
+  const len = arr.length
+  while (++i &lt; len) {
+    const val = arr[i]
+    if (isArrayish(val)) {
+      let j = -1
+      const nlen = val.length
+      while (++j &lt; nlen) {
+        newArr.push(val[j])
+      }
+    } else {
+      newArr.push(val)
+    }
   }
-  return getConstructorName(val) || toTitleCase(typeof val)
+  return newArr
 }
 
-export default getType
+export default flatten
 </code></pre>
         </article>
     </section>

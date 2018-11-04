@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: getType.js | vanillas</title>
+    <title>Source: combine.js | vanillas</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,27 +54,37 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import isNil from './isNil'
-import toTitleCase from './toTitleCase'
-import getConstructorName from './_internal/getConstructorName'
+            <pre class="prettyprint source linenums"><code>import merge from './merge'
+import concat from './concat'
+import isObject from './isObject'
 
 /**
- * Gets the type for any value. If available will inspect the constructor name,
- * otherwise will use the typeof
+ * Combines two values of the same type (if it makes sense to combine them).
+ * Numbers are summarized, strings and arrays are concatenated together, and
+ * true objects are merged (the second value merged on top of the first).
+ * In any other case only the first value is returned.
  *
  * @func
- * @sig * -> String
- * @param {*} val A value of any kind
- * @returns {String} The stringified representation of the value's type
+ * @sig a -> a -> a
+ * @param {*} val1 The base value to be combined with
+ * @param {*} val2 The value to combine
+ * @returns {*} If the values are of the same type, this represents the combined
+ * value of the two of them. Otherwise only the first value is returned
  */
-function getType(val) {
-  if (isNil(val)) {
-    return `${val}`
+function combine(val1, val2) {
+  if ([val1, val2].every(v => typeof v === 'number' || typeof v === 'string')) {
+    return val1 + val2
   }
-  return getConstructorName(val) || toTitleCase(typeof val)
+  if (isObject(val1) &amp;&amp; isObject(val2)) {
+    return merge(val1, val2)
+  }
+  if (Array.isArray(val1) &amp;&amp; Array.isArray(val2)) {
+    return concat(val1, val2)
+  }
+  return val1
 }
 
-export default getType
+export default combine
 </code></pre>
         </article>
     </section>
