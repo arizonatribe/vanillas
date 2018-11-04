@@ -1,3 +1,6 @@
+import forIn from './forIn'
+import { _includes } from './_internal/_includes'
+
 /**
  * Removes specified keys from an object (after cloning the Object).
  *
@@ -10,12 +13,11 @@
  */
 function omit(keys, obj) {
   const newObj = {}
-  // eslint-disable-next-line no-restricted-syntax
-  for (const key in obj) {
-    if (!keys.includes(key)) {
-      newObj[key] = obj[key]
+  forIn((key, ob) => {
+    if (!_includes(key, keys)) {
+      newObj[key] = ob[key]
     }
-  }
+  }, obj)
   return newObj
 }
 
