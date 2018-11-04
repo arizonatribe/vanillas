@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: uniqBy.js | vanillas</title>
+    <title>Source: promiseCompose.js | vanillas</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,48 +54,24 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import propAt from './propAt'
-import { _includes } from './_internal/_includes'
+            <pre class="prettyprint source linenums"><code>import promiseChain from './promiseChain'
 
 /**
- * Filters an array of values down to only those which are unique, based on a
- * provided predicate function (or shorthand for retrieving a prop inside an object)
+ * Gathers an Array of Promises (or of Functions that return Promises) and
+ * executes them from right to left. You can pass them all together in either a
+ * single array, or one by one as arguments (ie, in the style of either `apply` or `call`).
  *
  * @func
- * @sig (* -> *) -> [a, b, b, b, ..] -> [a, b, ..]
- * @param {Function|String} pred A predicate function
- * @param {Array} list An array of values which may or may not contain duplicates
- * @returns {Array} A new list containing only the unique values from the original array
+ * @sig [Promise|(() -> Promise)] -> Promise
+ * @param {Promise[]|Function[]} requests An array of Promises (or of Functions
+ * that return Promises) which need to be executed in sequential order
+ * @returns {Promise} A Promise that will resolve when each of the requests completes
  */
-function uniqBy(pred, list) {
-  let fn
-  if (typeof pred === 'string' &amp;&amp; pred.split('.').length === 1) {
-    fn = o => o[pred]
-  } else if (Array.isArray(pred) &amp;&amp; pred.length === 1) {
-    fn = o => o[pred[0]]
-  } else if (typeof pred === 'function') {
-    fn = pred
-  } else {
-    fn = o => propAt(pred, o)
-  }
-
-  let idx = -1
-  const newArr = []
-  const compared = []
-  const len = list.length
-
-  while (++idx &lt; len) {
-    const val = list[idx]
-    const valley = fn(val)
-    if (!_includes(valley, compared)) {
-      newArr.push(val)
-      compared.push(valley)
-    }
-  }
-  return newArr
+function promiseCompose(...requests) {
+  return promiseChain(requests.reverse())
 }
 
-export default uniqBy
+export default promiseCompose
 </code></pre>
         </article>
     </section>
