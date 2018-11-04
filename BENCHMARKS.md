@@ -108,6 +108,11 @@ Ramda "findIndex" x 3,925,421 ops/sec ±1.01% (92 runs sampled)
 (native) "Array.findIndex()" x 11,010,660 ops/sec ±0.41% (95 runs sampled)
 Fastest is (native) "Array.findIndex()"
 
+Vanillas "flatten" x 18,401,559 ops/sec ±0.57% (93 runs sampled)
+Lodash "flatten" x 13,499,273 ops/sec ±1.21% (93 runs sampled)
+Ramda "flatten" x 461,306 ops/sec ±1.54% (93 runs sampled)
+Fastest is Vanillas "flatten"
+
 Vanillas "intersection" x 11,648,638 ops/sec ±1.93% (90 runs sampled)
 Lodash "intersection" x 3,018,181 ops/sec ±0.39% (95 runs sampled)
 Ramda "intersection" x 591,150 ops/sec ±1.27% (91 runs sampled)
