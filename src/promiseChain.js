@@ -9,15 +9,16 @@
  * that return Promises) which need to be executed in sequential order
  * @returns {Promise} A Promise that will resolve when each of the requests completes
  */
-function promiseChain(requests) {
-  const len = requests.length
+function promiseChain(...requests) {
+  const reqs = Array.isArray(requests[0]) ? requests[0] : requests
+  const len = reqs.length
   const promisesPromises = new Array(len)
   const getNext = (req, lastVal) => (typeof req === 'function' ? req(lastVal) : req)
 
   let chain = Promise.resolve()
   for (let i = 0; i < len; i++) {
     promisesPromises[i] = (
-      chain = chain.then(val => getNext(requests[i], val))
+      chain = chain.then(val => getNext(reqs[i], val))
     )
   }
 
