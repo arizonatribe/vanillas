@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: size.js | vanillas</title>
+    <title>Source: difference.js | vanillas</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,38 +54,45 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import isUndefined from './isUndefined'
+            <pre class="prettyprint source linenums"><code>import { _includes } from './_internal/_includes'
 
 /**
- * Checks the length (or size) of many different types of values:
- *   - Array
- *   - Set
- *   - Map
- *   - Object (num of keys)
- *   - String (num of chars)
- *   - Function (num of params)
+ * Compares two lists of Strings/Numbers and returns the values that are different between the two lists
  *
  * @func
- * @sig Array|String|Object -> Number
- * @param {Object|String|Array|Function} val A value of type Object, String,
- * Array or Function
- * @returns {Number} The length of the String or Array, OR the number of keys in
- * the Object
+ * @sig [Number|String] -> [Number|String] -> [Number|String]
+ * @param {String[]|Number[]} arr1 An Array of Strings
+ * @param {String[]|Number[]} arr2 An Array of Strings
+ * @returns {String[]|Number[]} An array of values that are different between the two lists
  */
-function size(val) {
-  if (!isUndefined(val.length)) {
-    return val.length
+function difference(arr1, arr2) {
+  const diff = []
+  const len1 = arr1.length
+  const len2 = arr2.length
+  if (len1 === 0 &amp;&amp; len2 === 0) {
+    return diff
+  } else if (len1 === 0) {
+    return arr2
+  } else if (len2 === 0) {
+    return arr1
   }
-  if (!isUndefined(val.size)) {
-    return val.size
+
+  for (let i = 0; i &lt; len1; i++) {
+    const val = arr1[i]
+    if (!_includes(val, arr2)) {
+      diff.push(val)
+    }
   }
-  if (typeof val === 'object') {
-    return Object.keys(val).length
+  for (let j = 0; j &lt; len2; j++) {
+    const val = arr2[j]
+    if (!_includes(val, arr1)) {
+      diff.push(val)
+    }
   }
-  return undefined
+  return diff
 }
 
-export default size
+export default difference
 </code></pre>
         </article>
     </section>
