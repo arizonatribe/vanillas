@@ -2,10 +2,12 @@ import curry from '../curry'
 import uncurriedAppend from '../append'
 import uncurriedCond from '../cond'
 import uncurriedContains from '../contains'
+import uncurriedDifference from '../difference'
 import uncurriedEach from '../each'
 import uncurriedFind from '../find'
 import uncurriedFindIndex from '../findIndex'
 import uncurriedHas from '../has'
+import uncurriedIntersection from '../intersection'
 import uncurriedIsEqual from '../isEqual'
 import uncurriedIsSameType from '../isSameType'
 import uncurriedIsStrictEqual from '../isStrictEqual'
@@ -27,10 +29,12 @@ import uncurriedValidate from '../validate'
 export const append = curry(uncurriedAppend)
 export const cond = curry(uncurriedCond)
 export const contains = curry(uncurriedContains)
+export const difference = curry(uncurriedDifference)
 export const each = curry(uncurriedEach)
 export const find = curry(uncurriedFind)
 export const findIndex = curry(uncurriedFindIndex)
 export const has = curry(uncurriedHas)
+export const intersection = curry(uncurriedIntersection)
 export const isEqual = curry(uncurriedIsEqual)
 export const isSameType = curry(uncurriedIsSameType)
 export const isStrictEqual = curry(uncurriedIsStrictEqual)

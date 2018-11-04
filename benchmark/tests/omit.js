@@ -4,12 +4,16 @@ import { omit } from '../../src'
 import { omit as curriedOmit } from '../../src/curried'
 import { pantheon } from '../../test/__mocks__'
 
+const exclude = ['Jupiter', 'Saturn', 'Neptune']
+
 const omitTests = [
-  ['Vanillas "omit"', () => omit(['Jupiter', 'Saturn', 'Neptune'], pantheon)],
-  ['Lodash "omit"', () => _.omit(pantheon, ['Jupiter', 'Saturn', 'Neptune'])],
-  ['Ramda "omit"', () => R.omit(['Jupiter', 'Saturn', 'Neptune'], pantheon)],
-  ['(native) "Object.keys().filter().reduce()"', () =>
-    Object.keys(pantheon).reduce((newObj, key) => ({ ...newObj, [key]: pantheon[key] }), {})
+  ['Vanillas "omit"', () => omit(exclude, pantheon)],
+  ['Lodash "omit"', () => _.omit(pantheon, exclude)],
+  ['Ramda "omit"', () => R.omit(exclude, pantheon)],
+  ['(native) "Object.keys().filter().reduce()"', () => Object
+    .keys(pantheon)
+    .filter(key => !exclude.includes(key))
+    .reduce((newObj, key) => ({ ...newObj, [key]: pantheon[key] }), {})
   ]
 ]
 const curriedOmitTests = [
