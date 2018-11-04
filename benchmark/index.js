@@ -48,9 +48,8 @@ async function benchmark() {
     const requests = []
     const logger = updateDocs ? logToDocs : log
 
-    functionNames.forEach(fnName => {
-      log(chalk`{white Benchmarking "${fnName}"}\n`)
-
+    /* Check that we'll be able to run all the tests before we start the long wait */
+    const validatedTests = functionNames.map(fnName => {
       const benchmarkScriptPath = path.resolve(baseDir, `${fnName}.js`)
       // eslint-disable-next-line import/no-dynamic-require
       const fnBenchmarks = require(benchmarkScriptPath).default
@@ -60,14 +59,22 @@ async function benchmark() {
         throw new Error(`No tests found for "${fnName}"! Are you exporting them from the benchmark file?`)
       }
 
-      suite.forEach(tests => {
-        const testsReturnDifferentValues = allTestsReturnSameValue(tests)
-        if (testsReturnDifferentValues) {
-          log(testsReturnDifferentValues)
-          throw new Error(`Unable to run benchmarks for "${fnName}" because one (or more) of the tests return different values`)
-        }
-        requests.push(runBenchmarks(logger, tests))
-      })
+      return [
+        fnName,
+        suite.map(tests => {
+          const testsReturnDifferentValues = allTestsReturnSameValue(tests)
+          if (testsReturnDifferentValues) {
+            log(testsReturnDifferentValues)
+            throw new Error(`Unable to run benchmarks for "${fnName}" because one (or more) of the tests return different values`)
+          }
+          return tests
+        })
+      ]
+    })
+
+    validatedTests.forEach(([fnName, suite]) => {
+      log(chalk`{white Benchmarking "${fnName}"}\n`)
+      requests.push(...suite.map(tests => runBenchmarks(logger, tests)))
     })
 
     await promiseChain(requests)

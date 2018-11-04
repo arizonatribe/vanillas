@@ -6,6 +6,9 @@ import uncurriedDifference from '../difference'
 import uncurriedEach from '../each'
 import uncurriedFind from '../find'
 import uncurriedFindIndex from '../findIndex'
+import uncurriedFilter from '../filter'
+import uncurriedFilterObject from '../filterObject'
+import uncurriedFilterString from '../filterString'
 import uncurriedHas from '../has'
 import uncurriedIntersection from '../intersection'
 import uncurriedIsEqual from '../isEqual'
@@ -33,6 +36,9 @@ export const difference = curry(uncurriedDifference)
 export const each = curry(uncurriedEach)
 export const find = curry(uncurriedFind)
 export const findIndex = curry(uncurriedFindIndex)
+export const filter = curry(uncurriedFilter)
+export const filterObject = curry(uncurriedFilterObject)
+export const filterString = curry(uncurriedFilterString)
 export const has = curry(uncurriedHas)
 export const intersection = curry(uncurriedIntersection)
 export const isEqual = curry(uncurriedIsEqual)
