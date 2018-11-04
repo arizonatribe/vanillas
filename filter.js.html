@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: size.js | vanillas</title>
+    <title>Source: filter.js | vanillas</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,38 +54,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import isUndefined from './isUndefined'
+            <pre class="prettyprint source linenums"><code>import isArrayish from './isArrayish'
+import isObject from './isObject'
+import filterString from './filterString'
+import filterObject from './filterObject'
 
 /**
- * Checks the length (or size) of many different types of values:
- *   - Array
- *   - Set
- *   - Map
- *   - Object (num of keys)
- *   - String (num of chars)
- *   - Function (num of params)
+ * Applies a filtering function you provide over a value you provide, according to its type.
+ * String values will have the filtering function applied over every character in the String.
+ * Objects will have the filtering function applied to every value in the Object.
+ * Arrays (or Array-like values) will have the filtering function applied to every value in the Array.
+ * If the type of your value is none of the above, the value will be returned as-is.
  *
  * @func
- * @sig Array|String|Object -> Number
- * @param {Object|String|Array|Function} val A value of type Object, String,
- * Array or Function
- * @returns {Number} The length of the String or Array, OR the number of keys in
- * the Object
+ * @sig (* -> *) -> * -> *
+ * @param {Function} fn A filtering function that is invoked on the provided value
+ * @param {Object|Array|String} val An Object/Array/String whose values/chars will be filtered
+ * @returns {Object|Array|String} A new value that is the result of
+ * the filtering operation over all the chars or values in the original String/Object/Array
  */
-function size(val) {
-  if (!isUndefined(val.length)) {
-    return val.length
-  }
-  if (!isUndefined(val.size)) {
-    return val.size
-  }
-  if (typeof val === 'object') {
-    return Object.keys(val).length
-  }
-  return undefined
+function filter(fn, val) {
+  if (Array.isArray(val)) return val.filter(fn)
+  if (isObject(val)) return filterObject(fn, val)
+  if (typeof val === 'string') return filterString(fn, val)
+  if (isArrayish(val)) return val.filter(fn)
+  return val
 }
 
-export default size
+export default filter
 </code></pre>
         </article>
     </section>

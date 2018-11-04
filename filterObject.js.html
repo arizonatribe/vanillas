@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: size.js | vanillas</title>
+    <title>Source: filterObject.js | vanillas</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -54,38 +54,29 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import isUndefined from './isUndefined'
+            <pre class="prettyprint source linenums"><code>import forIn from './forIn'
 
 /**
- * Checks the length (or size) of many different types of values:
- *   - Array
- *   - Set
- *   - Map
- *   - Object (num of keys)
- *   - String (num of chars)
- *   - Function (num of params)
+ * Applies a filtering function you provide over every value in a given Object.
  *
  * @func
- * @sig Array|String|Object -> Number
- * @param {Object|String|Array|Function} val A value of type Object, String,
- * Array or Function
- * @returns {Number} The length of the String or Array, OR the number of keys in
- * the Object
+ * @sig (* -> *) -> {k: v} -> {k: v}
+ * @param {Function} fn A filtering function that is invoked on every value in the provided Object
+ * @param {Object} obj An Object whose values will be filtered
+ * @returns {Object} A new Object that is the result of
+ * the filtering operation over all the values in the original Object
  */
-function size(val) {
-  if (!isUndefined(val.length)) {
-    return val.length
-  }
-  if (!isUndefined(val.size)) {
-    return val.size
-  }
-  if (typeof val === 'object') {
-    return Object.keys(val).length
-  }
-  return undefined
+function filterObject(fn, obj) {
+  const newObj = {}
+  forIn((key, ob) => {
+    if (fn(ob[key], key, ob)) {
+      newObj[key] = ob[key]
+    }
+  }, obj)
+  return newObj
 }
 
-export default size
+export default filterObject
 </code></pre>
         </article>
     </section>
