@@ -27,9 +27,9 @@ function merge(...vals) {
     return vals[1]
   }
   const newObj = { }
-  forIn((key, obj) => { newObj[key] = obj[key] }, vals[0])
+  forIn((key, val) => { newObj[key] = val }, vals[0])
   for (let i = 1; i < numOfVals; i++) {
-    forIn((key, obj) => { newObj[key] = merge(newObj[key], obj[key]) }, vals[i])
+    forIn((key, val) => { newObj[key] = merge(newObj[key], val) }, vals[i])
   }
   return newObj
 }

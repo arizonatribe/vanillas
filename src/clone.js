@@ -17,8 +17,7 @@ function clone(obj) {
     }
     if (isObject(obj)) {
       const newObj = {}
-      forIn((key, ob) => {
-        const val = ob[key]
+      forIn((key, val) => {
         if (isObject(val) || Array.isArray(val)) {
           newObj[key] = clone(val)
         } else {

@@ -12,8 +12,8 @@ import forIn from './forIn'
  */
 function mapObject(fn, obj) {
   const newObj = {}
-  forIn((key, ob) => {
-    newObj[key] = fn(ob[key], key, ob)
+  forIn((key, val, ob) => {
+    newObj[key] = fn(val, key, ob)
   }, obj)
   return newObj
 }

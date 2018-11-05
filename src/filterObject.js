@@ -12,9 +12,9 @@ import forIn from './forIn'
  */
 function filterObject(fn, obj) {
   const newObj = {}
-  forIn((key, ob) => {
-    if (fn(ob[key], key, ob)) {
-      newObj[key] = ob[key]
+  forIn((key, val, ob) => {
+    if (fn(val, key, ob)) {
+      newObj[key] = val
     }
   }, obj)
   return newObj

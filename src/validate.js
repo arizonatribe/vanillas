@@ -71,8 +71,8 @@ function _unpackValidator(rawValidators) {
 function validate(validations, values) {
   const validators = mapObject(_unpackValidator, validations)
   const invalids = {}
-  forIn((key, ob) => {
-    const validationResults = ob[key](values[key], key)
+  forIn((key, val) => {
+    const validationResults = val(values[key], key)
     if (validationResults.length) {
       invalids[key] = validationResults
     }

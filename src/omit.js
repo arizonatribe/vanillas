@@ -13,9 +13,9 @@ import { _includes } from './_internal/_includes'
  */
 function omit(keys, obj) {
   const newObj = {}
-  forIn((key, ob) => {
+  forIn((key, val) => {
     if (!_includes(key, keys)) {
-      newObj[key] = ob[key]
+      newObj[key] = val
     }
   }, obj)
   return newObj

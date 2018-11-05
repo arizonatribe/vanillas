@@ -10,8 +10,8 @@ import forIn from './forIn'
  */
 function values(obj) {
   const arr = []
-  forIn((key, ob) => {
-    arr.push(ob[key])
+  forIn((key, val) => {
+    arr.push(val)
   }, obj)
   return arr
 }

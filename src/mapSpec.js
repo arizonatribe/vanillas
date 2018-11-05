@@ -1,3 +1,4 @@
+import has from './has'
 import forIn from './forIn'
 import isObject from './isObject'
 
@@ -10,7 +11,7 @@ import isObject from './isObject'
  * This is similar to Ramda's `evolve()` however you can also set values
  * in your spec that are _not_ functions
  * (which will just override whatever matching key there might be on the input object).
- * Addtionally, futulities supplies the key and the object as the 2nd and third
+ * Addtionally, it supplies the key and the object as the 2nd and third
  * params to your spec's transformation function, so that you can create props
  * based on the entire input Object (with Ramda you'll need to also use
  * `applySpec()` and in a separate operation to derived these kinds of values).
@@ -41,13 +42,20 @@ import isObject from './isObject'
  */
 function mapSpec(spec, obj) {
   const newObj = {}
-  forIn((key, ob) => {
-    if (typeof ob[key] === 'function') {
-      newObj[key] = ob[key](obj[key], key, obj)
-    } else if (isObject(ob[key])) {
-      newObj[key] = mapSpec(ob[key], obj[key])
+  forIn((key, val, ob) => {
+    if (typeof spec[key] === 'function') {
+      newObj[key] = spec[key](val, key, ob)
+    } else if (isObject(spec[key])) {
+      newObj[key] = mapSpec(spec[key], val)
     } else {
-      newObj[key] = ob[key]
+      newObj[key] = val
+    }
+  }, obj)
+  forIn((key, val) => {
+    if (typeof val !== 'function') {
+      newObj[key] = val
+    } else if (!has(key, newObj)) {
+      newObj[key] = val(undefined, key, newObj)
     }
   }, spec)
   return newObj
