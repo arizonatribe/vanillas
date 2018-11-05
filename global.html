@@ -32,7 +32,7 @@
     <div class="title">
         <h1><a href="index.html" class="link">vanillas</a></h1>
         
-            <span class="version">v0.1.10</span>
+            <span class="version">v0.1.11</span>
         
     </div>
     <div class="search-container" id="search-container">
@@ -4164,7 +4164,7 @@ Object's own properties.</p>
             
 
             <td class="description last"><p>A function to execute iteratively,
-which will receive the key and object</p></td>
+which will receive the <code>key</code>, <code>value</code>, and <code>object</code> (respectively)</p></td>
         </tr>
 
     
@@ -7875,7 +7875,7 @@ the mapping operation over all the values in the original Object</p>
             
             <div class="container-source members">
                 <code><a href="mapSpec.js.html">mapSpec.js</a></code>,
-                <code><a href="mapSpec.js.html#line42">line 42</a></code>
+                <code><a href="mapSpec.js.html#line43">line 43</a></code>
             </div>
             
         </h4>
@@ -7894,7 +7894,7 @@ function to the key/val in the input Object.</p>
 <p>This is similar to Ramda's <code>evolve()</code> however you can also set values
 in your spec that are <em>not</em> functions
 (which will just override whatever matching key there might be on the input object).
-Addtionally, futulities supplies the key and the object as the 2nd and third
+Addtionally, it supplies the key and the object as the 2nd and third
 params to your spec's transformation function, so that you can create props
 based on the entire input Object (with Ramda you'll need to also use
 <code>applySpec()</code> and in a separate operation to derived these kinds of values).</p>

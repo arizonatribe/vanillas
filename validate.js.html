@@ -34,7 +34,7 @@
     <div class="title">
         <h1><a href="index.html" class="link">vanillas</a></h1>
         
-            <span class="version">v0.1.10</span>
+            <span class="version">v0.1.11</span>
         
     </div>
     <div class="search-container" id="search-container">
@@ -127,8 +127,8 @@ function _unpackValidator(rawValidators) {
 function validate(validations, values) {
   const validators = mapObject(_unpackValidator, validations)
   const invalids = {}
-  forIn((key, ob) => {
-    const validationResults = ob[key](values[key], key)
+  forIn((key, val) => {
+    const validationResults = val(values[key], key)
     if (validationResults.length) {
       invalids[key] = validationResults
     }

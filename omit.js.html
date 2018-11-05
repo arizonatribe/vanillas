@@ -34,7 +34,7 @@
     <div class="title">
         <h1><a href="index.html" class="link">vanillas</a></h1>
         
-            <span class="version">v0.1.10</span>
+            <span class="version">v0.1.11</span>
         
     </div>
     <div class="search-container" id="search-container">
@@ -69,9 +69,9 @@ import { _includes } from './_internal/_includes'
  */
 function omit(keys, obj) {
   const newObj = {}
-  forIn((key, ob) => {
+  forIn((key, val) => {
     if (!_includes(key, keys)) {
-      newObj[key] = ob[key]
+      newObj[key] = val
     }
   }, obj)
   return newObj

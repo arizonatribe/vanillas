@@ -34,7 +34,7 @@
     <div class="title">
         <h1><a href="index.html" class="link">vanillas</a></h1>
         
-            <span class="version">v0.1.10</span>
+            <span class="version">v0.1.11</span>
         
     </div>
     <div class="search-container" id="search-container">
@@ -83,9 +83,9 @@ function merge(...vals) {
     return vals[1]
   }
   const newObj = { }
-  forIn((key, obj) => { newObj[key] = obj[key] }, vals[0])
+  forIn((key, val) => { newObj[key] = val }, vals[0])
   for (let i = 1; i &lt; numOfVals; i++) {
-    forIn((key, obj) => { newObj[key] = merge(newObj[key], obj[key]) }, vals[i])
+    forIn((key, val) => { newObj[key] = merge(newObj[key], val) }, vals[i])
   }
   return newObj
 }
