@@ -11,6 +11,12 @@
     "@babel/proposal-object-rest-spread"
   ],
   "env": {
+    "cjs": {
+      "plugins": [
+        "@babel/proposal-object-rest-spread",
+        "add-module-exports"
+      ]
+    },
     "umd": {
       "presets": [
         ["@babel/preset-env", {
