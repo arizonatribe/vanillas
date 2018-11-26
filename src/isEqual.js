@@ -21,8 +21,13 @@ function isEqual(firstVal, secondVal) {
   if (isStrictEqual(firstVal, secondVal)) return true
   if (!isSameType(firstVal, secondVal)) return false
 
-  if ([firstVal, secondVal].every(val => Array.isArray(val))) {
-    return firstVal.every((v, i) => isEqual(v, secondVal[i]))
+  if (Array.isArray(firstVal) && Array.isArray(secondVal)) {
+    const valLen = firstVal.length
+    if (valLen !== secondVal.length) return false
+    for (let i = 0; i < valLen; i++) {
+      if (!isEqual(firstVal[i], secondVal[i])) return false
+    }
+    return true
   }
 
   if (isObject(firstVal)) {

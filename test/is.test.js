@@ -157,6 +157,7 @@ tape('"isEqual" performs deep equality testing of two values', t => {
   t.equal(isEqual([], []), true, 'two arrays are both empty')
   t.equal(isEqual(['lorem', 'ipsum'], ['lorem', 'ipsum']), true, 'two arrays that are equal')
   t.equal(isEqual(['lorem', 'ipsum'], ['dolor', 'sit']), false, 'two arrays that are not equal')
+  t.equal(isEqual([], [1, 2, 3]), false, 'both values are inspected')
   t.equal(isEqual({}, {}), true, 'two objects are both empty')
   t.equal(isEqual({lorem: 'ipsum'}, {lorem: 'ipsum'}), true, 'two objects that are equal')
   t.equal(isEqual({lorem: 'ipsum'}, {dolor: 'sit'}), false, 'two objects that are not equal')

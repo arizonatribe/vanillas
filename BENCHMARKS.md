@@ -148,13 +148,18 @@ Lodash "isEmpty" x 12,522,666 ops/sec ±0.44% (92 runs sampled)
 Ramda "isEmpty" x 433,022 ops/sec ±0.12% (98 runs sampled)
 Fastest is Vanillas "isEmpty"
 
-Vanillas "isEqual" x 369,686 ops/sec ±0.62% (95 runs sampled)
-Lodash "isEqual" x 145,930 ops/sec ±0.28% (95 runs sampled)
-Ramda "equals" x 43,402 ops/sec ±1.04% (92 runs sampled)
-Fastest is Vanillas "isEqual"
+Vanillas "isEqual" (array equality) x 8,990,731 ops/sec ±0.71% (92 runs sampled)
+Lodash "isEqual" (array equality) x 4,009,106 ops/sec ±0.93% (95 runs sampled)
+Ramda "equals" (array equality) x 459,716 ops/sec ±0.97% (95 runs sampled)
+Fastest is Vanillas "isEqual" (array equality)
 
-Vanillas (curried) "isEqual" x 363,998 ops/sec ±0.22% (98 runs sampled)
-Ramda (curried) "equals" x 43,087 ops/sec ±0.35% (93 runs sampled)
+Vanillas "isEqual" (object equality) x 552,412 ops/sec ±1.44% (90 runs sampled)
+Lodash "isEqual" (object equality) x 164,996 ops/sec ±1.50% (92 runs sampled)
+Ramda "equals" (object equality) x 51,133 ops/sec ±1.50% (92 runs sampled)
+Fastest is Vanillas "isEqual" (object equality)
+
+Vanillas (curried) "isEqual" x 501,780 ops/sec ±1.56% (88 runs sampled)
+Ramda (curried) "equals" x 48,462 ops/sec ±2.05% (84 runs sampled)
 Fastest is Vanillas (curried) "isEqual"
 
 Vanillas "isObject" x 15,465,431 ops/sec ±0.57% (96 runs sampled)
