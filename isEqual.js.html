@@ -34,7 +34,7 @@
     <div class="title">
         <h1><a href="index.html" class="link">vanillas</a></h1>
         
-            <span class="version">v0.1.12</span>
+            <span class="version">v0.1.13</span>
         
     </div>
     <div class="search-container" id="search-container">
@@ -77,8 +77,13 @@ function isEqual(firstVal, secondVal) {
   if (isStrictEqual(firstVal, secondVal)) return true
   if (!isSameType(firstVal, secondVal)) return false
 
-  if ([firstVal, secondVal].every(val => Array.isArray(val))) {
-    return firstVal.every((v, i) => isEqual(v, secondVal[i]))
+  if (Array.isArray(firstVal) &amp;&amp; Array.isArray(secondVal)) {
+    const valLen = firstVal.length
+    if (valLen !== secondVal.length) return false
+    for (let i = 0; i &lt; valLen; i++) {
+      if (!isEqual(firstVal[i], secondVal[i])) return false
+    }
+    return true
   }
 
   if (isObject(firstVal)) {
