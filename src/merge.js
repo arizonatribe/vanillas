@@ -18,7 +18,7 @@ import forIn from './forIn'
 function merge(...vals) {
   const numOfVals = vals.length
   if (isNil(vals[0]) || isNil(vals[1])) {
-    return vals[1] || vals[0]
+    return !isNil(vals[1]) ? vals[1] : vals[0]
   }
   if (Array.isArray(vals[0])) {
     return concat(vals[0], ...vals.slice(1).map(a => Array.isArray(a) ? a : [a]))
@@ -29,7 +29,9 @@ function merge(...vals) {
   const newObj = { }
   forIn((key, val) => { newObj[key] = val }, vals[0])
   for (let i = 1; i < numOfVals; i++) {
-    forIn((key, val) => { newObj[key] = merge(newObj[key], val) }, vals[i])
+    forIn((key, val) => {
+      newObj[key] = merge(newObj[key], val)
+    }, vals[i])
   }
   return newObj
 }

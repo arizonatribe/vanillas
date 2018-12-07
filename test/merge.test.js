@@ -73,5 +73,16 @@ tape('"merge" can blend two or more Objects together', t => {
     },
     'merge can blend three (or more) objects'
   )
+  t.deepEqual(
+    merge({}, {
+      NODE_ENV: 'development',
+      SOME_API: 'http://localhost',
+      SOME_POORLY_NAMED_VAR: 0
+    }), {
+      NODE_ENV: 'development',
+      SOME_API: 'http://localhost',
+      SOME_POORLY_NAMED_VAR: 0
+    }
+  )
   t.end()
 })
