@@ -2,6 +2,7 @@ import isNil from './isNil'
 import isPrimitive from './isPrimitive'
 import concat from './concat'
 import forIn from './forIn'
+import uniq from './uniq'
 
 /**
  * Merges the values from 2 or more Objects or Arrays together into a new Object/Array.
@@ -21,7 +22,7 @@ function merge(...vals) {
     return !isNil(vals[1]) ? vals[1] : vals[0]
   }
   if (Array.isArray(vals[0])) {
-    return concat(vals[0], ...vals.slice(1).map(a => Array.isArray(a) ? a : [a]))
+    return uniq(concat(vals[0], ...vals.slice(1).map(a => Array.isArray(a) ? a : [a])))
   }
   if (isPrimitive(vals[1]) && numOfVals === 2) {
     return vals[1]

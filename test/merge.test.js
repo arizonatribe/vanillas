@@ -1,5 +1,6 @@
 import tape from 'tape'
 import merge from '../src/merge'
+import { pantheon, solarSystem } from './__mocks__'
 
 tape('"merge" can blend two or more Objects together', t => {
   const hook = {
@@ -83,6 +84,18 @@ tape('"merge" can blend two or more Objects together', t => {
       SOME_API: 'http://localhost',
       SOME_POORLY_NAMED_VAR: 0
     }
+  )
+  t.deepEqual(
+    merge(pantheon, solarSystem), {
+      Sun: 'Apollo',
+      Mercury: { greek: 'Hermes' },
+      Venus: 'Aphrodite',
+      Mars: { greek: 'Aries', moons: ['Phobos', 'Deimos'] },
+      Jupiter: { greek: 'Zeuss', moons: ['Europa', 'Ganymede', 'Lo'] },
+      Saturn: { greek: 'Kronos', moons: ['Titan', 'Enceladus', 'Mimas'] },
+      Neptune: { greek: 'Poseidon', moons: ['Triton'] }
+    },
+    'more complex objects with arrays will be only contain unique values'
   )
   t.end()
 })
