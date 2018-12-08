@@ -34,7 +34,7 @@
     <div class="title">
         <h1><a href="index.html" class="link">vanillas</a></h1>
         
-            <span class="version">v0.1.14</span>
+            <span class="version">v0.1.15</span>
         
     </div>
     <div class="search-container" id="search-container">
@@ -69,13 +69,7 @@ function intersection(arr1, arr2) {
   const diff = []
   const len1 = arr1.length
   const len2 = arr2.length
-  if (len1 === 0 &amp;&amp; len2 === 0) {
-    return diff
-  } else if (len1 === 0) {
-    return arr2
-  } else if (len2 === 0) {
-    return arr1
-  }
+  if (len1 === 0 || len2 === 0) return diff
 
   for (let i = 0; i &lt; len1; i++) {
     const val = arr1[i]
