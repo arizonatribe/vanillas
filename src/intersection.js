@@ -13,13 +13,7 @@ function intersection(arr1, arr2) {
   const diff = []
   const len1 = arr1.length
   const len2 = arr2.length
-  if (len1 === 0 && len2 === 0) {
-    return diff
-  } else if (len1 === 0) {
-    return arr2
-  } else if (len2 === 0) {
-    return arr1
-  }
+  if (len1 === 0 || len2 === 0) return diff
 
   for (let i = 0; i < len1; i++) {
     const val = arr1[i]

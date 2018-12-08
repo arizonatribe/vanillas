@@ -29,5 +29,10 @@ tape('"intersection" gets the values in common between two arrays', t => {
     ['dustin'],
     'can be curried'
   )
+  t.deepEqual(
+    intersection([], sphere),
+    [],
+    'empty arrays behave as expected'
+  )
   t.end()
 })

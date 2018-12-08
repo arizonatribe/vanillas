@@ -128,13 +128,13 @@ Lodash "flatten" x 9,713,324 ops/sec ±2.22% (93 runs sampled)
 Ramda "flatten" x 402,766 ops/sec ±0.11% (96 runs sampled)
 Fastest is Vanillas "flatten"
 
-Vanillas "intersection" x 5,185,806 ops/sec ±0.16% (95 runs sampled)
-Lodash "intersection" x 2,493,662 ops/sec ±1.22% (95 runs sampled)
-Ramda "intersection" x 498,272 ops/sec ±0.21% (92 runs sampled)
+Vanillas "intersection" x 11,177,894 ops/sec ±0.55% (93 runs sampled)
+Lodash "intersection" x 2,907,770 ops/sec ±1.30% (91 runs sampled)
+Ramda "intersection" x 656,015 ops/sec ±0.37% (95 runs sampled)
 Fastest is Vanillas "intersection"
 
-Vanillas "intersection" (curried) x 4,717,475 ops/sec ±1.06% (96 runs sampled)
-Ramda "intersection" (curried) x 450,717 ops/sec ±0.14% (96 runs sampled)
+Vanillas "intersection" (curried) x 9,836,929 ops/sec ±0.64% (93 runs sampled)
+Ramda "intersection" (curried) x 565,872 ops/sec ±1.08% (94 runs sampled)
 Fastest is Vanillas "intersection" (curried)
 
 Vanillas "invert" x 6,472,978 ops/sec ±1.19% (92 runs sampled)
