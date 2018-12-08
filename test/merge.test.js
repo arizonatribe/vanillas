@@ -97,5 +97,17 @@ tape('"merge" can blend two or more Objects together', t => {
     },
     'more complex objects with arrays will be only contain unique values'
   )
+  t.deepEqual(
+    merge(pantheon, { Mars: { moons: 'none' } }), {
+      Sun: 'Apollo',
+      Mercury: { greek: 'Hermes' },
+      Venus: 'Aphrodite',
+      Mars: { greek: 'Aries', moons: 'none' },
+      Jupiter: { greek: 'Zeuss', moons: ['Europa', 'Ganymede', 'Lo'] },
+      Saturn: { greek: 'Kronos', moons: ['Titan', 'Enceladus', 'Mimas'] },
+      Neptune: { greek: 'Poseidon', moons: ['Triton'] }
+    },
+    'primitive values will overwrite arrays or objects in the original'
+  )
   t.end()
 })
