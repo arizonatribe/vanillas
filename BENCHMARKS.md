@@ -196,14 +196,14 @@ Vanillas "mapString" x 430,642 ops/sec ±0.25% (95 runs sampled)
 (native) "String.split().map().join()" x 302,381 ops/sec ±0.11% (93 runs sampled)
 Fastest is Vanillas "mapString"
 
-Vanillas "merge" x 2,551,436 ops/sec ±1.75% (92 runs sampled)
-Lodash "merge" x 1,218,514 ops/sec ±0.34% (95 runs sampled)
-Ramda "merge" x 896,664 ops/sec ±0.75% (94 runs sampled)
-(native) "Object.assign({}, ..)" x 942,946 ops/sec ±0.41% (95 runs sampled)
+Vanillas "merge" x 2,779,455 ops/sec ±0.49% (94 runs sampled)
+Lodash "merge" x 1,210,338 ops/sec ±1.35% (92 runs sampled)
+Ramda "merge" x 857,470 ops/sec ±0.88% (90 runs sampled)
+(native) "Object.assign({}, ..)" x 909,972 ops/sec ±0.54% (90 runs sampled)
 Fastest is Vanillas "merge"
 
-Vanillas (curried) "merge" x 1,787,310 ops/sec ±0.55% (91 runs sampled)
-Ramda (curried) "merge" x 770,357 ops/sec ±0.77% (94 runs sampled)
+Vanillas (curried) "merge" x 1,895,698 ops/sec ±1.37% (91 runs sampled)
+Ramda (curried) "merge" x 753,140 ops/sec ±0.56% (92 runs sampled)
 Fastest is Vanillas (curried) "merge"
 
 Vanillas "omit" x 4,559,041 ops/sec ±0.27% (95 runs sampled)

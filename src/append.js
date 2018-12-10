@@ -21,6 +21,9 @@ function append(firstVal, secondVal) {
   if ([firstVal, secondVal].every(val => typeof val === 'string' || typeof val === 'number')) {
     return `${firstVal}${secondVal}`
   }
+  if (Array.isArray(firstVal) && Array.isArray(secondVal)) {
+    return [...firstVal, ...secondVal]
+  }
   return merge(firstVal, secondVal)
 }
 

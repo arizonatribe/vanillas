@@ -17,6 +17,9 @@ function prepend(firstVal, secondVal) {
   if ([firstVal, secondVal].every(val => typeof val === 'string' || typeof val === 'number')) {
     return `${secondVal}${firstVal}`
   }
+  if (Array.isArray(firstVal) && Array.isArray(secondVal)) {
+    return [...secondVal, ...firstVal]
+  }
   return merge(secondVal, firstVal)
 }
 

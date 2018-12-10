@@ -109,5 +109,34 @@ tape('"merge" can blend two or more Objects together', t => {
     },
     'primitive values will overwrite arrays or objects in the original'
   )
+  t.deepEqual(
+    merge({
+      Mars: {
+        status: 'orbiting',
+        astronauts: [
+          { name: 'Val Kilmer' },
+          { name: 'Connie Nielsen' },
+          { name: 'Carrie Ann-Moss' }
+        ]
+      }
+    }, {
+      Mars: {
+        status: 'marooned',
+        astronauts: [
+          { name: 'Matt Damon' },
+          { name: 'Don Cheadle' }
+        ]
+      }
+    }), {
+      Mars: {
+        status: 'marooned',
+        astronauts: [
+          { name: 'Matt Damon' },
+          { name: 'Don Cheadle' }
+        ]
+      }
+    },
+    'Arrays don\'t merge together'
+  )
   t.end()
 })

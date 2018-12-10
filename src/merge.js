@@ -1,8 +1,6 @@
-import isNil from './isNil'
-import isPrimitive from './isPrimitive'
-import concat from './concat'
 import forIn from './forIn'
-import uniq from './uniq'
+import isNil from './isNil'
+import isObject from './isObject'
 
 /**
  * Merges the values from 2 or more Objects or Arrays together into a new Object/Array.
@@ -21,10 +19,7 @@ function merge(...vals) {
   if (isNil(vals[0]) || isNil(vals[1])) {
     return !isNil(vals[1]) ? vals[1] : vals[0]
   }
-  if (Array.isArray(vals[0]) && Array.isArray(vals[1])) {
-    return uniq(concat(vals[0], ...vals.slice(1)))
-  }
-  if (isPrimitive(vals[1]) && numOfVals === 2) {
+  if (!isObject(vals[1]) && numOfVals === 2) {
     return vals[1]
   }
   const newObj = { }
