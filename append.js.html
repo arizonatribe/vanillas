@@ -34,7 +34,7 @@
     <div class="title">
         <h1><a href="index.html" class="link">vanillas</a></h1>
         
-            <span class="version">v0.1.17</span>
+            <span class="version">v0.1.18</span>
         
     </div>
     <div class="search-container" id="search-container">
@@ -76,6 +76,9 @@
 function append(firstVal, secondVal) {
   if ([firstVal, secondVal].every(val => typeof val === 'string' || typeof val === 'number')) {
     return `${firstVal}${secondVal}`
+  }
+  if (Array.isArray(firstVal) &amp;&amp; Array.isArray(secondVal)) {
+    return [...firstVal, ...secondVal]
   }
   return merge(firstVal, secondVal)
 }
