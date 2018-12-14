@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Source: converge.js | vanillas</title>
+    <title>Source: toInteger.js | vanillas</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -55,35 +55,26 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Run several Functions (or composed chains of Functions) onto the same input
- * and converges their results as arguments to another Function.
- *
- * A common example might be to take an Object that needs to be transformed in
- * several different ways and then merged into one final Object. In that case
- * you can supply a "merge" (or "assign") Function as the convergence Function,
- * and then pass all your Object transforming Functions as additional arguments.
- * When you're ready to receive the actual input Object it will be forked into
- * all the transform Functions and their results will converge into the
- * merge/assign Function you supplied first.
- *
+ * Converts a given value to an Integer and rounds up or down floating point values appropriately.
+ * If the values is a `Boolean`, then `true` will yield `1` and `false will yield `0`.
+ * If `NaN` then zero will always be returned.
  *
  * @func
- * @sig
- * @param {Function} fn A Function to converge the results (from executing all the others) into
- * @param {Function} ...forkedFunctions Two or more Functions (should be at least two,
- * otherwise you're using the wrong util; use compose instead) that will later receive the same input
- * @returns {Function} A wrapped Function that is ready to receive a value(s) and pass it (in parallel) into the other Functions, converging those results as _arguments_ to the first Function you supplied
+ * @sig String -> Integer
+ * @param {String} str A string which may be numeric
+ * @returns {Number} Either the successfully converted number or zero (if it was NaN)
  */
-function converge(fn, ...forkedFunctions) {
-  function inner(...args) {
-    return fn(
-      ...(Array.isArray(forkedFunctions[0]) ? forkedFunctions[0] : forkedFunctions).map(f => f(...args))
-    )
+function toInteger(str) {
+  if (typeof str === 'boolean') {
+    return str === true ? 1 : 0
   }
-  return inner
+
+  const num = parseFloat(str)
+  // eslint-disable-next-line no-restricted-globals
+  return isNaN(num) ? 0 : Math.round(num)
 }
 
-export default converge
+export default toInteger
 </code></pre>
         </article>
     </section>
