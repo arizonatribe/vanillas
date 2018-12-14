@@ -28,6 +28,7 @@ const distPkg = merge({
 const resolvePath = rel => path.resolve(__dirname, '..', rel)
 const paths = {
   build: resolvePath('build'),
+  README: resolvePath('README.md'),
   faucet: resolvePath('node_modules/.bin/faucet'),
   pkg: resolvePath('build/package.json'),
   babel: resolvePath('node_modules/.bin/babel'),
@@ -38,6 +39,7 @@ const paths = {
 
 fse.emptyDirSync(paths.build)
 fse.writeJsonSync(paths.pkg, distPkg, { spaces: 2 })
+fse.copySync(paths.README, `${paths.build}/README.md`)
 
 const env = clone(process.env)
 
