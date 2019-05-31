@@ -1,4 +1,5 @@
 const babel = require('rollup-plugin-babel')
+const commonjs = require('rollup-plugin-commonjs')
 const nodeResolve = require('rollup-plugin-node-resolve')
 const replace = require('rollup-plugin-replace')
 const {terser} = require('rollup-plugin-terser')
@@ -16,6 +17,7 @@ const config = {
   },
   plugins: [
     nodeResolve({jsnext: true}),
+    commonjs(),
     babel({exclude: 'node_modules/**'}),
     replace({'process.env.NODE_ENV': JSON.stringify(env)})
   ]

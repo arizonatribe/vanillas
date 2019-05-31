@@ -9,6 +9,20 @@ Vanillas "assign" x 2,961,012 ops/sec ±0.31% (94 runs sampled)
 (native) "Object.assign()" x 3,796,142 ops/sec ±2.39% (92 runs sampled)
 Fastest is (native) "Object.assign()"
 
+New'ing up a class (setting prop using bind) x 28,475,990 ops/sec ±0.70% (94 runs sampled)
+New'ing up a class (setting shared prop on instance) x 35,870,924 ops/sec ±0.19% (95 runs sampled)
+New'ing up a class (passing prop via super()) x 86,765,994 ops/sec ±0.06% (99 runs sampled)
+New'ing up a class (ES5 constructor Function) x 82,345,440 ops/sec ±0.17% (93 runs sampled)
+Object composition x 82,442,581 ops/sec ±0.05% (98 runs sampled)
+Fastest is New'ing up a class (passing prop via super())
+
+New'ing up a class (setting prop using bind) x 19,078,805 ops/sec ±0.64% (94 runs sampled)
+New'ing up a class (setting shared prop on instance) x 25,192,029 ops/sec ±0.45% (91 runs sampled)
+New'ing up a class (passing prop via super()) x 43,686,722 ops/sec ±1.99% (93 runs sampled)
+New'ing up a class (ES5 constructor Function) x 33,212,769 ops/sec ±0.97% (94 runs sampled)
+Object composition x 80,438,089 ops/sec ±0.04% (96 runs sampled)
+Fastest is Object composition
+
 Vanillas "clone" x 4,213,619 ops/sec ±0.21% (97 runs sampled)
 Lodash "clone" x 1,343,911 ops/sec ±0.17% (96 runs sampled)
 Ramda "clone" x 692,912 ops/sec ±0.76% (98 runs sampled)
