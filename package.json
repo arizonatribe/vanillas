@@ -26,14 +26,14 @@
     "utilities"
   ],
   "watch": {
-    "docs": "{assets,src}/*"
+    "docs": "src/*"
   },
   "scripts": {
-    "docs": "jsdoc --configure jsdoc.json",
-    "docs:server": "live-server --open=docs --watch=assets,docs --port=5000",
+    "dist": "npm publish build",
+    "docs": "rimraf docs/* && jsdoc --configure jsdoc.json && mv docs/$npm_package_name/$npm_package_version/* docs/ && rimraf docs/$npm_package_name",
+    "docs:server": "live-server --open=docs/ --watch=src,docs --port=5000",
     "start": "npm run test:watch",
-    "prestart:docs": "npm run docs",
-    "start:docs": "concurrently \"npm-watch\" \"npm run docs:server\"",
+    "start:docs": "npm run docs && concurrently \"npm-watch\" \"npm run docs:server\"",
     "test:watch": "nodemon test/index.js",
     "test:coverage": "nyc tape --require=@babel/register test/index.js | tap-nyc",
     "test": "tape --require=@babel/register test/index.js",
@@ -77,6 +77,7 @@
     "nyc": "^14.1.1",
     "ramda": "^0.25.0",
     "redux": "4.0.0",
+    "rimraf": "^3.0.0",
     "rollup": "^1.10.1",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^10.0.0",

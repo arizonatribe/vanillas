@@ -12,9 +12,15 @@
     "include": ["src", "package.json", "README.md"]
   },
   "templates": {
-    "name": "Vanillas",
     "cleverLinks": true,
-    "monospaceLinks": false
+    "monospaceLinks": false,
+    "better-docs": {
+      "name": "Vanillas",
+      "navigation": [{
+        "label": "Github",
+        "href": "https://github.com/arizonatribe/vanillas"
+      }]
+    }
   },
   "opts": {
     "destination": "./docs/",
