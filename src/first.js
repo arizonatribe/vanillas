@@ -1,7 +1,7 @@
 /**
  * Extracts the first value of an array of values.
  *
- * @func
+ * @function
  * @param {Array} arr An array of values from which to extract the first value
  * @returns {*|undefined} The value at the first index of the supplied array
  * (which may be undefined)

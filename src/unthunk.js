@@ -2,7 +2,7 @@
  * Transforms a thunk (of however many levels deep) into a single function that
  * will received all the args at once
  *
- * @func
+ * @function
  * @sig (a -> b -> c) -> ((a, b) -> c)
  * @param {Function} thunk A function that returns a function (which may return
  * a function, and so on)

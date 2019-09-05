@@ -35,6 +35,14 @@ function withoutTheCurlies(name) {
   }
 }
 
+/**
+ * Tests whether or not a given value is object-like
+ *
+ * @function
+ * @sig * -> Boolean
+ * @param {*} val A value that may or may not be object-like
+ * @returns {Boolean} Whether or not the value is object-like
+ */
 function isObjectish(val) {
   return !isNil(val) &&
     isUndefined(val.length) && (

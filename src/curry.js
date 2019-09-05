@@ -8,7 +8,7 @@
  * Note: you cannot set default values for curried function params
  * (again, you _cannot_ set default values for curried function params)
  *
- * @func
+ * @function
  * @sig ((*,*, ...) -> *) -> (* -> * -> ... -> *)
  * @param {Function} fn A Function whose signature needs to changed from
  * requiring all at once to providing them one (or more) at a time.

@@ -3,7 +3,7 @@ import { _includes } from './_internal/_includes'
 /**
  * Compares two lists of Strings/Numbers and returns the values that are in common (intersect) between the two lists
  *
- * @func
+ * @function
  * @sig [Number|String] -> [Number|String] -> [Number|String]
  * @param {String[]|Number[]} arr1 An Array of Strings/Numbers
  * @param {String[]|Number[]} arr2 An Array of Strings/Numbers

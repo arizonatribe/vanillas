@@ -3,7 +3,7 @@
  * If the values is a `Boolean`, then `true` will yield `1` and `false will yield `0`.
  * If `NaN` then zero will always be returned.
  *
- * @func
+ * @function
  * @sig String -> Integer
  * @param {String} str A string which may be numeric
  * @returns {Number} Either the successfully converted number or zero (if it was NaN)

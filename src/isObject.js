@@ -42,7 +42,7 @@ function isAnythingButAnObject(name) {
  * This excludes values that are _technically_ an Object but in practice are not
  * what you _really_ mean when you speak of Objects.
  *
- * @func
+ * @function
  * @sig * -> Boolean
  * @param {*} val A value (of any type)
  * @returns {Boolean} Whether or not the value is an Object

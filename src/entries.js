@@ -1,7 +1,7 @@
 /**
  * Extracts an Array of key/value pairs from an Object.
  *
- * @func
+ * @function
  * @sig {k: v} -> [[k, v], [k, v], ..]
  * @param {Object} obj The input object from which to extract prop keys and values
  * @returns {Array[]} An Array of key/value pairs corresponding to

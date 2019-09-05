@@ -1,7 +1,7 @@
 /**
  * Checks if a given Object contains a specified prop name
  *
- * @func
+ * @function
  * @category Object
  * @sig String -> Object -> Boolean
  * @param {String} key A prop name to look for in the object

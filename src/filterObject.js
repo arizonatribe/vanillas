@@ -3,7 +3,7 @@ import forIn from './forIn'
 /**
  * Applies a filtering function you provide over every value in a given Object.
  *
- * @func
+ * @function
  * @sig (* -> *) -> {k: v} -> {k: v}
  * @param {Function} fn A filtering function that is invoked on every value in the provided Object
  * @param {Object} obj An Object whose values will be filtered

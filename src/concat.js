@@ -3,7 +3,7 @@
  * (ie, it does not mutate the first Array). This operation is recursive, so you
  * can supply as many arrays as you wish.
  *
- * @func
+ * @function
  * @sig [*,...] -> [*,...] => [*,...]
  * @param {Array} firstArr An Array of values (of any type)
  * @param {Array} secondArr An Array of values (of any type)

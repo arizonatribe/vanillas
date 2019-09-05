@@ -5,7 +5,7 @@ import has from './has'
  * and on repeated usage will shortcut invoking the function and return the cached output instead,
  * whenever the same input args are supplied to the function.
  *
- * @func
+ * @function
  * @sig (* -> *) -> * -> *
  * @param {Function} fn A function whose input values (supplied later) will be
  * cached with its output result, so that the invoking the function can be

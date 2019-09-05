@@ -1,7 +1,7 @@
 /**
  * A faster forEach that provides the same API as native.
  *
- * @func
+ * @function
  * @sig ((*, Number, [*,..]) -> undefined) -> [*,..] -> undefined
  * @param {Function} fn A Function to execute for each iteration. It will
  * receive the value, index and full array (respectively) as args

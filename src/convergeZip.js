@@ -6,7 +6,7 @@
  * of the forked functions. They all still converge into one Function, but the
  * forked function just don't receive the same input values.
  *
- * @func
+ * @function
  * @sig
  * @param {Function} fn A Function to converge the results (from executing all the others) into
  * @param {Function} ...forkedFunctions Two or more Functions (should be at least two,

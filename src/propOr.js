@@ -5,7 +5,7 @@ import isUndefined from './isUndefined'
  * Attempts to find a specified key on an Object you provide, and if not found
  * will fall back to an additional value you specify.
  *
- * @func
+ * @function
  * @sig * -> String -> {k: v} -> *
  * @param {*} fallback A value to fall back on if the requested key does not
  * exist on the provided Object

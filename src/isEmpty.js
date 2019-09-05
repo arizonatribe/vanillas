@@ -6,7 +6,7 @@ import isObject from './isObject'
  * zero (or if they are Null or Undefined).
  * Whitespace-only strings are NOT considered empty (use `isBlankString` instead).
  *
- * @func
+ * @function
  * @isg * -> Boolean
  * @param {*} val A value of any type which may be considered empty
  * @returns {Boolean} Whether or not the value is empty

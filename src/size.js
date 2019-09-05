@@ -9,7 +9,7 @@ import isUndefined from './isUndefined'
  *   - String (num of chars)
  *   - Function (num of params)
  *
- * @func
+ * @function
  * @sig Array|String|Object -> Number
  * @param {Object|String|Array|Function} val A value of type Object, String,
  * Array or Function

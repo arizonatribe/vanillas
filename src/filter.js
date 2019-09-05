@@ -10,7 +10,7 @@ import filterObject from './filterObject'
  * Arrays (or Array-like values) will have the filtering function applied to every value in the Array.
  * If the type of your value is none of the above, the value will be returned as-is.
  *
- * @func
+ * @function
  * @sig (* -> *) -> * -> *
  * @param {Function} fn A filtering function that is invoked on the provided value
  * @param {Object|Array|String} val An Object/Array/String whose values/chars will be filtered

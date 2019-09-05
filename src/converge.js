@@ -11,7 +11,7 @@
  * merge/assign Function you supplied first.
  *
  *
- * @func
+ * @function
  * @sig
  * @param {Function} fn A Function to converge the results (from executing all the others) into
  * @param {Function} ...forkedFunctions Two or more Functions (should be at least two,

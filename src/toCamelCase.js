@@ -3,7 +3,7 @@
  * Hyphens and underscores are removed and interpred as the boundaries for new words.
  * The first letter of each new word - not preceded by whitespace - is capitalized.
  *
- * @func
+ * @function
  * @sig String -> String
  * @param {String} str A string which may contain underscores and hyphens and/or may be title-cased.
  * @returns {String} A new string that is without hyphens and underscores

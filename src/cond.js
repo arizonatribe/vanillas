@@ -9,7 +9,7 @@
  * __Note__: if your tranformation is _not_ a function then it will returned
  * as-is in response to a succesfully met condition
  *
- * @func
+ * @function
  * @sig [[* -> Boolean, * -> *], ..] -> * -> *
  * @param {Array} conditionalTransforms An array of arrays (which have two
  * values: the condition function and the transformation function)

@@ -2,7 +2,7 @@
  * Find the index of a single value from an array of values, based on criteria defined in a
  * predicate function.
  *
- * @func
+ * @function
  * @sig (* -> Boolean) -> [*,*,..] -> Number
  * @param {Function} pred A predicate function to apply to the array of values
  * (It should take a val as input and return a Boolean as output).

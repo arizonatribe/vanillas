@@ -7,7 +7,7 @@ import isObject from './isObject'
  * Null and Undefined values are handled gracefully, and if the second value is
  * a primitive it will be returned as-is, instead of trying to merge it onto the first.
  *
- * @func
+ * @function
  * @sig {k: v} -> {k: v} -> ... -> {k: v}
  * @param {Object|Array} val The first value to merge onto (will not get mutated though)
  * @param {Object|Array} val2 A value to merge onto the first

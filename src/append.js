@@ -9,7 +9,7 @@ import merge from './merge'
  * If both values are strings or numbers, a new string will be returned with
  * the second value added onto the first.
  *
- * @func
+ * @function
  * @sig Array|Object|String|Number -> Array|Object|String|Number -> Array|Object|String
  * @param {String|Number|Object|Array} firstVal A value that will have another appended onto
  * @param {String|Number|Object|Array} secondVal A value to append to the first value

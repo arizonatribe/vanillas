@@ -3,7 +3,7 @@
  * Whitespace and underscores are replaces with hyphens,
  * and uppercase letters are interpreted as boundaries for new hyphenated words.
  *
- * @func
+ * @function
  * @sig String -> String
  * @param {String} str A string which may contain uppercase characters
  * @returns {String} A new string that is an lowercase representation of the original string

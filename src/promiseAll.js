@@ -7,7 +7,7 @@
  * rejection will cause the whole endeavor to be terminated.
  * Addtionally you can pass in a flag to force caught errors to be ignored entirely.
  *
- * @func
+ * @function
  * @sig [(() -> Promise)] -> Promise
  * @param {Function[]} requests An array of Functions that return Promises
  * @param {Boolean} ignoreErrors Whether or not to ignore errors entirely

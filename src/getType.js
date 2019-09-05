@@ -6,7 +6,7 @@ import getConstructorName from './_internal/getConstructorName'
  * Gets the type for any value. If available will inspect the constructor name,
  * otherwise will use the typeof
  *
- * @func
+ * @function
  * @sig * -> String
  * @param {*} val A value of any kind
  * @returns {String} The stringified representation of the value's type

@@ -1,7 +1,7 @@
 /**
  * Transforms a string value into one which is title-cased. The first letter of any word is capitalized.
  *
- * @func
+ * @function
  * @sig String -> String
  * @param {String} str A string which may contain uppercase characters
  * @returns {String} A new string that is an lowercase representation of the original string

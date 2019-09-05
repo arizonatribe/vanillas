@@ -4,7 +4,7 @@ import has from './has'
  * A light wrapper around native `for .. in`, but will only iterate over an
  * Object's own properties.
  *
- * @func
+ * @function
  * @sig ({k: v} -> undefined) -> {k: v}
  * @param {Function} fn A function to execute iteratively,
  * which will receive the `key`, `value`, and `object` (respectively)

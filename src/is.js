@@ -13,7 +13,7 @@ import getType from './getType'
  * is(RegExp, /[a-z0-9]/)
  * is(Function, () => null)
  *
- * @func
+ * @function
  * @sig String|Function -> * -> Boolean
  * @param {Function|String} ofType A JavaScript type constructor function
  * (like `Function`, `String`, `RegExp`, `Boolean`, `Array`, `Object`, etc.) or a string

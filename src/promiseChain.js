@@ -3,7 +3,7 @@
  * executes them in sequential order they appear in the Array.
  * The value from the last will be supplied to the next (in case you need it).
  *
- * @func
+ * @function
  * @sig [Promise|(() -> Promise)] -> Promise
  * @param {Promise[]|Function[]} requests An array of Promises (or of Functions
  * that return Promises) which need to be executed in sequential order

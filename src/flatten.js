@@ -3,7 +3,7 @@ import isArrayish from './isArrayish'
 /**
  * Extracts nested arrays (of any depth) from a provided array, placing them onto on single new array.
  *
- * @func
+ * @function
  * @sig [a, b, [c, d], ..] -> [a, b, c, d, ..]
  * @param {Array} arr An array of values that may or may not be nested arrays
  * themselves

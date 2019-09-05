@@ -12,36 +12,16 @@
     "include": ["src", "package.json", "README.md"]
   },
   "templates": {
-    "name": "vanillas",
-    "cleverLinks": false,
-    "monospaceLinks": true,
-    "useLongnameInNav": false,
-    "useCollapsibles": true,
-    "footerText": "Dependency-free, low-level JavaScript function helpers",
-    "logo": {
-      "url": "https://arizonatribe.github.io/vanillas/styles/logo.png",
-      "width": "1px",
-      "height": "1px",
-      "link": "https://github.com/arizonatribe/vanillas"
-    },
-    "default": {
-      "staticFiles": {
-        "include": ["assets/"]
-      }
-    },
-    "css": [
-      "styles/after.css"
-    ],
-    "tabNames": {
-      "api": "API",
-      "tutorials": "Examples"
-    }
+    "name": "Vanillas",
+    "cleverLinks": true,
+    "monospaceLinks": false
   },
   "opts": {
     "destination": "./docs/",
     "encoding": "utf8",
     "private": true,
     "recurse": true,
-    "template": "node_modules/tui-jsdoc-template"
+    "title": "Vanillas",
+    "template": "node_modules/better-docs"
   }
 }

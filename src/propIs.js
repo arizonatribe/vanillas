@@ -5,7 +5,7 @@ import is from './is'
  * Looks for a specified key on an Object you provide and checks to see if its
  * corresponding value is of the type you specifiy.
  *
- * @func
+ * @function
  * @sig String -> String -> {k: v} -> Boolean
  * @param {Function|String} type A JavaScript type constructor function
  * (ie `Boolean`, `RegExp`, `Date`, `Array`, `Object`, `Number`, `String`, etc)

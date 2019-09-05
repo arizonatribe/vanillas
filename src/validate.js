@@ -50,7 +50,7 @@ function _unpackValidator(rawValidators) {
  * an error it will be replaced with a validation function that always returns `false` and a corresponding error message of:
  *   `Validations for "${key}" are broken`
  *
- * @func
+ * @function
  * @sig [[(* -> Boolean), String], ...] -> {k: v} -> {k: v}
  * @example
  * validate(isRequired, val)

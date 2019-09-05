@@ -11,7 +11,7 @@ import mapObject from './mapObject'
  * If the type of your value is none of the above, the value will be returned as-is.
  * Also, this mapping operation does _not_ mutate the original value.
  *
- * @func
+ * @function
  * @sig (* -> *) -> * -> *
  * @param {Function} fn A mapping function that is invoked on the provided value
  * @param {Object|Array|String} val An Object/Array/String whose values/chars will be mapped over

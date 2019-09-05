@@ -10,7 +10,7 @@ import isSameType from './isSameType'
  * Primitive values are checked to see if they are stricly equal
  * (ie triple equals; no type coercion).
  *
- * @func
+ * @function
  * @sig * -> * -> Boolean
  * @param {*} firstVal A value which may be null, undefined, a JavaScript
  * primitive value, an array of values, an array-like value, or an object

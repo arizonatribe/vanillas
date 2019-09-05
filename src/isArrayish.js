@@ -36,7 +36,7 @@ function isArrayLike(name) {
  * - Uint8Array
  * - Int8Array
  *
- * @func
+ * @function
  * @sig * -> Boolean
  * @param val A value to check as being an array
  * @returns {Boolean} Whether the value is an array-like type

@@ -4,7 +4,7 @@ import { _includes } from './_internal/_includes'
 /**
  * Removes specified keys from an object (after cloning the Object).
  *
- * @func
+ * @function
  * @sig String[] -> {k: v} -> {k: v}
  * @param {String[]} keys An array of keys to search for in the Object and
  * exclude from the output

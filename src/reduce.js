@@ -2,7 +2,7 @@
  * A simple wrapper around native Array.prototype.reduce(), for use in a
  * compose/pipe chain of functions.
  *
- * @func
+ * @function
  * @sig Array -> *
  * @param {Function} fn A function to control the reducition of each item in the
  * arram into the single output value

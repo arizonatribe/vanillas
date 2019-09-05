@@ -4,7 +4,7 @@ import forIn from './forIn'
  * Assigns the values from one or more Objects onto another Object.
  * This mutates the original Object.
  *
- * @func
+ * @function
  * @sig {k: v} ... -> {k: v}
  * @param {Object} obj An Object to mutate with the values from one (or more)
  * additionally supplied Objects

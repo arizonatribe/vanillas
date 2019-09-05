@@ -4,7 +4,7 @@ import getType from './getType'
  * Inspects two values to see if they are the same type.
  * The typeof and (if necessary) constructor names are inspected during this check.
  *
- * @func
+ * @function
  * @sig * -> Boolean
  * @param {*} val1 A value (of any type)
  * @param {*} val2 A value (of any type)

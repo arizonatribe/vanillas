@@ -3,7 +3,7 @@
  * and will not throw an error if somethign on the prop path chain you specify doesn't exist.
  * Will always return `undefined` if a prop path cannot be resolved (rather than throwing).
  *
- * @func
+ * @function
  * @sig String -> {k: v} -> *|undefined
  * @param {String|String[]} prop A top-level key OR a deeply nested prop path (which may
  * be represented as an array or as a single dot-delimited string)

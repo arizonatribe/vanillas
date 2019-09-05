@@ -33,6 +33,7 @@ import isObject from './isObject'
  *     name: 'john'
  *   })
  *
+ * @function
  * @param {Object} spec An Object whose keys should correspond to keys in the
  * input Object and whose values are mapping functions that will receive the
  * matching input Object's prop as input

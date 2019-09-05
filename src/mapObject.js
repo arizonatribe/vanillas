@@ -3,7 +3,7 @@ import forIn from './forIn'
 /**
  * Applies a mapping function you provide over every value in a given Object.
  *
- * @func
+ * @function
  * @sig (* -> *) -> {k: v} -> {k: v}
  * @param {Function} fn A mapping function that is invoked on every value in the provided Object
  * @param {Object} obj An Object whose values will be mapped over

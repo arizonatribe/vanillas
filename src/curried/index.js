@@ -26,6 +26,7 @@ import uncurriedPropEquals from '../propEquals'
 import uncurriedPropIs from '../propIs'
 import uncurriedPropOr from '../propOr'
 import uncurriedReduce from '../reduce'
+import uncurriedRenameKeys from '../renameKeys'
 import uncurriedMerge from '../merge'
 import uncurriedValidate from '../validate'
 
@@ -56,5 +57,6 @@ export const propEquals = curry(uncurriedPropEquals)
 export const propIs = curry(uncurriedPropIs)
 export const propOr = curry(uncurriedPropOr)
 export const reduce = curry(uncurriedReduce)
+export const renameKeys = curry(uncurriedRenameKeys)
 export const merge = curry(uncurriedMerge)
 export const validate = curry(uncurriedValidate)

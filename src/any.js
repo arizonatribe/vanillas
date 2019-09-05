@@ -2,7 +2,7 @@
  * Check an Array of items (of any type) to see if any item satisfies a given predicate function.
  * Exits when the first match is found.
  *
- * @func
+ * @function
  * @sig (* -> Boolean) -> Array -> Boolean
  * @param {Function} pred A predicate function to evaluate against each item in
  * a given array

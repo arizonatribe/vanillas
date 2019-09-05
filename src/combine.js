@@ -8,7 +8,7 @@ import isObject from './isObject'
  * true objects are merged (the second value merged on top of the first).
  * In any other case only the first value is returned.
  *
- * @func
+ * @function
  * @sig a -> a -> a
  * @param {*} val1 The base value to be combined with
  * @param {*} val2 The value to combine

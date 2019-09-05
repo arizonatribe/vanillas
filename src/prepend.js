@@ -3,7 +3,7 @@ import merge from './merge'
 /**
  * Merges two values together, placing the characters (or values) from one before those from the other.
  *
- * @func
+ * @function
  * @sig Array|Object|String|Number -> Array|Object|String|Number -> Array|Object|String
  * @param {Array|Object|String|Number} firstVal An Array, Object, String or
  * Number that the will have a new value(s) merged before its own characters/values

@@ -1,7 +1,7 @@
 /**
  * Applies a filtering function you provide over every character in a given string.
  *
- * @func
+ * @function
  * @sig (Char -> Char) -> String -> String
  * @param {Function} fn A filtering function that is invoked on every char in the
  * provided String value

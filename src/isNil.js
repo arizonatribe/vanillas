@@ -1,7 +1,7 @@
 /**
  * Checks to see if a value is null OR undefined
  *
- * @func
+ * @function
  * @sig * -> Boolean
  * @param {*} val A value (of any type)
  * @returns {Boolean} Whether or not the value is null or undefined
