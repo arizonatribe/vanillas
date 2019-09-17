@@ -5,7 +5,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: omit.js</title>
+    <title>JSDoc: toUriEncoded.js</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -63,7 +63,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>omit.js</h1>
+                        <h1>toUriEncoded.js</h1>
                     </header>
                     
                     
@@ -74,29 +74,31 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import forIn from './forIn'
-import { _includes } from './_internal/_includes'
+import isPrimitive from './isPrimitive'
 
 /**
- * Removes specified keys from an object (after cloning the Object).
+ * Transforms an object's key/value pairs into an encoded URI string, delimited by ampersands &amp;
  *
  * @function
- * @sig String[] -> {k: v} -> {k: v}
- * @param {String[]} keys An array of keys to search for in the Object and
- * exclude from the output
- * @param {Object} obj An Object from which to copy and remove keys
- * @returns {Object} A copy of the original Object, but without the specified keys
+ * @sig {k: v} -> String
+ * @param {Object&lt;string, string|boolean|number>} obj An object whose key/value pairs need to be serialized into a single string.
+ * @returns {String} A new string that represents the key/value pairs on the originating object
  */
-function omit(keys, obj) {
-  const newObj = {}
+function toUriEncoded(obj = {}) {
+  let strUri = ''
+
   forIn((key, val) => {
-    if (!_includes(key, keys)) {
-      newObj[key] = val
+    if (isPrimitive(val)) {
+      strUri += `&amp;${key}=${val}`
+    } else if (Array.isArray(val)) {
+      strUri += `&amp;${key}=${val.filter(isPrimitive).join(',')}`
     }
   }, obj)
-  return newObj
+
+  return encodeURI(strUri.slice(1))
 }
 
-export default omit
+export default toUriEncoded
 </code></pre>
         </article>
     </section>
