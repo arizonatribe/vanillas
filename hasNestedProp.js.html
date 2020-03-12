@@ -5,7 +5,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: reduce.js</title>
+    <title>JSDoc: hasNestedProp.js</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -63,7 +63,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>reduce.js</h1>
+                        <h1>hasNestedProp.js</h1>
                     </header>
                     
                     
@@ -73,23 +73,35 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * A simple wrapper around native Array.prototype.reduce(), for use in a
- * compose/pipe chain of functions.
+            <pre class="prettyprint source linenums"><code>import has from './has'
+
+/**
+ * Checks if a given Object contains a (potentially) nested property of a specified path
  *
  * @function
- * @sig Array -> *
- * @param {Function} fn A function to control the reducition of each item in the
- * arram into the single output value
- * @param {*} defaultVal A starting value for the reduction accumulator
- * @param {Array} arr An array of values of any type
- * @returns {*} The original Array somehow reduced to one value
+ * @category Object
+ * @sig String|Array -> Object -> Boolean
+ * @param {Array|String} prop A prop name, a dot-separated prop path, or an array of prop path "pieces" to look for in the object
+ * @param {Object} obj An Object to inspect for a given prop at the specified path
+ * @returns {Boolean} Whether the object contains the specified prop path
  */
-function reduce(fn, defaultVal, arr) {
-  return arr.reduce(fn, defaultVal)
+function hasNestedProp(prop, obj) {
+  const paths = typeof prop === 'string' ? prop.split('.') : prop
+  const len = paths.length
+  if (len === 0) return false
+  let idx = 0
+  let val = obj[paths[idx]]
+  let hasProp = has(paths[idx], obj)
+  while (++idx &lt; len &amp;&amp; hasProp === true) {
+    hasProp = has(paths[idx], val)
+    if (hasProp) {
+      val = val[paths[idx]]
+    }
+  }
+  return hasProp
 }
 
-export default reduce
+export default hasNestedProp
 </code></pre>
         </article>
     </section>
