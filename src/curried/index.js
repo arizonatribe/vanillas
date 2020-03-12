@@ -10,6 +10,7 @@ import uncurriedFilter from '../filter'
 import uncurriedFilterObject from '../filterObject'
 import uncurriedFilterString from '../filterString'
 import uncurriedHas from '../has'
+import uncurriedHasNestedProp from '../hasNestedProp'
 import uncurriedIntersection from '../intersection'
 import uncurriedIsEqual from '../isEqual'
 import uncurriedIsSameType from '../isSameType'
@@ -25,6 +26,7 @@ import uncurriedPropAt from '../propAt'
 import uncurriedPropEquals from '../propEquals'
 import uncurriedPropIs from '../propIs'
 import uncurriedPropOr from '../propOr'
+import uncurriedPropSet from '../propSet'
 import uncurriedReduce from '../reduce'
 import uncurriedRenameKeys from '../renameKeys'
 import uncurriedMerge from '../merge'
@@ -41,6 +43,7 @@ export const filter = curry(uncurriedFilter)
 export const filterObject = curry(uncurriedFilterObject)
 export const filterString = curry(uncurriedFilterString)
 export const has = curry(uncurriedHas)
+export const hasNestedProp = curry(uncurriedHasNestedProp)
 export const intersection = curry(uncurriedIntersection)
 export const isEqual = curry(uncurriedIsEqual)
 export const isSameType = curry(uncurriedIsSameType)
@@ -56,6 +59,7 @@ export const propAt = curry(uncurriedPropAt)
 export const propEquals = curry(uncurriedPropEquals)
 export const propIs = curry(uncurriedPropIs)
 export const propOr = curry(uncurriedPropOr)
+export const propSet = curry(uncurriedPropSet)
 export const reduce = curry(uncurriedReduce)
 export const renameKeys = curry(uncurriedRenameKeys)
 export const merge = curry(uncurriedMerge)
