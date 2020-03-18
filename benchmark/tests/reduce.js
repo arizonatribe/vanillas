@@ -7,6 +7,19 @@ import { hook } from '../../test/__mocks__'
 const val = Object.values(hook)
 const reducer = (obj, v) => ({ ...obj, [v]: v })
 
+const objReducer = (obj, v, k) => {
+  if (!obj[v]) {
+    obj[v] = []
+  }
+  obj[v].push(k)
+  return obj
+}
+const objVal = { a: 1, b: 2, c: 1 }
+
+const objectReduceTests = [
+  ['Vanillas "reduce"', () => reduce(objReducer, {}, objVal)],
+  ['Lodash "reduce"', () => _.reduce(objVal, objReducer, {})]
+]
 const reduceTests = [
   ['Vanillas "reduce"', () => reduce(reducer, {}, val)],
   ['Lodash "reduce"', () => _.reduce(val, reducer, {})],
@@ -18,4 +31,4 @@ const curriedReduceTests = [
   ['Ramda (curried) "reduce"', () => R.reduce(reducer)({})(val)]
 ]
 
-export default { reduceTests, curriedReduceTests }
+export default { reduceTests, objectReduceTests, curriedReduceTests }

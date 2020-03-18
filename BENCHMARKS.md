@@ -263,14 +263,18 @@ Vanillas (curried) "propEquals" x 6,690,540 ops/sec ±0.79% (97 runs sampled)
 Ramda (curried) "pathEq" x 2,159,725 ops/sec ±0.48% (97 runs sampled)
 Fastest is Vanillas (curried) "propEquals"
 
-Vanillas "reduce" x 348,070 ops/sec ±0.07% (99 runs sampled)
-Lodash "reduce" x 338,514 ops/sec ±1.23% (91 runs sampled)
-Ramda "reduce" x 303,677 ops/sec ±0.14% (96 runs sampled)
-(native) "Array.reduce" x 342,071 ops/sec ±0.99% (97 runs sampled)
+Vanillas "reduce" x 314,966 ops/sec ±0.13% (95 runs sampled)
+Lodash "reduce" x 312,844 ops/sec ±0.43% (96 runs sampled)
+Ramda "reduce" x 294,472 ops/sec ±0.88% (94 runs sampled)
+(native) "Array.reduce" x 325,962 ops/sec ±0.25% (98 runs sampled)
+Fastest is (native) "Array.reduce"
+
+Vanillas "reduce" x 2,744,128 ops/sec ±0.40% (95 runs sampled)
+Lodash "reduce" x 2,059,279 ops/sec ±1.49% (93 runs sampled)
 Fastest is Vanillas "reduce"
 
-Vanillas (curried) "reduce" x 328,626 ops/sec ±0.09% (98 runs sampled)
-Ramda (curried) "reduce" x 280,391 ops/sec ±0.93% (97 runs sampled)
+Vanillas (curried) "reduce" x 295,030 ops/sec ±0.16% (98 runs sampled)
+Ramda (curried) "reduce" x 271,807 ops/sec ±0.98% (96 runs sampled)
 Fastest is Vanillas (curried) "reduce"
 
 Vanillas "size" x 77,559,259 ops/sec ±0.24% (93 runs sampled)
