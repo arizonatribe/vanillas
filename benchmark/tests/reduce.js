@@ -17,8 +17,8 @@ const objReducer = (obj, v, k) => {
 const objVal = { a: 1, b: 2, c: 1 }
 
 const objectReduceTests = [
-  ['Vanillas "reduce"', () => reduce(objReducer, {}, objVal)],
-  ['Lodash "reduce"', () => _.reduce(objVal, objReducer, {})]
+  ['Vanillas "reduce (object)"', () => reduce(objReducer, {}, objVal)],
+  ['Lodash "reduce (object)"', () => _.reduce(objVal, objReducer, {})]
 ]
 const reduceTests = [
   ['Vanillas "reduce"', () => reduce(reducer, {}, val)],
