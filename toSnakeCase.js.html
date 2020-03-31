@@ -5,7 +5,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: pipe.js</title>
+    <title>JSDoc: toSnakeCase.js</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -66,7 +66,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>pipe.js</h1>
+                        <h1>toSnakeCase.js</h1>
                     </header>
                     
                     
@@ -76,35 +76,26 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import areAllFunctions from './_internal/areAllFunctions'
-import identity from './identity'
-
-/**
- * Creates a chain of Functions that will be executed in sequnce (from left to
- * right), with the value from the previous Function fed into the next Function.
- * The value that the chain of functions will executed on can be provided later.
+            <pre class="prettyprint source linenums"><code>/**
+ * Transforms a string value into one which is separated by underscores.
+ * Whitespace and hyphens are replaced with underscores,
+ * and uppercase letters are interpreted as boundaries for new underscore-separated words.
  *
  * @function
- * @sig Function,...Function -> *
- * @param {Function} ...fns One or more function to execute (in sequential
- * order) on a value that will be supplied later
- * @returns {Function} A single Function that is ready to receive a value and
- * pass it through the piped chain of Functions
+ * @sig String -> String
+ * @param {String} str A string which may contain uppercase characters or hyphens
+ * @returns {String} A new string that is an lowercase representation of the original string
  */
-function pipe(...fns) {
-  const fnlen = fns.length
-  if (fnlen === 0 || !areAllFunctions(fns)) return identity
-  function inner(...args) {
-    let result = fns[0](...args)
-    for (let i = 1; i &lt; fnlen; i++) {
-      result = fns[i](result)
-    }
-    return result
-  }
-  return inner
+function toSnakeCase(str) {
+  return str
+    .replace(/(\S)(\s+)(\S)/g, '$1_$3')
+    .replace(/([a-z0-9])(?=[A-Z])/g, '$1_')
+    .replace(/-/g, '_')
+    .replace(/__/g, '_')
+    .toLowerCase()
 }
 
-export default pipe
+export default toSnakeCase
 </code></pre>
         </article>
     </section>
