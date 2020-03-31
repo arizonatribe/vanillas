@@ -1,12 +1,12 @@
 /**
  * Transforms a string value into one which is hyphenated.
- * Whitespace and underscores are replaces with hyphens,
+ * Whitespace and underscores are replaced with hyphens,
  * and uppercase letters are interpreted as boundaries for new hyphenated words.
  *
  * @function
  * @sig String -> String
  * @param {String} str A string which may contain uppercase characters
- * @returns {String} A new string that is an lowercase representation of the original string
+ * @returns {String} A new string that is a hyphenated representation of the original string
  */
 function toKebabCase(str) {
   return str
