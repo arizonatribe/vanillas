@@ -2,6 +2,7 @@ import tape from 'tape'
 import isArrayish from '../src/isArrayish'
 import is from '../src/is'
 import isEmpty from '../src/isEmpty'
+import isPromise from '../src/isPromise'
 import isEqual from '../src/isEqual'
 import isObject from '../src/isObject'
 import isObjectish from '../src/isObjectish'
@@ -139,6 +140,21 @@ tape('"isEmpty" checks a value to see if it is empty (null, undefined, or empty 
   t.equal(isEmpty(new Float64Array()), true, 'Float64Arrays can be checked')
   t.equal(isEmpty(new Map()), true, 'Maps can be checked')
   t.equal(isEmpty(new Set()), true, 'Sets can be checked')
+  t.end()
+})
+
+tape('"isPromise" checks a value to see if it is a promise (a deferred object/function with a .then method)', t => {
+  t.equal(isPromise(), false, 'undefined is not a promise')
+  t.equal(isPromise(null), false, 'null is not a promise')
+  t.equal(isPromise(''), false, 'empty strings are not a promise')
+  t.equal(isPromise(0), false, 'numbers are not a promise')
+  t.equal(isPromise({}), false, 'empty objects are not promises')
+  t.equal(isPromise([]), false, 'empty arrays are not a promise')
+  t.equal(isPromise({finally() { }, catch() { }}), false, 'object with some of the methods expected on tha promise (but not the important one)')
+  t.equal(isPromise({ then() { return true } }), true, 'an object with a .then method is enough')
+  t.equal(isPromise({ then: 'return true' }), false, 'an object with a .then prop (which is not a method) is not a promise')
+  const promise = new Promise(resolve => { resolve() })
+  t.equal(isPromise(promise), true, 'a promise is a promise')
   t.end()
 })
 
