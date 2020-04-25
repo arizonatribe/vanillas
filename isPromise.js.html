@@ -5,7 +5,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: first.js</title>
+    <title>JSDoc: isPromise.js</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -66,7 +66,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>first.js</h1>
+                        <h1>isPromise.js</h1>
                     </header>
                     
                     
@@ -76,19 +76,21 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Extracts the first value of an array of values.
+            <pre class="prettyprint source linenums"><code>import isObject from './isObject'
+
+/**
+ * Checks if a value is a JavaScript Promise. This just means a deferred object/function with a method named `then`.
  *
  * @function
- * @param {Array} arr An array of values from which to extract the first value
- * @returns {*|undefined} The value at the first index of the supplied array
- * (which may be undefined)
+ * @isg * -> Boolean
+ * @param {*} val A value of any type which may be a promise
+ * @returns {Boolean} Whether or not the value is a promise
  */
-function first(val) {
-  return (val || [])[0]
+function isPromise(val) {
+  return (typeof val === 'function' || isObject(val)) &amp;&amp; typeof val.then === 'function'
 }
 
-export default first
+export default isPromise
 </code></pre>
         </article>
     </section>
