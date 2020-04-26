@@ -180,6 +180,10 @@ Vanillas "isObject" x 15,465,431 ops/sec ±0.57% (96 runs sampled)
 Lodash "isPlainObject" x 2,632,993 ops/sec ±0.12% (98 runs sampled)
 Fastest is Vanillas "isObject"
 
+Vanillas "isPromise" x 119,001,434 ops/sec ±0.71% (93 runs sampled)
+is-promise "isPromise" x 114,679,247 ops/sec ±1.13% (92 runs sampled)
+Fastest is Vanillas "isPromise"
+
 Vanillas "map" x 5,302,718 ops/sec ±2.49% (90 runs sampled)
 Lodash "map" x 4,282,006 ops/sec ±0.17% (98 runs sampled)
 Ramda "map" x 2,315,701 ops/sec ±1.68% (94 runs sampled)
