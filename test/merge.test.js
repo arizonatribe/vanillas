@@ -75,6 +75,16 @@ tape('"merge" can blend two or more Objects together', t => {
     'merge can blend three (or more) objects'
   )
   t.deepEqual(
+    merge(jurrassicPark, { Knight: 'roundtable', Nil: null }), {
+      Jackson: 'samuel',
+      Neill: 'sam',
+      Knight: 'roundtable',
+      Goldblum: 'jeff',
+      Nil: null
+    },
+    'respects null values as props'
+  )
+  t.deepEqual(
     merge({}, {
       NODE_ENV: 'development',
       SOME_API: 'http://localhost',

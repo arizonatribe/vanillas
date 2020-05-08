@@ -1,6 +1,4 @@
 import forIn from './forIn'
-import isNil from './isNil'
-import isObject from './isObject'
 
 /**
  * Merges the values from 2 or more Objects or Arrays together into a new Object/Array.
@@ -16,10 +14,12 @@ import isObject from './isObject'
  */
 function merge(...vals) {
   const numOfVals = vals.length
-  if (isNil(vals[0]) || isNil(vals[1])) {
-    return !isNil(vals[1]) ? vals[1] : vals[0]
+  if (vals[0] === undefined || vals[1] === undefined) {
+    return vals[1] !== undefined ? vals[1] : vals[0]
   }
-  if (!isObject(vals[1]) && numOfVals === 2) {
+  if (numOfVals === 2
+    && (typeof vals[1] !== 'object' || !vals[1] || vals[1].constructor.name !== 'Object')
+  ) {
     return vals[1]
   }
   const newObj = { }

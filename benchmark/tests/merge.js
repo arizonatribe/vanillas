@@ -8,7 +8,7 @@ const mergeTests = [
   ['Vanillas "merge"', () => merge(hook, sphere)],
   // Three arguments supplied here is because Lodash cheats: they mutate the first object
   ['Lodash "merge"', () => _.merge({}, hook, sphere)],
-  ['Ramda "merge"', () => R.merge(hook, sphere)],
+  ['Ramda "merge"', () => R.mergeDeepLeft(hook, sphere)],
   ['(native) "Object.assign({}, ..)"', () => Object.assign({}, hook, sphere)]
 ]
 const curriedMergeTests = [
