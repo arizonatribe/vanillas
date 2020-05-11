@@ -5,7 +5,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: toSnakeCase.js</title>
+    <title>JSDoc: mapObjectRecursive.js</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -66,7 +66,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>toSnakeCase.js</h1>
+                        <h1>mapObjectRecursive.js</h1>
                     </header>
                     
                     
@@ -76,26 +76,32 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * Transforms a string value into one which is separated by underscores.
- * Whitespace and hyphens are replaced with underscores,
- * and uppercase letters are interpreted as boundaries for new underscore-separated words.
+            <pre class="prettyprint source linenums"><code>import forIn from './forIn'
+import isObject from './isObject'
+
+/**
+ * Applies a mapping function you provide over every value in a given Object (recursively).
  *
  * @function
- * @sig String -> String
- * @param {String} str A string which may contain uppercase characters or hyphens
- * @returns {String} A new string that is an lowercase representation of the original string
+ * @sig (* -> *) -> {k: v} -> {k: v}
+ * @param {Function} fn A mapping function that is invoked on every value in the provided Object
+ * @param {Object} obj An Object whose values will be mapped over (recursively)
+ * @returns {Object} A new Object that is the result of the mapping operation over all the values in the original Object
  */
-function toSnakeCase(str) {
-  return str
-    .replace(/(\S)(\s+)(\S)/g, '$1_$3')
-    .replace(/([a-z0-9])(?=[A-Z])/g, '$1_')
-    .replace(/-/g, '_')
-    .replace(/__/g, '_')
-    .toLowerCase()
+function mapObjectRecursive(fn, obj) {
+  const newObj = {}
+  forIn((key, val, ob) => {
+    /* Looks redundant, but is written this way for speed */
+    if (typeof val === 'object' &amp;&amp; (val.constructor.name === 'Object' || isObject(val))) {
+      newObj[key] = mapObjectRecursive(fn, val)
+    } else {
+      newObj[key] = fn(val, key, ob)
+    }
+  }, obj)
+  return newObj
 }
 
-export default toSnakeCase
+export default mapObjectRecursive
 </code></pre>
         </article>
     </section>
