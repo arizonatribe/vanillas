@@ -14,7 +14,7 @@ function mapObjectRecursive(fn, obj) {
   const newObj = {}
   forIn((key, val, ob) => {
     /* Looks redundant, but is written this way for speed */
-    if (typeof val === 'object' && ((val.constructor && val.constructor.name === 'Object') || isObject(val))) {
+    if (typeof val === 'object' && val != null && ((val.constructor && val.constructor.name === 'Object') || isObject(val))) {
       newObj[key] = mapObjectRecursive(fn, val)
     } else {
       newObj[key] = fn(val, key, ob)
