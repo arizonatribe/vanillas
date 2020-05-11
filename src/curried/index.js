@@ -16,6 +16,7 @@ import uncurriedIsEqual from '../isEqual'
 import uncurriedIsSameType from '../isSameType'
 import uncurriedIsStrictEqual from '../isStrictEqual'
 import uncurriedMap from '../map'
+import uncurriedMapObjectRecursive from '../mapObjectRecursive'
 import uncurriedMapObject from '../mapObject'
 import uncurriedMapSpec from '../mapSpec'
 import uncurriedMapString from '../mapString'
@@ -50,6 +51,7 @@ export const isSameType = curry(uncurriedIsSameType)
 export const isStrictEqual = curry(uncurriedIsStrictEqual)
 export const map = curry(uncurriedMap)
 export const mapObject = curry(uncurriedMapObject)
+export const mapObjectRecursive = curry(uncurriedMapObjectRecursive)
 export const mapString = curry(uncurriedMapString)
 export const mapSpec = curry(uncurriedMapSpec)
 export const omit = curry(uncurriedOmit)

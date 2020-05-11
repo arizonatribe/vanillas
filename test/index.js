@@ -1,5 +1,6 @@
 import './is.test'
 import './map.test'
+import './mapObjectRecursive.test'
 import './mapSpec.test'
 import './merge.test'
 import './clone.test'
