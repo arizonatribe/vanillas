@@ -5,7 +5,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: invert.js</title>
+    <title>JSDoc: curryN.js</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -66,7 +66,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>invert.js</h1>
+                        <h1>curryN.js</h1>
                     </header>
                     
                     
@@ -76,25 +76,60 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import forIn from './forIn'
-
-/**
- * Swaps the values for keys in a given object. So the values in that object should be the kind that _can_ be converted to unique string values
+            <pre class="prettyprint source linenums"><code>/**
+ * Same as the regular curry function, but you must also specify the number of arguments that the curried function will take before being fully executed.
+ * You would use this in cases where it cannot be inferred from the curried function itself.
  *
  * @function
- * @sig {k: v} -> {v: k}
- * @param {Object&lt;string, string|number>} obj An object whose values _can_ be swapped for keys
- * @returns {Object&lt;string, string>} A new object whose keys were the values from the original object
+ * @sig Number -> ((*,*, ...) -> *) -> (* -> * -> ... -> *)
+ * @throws {TypeError} if arity is not supplied or is not a positive number
+ * @param {Number} arity The number of arguments the curried function will received before being executed
+ * @param {Function} fn A Function whose signature needs to changed from
+ * requiring all at once to providing them one (or more) at a time.
+ * @returns {Function} A new Function that will wait until all (arity) arguments have
+ * been supplied before returning a result (otherwise it will continue to return a new
+ * Function that is ready to receive the next argument)
  */
-function flipKeyValues(obj) {
-  const newObj = {}
-  forIn((key, val) => {
-    newObj[String(val)] = key
-  }, obj)
-  return newObj
+function curryN(arity, fn) {
+  if (typeof arity !== 'number' || Number.isNaN(arity) || arity &lt;= 0) {
+    throw new TypeError('The number of arguments (arity) was not specified in `curryN`. An integer greater than or equal to 1 must be supplied.')
+  }
+
+  const fnlen = arity
+  return function manyArgCurry(...args) {
+    const arglen = args.length
+    if (arglen === fnlen) {
+      return fn(...args)
+    }
+
+    return function inner(...innerArgs) {
+      const innerlen = innerArgs.length
+
+      let limit = fnlen
+      const allArgs = []
+
+      let argCount = 0
+      while (argCount &lt; arglen) {
+        allArgs.push(args[argCount])
+        argCount++
+        limit--
+      }
+
+      let innerArgCount = 0
+      while (innerArgCount &lt; innerlen) {
+        allArgs.push(innerArgs[innerArgCount])
+        innerArgCount++
+        limit--
+      }
+
+      return limit > 0
+        ? manyArgCurry(...allArgs)
+        : fn(...allArgs)
+    }
+  }
 }
 
-export default flipKeyValues
+export default curryN
 </code></pre>
         </article>
     </section>
