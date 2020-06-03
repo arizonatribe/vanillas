@@ -13,8 +13,10 @@
  * Function that is ready to receive the next argument)
  */
 function curryN(arity, fn) {
-  if (typeof arity !== 'number' || Number.isNaN(arity) || arity <= 0) {
-    throw new TypeError('The number of arguments (arity) was not specified in `curryN`. An integer greater than or equal to 1 must be supplied.')
+  if (typeof arity !== 'number' || Number.isNaN(arity) || arity < 0) {
+    throw new TypeError(`The number of arguments (arity) was not specified in 'curryN', got ${
+      arity
+    } instead. An integer greater than or equal to 0 must be supplied.`)
   }
 
   const fnlen = arity
