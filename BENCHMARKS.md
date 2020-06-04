@@ -234,11 +234,10 @@ Vanillas (curried) "omit" x 4,052,955 ops/sec ±0.31% (92 runs sampled)
 Ramda (curried) "omit" x 2,022,546 ops/sec ±0.17% (93 runs sampled)
 Fastest is Vanillas (curried) "omit"
 
-Vanillas "pick" x 8,724,502 ops/sec ±1.21% (91 runs sampled)
-Lodash "pick" x 957,307 ops/sec ±0.22% (94 runs sampled)
-Ramda "pick" x 5,531,552 ops/sec ±1.09% (96 runs sampled)
-(native) "Array.prototype.reduce" x 465,851 ops/sec ±0.13% (95 runs sampled)
-Fastest is Vanillas "pick"
+Vanillas "pick" x 10,353,509 ops/sec ±0.46% (91 runs sampled)
+Lodash "pick" x 1,132,053 ops/sec ±1.32% (93 runs sampled)
+Ramda "pick" x 9,913,334 ops/sec ±0.56% (93 runs sampled)
+(native) "Array.prototype.reduce" x 553,590 ops/sec ±0.86% (88 runs sampled)
 
 Vanillas (curried) "pick" x 6,778,471 ops/sec ±1.08% (96 runs sampled)
 Ramda (curried) "pick" x 2,531,976 ops/sec ±0.29% (95 runs sampled)

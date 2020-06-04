@@ -8,5 +8,10 @@ tape('"pick" removes specified props from an object', t => {
     {lorem: 'ipsum', dolor: 'sit amet'}
   )
   t.deepEqual(pick([], {lorem: 'ipsum'}), {}, 'handles no props gracefully')
+  t.deepEqual(
+    pick(['lorem', 'sit'], {lorem: 'ipsum', dolor: 'sit amet', consectetur: 'adipiscing elit'}),
+    {lorem: 'ipsum'},
+    'Won\'t pick props that aren\'t on the object already'
+  )
   t.end()
 })
