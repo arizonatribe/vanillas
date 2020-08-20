@@ -19,6 +19,7 @@
     <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
     <link type="text/css" rel="stylesheet" href="styles/app.min.css">
     <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+    
 </head>
 
 <body>
@@ -28,7 +29,7 @@
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                     
-                     
+                    
                         <h1 class="navbar-item">Vanillas</h1>
                     
                     <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -37,7 +38,7 @@
                         <span aria-hidden="true"></span>
                     </a>
                 </div>
-                 
+                
                 <div class="navbar-menu">
                     <div class="navbar-end">
                     
@@ -68,7 +69,7 @@
                         <p>Source</p>
                         <h1>mapSpec.js</h1>
                     </header>
-                    
+
                     
 
 
@@ -76,30 +77,24 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import has from './has'
-import forIn from './forIn'
-import isObject from './isObject'
+            <pre class="prettyprint source linenums"><code>import has from "./has"
+import forIn from "./forIn"
+import isObject from "./isObject"
 
 /**
  * Applies one or more mapping functions to the value in a given Object.
- * But rather than applying the same mapping function to every value in an
- * Object, instead you use a "spec" object to link the appropriate mapping
- * function to the key/val in the input Object.
+ * But rather than applying the same mapping function to every value in an Object, instead you use a "spec" object to link the appropriate mapping function to the key/val in the input Object.
  *
- * This is similar to Ramda's `evolve()` however you can also set values
- * in your spec that are _not_ functions
- * (which will just override whatever matching key there might be on the input object).
- * Addtionally, it supplies the key and the object as the 2nd and third
- * params to your spec's transformation function, so that you can create props
- * based on the entire input Object (with Ramda you'll need to also use
- * `applySpec()` and in a separate operation to derived these kinds of values).
+ * This is similar to Ramda's `evolve()` however you can also set values in your spec that are _not_ functions (which will just override whatever matching key there might be on the input object).
+ * Addtionally, it supplies the key and the object as the 2nd and third params to your spec's transformation function, so that you can create props based on the entire input Object (with Ramda you'll need to also use `applySpec()` and in a separate operation to derived these kinds of values).
  *
- * As an example, If you want a mapping function to be applied to a prop called "name",
- * then you would first pass in a spec object with a prop on it called "name"
- * and the value would be the mapping function.
- * Then the actual input object (with the desciption field) will have the matching mapping
- * function from your spec applied to it directly.
+ * As an example, If you want a mapping function to be applied to a prop called "name", then you would first pass in a spec object with a prop on it called "name" and the value would be the mapping function.
+ * Then the actual input object (with the desciption field) will have the matching mapping function from your spec applied to it directly.
  *
+ * @function
+ * @param {Object&lt;string, any>} spec An Object whose keys should correspond to keys in the input Object and whose values are mapping functions that will receive the matching input Object's prop as input
+ * @param {Object&lt;string, any>} inputObj The actual input to map over and transform
+ * @returns {Object&lt;string, any>} A new Object with all the mapping functions from the spec Object applied to the corresponding values in the input Object (if they exist)
  * @example
  *   mapSpec({
  *     age: Number,
@@ -110,19 +105,11 @@ import isObject from './isObject'
  *     isAlive: 1,
  *     name: 'john'
  *   })
- *
- * @function
- * @param {Object} spec An Object whose keys should correspond to keys in the
- * input Object and whose values are mapping functions that will receive the
- * matching input Object's prop as input
- * @param {Object} inputObj The actual input to map over and transform
- * @returns {Object} A new Object with all the mapping functions from the spec
- * Object applied to the corresponding values in the input Object (if they exist)
  */
 function mapSpec(spec, obj) {
   const newObj = {}
   forIn((key, val, ob) => {
-    if (typeof spec[key] === 'function') {
+    if (typeof spec[key] === "function") {
       newObj[key] = spec[key](val, key, ob)
     } else if (isObject(spec[key])) {
       newObj[key] = mapSpec(spec[key], val)
@@ -131,7 +118,7 @@ function mapSpec(spec, obj) {
     }
   }, obj)
   forIn((key, val) => {
-    if (typeof val !== 'function') {
+    if (typeof val !== "function") {
       newObj[key] = val
     } else if (!has(key, newObj)) {
       newObj[key] = val(undefined, key, newObj)
@@ -156,9 +143,9 @@ export default mapSpec
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Thu Jun 04 2020 01:41:01 GMT+0000 (UTC)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a> on Thu Aug 20 2020 22:36:19 GMT+0000 (Coordinated Universal Time)</p>
         <p class="sidebar-created-by">
-            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
         </p>
     </div>
@@ -166,6 +153,7 @@ export default mapSpec
 
 
 <script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
 <script src="scripts/linenumber.js"> </script>
 </body>
 </html>

@@ -17,6 +17,7 @@
     <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
     <link type="text/css" rel="stylesheet" href="styles/app.min.css">
     <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+    
 </head>
 
 <body>
@@ -26,7 +27,7 @@
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                     
-                     
+                    
                         <h1 class="navbar-item">Vanillas</h1>
                     
                     <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -35,7 +36,7 @@
                         <span aria-hidden="true"></span>
                     </a>
                 </div>
-                 
+                
                 <div class="navbar-menu">
                     <div class="navbar-end">
                     
@@ -66,7 +67,7 @@
                         <p>Title</p>
                         <h1>Global</h1>
                     </header>
-                    
+
                     
 
 
@@ -220,8 +221,7 @@ Exits when the first match is found.</p>
 
   
 
-  <td class="description last"><p>A predicate function to evaluate against each item in
-a given array</p></td>
+  <td class="description last"><p>A predicate function to evaluate against each item in a given array</p></td>
 </tr>
 
 
@@ -236,7 +236,7 @@ a given array</p></td>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -293,7 +293,7 @@ a given array</p></td>
         <p class="tag-source">
             <a href="any.js.html" class="button">View Source</a>
             <span>
-                <a href="any.js.html">any.js</a>, <a href="any.js.html#line13">line 13</a>
+                <a href="any.js.html">any.js</a>, <a href="any.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -324,8 +324,7 @@ a given array</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>Whether or not any items in the array matched the
-predicate function</p></div>
+    <div class='param-desc column is-7'><p>Whether or not any items in the array matched the predicate function</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -356,7 +355,7 @@ predicate function</p></div>
         
         <span class="code-name">
             
-                append<span class="signature">(firstVal, secondVal)</span><span class="type-signature"> &rarr; {Array|Object|String}</span>
+                append<span class="signature">(firstVal, secondVal)</span><span class="type-signature"> &rarr; {Array.&lt;*>|Object.&lt;string, <a href="global.html#any">any</a>>|String}</span>
             
         </span>
     </h4>
@@ -366,12 +365,9 @@ predicate function</p></div>
     
     <div class="description">
         <p>Blends two values together based on their type.
-If both are objects this would result in a new object
-with the second value's props merged onto the first's.
-If the first value is an array, this would result in a new array with
-the second value concatenated onto the first value.
-If both values are strings or numbers, a new string will be returned with
-the second value added onto the first.</p>
+If both are objects this would result in a new object with the second value's props merged onto the first's.
+If the first value is an array, this would result in a new array with the second value concatenated onto the first value.
+If both values are strings or numbers, a new string will be returned with the second value added onto the first.</p>
     </div>
     
 
@@ -421,10 +417,10 @@ the second value added onto the first.</p>
 <span class="param-type">Number</span>
 |
 
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -455,10 +451,10 @@ the second value added onto the first.</p>
 <span class="param-type">Number</span>
 |
 
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -515,7 +511,7 @@ the second value added onto the first.</p>
         <p class="tag-source">
             <a href="append.js.html" class="button">View Source</a>
             <span>
-                <a href="append.js.html">append.js</a>, <a href="append.js.html#line20">line 20</a>
+                <a href="append.js.html">append.js</a>, <a href="append.js.html#line14">line 14</a>
             </span>
         </p>
     
@@ -546,18 +542,16 @@ the second value added onto the first.</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new Array, Object, or String that has the
-characters/values from the second provided value merged <em>after</em> those from
-the first provided value</p></div>
+    <div class='param-desc column is-7'><p>A new Array, Object, or String that has the characters/values from the second provided value merged <em>after</em> those from the first provided value</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 |
 
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
 <span class="param-type">String</span>
@@ -585,7 +579,7 @@ the first provided value</p></div>
         
         <span class="code-name">
             
-                assign<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Object}</span>
+                assign<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>}</span>
             
         </span>
     </h4>
@@ -639,7 +633,7 @@ This mutates the original Object.</p>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -649,8 +643,7 @@ This mutates the original Object.</p>
 
   
 
-  <td class="description last"><p>An Object to mutate with the values from one (or more)
-additionally supplied Objects</p></td>
+  <td class="description last"><p>An Object to mutate with the values from one (or more) additionally supplied Objects</p></td>
 </tr>
 
 
@@ -665,7 +658,7 @@ additionally supplied Objects</p></td>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -675,8 +668,7 @@ additionally supplied Objects</p></td>
 
   
 
-  <td class="description last"><p>One or more Objects to extract from and assign
-onto the first Object</p></td>
+  <td class="description last"><p>One or more Objects to extract from and assign onto the first Object</p></td>
 </tr>
 
 
@@ -723,7 +715,7 @@ onto the first Object</p></td>
         <p class="tag-source">
             <a href="assign.js.html" class="button">View Source</a>
             <span>
-                <a href="assign.js.html">assign.js</a>, <a href="assign.js.html#line15">line 15</a>
+                <a href="assign.js.html">assign.js</a>, <a href="assign.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -760,7 +752,7 @@ onto the first Object</p></td>
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
     </div>
@@ -785,7 +777,7 @@ onto the first Object</p></td>
         
         <span class="code-name">
             
-                clone<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Object|Array}</span>
+                clone<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>|Array.&lt;*>}</span>
             
         </span>
     </h4>
@@ -838,10 +830,10 @@ onto the first Object</p></td>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -898,7 +890,7 @@ onto the first Object</p></td>
         <p class="tag-source">
             <a href="clone.js.html" class="button">View Source</a>
             <span>
-                <a href="clone.js.html">clone.js</a>, <a href="clone.js.html#line13">line 13</a>
+                <a href="clone.js.html">clone.js</a>, <a href="clone.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -935,10 +927,10 @@ onto the first Object</p></td>
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
     </div>
@@ -973,8 +965,7 @@ onto the first Object</p></td>
     
     <div class="description">
         <p>Combines two values of the same type (if it makes sense to combine them).
-Numbers are summarized, strings and arrays are concatenated together, and
-true objects are merged (the second value merged on top of the first).
+Numbers are summarized, strings and arrays are concatenated together, and true objects are merged (the second value merged on top of the first).
 In any other case only the first value is returned.</p>
     </div>
     
@@ -1101,7 +1092,7 @@ In any other case only the first value is returned.</p>
         <p class="tag-source">
             <a href="combine.js.html" class="button">View Source</a>
             <span>
-                <a href="combine.js.html">combine.js</a>, <a href="combine.js.html#line18">line 18</a>
+                <a href="combine.js.html">combine.js</a>, <a href="combine.js.html#line15">line 15</a>
             </span>
         </p>
     
@@ -1132,8 +1123,7 @@ In any other case only the first value is returned.</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>If the values are of the same type, this represents the combined
-value of the two of them. Otherwise only the first value is returned</p></div>
+    <div class='param-desc column is-7'><p>If the values are of the same type, this represents the combined value of the two of them. Otherwise only the first value is returned</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -1173,8 +1163,7 @@ value of the two of them. Otherwise only the first value is returned</p></div>
     
     
     <div class="description">
-        <p>Creates a chain of Functions that will be executed in sequnce (from right to
-left), with the value from the previous Function fed into the next Function.
+        <p>Creates a chain of Functions that will be executed in sequnce (from right to left), with the value from the previous Function fed into the next Function.
 The value that the chain of functions will executed on can be provided later.</p>
     </div>
     
@@ -1229,8 +1218,7 @@ The value that the chain of functions will executed on can be provided later.</p
 
   
 
-  <td class="description last"><p>One or more function to execute (in sequential
-order) on a value that will be supplied later</p></td>
+  <td class="description last"><p>One or more function to execute (in sequential order) on a value that will be supplied later</p></td>
 </tr>
 
 
@@ -1277,7 +1265,7 @@ order) on a value that will be supplied later</p></td>
         <p class="tag-source">
             <a href="compose.js.html" class="button">View Source</a>
             <span>
-                <a href="compose.js.html">compose.js</a>, <a href="compose.js.html#line16">line 16</a>
+                <a href="compose.js.html">compose.js</a>, <a href="compose.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -1308,8 +1296,7 @@ order) on a value that will be supplied later</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A single Function that is ready to receive a value and
-pass it through the composed chain of Functions</p></div>
+    <div class='param-desc column is-7'><p>A single Function that is ready to receive a value and pass it through the composed chain of Functions</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -1340,7 +1327,7 @@ pass it through the composed chain of Functions</p></div>
         
         <span class="code-name">
             
-                concat<span class="signature">(firstArr, secondArr)</span><span class="type-signature"> &rarr; {Array}</span>
+                concat<span class="signature">(firstArr, secondArr)</span><span class="type-signature"> &rarr; {Array.&lt;*>}</span>
             
         </span>
     </h4>
@@ -1349,9 +1336,8 @@ pass it through the composed chain of Functions</p></div>
     
     
     <div class="description">
-        <p>Adds the values from one Array onto another Array, returned as a new Array
-(ie, it does not mutate the first Array). This operation is recursive, so you
-can supply as many arrays as you wish.</p>
+        <p>Adds the values from one Array onto another Array, returned as a new Array (ie, it does not mutate the first Array).
+This operation is recursive, so you can supply as many arrays as you wish.</p>
     </div>
     
 
@@ -1395,7 +1381,7 @@ can supply as many arrays as you wish.</p>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -1420,7 +1406,7 @@ can supply as many arrays as you wish.</p>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -1477,7 +1463,7 @@ can supply as many arrays as you wish.</p>
         <p class="tag-source">
             <a href="concat.js.html" class="button">View Source</a>
             <span>
-                <a href="concat.js.html">concat.js</a>, <a href="concat.js.html#line13">line 13</a>
+                <a href="concat.js.html">concat.js</a>, <a href="concat.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -1508,14 +1494,13 @@ can supply as many arrays as you wish.</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new Array with the values from the second array
-concatenated onto those from the first</p></div>
+    <div class='param-desc column is-7'><p>A new Array with the values from the second array concatenated onto those from the first</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
     </div>
@@ -1549,15 +1534,13 @@ concatenated onto those from the first</p></div>
     
     
     <div class="description">
-        <p>Several pieces of conditional logic to apply against a value and the <em>first</em>
-one which matches will have a corresponding transformation applied to it.</p>
+        <p>Several pieces of conditional logic to apply against a value and the <em>first</em> one which matches will have a corresponding transformation applied to it.</p>
 <p>Supply an Array of pairs:</p>
 <ul>
 <li>the first value is the conditional logic (<code>Function</code>) to match against the value</li>
 <li>the second value is the transformation (<code>Function</code>) to apply to the value if the condition was matched</li>
 </ul>
-<p><strong>Note</strong>: if your tranformation is <em>not</em> a function then it will returned
-as-is in response to a succesfully met condition</p>
+<p><strong>Note</strong>: if your tranformation is <em>not</em> a function then it will returned as-is in response to a succesfully met condition</p>
     </div>
     
 
@@ -1601,7 +1584,7 @@ as-is in response to a succesfully met condition</p>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;Array.&lt;function()>></span>
 
 
   
@@ -1611,8 +1594,7 @@ as-is in response to a succesfully met condition</p>
 
   
 
-  <td class="description last"><p>An array of arrays (which have two
-values: the condition function and the transformation function)</p></td>
+  <td class="description last"><p>An array of arrays (which have two values: the condition function and the transformation function)</p></td>
 </tr>
 
 
@@ -1684,7 +1666,7 @@ values: the condition function and the transformation function)</p></td>
         <p class="tag-source">
             <a href="cond.js.html" class="button">View Source</a>
             <span>
-                <a href="cond.js.html">cond.js</a>, <a href="cond.js.html#line19">line 19</a>
+                <a href="cond.js.html">cond.js</a>, <a href="cond.js.html#line15">line 15</a>
             </span>
         </p>
     
@@ -1827,7 +1809,7 @@ values: the condition function and the transformation function)</p></td>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 |
 
 <span class="param-type">String</span>
@@ -1887,7 +1869,7 @@ values: the condition function and the transformation function)</p></td>
         <p class="tag-source">
             <a href="contains.js.html" class="button">View Source</a>
             <span>
-                <a href="contains.js.html">contains.js</a>, <a href="contains.js.html#line12">line 12</a>
+                <a href="contains.js.html">contains.js</a>, <a href="contains.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -1958,15 +1940,10 @@ values: the condition function and the transformation function)</p></td>
     
     
     <div class="description">
-        <p>Run several Functions (or composed chains of Functions) onto the same input
-and converges their results as arguments to another Function.</p>
-<p>A common example might be to take an Object that needs to be transformed in
-several different ways and then merged into one final Object. In that case
-you can supply a &quot;merge&quot; (or &quot;assign&quot;) Function as the convergence Function,
-and then pass all your Object transforming Functions as additional arguments.
-When you're ready to receive the actual input Object it will be forked into
-all the transform Functions and their results will converge into the
-merge/assign Function you supplied first.</p>
+        <p>Run several Functions (or composed chains of Functions) onto the same input and converges their results as arguments to another Function.</p>
+<p>A common example might be to take an Object that needs to be transformed in several different ways and then merged into one final Object.
+In that case you can supply a &quot;merge&quot; (or &quot;assign&quot;) Function as the convergence Function, and then pass all your Object transforming Functions as additional arguments.
+When you're ready to receive the actual input Object it will be forked into all the transform Functions and their results will converge into the merge/assign Function you supplied first.</p>
     </div>
     
 
@@ -2045,8 +2022,7 @@ merge/assign Function you supplied first.</p>
 
   
 
-  <td class="description last"><p>Two or more Functions (should be at least two,
-otherwise you're using the wrong util; use compose instead) that will later receive the same input</p></td>
+  <td class="description last"><p>Two or more Functions (should be at least two, otherwise you're using the wrong util; use compose instead) that will later receive the same input</p></td>
 </tr>
 
 
@@ -2093,7 +2069,7 @@ otherwise you're using the wrong util; use compose instead) that will later rece
         <p class="tag-source">
             <a href="converge.js.html" class="button">View Source</a>
             <span>
-                <a href="converge.js.html">converge.js</a>, <a href="converge.js.html#line21">line 21</a>
+                <a href="converge.js.html">converge.js</a>, <a href="converge.js.html#line13">line 13</a>
             </span>
         </p>
     
@@ -2164,12 +2140,9 @@ otherwise you're using the wrong util; use compose instead) that will later rece
     
     
     <div class="description">
-        <p>Run several Functions (or composed chains of Functions) onto the same input
-and converges their results as arguments to another Function. Compare to
-&quot;converge&quot; however the difference is that this is <em>always</em> intended to be
-used with multiple input values <em>and</em> each of those values corresponds to one
-of the forked functions. They all still converge into one Function, but the
-forked function just don't receive the same input values.</p>
+        <p>Run several Functions (or composed chains of Functions) onto the same input and converges their results as arguments to another Function.
+Compare to &quot;converge&quot; however the difference is that this is <em>always</em> intended to be used with multiple input values <em>and</em> each of those values corresponds to one of the forked functions.
+They all still converge into one Function, but the forked function just don't receive the same input values.</p>
     </div>
     
 
@@ -2248,8 +2221,7 @@ forked function just don't receive the same input values.</p>
 
   
 
-  <td class="description last"><p>Two or more Functions (should be at least two,
-otherwise you're using the wrong util; use compose instead) that will later receive the same input</p></td>
+  <td class="description last"><p>Two or more Functions (should be at least two, otherwise you're using the wrong util; use compose instead) that will later receive the same input</p></td>
 </tr>
 
 
@@ -2296,7 +2268,7 @@ otherwise you're using the wrong util; use compose instead) that will later rece
         <p class="tag-source">
             <a href="convergeZip.js.html" class="button">View Source</a>
             <span>
-                <a href="convergeZip.js.html">convergeZip.js</a>, <a href="convergeZip.js.html#line16">line 16</a>
+                <a href="convergeZip.js.html">convergeZip.js</a>, <a href="convergeZip.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -2367,13 +2339,10 @@ otherwise you're using the wrong util; use compose instead) that will later rece
     
     
     <div class="description">
-        <p>Takes a Function whose params are meant to be supplied all at once and
-changes it so they can be supplied one at a time. As each argument is
-supplied a new Function is returned that is ready to receive the next
-argument. This continues until all arguments for your origianl function
-have been supplied and then the actual result is returned.</p>
-<p>Note: you cannot set default values for curried function params
-(again, you <em>cannot</em> set default values for curried function params)</p>
+        <p>Takes a Function whose params are meant to be supplied all at once and changes it so they can be supplied one at a time.
+As each argument is supplied a new Function is returned that is ready to receive the next argument.
+This continues until all arguments for your origianl function have been supplied and then the actual result is returned.</p>
+<p>Note: you cannot set default values for curried function params (again, you <em>cannot</em> set default values for curried function params)</p>
     </div>
     
 
@@ -2427,8 +2396,7 @@ have been supplied and then the actual result is returned.</p>
 
   
 
-  <td class="description last"><p>A Function whose signature needs to changed from
-requiring all at once to providing them one (or more) at a time.</p></td>
+  <td class="description last"><p>A Function whose signature needs to changed from requiring all at once to providing them one (or more) at a time.</p></td>
 </tr>
 
 
@@ -2475,7 +2443,7 @@ requiring all at once to providing them one (or more) at a time.</p></td>
         <p class="tag-source">
             <a href="curry.js.html" class="button">View Source</a>
             <span>
-                <a href="curry.js.html">curry.js</a>, <a href="curry.js.html#line19">line 19</a>
+                <a href="curry.js.html">curry.js</a>, <a href="curry.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -2506,9 +2474,7 @@ requiring all at once to providing them one (or more) at a time.</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new Function that will wait until all arguments have
-been supplied before returning a result (otherwise it will continue to return a new
-Function that is ready to receive the next argument)</p></div>
+    <div class='param-desc column is-7'><p>A new Function that will wait until all arguments have been supplied before returning a result (otherwise it will continue to return a new Function that is ready to receive the next argument)</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -2628,8 +2594,7 @@ You would use this in cases where it cannot be inferred from the curried functio
 
   
 
-  <td class="description last"><p>A Function whose signature needs to changed from
-requiring all at once to providing them one (or more) at a time.</p></td>
+  <td class="description last"><p>A Function whose signature needs to changed from requiring all at once to providing them one (or more) at a time.</p></td>
 </tr>
 
 
@@ -2676,7 +2641,7 @@ requiring all at once to providing them one (or more) at a time.</p></td>
         <p class="tag-source">
             <a href="curryN.js.html" class="button">View Source</a>
             <span>
-                <a href="curryN.js.html">curryN.js</a>, <a href="curryN.js.html#line15">line 15</a>
+                <a href="curryN.js.html">curryN.js</a>, <a href="curryN.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -2728,9 +2693,7 @@ requiring all at once to providing them one (or more) at a time.</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new Function that will wait until all (arity) arguments have
-been supplied before returning a result (otherwise it will continue to return a new
-Function that is ready to receive the next argument)</p></div>
+    <div class='param-desc column is-7'><p>A new Function that will wait until all (arity) arguments have been supplied before returning a result (otherwise it will continue to return a new Function that is ready to receive the next argument)</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -2902,7 +2865,7 @@ Function that is ready to receive the next argument)</p></div>
         <p class="tag-source">
             <a href="difference.js.html" class="button">View Source</a>
             <span>
-                <a href="difference.js.html">difference.js</a>, <a href="difference.js.html#line12">line 12</a>
+                <a href="difference.js.html">difference.js</a>, <a href="difference.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -3030,8 +2993,7 @@ Function that is ready to receive the next argument)</p></div>
 
   
 
-  <td class="description last"><p>A Function to execute for each iteration. It will
-receive the value, index and full array (respectively) as args</p></td>
+  <td class="description last"><p>A Function to execute for each iteration. It will receive the value, index and full array (respectively) as args</p></td>
 </tr>
 
 
@@ -3046,7 +3008,7 @@ receive the value, index and full array (respectively) as args</p></td>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -3056,8 +3018,7 @@ receive the value, index and full array (respectively) as args</p></td>
 
   
 
-  <td class="description last"><p>An Array to iterate over (any value will be passed into
-the iterate Function)</p></td>
+  <td class="description last"><p>An Array to iterate over (any value will be passed into the iterate Function)</p></td>
 </tr>
 
 
@@ -3104,7 +3065,7 @@ the iterate Function)</p></td>
         <p class="tag-source">
             <a href="each.js.html" class="button">View Source</a>
             <span>
-                <a href="each.js.html">each.js</a>, <a href="each.js.html#line11">line 11</a>
+                <a href="each.js.html">each.js</a>, <a href="each.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -3141,7 +3102,7 @@ the iterate Function)</p></td>
         
         <span class="code-name">
             
-                entries<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Array.&lt;Array>}</span>
+                entries<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Array.&lt;String>}</span>
             
         </span>
     </h4>
@@ -3194,7 +3155,7 @@ the iterate Function)</p></td>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -3251,7 +3212,7 @@ the iterate Function)</p></td>
         <p class="tag-source">
             <a href="entries.js.html" class="button">View Source</a>
             <span>
-                <a href="entries.js.html">entries.js</a>, <a href="entries.js.html#line10">line 10</a>
+                <a href="entries.js.html">entries.js</a>, <a href="entries.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -3282,14 +3243,13 @@ the iterate Function)</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>An Array of key/value pairs corresponding to
-those on the input object</p></div>
+    <div class='param-desc column is-7'><p>An Array of key/value pairs corresponding to those on the input object</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Array.&lt;Array></span>
+<span class="param-type">Array.&lt;String></span>
 
 
     </div>
@@ -3314,7 +3274,7 @@ those on the input object</p></div>
         
         <span class="code-name">
             
-                filter<span class="signature">(fn, val)</span><span class="type-signature"> &rarr; {Object|Array|String}</span>
+                filter<span class="signature">(fn, val)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>|Array.&lt;*>|String}</span>
             
         </span>
     </h4>
@@ -3396,10 +3356,10 @@ If the type of your value is none of the above, the value will be returned as-is
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 |
 
 <span class="param-type">String</span>
@@ -3459,7 +3419,7 @@ If the type of your value is none of the above, the value will be returned as-is
         <p class="tag-source">
             <a href="filter.js.html" class="button">View Source</a>
             <span>
-                <a href="filter.js.html">filter.js</a>, <a href="filter.js.html#line20">line 20</a>
+                <a href="filter.js.html">filter.js</a>, <a href="filter.js.html#line18">line 18</a>
             </span>
         </p>
     
@@ -3490,17 +3450,16 @@ If the type of your value is none of the above, the value will be returned as-is
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new value that is the result of
-the filtering operation over all the chars or values in the original String/Object/Array</p></div>
+    <div class='param-desc column is-7'><p>A new value that is the result of the filtering operation over all the chars or values in the original String/Object/Array</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 |
 
 <span class="param-type">String</span>
@@ -3528,7 +3487,7 @@ the filtering operation over all the chars or values in the original String/Obje
         
         <span class="code-name">
             
-                filterObject<span class="signature">(fn, obj)</span><span class="type-signature"> &rarr; {Object}</span>
+                filterObject<span class="signature">(fn, obj)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>}</span>
             
         </span>
     </h4>
@@ -3606,7 +3565,7 @@ the filtering operation over all the chars or values in the original String/Obje
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -3663,7 +3622,7 @@ the filtering operation over all the chars or values in the original String/Obje
         <p class="tag-source">
             <a href="filterObject.js.html" class="button">View Source</a>
             <span>
-                <a href="filterObject.js.html">filterObject.js</a>, <a href="filterObject.js.html#line13">line 13</a>
+                <a href="filterObject.js.html">filterObject.js</a>, <a href="filterObject.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -3694,14 +3653,13 @@ the filtering operation over all the chars or values in the original String/Obje
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new Object that is the result of
-the filtering operation over all the values in the original Object</p></div>
+    <div class='param-desc column is-7'><p>A new Object that is the result of the filtering operation over all the values in the original Object</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
     </div>
@@ -3789,8 +3747,7 @@ the filtering operation over all the values in the original Object</p></div>
 
   
 
-  <td class="description last"><p>A filtering function that is invoked on every char in the
-provided String value</p></td>
+  <td class="description last"><p>A filtering function that is invoked on every char in the provided String value</p></td>
 </tr>
 
 
@@ -3862,7 +3819,7 @@ provided String value</p></td>
         <p class="tag-source">
             <a href="filterString.js.html" class="button">View Source</a>
             <span>
-                <a href="filterString.js.html">filterString.js</a>, <a href="filterString.js.html#line12">line 12</a>
+                <a href="filterString.js.html">filterString.js</a>, <a href="filterString.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -3893,8 +3850,7 @@ provided String value</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new String value that is the result of
-the filtering operation over the original string</p></div>
+    <div class='param-desc column is-7'><p>A new String value that is the result of the filtering operation over the original string</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -3925,7 +3881,7 @@ the filtering operation over the original string</p></div>
         
         <span class="code-name">
             
-                find<span class="signature">(pred, arr)</span><span class="type-signature"> &rarr; {*|undefined}</span>
+                find<span class="signature">(pred, arr)</span><span class="type-signature"> &rarr; {*}</span>
             
         </span>
     </h4>
@@ -3934,8 +3890,7 @@ the filtering operation over the original string</p></div>
     
     
     <div class="description">
-        <p>Find a single value from an array of values, based on criteria defined in a
-predicate function.</p>
+        <p>Find a single value from an array of values, based on criteria defined in a predicate function.</p>
     </div>
     
 
@@ -3989,8 +3944,7 @@ predicate function.</p>
 
   
 
-  <td class="description last"><p>A predicate function to apply to the array of values
-(It should take a val as input and return a Boolean as output).</p></td>
+  <td class="description last"><p>A predicate function to apply to the array of values (It should take a val as input and return a Boolean as output).</p></td>
 </tr>
 
 
@@ -4005,7 +3959,7 @@ predicate function.</p>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -4062,7 +4016,7 @@ predicate function.</p>
         <p class="tag-source">
             <a href="find.js.html" class="button">View Source</a>
             <span>
-                <a href="find.js.html">find.js</a>, <a href="find.js.html#line13">line 13</a>
+                <a href="find.js.html">find.js</a>, <a href="find.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -4093,17 +4047,13 @@ predicate function.</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>Either a value from the array that matched the predicate
-function or undefined (if no match)</p></div>
+    <div class='param-desc column is-7'><p>Either a value from the array that matched the predicate function or undefined (if no match)</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
 <span class="param-type">*</span>
-|
-
-<span class="param-type">undefined</span>
 
 
     </div>
@@ -4137,8 +4087,7 @@ function or undefined (if no match)</p></div>
     
     
     <div class="description">
-        <p>Find the index of a single value from an array of values, based on criteria defined in a
-predicate function.</p>
+        <p>Find the index of a single value from an array of values, based on criteria defined in a predicate function.</p>
     </div>
     
 
@@ -4192,8 +4141,7 @@ predicate function.</p>
 
   
 
-  <td class="description last"><p>A predicate function to apply to the array of values
-(It should take a val as input and return a Boolean as output).</p></td>
+  <td class="description last"><p>A predicate function to apply to the array of values (It should take a val as input and return a Boolean as output).</p></td>
 </tr>
 
 
@@ -4208,7 +4156,7 @@ predicate function.</p>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -4265,7 +4213,7 @@ predicate function.</p>
         <p class="tag-source">
             <a href="findIndex.js.html" class="button">View Source</a>
             <span>
-                <a href="findIndex.js.html">findIndex.js</a>, <a href="findIndex.js.html#line13">line 13</a>
+                <a href="findIndex.js.html">findIndex.js</a>, <a href="findIndex.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -4296,8 +4244,7 @@ predicate function.</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>Either the index of the value from the array that matched the predicate
-function or negative one (-1, if no match).</p></div>
+    <div class='param-desc column is-7'><p>Either the index of the value from the array that matched the predicate function or negative one (-1, if no match).</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -4328,7 +4275,7 @@ function or negative one (-1, if no match).</p></div>
         
         <span class="code-name">
             
-                first<span class="signature">(arr)</span><span class="type-signature"> &rarr; {*|undefined}</span>
+                first<span class="signature">(arr)</span><span class="type-signature"> &rarr; {*}</span>
             
         </span>
     </h4>
@@ -4381,7 +4328,7 @@ function or negative one (-1, if no match).</p></div>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -4438,7 +4385,7 @@ function or negative one (-1, if no match).</p></div>
         <p class="tag-source">
             <a href="first.js.html" class="button">View Source</a>
             <span>
-                <a href="first.js.html">first.js</a>, <a href="first.js.html#line9">line 9</a>
+                <a href="first.js.html">first.js</a>, <a href="first.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -4469,17 +4416,13 @@ function or negative one (-1, if no match).</p></div>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>The value at the first index of the supplied array
-(which may be undefined)</p></div>
+    <div class='param-desc column is-7'><p>The value at the first index of the supplied array (which may be undefined)</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
 <span class="param-type">*</span>
-|
-
-<span class="param-type">undefined</span>
 
 
     </div>
@@ -4504,7 +4447,7 @@ function or negative one (-1, if no match).</p></div>
         
         <span class="code-name">
             
-                flatten<span class="signature">(arr)</span><span class="type-signature"> &rarr; {Array}</span>
+                flatten<span class="signature">(arr)</span><span class="type-signature"> &rarr; {Array.&lt;*>}</span>
             
         </span>
     </h4>
@@ -4557,7 +4500,10 @@ function or negative one (-1, if no match).</p></div>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;Array.&lt;*>></span>
+|
+
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -4567,8 +4513,7 @@ function or negative one (-1, if no match).</p></div>
 
   
 
-  <td class="description last"><p>An array of values that may or may not be nested arrays
-themselves</p></td>
+  <td class="description last"><p>An array of values that may or may not be nested arrays themselves</p></td>
 </tr>
 
 
@@ -4615,7 +4560,7 @@ themselves</p></td>
         <p class="tag-source">
             <a href="flatten.js.html" class="button">View Source</a>
             <span>
-                <a href="flatten.js.html">flatten.js</a>, <a href="flatten.js.html#line13">line 13</a>
+                <a href="flatten.js.html">flatten.js</a>, <a href="flatten.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -4646,14 +4591,13 @@ themselves</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new array of values, but with any nested arrays from the
-original input extracted onto one single (flat) array</p></div>
+    <div class='param-desc column is-7'><p>A new array of values, but with any nested arrays from the original input extracted onto one single (flat) array</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
     </div>
@@ -4788,7 +4732,7 @@ original input extracted onto one single (flat) array</p></div>
         <p class="tag-source">
             <a href="invert.js.html" class="button">View Source</a>
             <span>
-                <a href="invert.js.html">invert.js</a>, <a href="invert.js.html#line11">line 11</a>
+                <a href="invert.js.html">invert.js</a>, <a href="invert.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -4859,8 +4803,7 @@ original input extracted onto one single (flat) array</p></div>
     
     
     <div class="description">
-        <p>A light wrapper around native <code>for .. in</code>, but will only iterate over an
-Object's own properties.</p>
+        <p>A light wrapper around native <code>for .. in</code>, but will only iterate over an Object's own properties.</p>
     </div>
     
 
@@ -4914,8 +4857,7 @@ Object's own properties.</p>
 
   
 
-  <td class="description last"><p>A function to execute iteratively,
-which will receive the <code>key</code>, <code>value</code>, and <code>object</code> (respectively)</p></td>
+  <td class="description last"><p>A function to execute iteratively, which will receive the <code>key</code>, <code>value</code>, and <code>object</code> (respectively)</p></td>
 </tr>
 
 
@@ -4930,7 +4872,7 @@ which will receive the <code>key</code>, <code>value</code>, and <code>object</c
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -4987,7 +4929,7 @@ which will receive the <code>key</code>, <code>value</code>, and <code>object</c
         <p class="tag-source">
             <a href="forIn.js.html" class="button">View Source</a>
             <span>
-                <a href="forIn.js.html">forIn.js</a>, <a href="forIn.js.html#line13">line 13</a>
+                <a href="forIn.js.html">forIn.js</a>, <a href="forIn.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -5033,8 +4975,7 @@ which will receive the <code>key</code>, <code>value</code>, and <code>object</c
     
     
     <div class="description">
-        <p>Gets the type for any value. If available will inspect the constructor name,
-otherwise will use the typeof</p>
+        <p>Gets the type for any value. If available will inspect the constructor name, otherwise will use the typeof</p>
     </div>
     
 
@@ -5135,7 +5076,7 @@ otherwise will use the typeof</p>
         <p class="tag-source">
             <a href="getType.js.html" class="button">View Source</a>
             <span>
-                <a href="getType.js.html">getType.js</a>, <a href="getType.js.html#line14">line 14</a>
+                <a href="getType.js.html">getType.js</a>, <a href="getType.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -5275,7 +5216,7 @@ otherwise will use the typeof</p>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -5332,7 +5273,7 @@ otherwise will use the typeof</p>
         <p class="tag-source">
             <a href="has.js.html" class="button">View Source</a>
             <span>
-                <a href="has.js.html">has.js</a>, <a href="has.js.html#line11">line 11</a>
+                <a href="has.js.html">has.js</a>, <a href="has.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -5447,7 +5388,7 @@ otherwise will use the typeof</p>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;String></span>
 |
 
 <span class="param-type">String</span>
@@ -5475,7 +5416,7 @@ otherwise will use the typeof</p>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -5532,7 +5473,7 @@ otherwise will use the typeof</p>
         <p class="tag-source">
             <a href="hasNestedProp.js.html" class="button">View Source</a>
             <span>
-                <a href="hasNestedProp.js.html">hasNestedProp.js</a>, <a href="hasNestedProp.js.html#line13">line 13</a>
+                <a href="hasNestedProp.js.html">hasNestedProp.js</a>, <a href="hasNestedProp.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -5704,7 +5645,7 @@ otherwise will use the typeof</p>
         <p class="tag-source">
             <a href="identity.js.html" class="button">View Source</a>
             <span>
-                <a href="identity.js.html">identity.js</a>, <a href="identity.js.html#line9">line 9</a>
+                <a href="identity.js.html">identity.js</a>, <a href="identity.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -5907,7 +5848,7 @@ otherwise will use the typeof</p>
         <p class="tag-source">
             <a href="intersection.js.html" class="button">View Source</a>
             <span>
-                <a href="intersection.js.html">intersection.js</a>, <a href="intersection.js.html#line12">line 12</a>
+                <a href="intersection.js.html">intersection.js</a>, <a href="intersection.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -5983,8 +5924,7 @@ otherwise will use the typeof</p>
     <div class="description">
         <p>Checks to see if a value is a certain type.
 You may specify that type as a case-insensitive string
-(ie, 'string', 'boolean', 'object', 'function', 'array', 'regexp', 'date', 'set, 'map'),
-OR a JavaScript type constructor function (ie, String, Function, Boolean, Array, RegExp, Date, Set, Map).</p>
+(ie, 'string', 'boolean', 'object', 'function', 'array', 'regexp', 'date', 'set, 'map'), OR a JavaScript type constructor function (ie, String, Function, Boolean, Array, RegExp, Date, Set, Map).</p>
     </div>
     
 
@@ -6041,9 +5981,7 @@ OR a JavaScript type constructor function (ie, String, Function, Boolean, Array,
 
   
 
-  <td class="description last"><p>A JavaScript type constructor function
-(like <code>Function</code>, <code>String</code>, <code>RegExp</code>, <code>Boolean</code>, <code>Array</code>, <code>Object</code>, etc.) or a string
-value matching the name of one</p></td>
+  <td class="description last"><p>A JavaScript type constructor function (like <code>Function</code>, <code>String</code>, <code>RegExp</code>, <code>Boolean</code>, <code>Array</code>, <code>Object</code>, etc.) or a string value matching the name of one</p></td>
 </tr>
 
 
@@ -6115,7 +6053,7 @@ value matching the name of one</p></td>
         <p class="tag-source">
             <a href="is.js.html" class="button">View Source</a>
             <span>
-                <a href="is.js.html">is.js</a>, <a href="is.js.html#line24">line 24</a>
+                <a href="is.js.html">is.js</a>, <a href="is.js.html#line20">line 20</a>
             </span>
         </p>
     
@@ -6253,6 +6191,11 @@ is(Function, () => null)</code></pre>
 
   <td class="type">
   
+      
+<span class="param-type">*</span>
+
+
+  
   </td>
 
   
@@ -6306,7 +6249,7 @@ is(Function, () => null)</code></pre>
         <p class="tag-source">
             <a href="isArrayish.js.html" class="button">View Source</a>
             <span>
-                <a href="isArrayish.js.html">isArrayish.js</a>, <a href="isArrayish.js.html#line44">line 44</a>
+                <a href="isArrayish.js.html">isArrayish.js</a>, <a href="isArrayish.js.html#line43">line 43</a>
             </span>
         </p>
     
@@ -6377,8 +6320,7 @@ is(Function, () => null)</code></pre>
     
     
     <div class="description">
-        <p>Checks a value to see if it is a String containing either
-no characters OR no characters <em>except</em> for whitespace.</p>
+        <p>Checks a value to see if it is a String containing either no characters OR no characters <em>except</em> for whitespace.</p>
     </div>
     
 
@@ -6479,7 +6421,7 @@ no characters OR no characters <em>except</em> for whitespace.</p>
         <p class="tag-source">
             <a href="isBlankString.js.html" class="button">View Source</a>
             <span>
-                <a href="isBlankString.js.html">isBlankString.js</a>, <a href="isBlankString.js.html#line10">line 10</a>
+                <a href="isBlankString.js.html">isBlankString.js</a>, <a href="isBlankString.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -6550,9 +6492,7 @@ no characters OR no characters <em>except</em> for whitespace.</p>
     
     
     <div class="description">
-        <p>Checks if a value is empty. Arrays, Objects, Strings, Sets, and
-Null/Undefined values are considered empty if their length (or size) prop is
-zero (or if they are Null or Undefined).
+        <p>Checks if a value is empty. Arrays, Objects, Strings, Sets, and Null/Undefined values are considered empty if their length (or size) prop is zero (or if they are Null or Undefined).
 Whitespace-only strings are NOT considered empty (use <code>isBlankString</code> instead).</p>
     </div>
     
@@ -6654,7 +6594,7 @@ Whitespace-only strings are NOT considered empty (use <code>isBlankString</code>
         <p class="tag-source">
             <a href="isEmpty.js.html" class="button">View Source</a>
             <span>
-                <a href="isEmpty.js.html">isEmpty.js</a>, <a href="isEmpty.js.html#line14">line 14</a>
+                <a href="isEmpty.js.html">isEmpty.js</a>, <a href="isEmpty.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -6726,10 +6666,8 @@ Whitespace-only strings are NOT considered empty (use <code>isBlankString</code>
     
     <div class="description">
         <p>Checks if two provided values are deeply equal.
-If Objects or Arrays (or Array-like values) are provided,
-they are inspected recursively.
-Primitive values are checked to see if they are stricly equal
-(ie triple equals; no type coercion).</p>
+If Objects or Arrays (or Array-like values) are provided, they are inspected recursively.
+Primitive values are checked to see if they are stricly equal (ie triple equals; no type coercion).</p>
     </div>
     
 
@@ -6783,8 +6721,7 @@ Primitive values are checked to see if they are stricly equal
 
   
 
-  <td class="description last"><p>A value which may be null, undefined, a JavaScript
-primitive value, an array of values, an array-like value, or an object</p></td>
+  <td class="description last"><p>A value which may be null, undefined, a JavaScript primitive value, an array of values, an array-like value, or an object</p></td>
 </tr>
 
 
@@ -6856,7 +6793,7 @@ primitive value, an array of values, an array-like value, or an object</p></td>
         <p class="tag-source">
             <a href="isEqual.js.html" class="button">View Source</a>
             <span>
-                <a href="isEqual.js.html">isEqual.js</a>, <a href="isEqual.js.html#line20">line 20</a>
+                <a href="isEqual.js.html">isEqual.js</a>, <a href="isEqual.js.html#line16">line 16</a>
             </span>
         </p>
     
@@ -7028,7 +6965,7 @@ primitive value, an array of values, an array-like value, or an object</p></td>
         <p class="tag-source">
             <a href="isInteger.js.html" class="button">View Source</a>
             <span>
-                <a href="isInteger.js.html">isInteger.js</a>, <a href="isInteger.js.html#line9">line 9</a>
+                <a href="isInteger.js.html">isInteger.js</a>, <a href="isInteger.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -7200,7 +7137,7 @@ primitive value, an array of values, an array-like value, or an object</p></td>
         <p class="tag-source">
             <a href="isMap.js.html" class="button">View Source</a>
             <span>
-                <a href="isMap.js.html">isMap.js</a>, <a href="isMap.js.html#line11">line 11</a>
+                <a href="isMap.js.html">isMap.js</a>, <a href="isMap.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -7372,7 +7309,7 @@ primitive value, an array of values, an array-like value, or an object</p></td>
         <p class="tag-source">
             <a href="isNil.js.html" class="button">View Source</a>
             <span>
-                <a href="isNil.js.html">isNil.js</a>, <a href="isNil.js.html#line9">line 9</a>
+                <a href="isNil.js.html">isNil.js</a>, <a href="isNil.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -7444,8 +7381,7 @@ primitive value, an array of values, an array-like value, or an object</p></td>
     
     <div class="description">
         <p>A high-speed, mostly adequate check of a value which may be an Object.
-This excludes values that are <em>technically</em> an Object but in practice are not
-what you <em>really</em> mean when you speak of Objects.</p>
+This excludes values that are <em>technically</em> an Object but in practice are not what you <em>really</em> mean when you speak of Objects.</p>
     </div>
     
 
@@ -7546,7 +7482,7 @@ what you <em>really</em> mean when you speak of Objects.</p>
         <p class="tag-source">
             <a href="isObject.js.html" class="button">View Source</a>
             <span>
-                <a href="isObject.js.html">isObject.js</a>, <a href="isObject.js.html#line50">line 50</a>
+                <a href="isObject.js.html">isObject.js</a>, <a href="isObject.js.html#line48">line 48</a>
             </span>
         </p>
     
@@ -7718,7 +7654,7 @@ what you <em>really</em> mean when you speak of Objects.</p>
         <p class="tag-source">
             <a href="isObjectish.js.html" class="button">View Source</a>
             <span>
-                <a href="isObjectish.js.html">isObjectish.js</a>, <a href="isObjectish.js.html#line46">line 46</a>
+                <a href="isObjectish.js.html">isObjectish.js</a>, <a href="isObjectish.js.html#line45">line 45</a>
             </span>
         </p>
     
@@ -7789,8 +7725,7 @@ what you <em>really</em> mean when you speak of Objects.</p>
     
     
     <div class="description">
-        <p>Checks if a given value is of a primitive type (ie, Boolean, String, Number,
-or Symbol).</p>
+        <p>Checks if a given value is of a primitive type (ie, Boolean, String, Number, or Symbol).</p>
     </div>
     
 
@@ -7891,7 +7826,7 @@ or Symbol).</p>
         <p class="tag-source">
             <a href="isPrimitive.js.html" class="button">View Source</a>
             <span>
-                <a href="isPrimitive.js.html">isPrimitive.js</a>, <a href="isPrimitive.js.html#line27">line 27</a>
+                <a href="isPrimitive.js.html">isPrimitive.js</a>, <a href="isPrimitive.js.html#line25">line 25</a>
             </span>
         </p>
     
@@ -8063,7 +7998,7 @@ or Symbol).</p>
         <p class="tag-source">
             <a href="isPromise.js.html" class="button">View Source</a>
             <span>
-                <a href="isPromise.js.html">isPromise.js</a>, <a href="isPromise.js.html#line9">line 9</a>
+                <a href="isPromise.js.html">isPromise.js</a>, <a href="isPromise.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -8261,7 +8196,7 @@ The typeof and (if necessary) constructor names are inspected during this check.
         <p class="tag-source">
             <a href="isSameType.js.html" class="button">View Source</a>
             <span>
-                <a href="isSameType.js.html">isSameType.js</a>, <a href="isSameType.js.html#line13">line 13</a>
+                <a href="isSameType.js.html">isSameType.js</a>, <a href="isSameType.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -8433,7 +8368,7 @@ The typeof and (if necessary) constructor names are inspected during this check.
         <p class="tag-source">
             <a href="isSet.js.html" class="button">View Source</a>
             <span>
-                <a href="isSet.js.html">isSet.js</a>, <a href="isSet.js.html#line11">line 11</a>
+                <a href="isSet.js.html">isSet.js</a>, <a href="isSet.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -8504,8 +8439,7 @@ The typeof and (if necessary) constructor names are inspected during this check.
     
     
     <div class="description">
-        <p>Inspects two values to see if they are strictly equal,
-meaning no type coercion or deepyly nested equality checks are performed.
+        <p>Inspects two values to see if they are strictly equal, meaning no type coercion or deepyly nested equality checks are performed.
 A very simple triple equals is all that is used.</p>
     </div>
     
@@ -8632,7 +8566,7 @@ A very simple triple equals is all that is used.</p>
         <p class="tag-source">
             <a href="isStrictEqual.js.html" class="button">View Source</a>
             <span>
-                <a href="isStrictEqual.js.html">isStrictEqual.js</a>, <a href="isStrictEqual.js.html#line12">line 12</a>
+                <a href="isStrictEqual.js.html">isStrictEqual.js</a>, <a href="isStrictEqual.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -8804,7 +8738,7 @@ A very simple triple equals is all that is used.</p>
         <p class="tag-source">
             <a href="isUndefined.js.html" class="button">View Source</a>
             <span>
-                <a href="isUndefined.js.html">isUndefined.js</a>, <a href="isUndefined.js.html#line9">line 9</a>
+                <a href="isUndefined.js.html">isUndefined.js</a>, <a href="isUndefined.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -8919,7 +8853,7 @@ A very simple triple equals is all that is used.</p>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -8976,7 +8910,7 @@ A very simple triple equals is all that is used.</p>
         <p class="tag-source">
             <a href="last.js.html" class="button">View Source</a>
             <span>
-                <a href="last.js.html">last.js</a>, <a href="last.js.html#line9">line 9</a>
+                <a href="last.js.html">last.js</a>, <a href="last.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -9038,7 +8972,7 @@ A very simple triple equals is all that is used.</p>
         
         <span class="code-name">
             
-                map<span class="signature">(fn, val)</span><span class="type-signature"> &rarr; {Object|Array|String}</span>
+                map<span class="signature">(fn, val)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>|Array.&lt;*>|String}</span>
             
         </span>
     </h4>
@@ -9121,10 +9055,10 @@ Also, this mapping operation does <em>not</em> mutate the original value.</p>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 |
 
 <span class="param-type">String</span>
@@ -9184,7 +9118,7 @@ Also, this mapping operation does <em>not</em> mutate the original value.</p>
         <p class="tag-source">
             <a href="map.js.html" class="button">View Source</a>
             <span>
-                <a href="map.js.html">map.js</a>, <a href="map.js.html#line21">line 21</a>
+                <a href="map.js.html">map.js</a>, <a href="map.js.html#line19">line 19</a>
             </span>
         </p>
     
@@ -9215,17 +9149,16 @@ Also, this mapping operation does <em>not</em> mutate the original value.</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new value that is the result of
-the mapping operation over all the chars or values in the original String/Object/Array</p></div>
+    <div class='param-desc column is-7'><p>A new value that is the result of the mapping operation over all the chars or values in the original String/Object/Array</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 |
 
 <span class="param-type">String</span>
@@ -9253,7 +9186,7 @@ the mapping operation over all the chars or values in the original String/Object
         
         <span class="code-name">
             
-                mapObject<span class="signature">(fn, obj)</span><span class="type-signature"> &rarr; {Object}</span>
+                mapObject<span class="signature">(fn, obj)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>}</span>
             
         </span>
     </h4>
@@ -9331,7 +9264,7 @@ the mapping operation over all the chars or values in the original String/Object
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -9388,7 +9321,7 @@ the mapping operation over all the chars or values in the original String/Object
         <p class="tag-source">
             <a href="mapObject.js.html" class="button">View Source</a>
             <span>
-                <a href="mapObject.js.html">mapObject.js</a>, <a href="mapObject.js.html#line13">line 13</a>
+                <a href="mapObject.js.html">mapObject.js</a>, <a href="mapObject.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -9419,14 +9352,13 @@ the mapping operation over all the chars or values in the original String/Object
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new Object that is the result of
-the mapping operation over all the values in the original Object</p></div>
+    <div class='param-desc column is-7'><p>A new Object that is the result of the mapping operation over all the values in the original Object</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
     </div>
@@ -9451,7 +9383,7 @@ the mapping operation over all the values in the original Object</p></div>
         
         <span class="code-name">
             
-                mapObjectRecursive<span class="signature">(fn, obj)</span><span class="type-signature"> &rarr; {Object}</span>
+                mapObjectRecursive<span class="signature">(fn, obj)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>}</span>
             
         </span>
     </h4>
@@ -9529,7 +9461,7 @@ the mapping operation over all the values in the original Object</p></div>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -9586,7 +9518,7 @@ the mapping operation over all the values in the original Object</p></div>
         <p class="tag-source">
             <a href="mapObjectRecursive.js.html" class="button">View Source</a>
             <span>
-                <a href="mapObjectRecursive.js.html">mapObjectRecursive.js</a>, <a href="mapObjectRecursive.js.html#line13">line 13</a>
+                <a href="mapObjectRecursive.js.html">mapObjectRecursive.js</a>, <a href="mapObjectRecursive.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -9623,7 +9555,7 @@ the mapping operation over all the values in the original Object</p></div>
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
     </div>
@@ -9648,7 +9580,7 @@ the mapping operation over all the values in the original Object</p></div>
         
         <span class="code-name">
             
-                mapSpec<span class="signature">(spec, inputObj)</span><span class="type-signature"> &rarr; {Object}</span>
+                mapSpec<span class="signature">(spec, inputObj)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>}</span>
             
         </span>
     </h4>
@@ -9658,21 +9590,11 @@ the mapping operation over all the values in the original Object</p></div>
     
     <div class="description">
         <p>Applies one or more mapping functions to the value in a given Object.
-But rather than applying the same mapping function to every value in an
-Object, instead you use a &quot;spec&quot; object to link the appropriate mapping
-function to the key/val in the input Object.</p>
-<p>This is similar to Ramda's <code>evolve()</code> however you can also set values
-in your spec that are <em>not</em> functions
-(which will just override whatever matching key there might be on the input object).
-Addtionally, it supplies the key and the object as the 2nd and third
-params to your spec's transformation function, so that you can create props
-based on the entire input Object (with Ramda you'll need to also use
-<code>applySpec()</code> and in a separate operation to derived these kinds of values).</p>
-<p>As an example, If you want a mapping function to be applied to a prop called &quot;name&quot;,
-then you would first pass in a spec object with a prop on it called &quot;name&quot;
-and the value would be the mapping function.
-Then the actual input object (with the desciption field) will have the matching mapping
-function from your spec applied to it directly.</p>
+But rather than applying the same mapping function to every value in an Object, instead you use a &quot;spec&quot; object to link the appropriate mapping function to the key/val in the input Object.</p>
+<p>This is similar to Ramda's <code>evolve()</code> however you can also set values in your spec that are <em>not</em> functions (which will just override whatever matching key there might be on the input object).
+Addtionally, it supplies the key and the object as the 2nd and third params to your spec's transformation function, so that you can create props based on the entire input Object (with Ramda you'll need to also use <code>applySpec()</code> and in a separate operation to derived these kinds of values).</p>
+<p>As an example, If you want a mapping function to be applied to a prop called &quot;name&quot;, then you would first pass in a spec object with a prop on it called &quot;name&quot; and the value would be the mapping function.
+Then the actual input object (with the desciption field) will have the matching mapping function from your spec applied to it directly.</p>
     </div>
     
 
@@ -9716,7 +9638,7 @@ function from your spec applied to it directly.</p>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -9726,9 +9648,7 @@ function from your spec applied to it directly.</p>
 
   
 
-  <td class="description last"><p>An Object whose keys should correspond to keys in the
-input Object and whose values are mapping functions that will receive the
-matching input Object's prop as input</p></td>
+  <td class="description last"><p>An Object whose keys should correspond to keys in the input Object and whose values are mapping functions that will receive the matching input Object's prop as input</p></td>
 </tr>
 
 
@@ -9743,7 +9663,7 @@ matching input Object's prop as input</p></td>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -9800,7 +9720,7 @@ matching input Object's prop as input</p></td>
         <p class="tag-source">
             <a href="mapSpec.js.html" class="button">View Source</a>
             <span>
-                <a href="mapSpec.js.html">mapSpec.js</a>, <a href="mapSpec.js.html#line44">line 44</a>
+                <a href="mapSpec.js.html">mapSpec.js</a>, <a href="mapSpec.js.html#line30">line 30</a>
             </span>
         </p>
     
@@ -9831,14 +9751,13 @@ matching input Object's prop as input</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new Object with all the mapping functions from the spec
-Object applied to the corresponding values in the input Object (if they exist)</p></div>
+    <div class='param-desc column is-7'><p>A new Object with all the mapping functions from the spec Object applied to the corresponding values in the input Object (if they exist)</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
     </div>
@@ -9941,8 +9860,7 @@ Object applied to the corresponding values in the input Object (if they exist)</
 
   
 
-  <td class="description last"><p>A mapping function that is invoked on every char in the
-provided String value</p></td>
+  <td class="description last"><p>A mapping function that is invoked on every char in the provided String value</p></td>
 </tr>
 
 
@@ -10014,7 +9932,7 @@ provided String value</p></td>
         <p class="tag-source">
             <a href="mapString.js.html" class="button">View Source</a>
             <span>
-                <a href="mapString.js.html">mapString.js</a>, <a href="mapString.js.html#line12">line 12</a>
+                <a href="mapString.js.html">mapString.js</a>, <a href="mapString.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -10045,8 +9963,7 @@ provided String value</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new String value that is the result of
-the mapping operation over the original string</p></div>
+    <div class='param-desc column is-7'><p>A new String value that is the result of the mapping operation over the original string</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -10086,9 +10003,7 @@ the mapping operation over the original string</p></div>
     
     
     <div class="description">
-        <p>Takes a snapshot of the input args and the output result for a provided function,
-and on repeated usage will shortcut invoking the function and return the cached output instead,
-whenever the same input args are supplied to the function.</p>
+        <p>Takes a snapshot of the input args and the output result for a provided function, and on repeated usage will shortcut invoking the function and return the cached output instead, whenever the same input args are supplied to the function.</p>
     </div>
     
 
@@ -10142,9 +10057,7 @@ whenever the same input args are supplied to the function.</p>
 
   
 
-  <td class="description last"><p>A function whose input values (supplied later) will be
-cached with its output result, so that the invoking the function can be
-skipped the next time the same values are passed to it</p></td>
+  <td class="description last"><p>A function whose input values (supplied later) will be cached with its output result, so that the invoking the function can be skipped the next time the same values are passed to it</p></td>
 </tr>
 
 
@@ -10191,7 +10104,7 @@ skipped the next time the same values are passed to it</p></td>
         <p class="tag-source">
             <a href="memoize.js.html" class="button">View Source</a>
             <span>
-                <a href="memoize.js.html">memoize.js</a>, <a href="memoize.js.html#line16">line 16</a>
+                <a href="memoize.js.html">memoize.js</a>, <a href="memoize.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -10222,8 +10135,7 @@ skipped the next time the same values are passed to it</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A memoized version of the original function. It will
-cache the input values supplied to it each time it is used</p></div>
+    <div class='param-desc column is-7'><p>A memoized version of the original function. It will cache the input values supplied to it each time it is used</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -10254,7 +10166,7 @@ cache the input values supplied to it each time it is used</p></div>
         
         <span class="code-name">
             
-                merge<span class="signature">(val, val2)</span><span class="type-signature"> &rarr; {Object|Array}</span>
+                merge<span class="signature">(val, val2)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>|Array.&lt;*>}</span>
             
         </span>
     </h4>
@@ -10264,8 +10176,7 @@ cache the input values supplied to it each time it is used</p></div>
     
     <div class="description">
         <p>Merges the values from 2 or more Objects or Arrays together into a new Object/Array.
-Null and Undefined values are handled gracefully, and if the second value is
-a primitive it will be returned as-is, instead of trying to merge it onto the first.</p>
+Null and Undefined values are handled gracefully, and if the second value is a primitive it will be returned as-is, instead of trying to merge it onto the first.</p>
     </div>
     
 
@@ -10309,10 +10220,10 @@ a primitive it will be returned as-is, instead of trying to merge it onto the fi
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -10337,10 +10248,10 @@ a primitive it will be returned as-is, instead of trying to merge it onto the fi
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -10397,7 +10308,7 @@ a primitive it will be returned as-is, instead of trying to merge it onto the fi
         <p class="tag-source">
             <a href="merge.js.html" class="button">View Source</a>
             <span>
-                <a href="merge.js.html">merge.js</a>, <a href="merge.js.html#line15">line 15</a>
+                <a href="merge.js.html">merge.js</a>, <a href="merge.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -10428,17 +10339,16 @@ a primitive it will be returned as-is, instead of trying to merge it onto the fi
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new value that contains the combined values from
-all the values passed in</p></div>
+    <div class='param-desc column is-7'><p>A new value that contains the combined values from all the values passed in</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
     </div>
@@ -10463,7 +10373,7 @@ all the values passed in</p></div>
         
         <span class="code-name">
             
-                omit<span class="signature">(keys, obj)</span><span class="type-signature"> &rarr; {Object}</span>
+                omit<span class="signature">(keys, obj)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>}</span>
             
         </span>
     </h4>
@@ -10516,7 +10426,7 @@ all the values passed in</p></div>
   <td class="type">
   
       
-<span class="param-type">Array.&lt;String></span>
+<span class="param-type">Array.&lt;string></span>
 
 
   
@@ -10526,8 +10436,7 @@ all the values passed in</p></div>
 
   
 
-  <td class="description last"><p>An array of keys to search for in the Object and
-exclude from the output</p></td>
+  <td class="description last"><p>An array of keys to search for in the Object and exclude from the output</p></td>
 </tr>
 
 
@@ -10542,7 +10451,7 @@ exclude from the output</p></td>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -10599,7 +10508,7 @@ exclude from the output</p></td>
         <p class="tag-source">
             <a href="omit.js.html" class="button">View Source</a>
             <span>
-                <a href="omit.js.html">omit.js</a>, <a href="omit.js.html#line14">line 14</a>
+                <a href="omit.js.html">omit.js</a>, <a href="omit.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -10636,7 +10545,7 @@ exclude from the output</p></td>
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
     </div>
@@ -10661,7 +10570,7 @@ exclude from the output</p></td>
         
         <span class="code-name">
             
-                pick<span class="signature">(keys, obj)</span><span class="type-signature"> &rarr; {Object}</span>
+                pick<span class="signature">(keys, obj)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>}</span>
             
         </span>
     </h4>
@@ -10724,8 +10633,7 @@ exclude from the output</p></td>
 
   
 
-  <td class="description last"><p>An array of keys to search for in the Object and
-include from the output</p></td>
+  <td class="description last"><p>An array of keys to search for in the Object and include from the output</p></td>
 </tr>
 
 
@@ -10740,7 +10648,7 @@ include from the output</p></td>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -10797,7 +10705,7 @@ include from the output</p></td>
         <p class="tag-source">
             <a href="pick.js.html" class="button">View Source</a>
             <span>
-                <a href="pick.js.html">pick.js</a>, <a href="pick.js.html#line11">line 11</a>
+                <a href="pick.js.html">pick.js</a>, <a href="pick.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -10834,7 +10742,7 @@ include from the output</p></td>
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
     </div>
@@ -10868,8 +10776,7 @@ include from the output</p></td>
     
     
     <div class="description">
-        <p>Creates a chain of Functions that will be executed in sequnce (from left to
-right), with the value from the previous Function fed into the next Function.
+        <p>Creates a chain of Functions that will be executed in sequnce (from left to right), with the value from the previous Function fed into the next Function.
 The value that the chain of functions will executed on can be provided later.</p>
     </div>
     
@@ -10924,8 +10831,7 @@ The value that the chain of functions will executed on can be provided later.</p
 
   
 
-  <td class="description last"><p>One or more function to execute (in sequential
-order) on a value that will be supplied later</p></td>
+  <td class="description last"><p>One or more function to execute (in sequential order) on a value that will be supplied later</p></td>
 </tr>
 
 
@@ -10972,7 +10878,7 @@ order) on a value that will be supplied later</p></td>
         <p class="tag-source">
             <a href="pipe.js.html" class="button">View Source</a>
             <span>
-                <a href="pipe.js.html">pipe.js</a>, <a href="pipe.js.html#line16">line 16</a>
+                <a href="pipe.js.html">pipe.js</a>, <a href="pipe.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -11003,8 +10909,7 @@ order) on a value that will be supplied later</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A single Function that is ready to receive a value and
-pass it through the piped chain of Functions</p></div>
+    <div class='param-desc column is-7'><p>A single Function that is ready to receive a value and pass it through the piped chain of Functions</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -11035,7 +10940,7 @@ pass it through the piped chain of Functions</p></div>
         
         <span class="code-name">
             
-                prepend<span class="signature">(firstVal, secondVal)</span><span class="type-signature"> &rarr; {Array|Object|String}</span>
+                prepend<span class="signature">(firstVal, secondVal)</span><span class="type-signature"> &rarr; {Array.&lt;*>|Object.&lt;string, <a href="global.html#any">any</a>>|String}</span>
             
         </span>
     </h4>
@@ -11088,10 +10993,10 @@ pass it through the piped chain of Functions</p></div>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 |
 
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
 <span class="param-type">String</span>
@@ -11107,8 +11012,7 @@ pass it through the piped chain of Functions</p></div>
 
   
 
-  <td class="description last"><p>An Array, Object, String or
-Number that the will have a new value(s) merged before its own characters/values</p></td>
+  <td class="description last"><p>An Array, Object, String or Number that the will have a new value(s) merged before its own characters/values</p></td>
 </tr>
 
 
@@ -11123,10 +11027,10 @@ Number that the will have a new value(s) merged before its own characters/values
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 |
 
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
 <span class="param-type">String</span>
@@ -11142,8 +11046,7 @@ Number that the will have a new value(s) merged before its own characters/values
 
   
 
-  <td class="description last"><p>An Array, Object, String or
-Number that the will merge <em>before</em> those from the first provided value</p></td>
+  <td class="description last"><p>An Array, Object, String or Number that the will merge <em>before</em> those from the first provided value</p></td>
 </tr>
 
 
@@ -11190,7 +11093,7 @@ Number that the will merge <em>before</em> those from the first provided value</
         <p class="tag-source">
             <a href="prepend.js.html" class="button">View Source</a>
             <span>
-                <a href="prepend.js.html">prepend.js</a>, <a href="prepend.js.html#line16">line 16</a>
+                <a href="prepend.js.html">prepend.js</a>, <a href="prepend.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -11221,18 +11124,16 @@ Number that the will merge <em>before</em> those from the first provided value</
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new Array, Object, or String that has the
-characters/values from the second provided value merged <em>before</em> those from
-the first provided value</p></div>
+    <div class='param-desc column is-7'><p>A new Array, Object, or String that has the characters/values from the second provided value merged <em>before</em> those from the first provided value</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 |
 
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
 <span class="param-type">String</span>
@@ -11260,7 +11161,7 @@ the first provided value</p></div>
         
         <span class="code-name">
             
-                promiseAll<span class="signature">(requests, ignoreErrors)</span><span class="type-signature"> &rarr; {Promise}</span>
+                promiseAll<span class="signature">(requests, ignoreErrors)</span><span class="type-signature"> &rarr; {Promise.&lt;*>}</span>
             
         </span>
     </h4>
@@ -11269,12 +11170,8 @@ the first provided value</p></div>
     
     
     <div class="description">
-        <p>Gathers an Array of Functions that return Promises and
-returns an Array of results, once they have all completed.
-The only difference between this and native Promise.all() is that these
-promises will <em>all</em> be resolved/rejected before the final Promise (containing
-all the results) is returned. With native Promise.all(), the first unhandled
-rejection will cause the whole endeavor to be terminated.
+        <p>Gathers an Array of Functions that return Promises and returns an Array of results, once they have all completed.
+The only difference between this and native Promise.all() is that these promises will <em>all</em> be resolved/rejected before the final Promise (containing all the results) is returned. With native Promise.all(), the first unhandled rejection will cause the whole endeavor to be terminated.
 Addtionally you can pass in a flag to force caught errors to be ignored entirely.</p>
     </div>
     
@@ -11354,9 +11251,7 @@ Addtionally you can pass in a flag to force caught errors to be ignored entirely
 
   
 
-  <td class="description last"><p>Whether or not to ignore errors entirely
-(this will cause all the results to be returned and any Errors
-will be returned in place of the results)</p></td>
+  <td class="description last"><p>Whether or not to ignore errors entirely (this will cause all the results to be returned and any Errors will be returned in place of the results)</p></td>
 </tr>
 
 
@@ -11403,7 +11298,7 @@ will be returned in place of the results)</p></td>
         <p class="tag-source">
             <a href="promiseAll.js.html" class="button">View Source</a>
             <span>
-                <a href="promiseAll.js.html">promiseAll.js</a>, <a href="promiseAll.js.html#line18">line 18</a>
+                <a href="promiseAll.js.html">promiseAll.js</a>, <a href="promiseAll.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -11440,7 +11335,7 @@ will be returned in place of the results)</p></td>
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise</span>
+<span class="param-type">Promise.&lt;*></span>
 
 
     </div>
@@ -11465,7 +11360,7 @@ will be returned in place of the results)</p></td>
         
         <span class="code-name">
             
-                promiseChain<span class="signature">(&hellip;requests)</span><span class="type-signature"> &rarr; {Promise}</span>
+                promiseChain<span class="signature">(&hellip;requests)</span><span class="type-signature"> &rarr; {Promise.&lt;*>}</span>
             
         </span>
     </h4>
@@ -11474,8 +11369,7 @@ will be returned in place of the results)</p></td>
     
     
     <div class="description">
-        <p>Gathers an Array of Promises (or of Functions that return Promises) and
-executes them in sequential order they appear in the Array.
+        <p>Gathers an Array of Promises (or of Functions that return Promises) and executes them in sequential order they appear in the Array.
 The value from the last will be supplied to the next (in case you need it).</p>
     </div>
     
@@ -11522,7 +11416,7 @@ The value from the last will be supplied to the next (in case you need it).</p>
   <td class="type">
   
       
-<span class="param-type">Array.&lt;Promise></span>
+<span class="param-type">Array.&lt;Promise.&lt;*>></span>
 |
 
 <span class="param-type">Array.&lt;function()></span>
@@ -11545,8 +11439,7 @@ The value from the last will be supplied to the next (in case you need it).</p>
 
   
 
-  <td class="description last"><p>An array of Promises (or of Functions
-that return Promises) which need to be executed in sequential order</p></td>
+  <td class="description last"><p>An array of Promises (or of Functions that return Promises) which need to be executed in sequential order</p></td>
 </tr>
 
 
@@ -11593,7 +11486,7 @@ that return Promises) which need to be executed in sequential order</p></td>
         <p class="tag-source">
             <a href="promiseChain.js.html" class="button">View Source</a>
             <span>
-                <a href="promiseChain.js.html">promiseChain.js</a>, <a href="promiseChain.js.html#line12">line 12</a>
+                <a href="promiseChain.js.html">promiseChain.js</a>, <a href="promiseChain.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -11630,7 +11523,7 @@ that return Promises) which need to be executed in sequential order</p></td>
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise</span>
+<span class="param-type">Promise.&lt;*></span>
 
 
     </div>
@@ -11655,7 +11548,7 @@ that return Promises) which need to be executed in sequential order</p></td>
         
         <span class="code-name">
             
-                promiseCompose<span class="signature">(&hellip;requests)</span><span class="type-signature"> &rarr; {Promise}</span>
+                promiseCompose<span class="signature">(&hellip;requests)</span><span class="type-signature"> &rarr; {Promise.&lt;*>}</span>
             
         </span>
     </h4>
@@ -11664,9 +11557,8 @@ that return Promises) which need to be executed in sequential order</p></td>
     
     
     <div class="description">
-        <p>Gathers an Array of Promises (or of Functions that return Promises) and
-executes them from right to left. You can pass them all together in either a
-single array, or one by one as arguments (ie, in the style of either <code>apply</code> or <code>call</code>).</p>
+        <p>Gathers an Array of Promises (or of Functions that return Promises) and executes them from right to left.
+You can pass them all together in either a single array, or one by one as arguments (ie, in the style of either <code>apply</code> or <code>call</code>).</p>
     </div>
     
 
@@ -11712,7 +11604,7 @@ single array, or one by one as arguments (ie, in the style of either <code>apply
   <td class="type">
   
       
-<span class="param-type">Array.&lt;Promise></span>
+<span class="param-type">Array.&lt;Promise.&lt;*>></span>
 |
 
 <span class="param-type">Array.&lt;function()></span>
@@ -11735,8 +11627,7 @@ single array, or one by one as arguments (ie, in the style of either <code>apply
 
   
 
-  <td class="description last"><p>An array of Promises (or of Functions
-that return Promises) which need to be executed in sequential order</p></td>
+  <td class="description last"><p>An array of Promises (or of Functions that return Promises) which need to be executed in sequential order</p></td>
 </tr>
 
 
@@ -11783,7 +11674,7 @@ that return Promises) which need to be executed in sequential order</p></td>
         <p class="tag-source">
             <a href="promiseCompose.js.html" class="button">View Source</a>
             <span>
-                <a href="promiseCompose.js.html">promiseCompose.js</a>, <a href="promiseCompose.js.html#line14">line 14</a>
+                <a href="promiseCompose.js.html">promiseCompose.js</a>, <a href="promiseCompose.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -11820,7 +11711,7 @@ that return Promises) which need to be executed in sequential order</p></td>
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise</span>
+<span class="param-type">Promise.&lt;*></span>
 
 
     </div>
@@ -11854,8 +11745,8 @@ that return Promises) which need to be executed in sequential order</p></td>
     
     
     <div class="description">
-        <p>Looks for a specified key on an Object you provide. The is performed safely
-and will not throw an error if somethign on the prop path chain you specify doesn't exist.
+        <p>Looks for a specified key on an Object you provide.
+The is performed safely and will not throw an error if somethign on the prop path chain you specify doesn't exist.
 Will always return <code>undefined</code> if a prop path cannot be resolved (rather than throwing).</p>
     </div>
     
@@ -11913,8 +11804,7 @@ Will always return <code>undefined</code> if a prop path cannot be resolved (rat
 
   
 
-  <td class="description last"><p>A top-level key OR a deeply nested prop path (which may
-be represented as an array or as a single dot-delimited string)</p></td>
+  <td class="description last"><p>A top-level key OR a deeply nested prop path (which may be represented as an array or as a single dot-delimited string)</p></td>
 </tr>
 
 
@@ -11929,7 +11819,7 @@ be represented as an array or as a single dot-delimited string)</p></td>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -11986,7 +11876,7 @@ be represented as an array or as a single dot-delimited string)</p></td>
         <p class="tag-source">
             <a href="propAt.js.html" class="button">View Source</a>
             <span>
-                <a href="propAt.js.html">propAt.js</a>, <a href="propAt.js.html#line14">line 14</a>
+                <a href="propAt.js.html">propAt.js</a>, <a href="propAt.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -12017,8 +11907,7 @@ be represented as an array or as a single dot-delimited string)</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>The value associated with the nested prop path OR undefined if
-it does not exist</p></div>
+    <div class='param-desc column is-7'><p>The value associated with the nested prop path OR undefined if it does not exist</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -12061,8 +11950,7 @@ it does not exist</p></div>
     
     
     <div class="description">
-        <p>Looks for a specified key on an Object you provide and checks to see if its
-corresponding value equals the value you specifiy.</p>
+        <p>Looks for a specified key on an Object you provide and checks to see if its corresponding value equals the value you specifiy.</p>
     </div>
     
 
@@ -12159,7 +12047,7 @@ corresponding value equals the value you specifiy.</p>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -12216,7 +12104,7 @@ corresponding value equals the value you specifiy.</p>
         <p class="tag-source">
             <a href="propEquals.js.html" class="button">View Source</a>
             <span>
-                <a href="propEquals.js.html">propEquals.js</a>, <a href="propEquals.js.html#line14">line 14</a>
+                <a href="propEquals.js.html">propEquals.js</a>, <a href="propEquals.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -12287,8 +12175,7 @@ corresponding value equals the value you specifiy.</p>
     
     
     <div class="description">
-        <p>Looks for a specified key on an Object you provide and checks to see if its
-corresponding value is of the type you specifiy.</p>
+        <p>Looks for a specified key on an Object you provide and checks to see if its corresponding value is of the type you specifiy.</p>
     </div>
     
 
@@ -12345,10 +12232,7 @@ corresponding value is of the type you specifiy.</p>
 
   
 
-  <td class="description last"><p>A JavaScript type constructor function
-(ie <code>Boolean</code>, <code>RegExp</code>, <code>Date</code>, <code>Array</code>, <code>Object</code>, <code>Number</code>, <code>String</code>, etc)
-OR a string represention of the type (ie, &quot;boolean&quot;, &quot;regexp&quot;, &quot;date&quot;,
-&quot;array&quot;, &quot;object&quot;, &quot;number&quot;, &quot;string&quot;, etc)</p></td>
+  <td class="description last"><p>A JavaScript type constructor function (ie <code>Boolean</code>, <code>RegExp</code>, <code>Date</code>, <code>Array</code>, <code>Object</code>, <code>Number</code>, <code>String</code>, etc) OR a string represention of the type (ie, &quot;boolean&quot;, &quot;regexp&quot;, &quot;date&quot;, &quot;array&quot;, &quot;object&quot;, &quot;number&quot;, &quot;string&quot;, etc)</p></td>
 </tr>
 
 
@@ -12388,7 +12272,7 @@ OR a string represention of the type (ie, &quot;boolean&quot;, &quot;regexp&quot
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -12445,7 +12329,7 @@ OR a string represention of the type (ie, &quot;boolean&quot;, &quot;regexp&quot
         <p class="tag-source">
             <a href="propIs.js.html" class="button">View Source</a>
             <span>
-                <a href="propIs.js.html">propIs.js</a>, <a href="propIs.js.html#line18">line 18</a>
+                <a href="propIs.js.html">propIs.js</a>, <a href="propIs.js.html#line13">line 13</a>
             </span>
         </p>
     
@@ -12516,8 +12400,7 @@ OR a string represention of the type (ie, &quot;boolean&quot;, &quot;regexp&quot
     
     
     <div class="description">
-        <p>Attempts to find a specified key on an Object you provide, and if not found
-will fall back to an additional value you specify.</p>
+        <p>Attempts to find a specified key on an Object you provide, and if not found will fall back to an additional value you specify.</p>
     </div>
     
 
@@ -12571,8 +12454,7 @@ will fall back to an additional value you specify.</p>
 
   
 
-  <td class="description last"><p>A value to fall back on if the requested key does not
-exist on the provided Object</p></td>
+  <td class="description last"><p>A value to fall back on if the requested key does not exist on the provided Object</p></td>
 </tr>
 
 
@@ -12612,7 +12494,7 @@ exist on the provided Object</p></td>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -12669,7 +12551,7 @@ exist on the provided Object</p></td>
         <p class="tag-source">
             <a href="propOr.js.html" class="button">View Source</a>
             <span>
-                <a href="propOr.js.html">propOr.js</a>, <a href="propOr.js.html#line16">line 16</a>
+                <a href="propOr.js.html">propOr.js</a>, <a href="propOr.js.html#line13">line 13</a>
             </span>
         </p>
     
@@ -12731,7 +12613,7 @@ exist on the provided Object</p></td>
         
         <span class="code-name">
             
-                propSet<span class="signature">(prop, val, obj)</span><span class="type-signature"> &rarr; {Object}</span>
+                propSet<span class="signature">(prop, val, obj)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>}</span>
             
         </span>
     </h4>
@@ -12799,8 +12681,7 @@ The is performed safely and will not throw an error if somethign on the prop pat
 
   
 
-  <td class="description last"><p>A top-level key OR a deeply nested prop path (which may
-be represented as an array or as a single dot-delimited string)</p></td>
+  <td class="description last"><p>A top-level key OR a deeply nested prop path (which may be represented as an array or as a single dot-delimited string)</p></td>
 </tr>
 
 
@@ -12840,7 +12721,7 @@ be represented as an array or as a single dot-delimited string)</p></td>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -12897,7 +12778,7 @@ be represented as an array or as a single dot-delimited string)</p></td>
         <p class="tag-source">
             <a href="propSet.js.html" class="button">View Source</a>
             <span>
-                <a href="propSet.js.html">propSet.js</a>, <a href="propSet.js.html#line19">line 19</a>
+                <a href="propSet.js.html">propSet.js</a>, <a href="propSet.js.html#line16">line 16</a>
             </span>
         </p>
     
@@ -12928,14 +12809,13 @@ be represented as an array or as a single dot-delimited string)</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>The original object, but modified to have the provided value placed at the specified path
-it does not exist</p></div>
+    <div class='param-desc column is-7'><p>The original object, but modified to have the provided value placed at the specified path it does not exist</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
     </div>
@@ -12969,10 +12849,8 @@ it does not exist</p></div>
     
     
     <div class="description">
-        <p>A simple wrapper around native Array.prototype.reduce(), for use in a
-compose/pipe chain of functions.
-Can also reduce the key/value pairs of an object, if one is supplied in place
-of an array.</p>
+        <p>A simple wrapper around native Array.prototype.reduce(), for use in a compose/pipe chain of functions.
+Can also reduce the key/value pairs of an object, if one is supplied in place of an array.</p>
     </div>
     
 
@@ -13026,8 +12904,7 @@ of an array.</p>
 
   
 
-  <td class="description last"><p>A function to control the reduction of each item in the
-array|object into the single output value</p></td>
+  <td class="description last"><p>A function to control the reduction of each item in the array|object into the single output value</p></td>
 </tr>
 
 
@@ -13067,10 +12944,10 @@ array|object into the single output value</p></td>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 |
 
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -13127,7 +13004,7 @@ array|object into the single output value</p></td>
         <p class="tag-source">
             <a href="reduce.js.html" class="button">View Source</a>
             <span>
-                <a href="reduce.js.html">reduce.js</a>, <a href="reduce.js.html#line15">line 15</a>
+                <a href="reduce.js.html">reduce.js</a>, <a href="reduce.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -13189,7 +13066,7 @@ array|object into the single output value</p></td>
         
         <span class="code-name">
             
-                renameKeys<span class="signature">(keyMap, obj)</span><span class="type-signature"> &rarr; {Object}</span>
+                renameKeys<span class="signature">(keyMap, obj)</span><span class="type-signature"> &rarr; {Object.&lt;string, <a href="global.html#any">any</a>>}</span>
             
         </span>
     </h4>
@@ -13267,7 +13144,7 @@ array|object into the single output value</p></td>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -13324,7 +13201,7 @@ array|object into the single output value</p></td>
         <p class="tag-source">
             <a href="renameKeys.js.html" class="button">View Source</a>
             <span>
-                <a href="renameKeys.js.html">renameKeys.js</a>, <a href="renameKeys.js.html#line13">line 13</a>
+                <a href="renameKeys.js.html">renameKeys.js</a>, <a href="renameKeys.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -13361,7 +13238,7 @@ array|object into the single output value</p></td>
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
     </div>
@@ -13395,11 +13272,9 @@ array|object into the single output value</p></td>
     
     
     <div class="description">
-        <p>Recursively shims an Object. Every time the getter is invoked
-(which happens whenever prop paths are referenced in the consuming code),
-the path is shimmed with another Proxy.
-It is not a polyfill but rather a way to keep deep prop paths that may not
-exist on the source object from throwing an error.</p>
+        <p>Recursively shims an Object.
+Every time the getter is invoked (which happens whenever prop paths are referenced in the consuming code), the path is shimmed with another Proxy.
+It is not a polyfill but rather a way to keep deep prop paths that may not exist on the source object from throwing an error.</p>
     </div>
     
 
@@ -13443,7 +13318,7 @@ exist on the source object from throwing an error.</p>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -13500,7 +13375,7 @@ exist on the source object from throwing an error.</p>
         <p class="tag-source">
             <a href="shim.js.html" class="button">View Source</a>
             <span>
-                <a href="shim.js.html">shim.js</a>, <a href="shim.js.html#line29">line 29</a>
+                <a href="shim.js.html">shim.js</a>, <a href="shim.js.html#line25">line 25</a>
             </span>
         </p>
     
@@ -13531,8 +13406,7 @@ exist on the source object from throwing an error.</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>An Object that will return props on the source Object if
-they exist but safely handle missing prop paths without throwing errors.</p></div>
+    <div class='param-desc column is-7'><p>An Object that will return props on the source Object if they exist but safely handle missing prop paths without throwing errors.</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -13624,13 +13498,13 @@ they exist but safely handle missing prop paths without throwing errors.</p></di
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 |
 
 <span class="param-type">String</span>
 |
 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 |
 
 <span class="param-type">function</span>
@@ -13643,8 +13517,7 @@ they exist but safely handle missing prop paths without throwing errors.</p></di
 
   
 
-  <td class="description last"><p>A value of type Object, String,
-Array or Function</p></td>
+  <td class="description last"><p>A value of type Object, String, Array or Function</p></td>
 </tr>
 
 
@@ -13691,7 +13564,7 @@ Array or Function</p></td>
         <p class="tag-source">
             <a href="size.js.html" class="button">View Source</a>
             <span>
-                <a href="size.js.html">size.js</a>, <a href="size.js.html#line19">line 19</a>
+                <a href="size.js.html">size.js</a>, <a href="size.js.html#line16">line 16</a>
             </span>
         </p>
     
@@ -13722,8 +13595,7 @@ Array or Function</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>The length of the String or Array, OR the number of keys in
-the Object</p></div>
+    <div class='param-desc column is-7'><p>The length of the String or Array, OR the number of keys in the Object</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -13866,7 +13738,7 @@ The first letter of each new word - not preceded by whitespace - is capitalized.
         <p class="tag-source">
             <a href="toCamelCase.js.html" class="button">View Source</a>
             <span>
-                <a href="toCamelCase.js.html">toCamelCase.js</a>, <a href="toCamelCase.js.html#line12">line 12</a>
+                <a href="toCamelCase.js.html">toCamelCase.js</a>, <a href="toCamelCase.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -13897,8 +13769,7 @@ The first letter of each new word - not preceded by whitespace - is capitalized.
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new string that is without hyphens and underscores
-and the first letter of every new word boundary is capitalized, unless preceded by whitespace</p></div>
+    <div class='param-desc column is-7'><p>A new string that is without hyphens and underscores and the first letter of every new word boundary is capitalized, unless preceded by whitespace</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -14040,7 +13911,7 @@ If the values is a <code>Boolean</code>, then <code>true</code> will yield <code
         <p class="tag-source">
             <a href="toInteger.js.html" class="button">View Source</a>
             <span>
-                <a href="toInteger.js.html">toInteger.js</a>, <a href="toInteger.js.html#line11">line 11</a>
+                <a href="toInteger.js.html">toInteger.js</a>, <a href="toInteger.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -14112,8 +13983,7 @@ If the values is a <code>Boolean</code>, then <code>true</code> will yield <code
     
     <div class="description">
         <p>Transforms a string value into one which is hyphenated.
-Whitespace and underscores are replaced with hyphens,
-and uppercase letters are interpreted as boundaries for new hyphenated words.</p>
+Whitespace and underscores are replaced with hyphens, and uppercase letters are interpreted as boundaries for new hyphenated words.</p>
     </div>
     
 
@@ -14214,7 +14084,7 @@ and uppercase letters are interpreted as boundaries for new hyphenated words.</p
         <p class="tag-source">
             <a href="toKebabCase.js.html" class="button">View Source</a>
             <span>
-                <a href="toKebabCase.js.html">toKebabCase.js</a>, <a href="toKebabCase.js.html#line11">line 11</a>
+                <a href="toKebabCase.js.html">toKebabCase.js</a>, <a href="toKebabCase.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -14285,8 +14155,7 @@ and uppercase letters are interpreted as boundaries for new hyphenated words.</p
     
     
     <div class="description">
-        <p>Simple wrapper around String.prototype.toLowerCase() that is provided for
-consistency with the non-native string case methods (<code>toKebabCase()</code>, <code>toCamelCase()</code>, etc)</p>
+        <p>Simple wrapper around String.prototype.toLowerCase() that is provided for consistency with the non-native string case methods (<code>toKebabCase()</code>, <code>toCamelCase()</code>, etc)</p>
     </div>
     
 
@@ -14387,7 +14256,7 @@ consistency with the non-native string case methods (<code>toKebabCase()</code>,
         <p class="tag-source">
             <a href="toLowerCase.js.html" class="button">View Source</a>
             <span>
-                <a href="toLowerCase.js.html">toLowerCase.js</a>, <a href="toLowerCase.js.html#line11">line 11</a>
+                <a href="toLowerCase.js.html">toLowerCase.js</a>, <a href="toLowerCase.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -14418,8 +14287,7 @@ consistency with the non-native string case methods (<code>toKebabCase()</code>,
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new string that is an lowercase representation of the
-original string</p></div>
+    <div class='param-desc column is-7'><p>A new string that is an lowercase representation of the original string</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -14460,8 +14328,7 @@ original string</p></div>
     
     <div class="description">
         <p>Transforms a string value into one which is separated by underscores.
-Whitespace and hyphens are replaced with underscores,
-and uppercase letters are interpreted as boundaries for new underscore-separated words.</p>
+Whitespace and hyphens are replaced with underscores, and uppercase letters are interpreted as boundaries for new underscore-separated words.</p>
     </div>
     
 
@@ -14562,7 +14429,7 @@ and uppercase letters are interpreted as boundaries for new underscore-separated
         <p class="tag-source">
             <a href="toSnakeCase.js.html" class="button">View Source</a>
             <span>
-                <a href="toSnakeCase.js.html">toSnakeCase.js</a>, <a href="toSnakeCase.js.html#line11">line 11</a>
+                <a href="toSnakeCase.js.html">toSnakeCase.js</a>, <a href="toSnakeCase.js.html#line9">line 9</a>
             </span>
         </p>
     
@@ -14734,7 +14601,7 @@ and uppercase letters are interpreted as boundaries for new underscore-separated
         <p class="tag-source">
             <a href="toTitleCase.js.html" class="button">View Source</a>
             <span>
-                <a href="toTitleCase.js.html">toTitleCase.js</a>, <a href="toTitleCase.js.html#line9">line 9</a>
+                <a href="toTitleCase.js.html">toTitleCase.js</a>, <a href="toTitleCase.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -14805,8 +14672,7 @@ and uppercase letters are interpreted as boundaries for new underscore-separated
     
     
     <div class="description">
-        <p>Simple wrapper around String.prototype.toUpperCase() that is provided for
-consistency with the non-native string case methods (<code>toKebabCase()</code>, <code>toCamelCase()</code>, etc)</p>
+        <p>Simple wrapper around String.prototype.toUpperCase() that is provided for consistency with the non-native string case methods (<code>toKebabCase()</code>, <code>toCamelCase()</code>, etc)</p>
     </div>
     
 
@@ -14907,7 +14773,7 @@ consistency with the non-native string case methods (<code>toKebabCase()</code>,
         <p class="tag-source">
             <a href="toUpperCase.js.html" class="button">View Source</a>
             <span>
-                <a href="toUpperCase.js.html">toUpperCase.js</a>, <a href="toUpperCase.js.html#line11">line 11</a>
+                <a href="toUpperCase.js.html">toUpperCase.js</a>, <a href="toUpperCase.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -14938,8 +14804,7 @@ consistency with the non-native string case methods (<code>toKebabCase()</code>,
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A new string that is an uppercase representation of the
-original string</p></div>
+    <div class='param-desc column is-7'><p>A new string that is an uppercase representation of the original string</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -15023,7 +14888,13 @@ original string</p></div>
   <td class="type">
   
       
-<span class="param-type">Object.&lt;string, (string|boolean|number)></span>
+<span class="param-type">Object.&lt;string, string></span>
+|
+
+<span class="param-type">Boolean</span>
+|
+
+<span class="param-type">Number</span>
 
 
   
@@ -15080,7 +14951,7 @@ original string</p></div>
         <p class="tag-source">
             <a href="toUriEncoded.js.html" class="button">View Source</a>
             <span>
-                <a href="toUriEncoded.js.html">toUriEncoded.js</a>, <a href="toUriEncoded.js.html#line12">line 12</a>
+                <a href="toUriEncoded.js.html">toUriEncoded.js</a>, <a href="toUriEncoded.js.html#line11">line 11</a>
             </span>
         </p>
     
@@ -15142,7 +15013,7 @@ original string</p></div>
         
         <span class="code-name">
             
-                uniq<span class="signature">(list)</span><span class="type-signature"> &rarr; {Array}</span>
+                uniq<span class="signature">(list)</span><span class="type-signature"> &rarr; {Array.&lt;*>}</span>
             
         </span>
     </h4>
@@ -15195,7 +15066,7 @@ original string</p></div>
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -15252,7 +15123,7 @@ original string</p></div>
         <p class="tag-source">
             <a href="uniq.js.html" class="button">View Source</a>
             <span>
-                <a href="uniq.js.html">uniq.js</a>, <a href="uniq.js.html#line11">line 11</a>
+                <a href="uniq.js.html">uniq.js</a>, <a href="uniq.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -15289,7 +15160,7 @@ original string</p></div>
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
     </div>
@@ -15314,7 +15185,7 @@ original string</p></div>
         
         <span class="code-name">
             
-                uniqBy<span class="signature">(pred, list)</span><span class="type-signature"> &rarr; {Array}</span>
+                uniqBy<span class="signature">(pred, list)</span><span class="type-signature"> &rarr; {Array.&lt;*>}</span>
             
         </span>
     </h4>
@@ -15323,8 +15194,7 @@ original string</p></div>
     
     
     <div class="description">
-        <p>Filters an array of values down to only those which are unique, based on a
-provided predicate function (or shorthand for retrieving a prop inside an object)</p>
+        <p>Filters an array of values down to only those which are unique, based on a provided predicate function (or shorthand for retrieving a prop inside an object)</p>
     </div>
     
 
@@ -15396,7 +15266,7 @@ provided predicate function (or shorthand for retrieving a prop inside an object
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
   
@@ -15453,7 +15323,7 @@ provided predicate function (or shorthand for retrieving a prop inside an object
         <p class="tag-source">
             <a href="uniqBy.js.html" class="button">View Source</a>
             <span>
-                <a href="uniqBy.js.html">uniqBy.js</a>, <a href="uniqBy.js.html#line14">line 14</a>
+                <a href="uniqBy.js.html">uniqBy.js</a>, <a href="uniqBy.js.html#line12">line 12</a>
             </span>
         </p>
     
@@ -15490,7 +15360,7 @@ provided predicate function (or shorthand for retrieving a prop inside an object
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;*></span>
 
 
     </div>
@@ -15524,8 +15394,7 @@ provided predicate function (or shorthand for retrieving a prop inside an object
     
     
     <div class="description">
-        <p>Transforms a thunk (of however many levels deep) into a single function that
-will received all the args at once</p>
+        <p>Transforms a thunk (of however many levels deep) into a single function that will received all the args at once</p>
     </div>
     
 
@@ -15579,8 +15448,7 @@ will received all the args at once</p>
 
   
 
-  <td class="description last"><p>A function that returns a function (which may return
-a function, and so on)</p></td>
+  <td class="description last"><p>A function that returns a function (which may return a function, and so on)</p></td>
 </tr>
 
 
@@ -15627,7 +15495,7 @@ a function, and so on)</p></td>
         <p class="tag-source">
             <a href="unthunk.js.html" class="button">View Source</a>
             <span>
-                <a href="unthunk.js.html">unthunk.js</a>, <a href="unthunk.js.html#line12">line 12</a>
+                <a href="unthunk.js.html">unthunk.js</a>, <a href="unthunk.js.html#line8">line 8</a>
             </span>
         </p>
     
@@ -15658,8 +15526,7 @@ a function, and so on)</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>A single function that is ready to receive all the
-arguments at once</p></div>
+    <div class='param-desc column is-7'><p>A single function that is ready to receive all the arguments at once</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -15690,7 +15557,7 @@ arguments at once</p></div>
         
         <span class="code-name">
             
-                validate<span class="signature">(validations, values)</span><span class="type-signature"> &rarr; {Object}</span>
+                validate<span class="signature">(validations, values)</span><span class="type-signature"> &rarr; {Object.&lt;string, Array.&lt;String>>}</span>
             
         </span>
     </h4>
@@ -15707,11 +15574,9 @@ Those validations are written as Arrays of pairs:</p>
 should the validation fail.</li>
 </ul>
 <p>If you do not supply a validation error message, a default one will be built that looks like:
-<code>&quot;${val}&quot; is not valid for &quot;${key}&quot;</code>
-And of course, you can write your validation error message as a function that
-will receive the value and key name as its first and second params (you should return a message as a string).</p>
-<p>If you do not supply valid input (Array of validator function and validation error message), rather than throwing
-an error it will be replaced with a validation function that always returns <code>false</code> and a corresponding error message of:
+<code>&quot;${val}&quot; is not valid for &quot;${key}&quot;</code></p>
+<p>And of course, you can write your validation error message as a function that will receive the value and key name as its first and second params (you should return a message as a string).</p>
+<p>If you do not supply valid input (Array of validator function and validation error message), rather than throwing an error it will be replaced with a validation function that always returns <code>false</code> and a corresponding error message of:
 <code>Validations for &quot;${key}&quot; are broken</code></p>
     </div>
     
@@ -15756,7 +15621,7 @@ an error it will be replaced with a validation function that always returns <cod
   <td class="type">
   
       
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;function()></span>
 
 
   
@@ -15781,7 +15646,7 @@ an error it will be replaced with a validation function that always returns <cod
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -15791,8 +15656,7 @@ an error it will be replaced with a validation function that always returns <cod
 
   
 
-  <td class="description last"><p>An Object of key value pairs, the keys should correspond to
-validators and the values are that which is to be validated</p></td>
+  <td class="description last"><p>An Object of key value pairs, the keys should correspond to validators and the values are that which is to be validated</p></td>
 </tr>
 
 
@@ -15839,7 +15703,7 @@ validators and the values are that which is to be validated</p></td>
         <p class="tag-source">
             <a href="validate.js.html" class="button">View Source</a>
             <span>
-                <a href="validate.js.html">validate.js</a>, <a href="validate.js.html#line71">line 71</a>
+                <a href="validate.js.html">validate.js</a>, <a href="validate.js.html#line66">line 66</a>
             </span>
         </p>
     
@@ -15870,15 +15734,13 @@ validators and the values are that which is to be validated</p></td>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>An object containing the key names of the values and one or
-more validation error messages (Only key names whose values were found to be
-invalid will show up on this output Object; an empty Object means everything was valid)</p></div>
+    <div class='param-desc column is-7'><p>An object containing the key names of the values and one or more validation error messages (Only key names whose values were found to be invalid will show up on this output Object; an empty Object means everything was valid)</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, Array.&lt;String>></span>
 
 
     </div>
@@ -15917,7 +15779,7 @@ validate([
         
         <span class="code-name">
             
-                values<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Array.&lt;Array>}</span>
+                values<span class="signature">(obj)</span><span class="type-signature"> &rarr; {Array.&lt;*>}</span>
             
         </span>
     </h4>
@@ -15970,7 +15832,7 @@ validate([
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type">Object.&lt;string, <a href="global.html#any">any</a>></span>
 
 
   
@@ -16027,7 +15889,7 @@ validate([
         <p class="tag-source">
             <a href="values.js.html" class="button">View Source</a>
             <span>
-                <a href="values.js.html">values.js</a>, <a href="values.js.html#line11">line 11</a>
+                <a href="values.js.html">values.js</a>, <a href="values.js.html#line10">line 10</a>
             </span>
         </p>
     
@@ -16064,7 +15926,7 @@ validate([
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Array.&lt;Array></span>
+<span class="param-type">Array.&lt;*></span>
 
 
     </div>
@@ -16102,9 +15964,9 @@ validate([
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Thu Jun 04 2020 01:41:01 GMT+0000 (UTC)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a> on Thu Aug 20 2020 22:36:20 GMT+0000 (Coordinated Universal Time)</p>
         <p class="sidebar-created-by">
-            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
         </p>
     </div>
@@ -16112,6 +15974,7 @@ validate([
 
 
 <script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
 <script src="scripts/linenumber.js"> </script>
 </body>
 </html>
