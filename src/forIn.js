@@ -1,14 +1,11 @@
-import has from './has'
+import has from "./has"
 
 /**
- * A light wrapper around native `for .. in`, but will only iterate over an
- * Object's own properties.
+ * A light wrapper around native `for .. in`, but will only iterate over an Object's own properties.
  *
  * @function
- * @sig ({k: v} -> undefined) -> {k: v}
- * @param {Function} fn A function to execute iteratively,
- * which will receive the `key`, `value`, and `object` (respectively)
- * @param {Object} obj An object whose keys will be iterated over
+ * @param {Function} fn A function to execute iteratively, which will receive the `key`, `value`, and `object` (respectively)
+ * @param {Object<string, any>} obj An object whose keys will be iterated over
  */
 function forIn(fn, obj) {
   // eslint-disable-next-line no-restricted-syntax

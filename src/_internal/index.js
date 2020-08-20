@@ -1,9 +1,9 @@
-import _map from './_map'
-import _includes from './_includes'
-import areAllFunctions from './areAllFunctions'
-import getConstructorName from './getConstructorName'
+import _map from "./_map"
+import _includes from "./_includes"
+import areAllFunctions from "./areAllFunctions"
+import getConstructorName from "./getConstructorName"
 
-export * from './coerce'
+export * from "./coerce"
 
 export {
   _map,

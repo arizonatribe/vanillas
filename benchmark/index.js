@@ -1,30 +1,30 @@
-const fs = require('fs')
-const path = require('path')
-const chalk = require('chalk')
-const readdirRecursive = require('fs-readdir-recursive')
+const fs = require("fs")
+const path = require("path")
+const chalk = require("chalk")
+const readdirRecursive = require("fs-readdir-recursive")
 
-require('@babel/register')
+require("@babel/register")
 
-const { errorLog, log } = require('./helpers')
-const { default: runBenchmarks } = require('./run')
-const { default: isEqual } = require('../src/isEqual')
-const { default: promiseChain } = require('../src/promiseChain')
+const { errorLog, log } = require("./helpers")
+const { default: runBenchmarks } = require("./run")
+const { default: isEqual } = require("../src/isEqual")
+const { default: promiseChain } = require("../src/promiseChain")
 
 const docs = []
 const logToDocs = (...l) => docs.push(...l)
 
 let functionNames = process.argv.slice(2).filter(arg => !/^--/.test(arg))
-const updateDocs = process.argv.some(arg => arg === '--update-docs')
-const baseDir = path.resolve('benchmark', 'tests')
+const updateDocs = process.argv.some(arg => arg === "--update-docs")
+const baseDir = path.resolve("benchmark", "tests")
 
 if (!functionNames.length) {
-  functionNames = readdirRecursive(baseDir).map(fn => fn.split('.')[0])
+  functionNames = readdirRecursive(baseDir).map(fn => fn.split(".")[0])
   log(chalk`{white Running all tests}{red.bold :}`)
   log(chalk`{cyan You can always specify which test(s) to run using this syntax}:\n`)
   log(chalk`{red $} {yellow npm run benchmark }{white -- }{cyan <file1> <file2> <file3>}{white ...}`)
   log(chalk`{cyan (You can run one or more or all of the tests in the }{red benchmark/test/} {cyan directory)}\n`)
 } else if (functionNames.length !== 1) {
-  log(chalk`{white Running benchmark tests for: "${functionNames.join(', ')}"}{red.bold  . . . }\n`)
+  log(chalk`{white Running benchmark tests for: "${functionNames.join(", ")}"}{red.bold  . . . }\n`)
 }
 
 function allTestsReturnSameValue(tests = []) {
@@ -33,7 +33,7 @@ function allTestsReturnSameValue(tests = []) {
     .every(([caption, result], index, arr) => {
       if (!isEqual(result, arr[0][1])) {
         messages = chalk`{red The result for ${
-          index > 1 ? caption : 'the second test'
+          index > 1 ? caption : "the second test"
         } }{red doesn't match the first test:}`
         messages += chalk`{green \n  ${JSON.stringify(arr[0][1])}}{yellow \n    vs}{green \n  ${JSON.stringify(result)}\n}`
         return false
@@ -81,9 +81,9 @@ async function benchmark() {
 
     if (docs.length) {
       fs.writeFileSync(
-        'BENCHMARKS.md',
-        ['```', ...docs, '```'].join('\n'),
-        'utf-8'
+        "BENCHMARKS.md",
+        ["```", ...docs, "```"].join("\n"),
+        "utf-8"
       )
     }
   } catch (err) {

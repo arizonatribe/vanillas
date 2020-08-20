@@ -1,19 +1,19 @@
-import isNil from './isNil'
-import getConstructorName from './_internal/getConstructorName'
+import isNil from "./isNil"
+import getConstructorName from "./_internal/getConstructorName"
 
 function isArrayLike(name) {
   switch (name) {
-  case 'Set':
-  case 'WeakSet':
-  case 'Array':
-  case 'Float64Array':
-  case 'Float32Array':
-  case 'Int32Array':
-  case 'Uint16Array':
-  case 'Int16Array':
-  case 'Uint8ClampedArray':
-  case 'Uint8Array':
-  case 'Int8Array':
+  case "Set":
+  case "WeakSet":
+  case "Array":
+  case "Float64Array":
+  case "Float32Array":
+  case "Int32Array":
+  case "Uint16Array":
+  case "Int16Array":
+  case "Uint8ClampedArray":
+  case "Uint8Array":
+  case "Int8Array":
     return true
   default:
     return false
@@ -37,8 +37,7 @@ function isArrayLike(name) {
  * - Int8Array
  *
  * @function
- * @sig * -> Boolean
- * @param val A value to check as being an array
+ * @param {*} val A value to check as being an array
  * @returns {Boolean} Whether the value is an array-like type
  */
 function isArrayish(val) {

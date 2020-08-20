@@ -1,11 +1,10 @@
-import getType from './getType'
+import getType from "./getType"
 
 /**
  * Inspects two values to see if they are the same type.
  * The typeof and (if necessary) constructor names are inspected during this check.
  *
  * @function
- * @sig * -> Boolean
  * @param {*} val1 A value (of any type)
  * @param {*} val2 A value (of any type)
  * @returns {Boolean} Whether or not the two values are of the same type

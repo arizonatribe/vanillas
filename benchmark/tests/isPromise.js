@@ -1,5 +1,5 @@
-import ispromise from 'is-promise'
-import { isPromise } from '../../src'
+import ispromise from "is-promise"
+import { isPromise } from "../../src"
 
 const val = {
   catch() { },
@@ -8,8 +8,8 @@ const val = {
 }
 
 const tests = [
-  ['Vanillas "isPromise"', () => isPromise(val)],
-  ['is-promise "isPromise"', () => ispromise(val)]
+  ["Vanillas \"isPromise\"", () => isPromise(val)],
+  ["is-promise \"isPromise\"", () => ispromise(val)]
 ]
 
 export default { tests }

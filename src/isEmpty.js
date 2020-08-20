@@ -1,13 +1,10 @@
-import isObject from './isObject'
+import isObject from "./isObject"
 
 /**
- * Checks if a value is empty. Arrays, Objects, Strings, Sets, and
- * Null/Undefined values are considered empty if their length (or size) prop is
- * zero (or if they are Null or Undefined).
+ * Checks if a value is empty. Arrays, Objects, Strings, Sets, and Null/Undefined values are considered empty if their length (or size) prop is zero (or if they are Null or Undefined).
  * Whitespace-only strings are NOT considered empty (use `isBlankString` instead).
  *
  * @function
- * @isg * -> Boolean
  * @param {*} val A value of any type which may be considered empty
  * @returns {Boolean} Whether or not the value is empty
  */

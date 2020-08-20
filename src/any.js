@@ -3,12 +3,9 @@
  * Exits when the first match is found.
  *
  * @function
- * @sig (* -> Boolean) -> Array -> Boolean
- * @param {Function} pred A predicate function to evaluate against each item in
- * a given array
- * @param {Array} arr An array of items to evaluate against the predicate function
- * @returns {Boolean} Whether or not any items in the array matched the
- * predicate function
+ * @param {Function} pred A predicate function to evaluate against each item in a given array
+ * @param {Array<*>} arr An array of items to evaluate against the predicate function
+ * @returns {Boolean} Whether or not any items in the array matched the predicate function
  */
 function any(pred, arr) {
   const len = arr.length

@@ -1,9 +1,9 @@
-import R from 'ramda'
-import { mapSpec, toTitleCase } from '../../src'
-import { mapSpec as curriedMapSpec } from '../../src/curried'
-import { hook } from '../../test/__mocks__'
+import R from "ramda"
+import { mapSpec, toTitleCase } from "../../src"
+import { mapSpec as curriedMapSpec } from "../../src/curried"
+import { hook } from "../../test/__mocks__"
 
-const yearOfHook = { ...hook, year: '1991' }
+const yearOfHook = { ...hook, year: "1991" }
 
 const spec = {
   Hoffman: toTitleCase,
@@ -14,15 +14,15 @@ const spec = {
 }
 
 const mapSpecTests = [
-  ['Vanillas "mapSpec"', () => mapSpec(spec, yearOfHook)],
-  ['Ramda "evolve"', () => R.evolve(spec, yearOfHook)],
-  ['(native) recursive "Object.keys(spec).forEach()"', () => {
+  ["Vanillas \"mapSpec\"", () => mapSpec(spec, yearOfHook)],
+  ["Ramda \"evolve\"", () => R.evolve(spec, yearOfHook)],
+  ["(native) recursive \"Object.keys(spec).forEach()\"", () => {
     function mapDeeply(fns, val) {
       const newObj = {}
       Object.keys(fns).forEach(key => {
-        if (typeof fns[key] === 'function') {
+        if (typeof fns[key] === "function") {
           newObj[key] = fns[key](val[key])
-        } else if (fns[key].constructor && fns[key].constructor.name === 'Object') {
+        } else if (fns[key].constructor && fns[key].constructor.name === "Object") {
           newObj[key] = mapDeeply(fns[key])(val[key])
         } else {
           newObj[key] = val[key]
@@ -34,8 +34,8 @@ const mapSpecTests = [
   }]
 ]
 const curriedMapSpecTests = [
-  ['Vanillas (curried) "mapSpec"', () => curriedMapSpec(spec)(yearOfHook)],
-  ['Ramda (curried) "evolve"', () => R.evolve(spec)(yearOfHook)]
+  ["Vanillas (curried) \"mapSpec\"", () => curriedMapSpec(spec)(yearOfHook)],
+  ["Ramda (curried) \"evolve\"", () => R.evolve(spec)(yearOfHook)]
 ]
 
 export default { mapSpecTests, curriedMapSpecTests }

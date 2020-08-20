@@ -1,19 +1,15 @@
-import isObject from './isObject'
-import isArrayish from './isArrayish'
-import isStrictEqual from './isStrictEqual'
-import isSameType from './isSameType'
+import isObject from "./isObject"
+import isArrayish from "./isArrayish"
+import isStrictEqual from "./isStrictEqual"
+import isSameType from "./isSameType"
 
 /**
  * Checks if two provided values are deeply equal.
- * If Objects or Arrays (or Array-like values) are provided,
- * they are inspected recursively.
- * Primitive values are checked to see if they are stricly equal
- * (ie triple equals; no type coercion).
+ * If Objects or Arrays (or Array-like values) are provided, they are inspected recursively.
+ * Primitive values are checked to see if they are stricly equal (ie triple equals; no type coercion).
  *
  * @function
- * @sig * -> * -> Boolean
- * @param {*} firstVal A value which may be null, undefined, a JavaScript
- * primitive value, an array of values, an array-like value, or an object
+ * @param {*} firstVal A value which may be null, undefined, a JavaScript primitive value, an array of values, an array-like value, or an object
  * @param {*} secondVal A value which may be null, undefined, a JavaScript
  * @returns {Boolean} Whether or not the two values are deeply equal
  */

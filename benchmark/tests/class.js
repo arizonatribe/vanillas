@@ -21,8 +21,8 @@ class AnimalClass {
 class DogClass extends AnimalClass {
   constructor() {
     super()
-    this.makeSound = this.makeSound.bind(this, 'bark')
-    this.eatFood = this.eatFood.bind(this, 'kibble')
+    this.makeSound = this.makeSound.bind(this, "bark")
+    this.eatFood = this.eatFood.bind(this, "kibble")
   }
 }
 
@@ -39,8 +39,8 @@ class AnimalClass2 {
 class DogClass2 extends AnimalClass2 {
   constructor() {
     super()
-    this.sound = 'bark'
-    this.food = 'kibble'
+    this.sound = "bark"
+    this.food = "kibble"
   }
 }
 
@@ -61,7 +61,7 @@ class AnimalClass3 {
 
 class DogClass3 extends AnimalClass3 {
   constructor() {
-    super('bark', 'kibble')
+    super("bark", "kibble")
   }
 }
 
@@ -78,7 +78,7 @@ AnimalConstructor.prototype.eatFood = function() {
 }
 
 function DogConstructor() {
-  AnimalConstructor.call(this, 'bark', 'kibble')
+  AnimalConstructor.call(this, "bark", "kibble")
 }
 
 DogConstructor.prototype = Object.create(AnimalConstructor.prototype)
@@ -88,51 +88,51 @@ const makeSound = noise => noise
 
 const dogObj = {
   makeSound() {
-    return makeSound('bark')
+    return makeSound("bark")
   },
   eatFood() {
-    return eatFood('kibble')
+    return eatFood("kibble")
   }
 }
 
 const singleMethodTests = [
-  ['New\'ing up a class (setting prop using bind)', () => {
+  ["New'ing up a class (setting prop using bind)", () => {
     const dog = new DogClass()
     return dog.makeSound()
   }],
-  ['New\'ing up a class (setting shared prop on instance)', () => {
+  ["New'ing up a class (setting shared prop on instance)", () => {
     const dog = new DogClass2()
     return dog.makeSound()
   }],
-  ['New\'ing up a class (passing prop via super())', () => {
+  ["New'ing up a class (passing prop via super())", () => {
     const dog = new DogClass3()
     return dog.makeSound()
   }],
-  ['New\'ing up a class (ES5 constructor Function)', () => {
+  ["New'ing up a class (ES5 constructor Function)", () => {
     const dog = new DogConstructor()
     return dog.makeSound()
   }],
-  ['Object composition', () => dogObj.makeSound()]
+  ["Object composition", () => dogObj.makeSound()]
 ]
 
 const multipleMethodTests = [
-  ['New\'ing up a class (setting prop using bind)', () => {
+  ["New'ing up a class (setting prop using bind)", () => {
     const dog = new DogClass()
     return dog.makeSound() + dog.eatFood()
   }],
-  ['New\'ing up a class (setting shared prop on instance)', () => {
+  ["New'ing up a class (setting shared prop on instance)", () => {
     const dog = new DogClass2()
     return dog.makeSound() + dog.eatFood()
   }],
-  ['New\'ing up a class (passing prop via super())', () => {
+  ["New'ing up a class (passing prop via super())", () => {
     const dog = new DogClass3()
     return dog.makeSound() + dog.eatFood()
   }],
-  ['New\'ing up a class (ES5 constructor Function)', () => {
+  ["New'ing up a class (ES5 constructor Function)", () => {
     const dog = new DogConstructor()
     return dog.makeSound() + dog.eatFood()
   }],
-  ['Object composition', () => dogObj.makeSound() + dogObj.eatFood()]
+  ["Object composition", () => dogObj.makeSound() + dogObj.eatFood()]
 ]
 
 export default { singleMethodTests, multipleMethodTests }

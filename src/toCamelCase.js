@@ -4,18 +4,16 @@
  * The first letter of each new word - not preceded by whitespace - is capitalized.
  *
  * @function
- * @sig String -> String
  * @param {String} str A string which may contain underscores and hyphens and/or may be title-cased.
- * @returns {String} A new string that is without hyphens and underscores
- * and the first letter of every new word boundary is capitalized, unless preceded by whitespace
+ * @returns {String} A new string that is without hyphens and underscores and the first letter of every new word boundary is capitalized, unless preceded by whitespace
  */
 function toCamelCase(str) {
   return [
     str.charAt(0).toLowerCase(),
     str.slice(1)
-      .replace(/[_-]+[a-z]/ig, w => w.replace(/[_-]/g, '').toUpperCase())
+      .replace(/[_-]+[a-z]/ig, w => w.replace(/[_-]/g, "").toUpperCase())
       .replace(/\s+[A-Z]/g, w => w.toLowerCase())
-  ].join('')
+  ].join("")
 }
 
 export default toCamelCase

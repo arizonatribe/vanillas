@@ -1,13 +1,12 @@
-import { _includes } from './_internal/_includes'
+import { _includes } from "./_internal/_includes"
 
 /**
  * Compares two lists of Strings/Numbers and returns the values that are different between the two lists
  *
  * @function
- * @sig [Number|String] -> [Number|String] -> [Number|String]
- * @param {String[]|Number[]} arr1 An Array of Strings
- * @param {String[]|Number[]} arr2 An Array of Strings
- * @returns {String[]|Number[]} An array of values that are different between the two lists
+ * @param {Array<String>|Array<Number>} arr1 An Array of Strings
+ * @param {Array<String>|Array<Number>} arr2 An Array of Strings
+ * @returns {Array<String>|Array<Number>} An array of values that are different between the two lists
  */
 function difference(arr1, arr2) {
   const diff = []

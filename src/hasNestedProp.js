@@ -1,17 +1,15 @@
-import has from './has'
+import has from "./has"
 
 /**
  * Checks if a given Object contains a (potentially) nested property of a specified path
  *
  * @function
- * @category Object
- * @sig String|Array -> Object -> Boolean
- * @param {Array|String} prop A prop name, a dot-separated prop path, or an array of prop path "pieces" to look for in the object
- * @param {Object} obj An Object to inspect for a given prop at the specified path
+ * @param {Array<String>|String} prop A prop name, a dot-separated prop path, or an array of prop path "pieces" to look for in the object
+ * @param {Object<string, any>} obj An Object to inspect for a given prop at the specified path
  * @returns {Boolean} Whether the object contains the specified prop path
  */
 function hasNestedProp(prop, obj) {
-  const paths = typeof prop === 'string' ? prop.split('.') : prop
+  const paths = typeof prop === "string" ? prop.split(".") : prop
   const len = paths.length
   if (len === 0) return false
   let idx = 0

@@ -1,14 +1,10 @@
 /**
- * Find a single value from an array of values, based on criteria defined in a
- * predicate function.
+ * Find a single value from an array of values, based on criteria defined in a predicate function.
  *
  * @function
- * @sig (* -> Boolean) -> [*,*,..] -> *|undefined
- * @param {Function} pred A predicate function to apply to the array of values
- * (It should take a val as input and return a Boolean as output).
- * @param {Array} arr An array of values from which to find one particular matching value
- * @returns {*|undefined} Either a value from the array that matched the predicate
- * function or undefined (if no match)
+ * @param {Function} pred A predicate function to apply to the array of values (It should take a val as input and return a Boolean as output).
+ * @param {Array<*>} arr An array of values from which to find one particular matching value
+ * @returns {*} Either a value from the array that matched the predicate function or undefined (if no match)
  */
 function find(pred, arr) {
   const len = arr.length

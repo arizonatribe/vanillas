@@ -1,17 +1,13 @@
-import areAllFunctions from './_internal/areAllFunctions'
-import identity from './identity'
+import areAllFunctions from "./_internal/areAllFunctions"
+import identity from "./identity"
 
 /**
- * Creates a chain of Functions that will be executed in sequnce (from right to
- * left), with the value from the previous Function fed into the next Function.
+ * Creates a chain of Functions that will be executed in sequnce (from right to left), with the value from the previous Function fed into the next Function.
  * The value that the chain of functions will executed on can be provided later.
  *
  * @function
- * @sig Function,...Function -> *
- * @param {Function} ...fns One or more function to execute (in sequential
- * order) on a value that will be supplied later
- * @returns {Function} A single Function that is ready to receive a value and
- * pass it through the composed chain of Functions
+ * @param {Function} ...fns One or more function to execute (in sequential order) on a value that will be supplied later
+ * @returns {Function} A single Function that is ready to receive a value and pass it through the composed chain of Functions
  */
 function compose(...fns) {
   let fnlen = fns.length

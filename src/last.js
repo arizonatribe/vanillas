@@ -2,8 +2,7 @@
  * Retrieves the last value from an Array
  *
  * @function
- * @sig [a, b, ..., c] -> c
- * @param {Array} arr An array of any kind of values
+ * @param {Array<*>} arr An array of any kind of values
  * @returns {*} The last value from a given array
  */
 function last(arr) {

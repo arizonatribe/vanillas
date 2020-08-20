@@ -29,7 +29,7 @@
         "func-names": "off",
         "no-plusplus": "off",
         "object-curly-spacing": "off",
-        "quotes": [ "error", "single" ],
+        "quotes": [ "error", "double" ],
         "semi-spacing": "error",
         "semi": [ "error", "never" ],
         "no-confusing-arrow": "off",

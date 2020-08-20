@@ -1,14 +1,13 @@
-import isNil from './isNil'
-import isObject from './isObject'
-import forIn from './forIn'
+import isNil from "./isNil"
+import isObject from "./isObject"
+import forIn from "./forIn"
 
 /**
  * Recursively copies the content of an Object into a new Object
  *
  * @function
- * @sig {k: v} -> {k: v}
- * @param {Object|Array} obj An Object (or Array) from which to create a deep copy
- * @returns {Object|Array} The new (cloned) Object (or Array)
+ * @param {Object<string, any>|Array<*>} obj An Object (or Array) from which to create a deep copy
+ * @returns {Object<string, any>|Array<*>} The new (cloned) Object (or Array)
  */
 function clone(obj) {
   if (!isNil(obj)) {

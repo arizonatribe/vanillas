@@ -1,9 +1,9 @@
-import cond from './cond'
-import forIn from './forIn'
-import mapObject from './mapObject'
-import { toFunction } from './_internal/coerce'
+import cond from "./cond"
+import forIn from "./forIn"
+import mapObject from "./mapObject"
+import { toFunction } from "./_internal/coerce"
 
-const isFunction = v => typeof v === 'function'
+const isFunction = v => typeof v === "function"
 const brokenValidator = (val, key) => `Validations for "${key}" are broken`
 const defaultMessageHandler = (val, key) => `"${val}" is not valid for "${key}"`
 
@@ -43,15 +43,16 @@ function _unpackValidator(rawValidators) {
  *
  * If you do not supply a validation error message, a default one will be built that looks like:
  *   `"${val}" is not valid for "${key}"`
- * And of course, you can write your validation error message as a function that
- * will receive the value and key name as its first and second params (you should return a message as a string).
  *
- * If you do not supply valid input (Array of validator function and validation error message), rather than throwing
- * an error it will be replaced with a validation function that always returns `false` and a corresponding error message of:
+ * And of course, you can write your validation error message as a function that will receive the value and key name as its first and second params (you should return a message as a string).
+ *
+ * If you do not supply valid input (Array of validator function and validation error message), rather than throwing an error it will be replaced with a validation function that always returns `false` and a corresponding error message of:
  *   `Validations for "${key}" are broken`
  *
  * @function
- * @sig [[(* -> Boolean), String], ...] -> {k: v} -> {k: v}
+ * @param {Array<Function>} validations An array of validator functions and their corresponding error message
+ * @param {Object<string, any>} values An Object of key value pairs, the keys should correspond to validators and the values are that which is to be validated
+ * @returns {Object<string, Array<String>>} An object containing the key names of the values and one or more validation error messages (Only key names whose values were found to be invalid will show up on this output Object; an empty Object means everything was valid)
  * @example
  * validate(isRequired, val)
  * validate([isRequired, 'field is required'], val)
@@ -61,12 +62,6 @@ function _unpackValidator(rawValidators) {
  *   [mustBeBlue, 'Your favorite color must be blue'],
  *   [functionalOrObjectOriented]
  * ], val)
- * @param {Array} validations An array of validator functions and their corresponding error message
- * @param {Object} values An Object of key value pairs, the keys should correspond to
- * validators and the values are that which is to be validated
- * @returns {Object} An object containing the key names of the values and one or
- * more validation error messages (Only key names whose values were found to be
- * invalid will show up on this output Object; an empty Object means everything was valid)
  */
 function validate(validations, values) {
   const validators = mapObject(_unpackValidator, validations)

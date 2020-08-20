@@ -1,13 +1,11 @@
-import isNil from './isNil'
-import toTitleCase from './toTitleCase'
-import getConstructorName from './_internal/getConstructorName'
+import isNil from "./isNil"
+import toTitleCase from "./toTitleCase"
+import getConstructorName from "./_internal/getConstructorName"
 
 /**
- * Gets the type for any value. If available will inspect the constructor name,
- * otherwise will use the typeof
+ * Gets the type for any value. If available will inspect the constructor name, otherwise will use the typeof
  *
  * @function
- * @sig * -> String
  * @param {*} val A value of any kind
  * @returns {String} The stringified representation of the value's type
  */

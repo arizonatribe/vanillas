@@ -1,13 +1,12 @@
-import { _includes } from './_internal/_includes'
+import { _includes } from "./_internal/_includes"
 
 /**
  * Compares two lists of Strings/Numbers and returns the values that are in common (intersect) between the two lists
  *
  * @function
- * @sig [Number|String] -> [Number|String] -> [Number|String]
- * @param {String[]|Number[]} arr1 An Array of Strings/Numbers
- * @param {String[]|Number[]} arr2 An Array of Strings/Numbers
- * @returns {String[]|Number[]} The values in common between the two lists
+ * @param {Array<String>|Array<Number>} arr1 An Array of Strings/Numbers
+ * @param {Array<String>|Array<Number>} arr2 An Array of Strings/Numbers
+ * @returns {Array<String>|Array<Number>} The values in common between the two lists
  */
 function intersection(arr1, arr2) {
   const diff = []

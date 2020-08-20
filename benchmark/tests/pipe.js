@@ -1,5 +1,5 @@
-import R from 'ramda'
-import { pipe } from '../../src'
+import R from "ramda"
+import { pipe } from "../../src"
 
 const val = 1.3
 const add4 = a => a + 4
@@ -9,8 +9,8 @@ const randomNumber = Math.random()
 const random = () => randomNumber
 
 const tests = [
-  ['Vanillas "pipe"', () => pipe(random, add4, subtract7, divide3)(val)],
-  ['Ramda "pipe"', () => R.pipe(random, add4, subtract7, divide3)(val)]
+  ["Vanillas \"pipe\"", () => pipe(random, add4, subtract7, divide3)(val)],
+  ["Ramda \"pipe\"", () => R.pipe(random, add4, subtract7, divide3)(val)]
 ]
 
 export default { tests }

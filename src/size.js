@@ -1,4 +1,4 @@
-import isUndefined from './isUndefined'
+import isUndefined from "./isUndefined"
 
 /**
  * Checks the length (or size) of many different types of values:
@@ -10,11 +10,8 @@ import isUndefined from './isUndefined'
  *   - Function (num of params)
  *
  * @function
- * @sig Array|String|Object -> Number
- * @param {Object|String|Array|Function} val A value of type Object, String,
- * Array or Function
- * @returns {Number} The length of the String or Array, OR the number of keys in
- * the Object
+ * @param {Object<string, any>|String|Array<*>|Function} val A value of type Object, String, Array or Function
+ * @returns {Number} The length of the String or Array, OR the number of keys in the Object
  */
 function size(val) {
   if (!isUndefined(val.length)) {
@@ -23,7 +20,7 @@ function size(val) {
   if (!isUndefined(val.size)) {
     return val.size
   }
-  if (typeof val === 'object') {
+  if (typeof val === "object") {
     return Object.keys(val).length
   }
   return undefined
