@@ -18,6 +18,7 @@
         "no-restricted-syntax": "off",
         "class-methods-use-this": "off",
         "comma-dangle": [ "error", "never" ],
+        "no-nested-ternary": "off",
         "no-underscore-dangle": "off",
         "consistent-return": "off",
         "function-paren-newline": "off",

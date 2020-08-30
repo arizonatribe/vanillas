@@ -1,6 +1,6 @@
 /**
  * Looks for a specified key on an Object you provide.
- * The is performed safely and will not throw an error if somethign on the prop path chain you specify doesn't exist.
+ * The is performed safely and will not throw an error if something on the prop path chain you specify doesn't exist.
  * Will always return `undefined` if a prop path cannot be resolved (rather than throwing).
  *
  * @function

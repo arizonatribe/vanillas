@@ -9,6 +9,7 @@ import uncurriedFindIndex from "../findIndex"
 import uncurriedFilter from "../filter"
 import uncurriedFilterObject from "../filterObject"
 import uncurriedFilterString from "../filterString"
+import uncurriedFuzzy from "../fuzzy"
 import uncurriedHas from "../has"
 import uncurriedHasNestedProp from "../hasNestedProp"
 import uncurriedIntersection from "../intersection"
@@ -43,6 +44,7 @@ export const findIndex = curry(uncurriedFindIndex)
 export const filter = curry(uncurriedFilter)
 export const filterObject = curry(uncurriedFilterObject)
 export const filterString = curry(uncurriedFilterString)
+export const fuzzy = curry(uncurriedFuzzy)
 export const has = curry(uncurriedHas)
 export const hasNestedProp = curry(uncurriedHasNestedProp)
 export const intersection = curry(uncurriedIntersection)

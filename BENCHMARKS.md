@@ -142,6 +142,12 @@ Lodash "flatten" x 9,713,324 ops/sec ±2.22% (93 runs sampled)
 Ramda "flatten" x 402,766 ops/sec ±0.11% (96 runs sampled)
 Fastest is Vanillas "flatten"
 
+Vanillas Fuzzy x 12,427 ops/sec ±0.33% (91 runs sampled)
+Fuzzy x 8,661 ops/sec ±0.56% (93 runs sampled)
+Fuzzy-Search x 7,570 ops/sec ±0.36% (95 runs sampled)
+FuzzyJs x 5,868 ops/sec ±0.42% (95 runs sampled)
+Fastest is Vanillas Fuzzy
+
 Vanillas "intersection" x 11,177,894 ops/sec ±0.55% (93 runs sampled)
 Lodash "intersection" x 2,907,770 ops/sec ±1.30% (91 runs sampled)
 Ramda "intersection" x 656,015 ops/sec ±0.37% (95 runs sampled)
