@@ -34,6 +34,7 @@ import uncurriedRenameKeys from "../renameKeys"
 import uncurriedMerge from "../merge"
 import uncurriedValidate from "../validate"
 
+export { default as eitherOr } from "../eitherOr"
 export const append = curry(uncurriedAppend)
 export const cond = curry(uncurriedCond)
 export const contains = curry(uncurriedContains)

@@ -2,7 +2,7 @@
   "name": "vanillas",
   "description": "Dependency-free, low-level JavaScript function helpers",
   "main": "src/index.js",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "license": "MIT",
   "author": "David Nunez <arizonatribe@gmail.com>",

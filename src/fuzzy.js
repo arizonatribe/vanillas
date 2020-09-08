@@ -16,10 +16,11 @@ function fuzzy(propFn, needle, caseSensitive, arr) {
   if (arr == null || !Array.isArray(arr) || arr.length === 0) return []
   if (typeof needle !== "string" || !needle.trim().length) return arr
 
-  let idx = 0
   const scores = []
   const len = arr.length
   const needleLen = needle.length
+  let idx = len
+
   const noodle = caseSensitive ? needle : needle.toLowerCase()
   const extractFn = typeof propFn !== "function" && caseSensitive
     ? v => v
@@ -29,7 +30,7 @@ function fuzzy(propFn, needle, caseSensitive, arr) {
         ? propFn
         : v => propFn(v).toLowerCase()
 
-  while (idx < len) {
+  while (--idx) {
     let score = 0
     const val = extractFn(arr[idx])
     const valLen = val.length
@@ -53,7 +54,6 @@ function fuzzy(propFn, needle, caseSensitive, arr) {
         scores.push([score, idx])
       }
     }
-    idx++
   }
 
   return scores.sort((a, b) => b[0] - a[0] || a[1] - b[1]).map(([_, index]) => arr[index])
