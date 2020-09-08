@@ -5,7 +5,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: contains.js</title>
+    <title>JSDoc: eitherOr.js</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -67,7 +67,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>contains.js</h1>
+                        <h1>eitherOr.js</h1>
                     </header>
 
                     
@@ -77,23 +77,29 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { _includes } from "./_internal/_includes"
+            <pre class="prettyprint source linenums"><code>import curry from "./curry"
 
 /**
- * Checks if a given value is present in a String OR Array
+ * A function that accepts two functions and a value and will return the first result which is "truthy".
+ * This function is curried because it doesn't make any sense to even have it unless you have the functions ahead of time but not the value.
  *
  * @function
- * @param {String|Number} val A value which may be present in the String/Array
- * @param {Array&lt;*>|String} arr An Array or String which may contain the provided value
- * @returns {Boolean} Whether or not the String|Array contains the provided value
+ * @param {function} fnA The first function to be executed on the value
+ * @param {function} fnB The second function to be executed on the value
+ * @param {*} val A value to be passed into the functions
+ * @returns {*} The result of executing value passed in
  */
-function contains(val, arr) {
-  return Array.isArray(arr)
-    ? _includes(val, arr)
-    : arr.indexOf(val) !== -1
+function eitherOr(fnA, fnB, val) {
+  if (typeof fnA !== "function") {
+    throw new TypeError(`${fnA} is not a function`)
+  }
+  if (typeof fnB !== "function") {
+    throw new TypeError(`${fnB} is not a function`)
+  }
+  return fnA(val) || fnB(val)
 }
 
-export default contains
+export default curry(eitherOr)
 </code></pre>
         </article>
     </section>
