@@ -5,7 +5,7 @@ import has from "./has"
  *
  * @function
  * @param {Array<String>|String} prop A prop name, a dot-separated prop path, or an array of prop path "pieces" to look for in the object
- * @param {Object<string, any>} obj An Object to inspect for a given prop at the specified path
+ * @param {object} obj An Object to inspect for a given prop at the specified path
  * @returns {Boolean} Whether the object contains the specified prop path
  */
 function hasNestedProp(prop, obj) {

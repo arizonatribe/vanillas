@@ -6,8 +6,8 @@ import { _includes } from "./_internal/_includes"
  *
  * @function
  * @param {Array<string>} keys An array of keys to search for in the Object and exclude from the output
- * @param {Object<string, any>} obj An Object from which to copy and remove keys
- * @returns {Object<string, any>} A copy of the original Object, but without the specified keys
+ * @param {object} obj An Object from which to copy and remove keys
+ * @returns {object} A copy of the original Object, but without the specified keys
  */
 function omit(keys, obj) {
   const newObj = {}

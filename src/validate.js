@@ -51,8 +51,8 @@ function _unpackValidator(rawValidators) {
  *
  * @function
  * @param {Array<Function>} validations An array of validator functions and their corresponding error message
- * @param {Object<string, any>} values An Object of key value pairs, the keys should correspond to validators and the values are that which is to be validated
- * @returns {Object<string, Array<String>>} An object containing the key names of the values and one or more validation error messages (Only key names whose values were found to be invalid will show up on this output Object; an empty Object means everything was valid)
+ * @param {object} values An Object of key value pairs, the keys should correspond to validators and the values are that which is to be validated
+ * @returns {object} An object containing the key names of the values and one or more validation error messages (Only key names whose values were found to be invalid will show up on this output Object; an empty Object means everything was valid)
  * @example
  * validate(isRequired, val)
  * validate([isRequired, 'field is required'], val)

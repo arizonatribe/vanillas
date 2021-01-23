@@ -3,7 +3,7 @@
  *
  * @function
  * @param {String} key A prop name to look for in the object
- * @param {Object<string, any>} obj An Object to inspect for a given prop
+ * @param {object} obj An Object to inspect for a given prop
  * @returns {Boolean} Whether the object contains the specified prop
  */
 function has(key, obj) {

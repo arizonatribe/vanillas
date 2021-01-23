@@ -7,7 +7,7 @@ import isUndefined from "./isUndefined"
  * @function
  * @param {*} fallback A value to fall back on if the requested key does not exist on the provided Object
  * @param {String} prop A key to search for on the Object
- * @param {Object<string, any>} obj An object which may contain a specified prop
+ * @param {object} obj An object which may contain a specified prop
  * @returns {*} Either the requested prop (from the Object) or the fallback value
  */
 function propOr(fallback, prop, obj) {

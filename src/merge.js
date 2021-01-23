@@ -5,9 +5,9 @@ import forIn from "./forIn"
  * Null and Undefined values are handled gracefully, and if the second value is a primitive it will be returned as-is, instead of trying to merge it onto the first.
  *
  * @function
- * @param {Object<string, any>|Array<*>} val The first value to merge onto (will not get mutated though)
- * @param {Object<string, any>|Array<*>} val2 A value to merge onto the first
- * @returns {Object<string, any>|Array<*>} A new value that contains the combined values from all the values passed in
+ * @param {object|Array<*>} val The first value to merge onto (will not get mutated though)
+ * @param {object|Array<*>} val2 A value to merge onto the first
+ * @returns {object|Array<*>} A new value that contains the combined values from all the values passed in
  */
 function merge(...vals) {
   const numOfVals = vals.length

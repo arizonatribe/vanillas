@@ -20,9 +20,7 @@ declare function append(firstVal: string | number | {
     [key: string]: any;
 } | any[], secondVal: string | number | {
     [key: string]: any;
-} | any[]): any[] | {
-    [key: string]: any;
-} | string;
+} | any[]): any[] | any | string;
 
 /**
  * Assigns the values from one or more Objects onto another Object.
@@ -31,22 +29,14 @@ declare function append(firstVal: string | number | {
  * @param ...resOfObjects - One or more Objects to extract from and assign onto the first Object
  * @returns The first object mutated with the values from any other object passed in
  */
-declare function assign(obj: {
-    [key: string]: any;
-}): {
-    [key: string]: any;
-};
+declare function assign(obj: any): any;
 
 /**
  * Recursively copies the content of an Object into a new Object
  * @param obj - An Object (or Array) from which to create a deep copy
  * @returns The new (cloned) Object (or Array)
  */
-declare function clone(obj: {
-    [key: string]: any;
-} | any[]): {
-    [key: string]: any;
-} | any[];
+declare function clone(obj: any | any[]): any | any[];
 
 /**
  * Combines two values of the same type (if it makes sense to combine them).
@@ -155,13 +145,21 @@ declare function difference(arr1: String[] | Number[], arr2: String[] | Number[]
 declare function each(fn: (...params: any[]) => any, arr: any[]): void;
 
 /**
+ * A function that accepts two functions and a value and will return the first result which is "truthy".
+ * This function is curried because it doesn't make any sense to even have it unless you have the functions ahead of time but not the value.
+ * @param fnA - The first function to be executed on the value
+ * @param fnB - The second function to be executed on the value
+ * @param val - A value to be passed into the functions
+ * @returns The result of executing value passed in
+ */
+declare function eitherOr(fnA: (...params: any[]) => any, fnB: (...params: any[]) => any, val: any): any;
+
+/**
  * Extracts an Array of key/value pairs from an Object.
  * @param obj - The input object from which to extract prop keys and values
  * @returns An Array of key/value pairs corresponding to those on the input object
  */
-declare function entries(obj: {
-    [key: string]: any;
-}): String[];
+declare function entries(obj: any): String[];
 
 /**
  * Applies a filtering function you provide over a value you provide, according to its type.
@@ -173,11 +171,7 @@ declare function entries(obj: {
  * @param val - An Object/Array/String whose values/chars will be filtered
  * @returns A new value that is the result of the filtering operation over all the chars or values in the original String/Object/Array
  */
-declare function filter(fn: (...params: any[]) => any, val: {
-    [key: string]: any;
-} | any[] | string): {
-    [key: string]: any;
-} | any[] | string;
+declare function filter(fn: (...params: any[]) => any, val: any | any[] | string): any | any[] | string;
 
 /**
  * Applies a filtering function you provide over every value in a given Object.
@@ -185,11 +179,7 @@ declare function filter(fn: (...params: any[]) => any, val: {
  * @param obj - An Object whose values will be filtered
  * @returns A new Object that is the result of the filtering operation over all the values in the original Object
  */
-declare function filterObject(fn: (...params: any[]) => any, obj: {
-    [key: string]: any;
-}): {
-    [key: string]: any;
-};
+declare function filterObject(fn: (...params: any[]) => any, obj: any): any;
 
 /**
  * Applies a filtering function you provide over every character in a given string.
@@ -234,9 +224,21 @@ declare function flatten(arr: any[][] | any[]): any[];
  * @param fn - A function to execute iteratively, which will receive the `key`, `value`, and `object` (respectively)
  * @param obj - An object whose keys will be iterated over
  */
-declare function forIn(fn: (...params: any[]) => any, obj: {
-    [key: string]: any;
-}): void;
+declare function forIn(fn: (...params: any[]) => any, obj: any): void;
+
+/**
+ * Performs a fuzzy search on a list of strings or objects.
+ * If a list of objects, provided the prop extraction function so the search can find the correct field(s)
+ * This is heavily inspired by (most of) the algorithm used by [Matt York's](https://github.com/myork/fuzzy) fuzzy search function,
+ * however several features were not carried over and his implementation of that alrgorithm has been significantly changed to achieve a 25% speed improvement.
+ * Please see his original work - called [fuzzy](https://www.npmjs.com/package/fuzzy) MIT - if you need some of his additional options.
+ * @param [propFn] - A function which will extract all the fields which you wish to fuzzy search on. Omit if the list is a list of strings
+ * @param needle - The search value itself
+ * @param [caseSensitive = false] - Whether or not to perform a case-sensitive search
+ * @param arr - An array of string values or objects which have string values to be searched on
+ * @returns The filtered list of search results
+ */
+declare function fuzzy(propFn?: (...params: any[]) => any, needle: string, caseSensitive?: boolean, arr: String[] | object[]): String[] | object[];
 
 /**
  * Gets the type for any value. If available will inspect the constructor name, otherwise will use the typeof
@@ -251,9 +253,7 @@ declare function getType(val: any): string;
  * @param obj - An Object to inspect for a given prop
  * @returns Whether the object contains the specified prop
  */
-declare function has(key: string, obj: {
-    [key: string]: any;
-}): boolean;
+declare function has(key: string, obj: any): boolean;
 
 /**
  * Checks if a given Object contains a (potentially) nested property of a specified path
@@ -261,9 +261,7 @@ declare function has(key: string, obj: {
  * @param obj - An Object to inspect for a given prop at the specified path
  * @returns Whether the object contains the specified prop path
  */
-declare function hasNestedProp(prop: String[] | string, obj: {
-    [key: string]: any;
-}): boolean;
+declare function hasNestedProp(prop: String[] | string, obj: any): boolean;
 
 /**
  * A function that always returns the value passed to it
@@ -285,11 +283,7 @@ declare function intersection(arr1: String[] | Number[], arr2: String[] | Number
  * @param obj - An object whose values _can_ be swapped for keys
  * @returns A new object whose keys were the values from the original object
  */
-declare function flipKeyValues(obj: {
-    [key: string]: string | number;
-}): {
-    [key: string]: string;
-};
+declare function flipKeyValues(obj: any): any;
 
 /**
  * Checks to see if a value is a certain type.
@@ -451,11 +445,7 @@ declare function last(arr: any[]): any;
  * @param val - An Object/Array/String whose values/chars will be mapped over
  * @returns A new value that is the result of the mapping operation over all the chars or values in the original String/Object/Array
  */
-declare function map(fn: (...params: any[]) => any, val: {
-    [key: string]: any;
-} | any[] | string): {
-    [key: string]: any;
-} | any[] | string;
+declare function map(fn: (...params: any[]) => any, val: any | any[] | string): any | any[] | string;
 
 /**
  * Applies a mapping function you provide over every value in a given Object.
@@ -463,11 +453,7 @@ declare function map(fn: (...params: any[]) => any, val: {
  * @param obj - An Object whose values will be mapped over
  * @returns A new Object that is the result of the mapping operation over all the values in the original Object
  */
-declare function mapObject(fn: (...params: any[]) => any, obj: {
-    [key: string]: any;
-}): {
-    [key: string]: any;
-};
+declare function mapObject(fn: (...params: any[]) => any, obj: any): any;
 
 /**
  * Applies a mapping function you provide over every value in a given Object (recursively).
@@ -475,11 +461,7 @@ declare function mapObject(fn: (...params: any[]) => any, obj: {
  * @param obj - An Object whose values will be mapped over (recursively)
  * @returns A new Object that is the result of the mapping operation over all the values in the original Object
  */
-declare function mapObjectRecursive(fn: (...params: any[]) => any, obj: {
-    [key: string]: any;
-}): {
-    [key: string]: any;
-};
+declare function mapObjectRecursive(fn: (...params: any[]) => any, obj: any): any;
 
 /**
  * Applies one or more mapping functions to the value in a given Object.
@@ -504,13 +486,7 @@ declare function mapObjectRecursive(fn: (...params: any[]) => any, obj: {
  * @param inputObj - The actual input to map over and transform
  * @returns A new Object with all the mapping functions from the spec Object applied to the corresponding values in the input Object (if they exist)
  */
-declare function mapSpec(spec: {
-    [key: string]: any;
-}, inputObj: {
-    [key: string]: any;
-}): {
-    [key: string]: any;
-};
+declare function mapSpec(spec: any, inputObj: any): any;
 
 /**
  * Applies a mapping function you provide over every character in a given string.
@@ -534,13 +510,7 @@ declare function memoize(fn: (...params: any[]) => any): (...params: any[]) => a
  * @param val2 - A value to merge onto the first
  * @returns A new value that contains the combined values from all the values passed in
  */
-declare function merge(val: {
-    [key: string]: any;
-} | any[], val2: {
-    [key: string]: any;
-} | any[]): {
-    [key: string]: any;
-} | any[];
+declare function merge(val: any | any[], val2: any | any[]): any | any[];
 
 /**
  * Removes specified keys from an object (after cloning the Object).
@@ -548,11 +518,21 @@ declare function merge(val: {
  * @param obj - An Object from which to copy and remove keys
  * @returns A copy of the original Object, but without the specified keys
  */
-declare function omit(keys: string[], obj: {
-    [key: string]: any;
-}): {
-    [key: string]: any;
-};
+declare function omit(keys: string[], obj: any): any;
+
+/**
+ * Removes all `null` or `undefined` values from a given object
+ * @param obj - An Object from which to copy and remove keys
+ * @returns A copy of the original Object, but without any `null` or `undefined` values
+ */
+declare function pickNull(obj: any): any;
+
+/**
+ * Removes all `undefined` values from a given object
+ * @param obj - An Object from which to copy and remove keys
+ * @returns A copy of the original Object, but without any `undefined` values
+ */
+declare function pickUndefined(obj: any): any;
 
 /**
  * Removes everything _except_ the specified keys from an object (after cloning the Object).
@@ -560,11 +540,7 @@ declare function omit(keys: string[], obj: {
  * @param obj - An Object from which to copy and remove keys
  * @returns A copy of the original Object, but with _only_ the specified keys
  */
-declare function pick(keys: String[], obj: {
-    [key: string]: any;
-}): {
-    [key: string]: any;
-};
+declare function pick(keys: String[], obj: any): any;
 
 /**
  * Creates a chain of Functions that will be executed in sequnce (from left to right), with the value from the previous Function fed into the next Function.
@@ -580,13 +556,7 @@ declare function pipe(): (...params: any[]) => any;
  * @param secondVal - An Array, Object, String or Number that the will merge _before_ those from the first provided value
  * @returns A new Array, Object, or String that has the characters/values from the second provided value merged _before_ those from the first provided value
  */
-declare function prepend(firstVal: any[] | {
-    [key: string]: any;
-} | string | number, secondVal: any[] | {
-    [key: string]: any;
-} | string | number): any[] | {
-    [key: string]: any;
-} | string;
+declare function prepend(firstVal: any[] | any | string | number, secondVal: any[] | any | string | number): any[] | any | string;
 
 /**
  * Gathers an Array of Functions that return Promises and returns an Array of results, once they have all completed.
@@ -616,15 +586,13 @@ declare function promiseCompose(...requests: (Promise<any>[] | ((...params: any[
 
 /**
  * Looks for a specified key on an Object you provide.
- * The is performed safely and will not throw an error if somethign on the prop path chain you specify doesn't exist.
+ * The is performed safely and will not throw an error if something on the prop path chain you specify doesn't exist.
  * Will always return `undefined` if a prop path cannot be resolved (rather than throwing).
  * @param prop - A top-level key OR a deeply nested prop path (which may be represented as an array or as a single dot-delimited string)
  * @param obj - An object which may contain a specified prop
  * @returns The value associated with the nested prop path OR undefined if it does not exist
  */
-declare function propAt(prop: string | String[], obj: {
-    [key: string]: any;
-}): any | undefined;
+declare function propAt(prop: string | String[], obj: any): any | undefined;
 
 /**
  * Looks for a specified key on an Object you provide and checks to see if its corresponding value equals the value you specifiy.
@@ -633,9 +601,7 @@ declare function propAt(prop: string | String[], obj: {
  * @param obj - An object which may contain a specified prop
  * @returns Whether or not the requested prop equals the specified value
  */
-declare function propEquals(prop: string, val: ((...params: any[]) => any) | string, obj: {
-    [key: string]: any;
-}): boolean;
+declare function propEquals(prop: string, val: ((...params: any[]) => any) | string, obj: any): boolean;
 
 /**
  * Looks for a specified key on an Object you provide and checks to see if its corresponding value is of the type you specifiy.
@@ -644,9 +610,7 @@ declare function propEquals(prop: string, val: ((...params: any[]) => any) | str
  * @param obj - An object which may contain a specified prop
  * @returns Whether or not the requested prop is of the type specified
  */
-declare function propIs(type: ((...params: any[]) => any) | string, prop: string, obj: {
-    [key: string]: any;
-}): boolean;
+declare function propIs(type: ((...params: any[]) => any) | string, prop: string, obj: any): boolean;
 
 /**
  * Attempts to find a specified key on an Object you provide, and if not found will fall back to an additional value you specify.
@@ -655,9 +619,7 @@ declare function propIs(type: ((...params: any[]) => any) | string, prop: string
  * @param obj - An object which may contain a specified prop
  * @returns Either the requested prop (from the Object) or the fallback value
  */
-declare function propOr(fallback: any, prop: string, obj: {
-    [key: string]: any;
-}): any;
+declare function propOr(fallback: any, prop: string, obj: any): any;
 
 /**
  * Looks for a specified key on an Object you provide and sets it to the provided value.
@@ -668,11 +630,7 @@ declare function propOr(fallback: any, prop: string, obj: {
  * @param obj - An object which onto which the value will be placed
  * @returns The original object, but modified to have the provided value placed at the specified path it does not exist
  */
-declare function propSet(prop: string | String[], val: any, obj: {
-    [key: string]: any;
-}): {
-    [key: string]: any;
-};
+declare function propSet(prop: string | String[], val: any, obj: any): any;
 
 /**
  * A simple wrapper around native Array.prototype.reduce(), for use in a compose/pipe chain of functions.
@@ -682,9 +640,7 @@ declare function propSet(prop: string | String[], val: any, obj: {
  * @param arr - An array of values of any type OR an object containing key/value pairs
  * @returns The original Array|Object somehow reduced to one value, according to the supplied function
  */
-declare function reduce(fn: (...params: any[]) => any, defaultVal: any, arr: any[] | {
-    [key: string]: any;
-}): any;
+declare function reduce(fn: (...params: any[]) => any, defaultVal: any, arr: any[] | any): any;
 
 /**
  * Renames a set of keys in a given object (removing the old ones)
@@ -692,13 +648,7 @@ declare function reduce(fn: (...params: any[]) => any, defaultVal: any, arr: any
  * @param obj - An Object whose keys will be renamed
  * @returns A new Object that has all the specified keys renamed to their new names
  */
-declare function renameKeys(keyMap: {
-    [key: string]: string;
-}, obj: {
-    [key: string]: any;
-}): {
-    [key: string]: any;
-};
+declare function renameKeys(keyMap: any, obj: any): any;
 
 /**
  * Recursively shims an Object.
@@ -707,9 +657,7 @@ declare function renameKeys(keyMap: {
  * @param obj - An object that will be the Proxy's source
  * @returns An Object that will return props on the source Object if they exist but safely handle missing prop paths without throwing errors.
  */
-declare function shim(obj: {
-    [key: string]: any;
-}): Proxy;
+declare function shim(obj: any): Proxy;
 
 /**
  * Checks the length (or size) of many different types of values:
@@ -722,9 +670,7 @@ declare function shim(obj: {
  * @param val - A value of type Object, String, Array or Function
  * @returns The length of the String or Array, OR the number of keys in the Object
  */
-declare function size(val: {
-    [key: string]: any;
-} | string | any[] | ((...params: any[]) => any)): number;
+declare function size(val: any | string | any[] | ((...params: any[]) => any)): number;
 
 /**
  * Transforms a string value into one which is hyphenated.
@@ -786,9 +732,7 @@ declare function toUpperCase(str: string): string;
  * @param obj - An object whose key/value pairs need to be serialized into a single string.
  * @returns A new string that represents the key/value pairs on the originating object
  */
-declare function toUriEncoded(obj: {
-    [key: string]: string;
-} | boolean | number): string;
+declare function toUriEncoded(obj: any | boolean | number): string;
 
 /**
  * Filters an array of values down to only those which are unique
@@ -839,18 +783,12 @@ declare function unthunk(thunk: (...params: any[]) => any): (...params: any[]) =
  * @param values - An Object of key value pairs, the keys should correspond to validators and the values are that which is to be validated
  * @returns An object containing the key names of the values and one or more validation error messages (Only key names whose values were found to be invalid will show up on this output Object; an empty Object means everything was valid)
  */
-declare function validate(validations: ((...params: any[]) => void)[], values: {
-    [key: string]: any;
-}): {
-    [key: string]: String[];
-};
+declare function validate(validations: ((...params: any[]) => void)[], values: any): any;
 
 /**
  * A simple polyfill for Object.values()
  * @param obj - An Object whose values need to be retrieved
  * @returns A list of all the values in the provided Object, ordered by keys
  */
-declare function values(obj: {
-    [key: string]: any;
-}): any[];
+declare function values(obj: any): any[];
 

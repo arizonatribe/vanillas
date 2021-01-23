@@ -5,7 +5,7 @@
  * @function
  * @param {Function} fn A function to control the reduction of each item in the array|object into the single output value
  * @param {*} defaultVal A starting value for the reduction accumulator
- * @param {Array<*>|Object<string, any>} arr An array of values of any type OR an object containing key/value pairs
+ * @param {Array<*>|object} arr An array of values of any type OR an object containing key/value pairs
  * @returns {*} The original Array|Object somehow reduced to one value, according to the supplied function
  */
 function reduce(fn, defaultVal, arr) {

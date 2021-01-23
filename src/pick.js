@@ -3,8 +3,8 @@
  *
  * @function
  * @param {Array<String>} keys An array of keys to search for in the Object and include from the output
- * @param {Object<string, any>} obj An Object from which to copy and remove keys
- * @returns {Object<string, any>} A copy of the original Object, but with _only_ the specified keys
+ * @param {object} obj An Object from which to copy and remove keys
+ * @returns {object} A copy of the original Object, but with _only_ the specified keys
  */
 function pick(keys, obj) {
   const newObj = {}

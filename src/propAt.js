@@ -5,7 +5,7 @@
  *
  * @function
  * @param {String|Array<String>} prop A top-level key OR a deeply nested prop path (which may be represented as an array or as a single dot-delimited string)
- * @param {Object<string, any>} obj An object which may contain a specified prop
+ * @param {object} obj An object which may contain a specified prop
  * @returns {*|undefined} The value associated with the nested prop path OR undefined if it does not exist
  */
 function propAt(prop, obj) {

@@ -6,8 +6,7 @@
  * @param {Array<*>} arr An Array to iterate over (any value will be passed into the iterate Function)
  */
 function each(fn, arr) {
-  const count = arr.length
-  for (let i = 0; i < count; i++) {
+  for (let i = 0, count = arr.length; i < count; i++) {
     fn(arr[i], i, arr)
   }
 }

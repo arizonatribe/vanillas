@@ -5,7 +5,7 @@ import has from "./has"
  *
  * @function
  * @param {Function} fn A function to execute iteratively, which will receive the `key`, `value`, and `object` (respectively)
- * @param {Object<string, any>} obj An object whose keys will be iterated over
+ * @param {object} obj An object whose keys will be iterated over
  */
 function forIn(fn, obj) {
   // eslint-disable-next-line no-restricted-syntax

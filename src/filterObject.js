@@ -5,8 +5,8 @@ import forIn from "./forIn"
  *
  * @function
  * @param {Function} fn A filtering function that is invoked on every value in the provided Object
- * @param {Object<string, any>} obj An Object whose values will be filtered
- * @returns {Object<string, any>} A new Object that is the result of the filtering operation over all the values in the original Object
+ * @param {object} obj An Object whose values will be filtered
+ * @returns {object} A new Object that is the result of the filtering operation over all the values in the original Object
  */
 function filterObject(fn, obj) {
   const newObj = {}

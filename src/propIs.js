@@ -7,7 +7,7 @@ import is from "./is"
  * @function
  * @param {Function|String} type A JavaScript type constructor function (ie `Boolean`, `RegExp`, `Date`, `Array`, `Object`, `Number`, `String`, etc) OR a string represention of the type (ie, "boolean", "regexp", "date", "array", "object", "number", "string", etc)
  * @param {String} prop A key to search for on the Object
- * @param {Object<string, any>} obj An object which may contain a specified prop
+ * @param {object} obj An object which may contain a specified prop
  * @returns {Boolean} Whether or not the requested prop is of the type specified
  */
 function propIs(type, prop, obj) {

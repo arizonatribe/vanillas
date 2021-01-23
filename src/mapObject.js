@@ -5,8 +5,8 @@ import forIn from "./forIn"
  *
  * @function
  * @param {Function} fn A mapping function that is invoked on every value in the provided Object
- * @param {Object<string, any>} obj An Object whose values will be mapped over
- * @returns {Object<string, any>} A new Object that is the result of the mapping operation over all the values in the original Object
+ * @param {object} obj An Object whose values will be mapped over
+ * @returns {object} A new Object that is the result of the mapping operation over all the values in the original Object
  */
 function mapObject(fn, obj) {
   const newObj = {}
