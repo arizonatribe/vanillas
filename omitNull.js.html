@@ -5,7 +5,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>JSDoc: omit.js</title>
+    <title>JSDoc: omitNull.js</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -67,7 +67,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>omit.js</h1>
+                        <h1>omitNull.js</h1>
                     </header>
 
                     
@@ -77,28 +77,26 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import forIn from "./forIn"
-import { _includes } from "./_internal/_includes"
-
-/**
- * Removes specified keys from an object (after cloning the Object).
+            <pre class="prettyprint source linenums"><code>/**
+ * Removes all `null` or `undefined` values from a given object
  *
  * @function
- * @param {Array&lt;string>} keys An array of keys to search for in the Object and exclude from the output
  * @param {object} obj An Object from which to copy and remove keys
- * @returns {object} A copy of the original Object, but without the specified keys
+ * @returns {object} A copy of the original Object, but without any `null` or `undefined` values
  */
-function omit(keys, obj) {
+function pickNull(obj) {
   const newObj = {}
-  forIn((key, val) => {
-    if (!_includes(key, keys)) {
-      newObj[key] = val
+  const keys = Object.keys(obj)
+  const numOfKeys = keys.length
+  for (let i = 0; i &lt; numOfKeys; i++) {
+    if (obj[keys[i]] != null) {
+      newObj[keys[i]] = obj[keys[i]]
     }
-  }, obj)
+  }
   return newObj
 }
 
-export default omit
+export default pickNull
 </code></pre>
         </article>
     </section>
