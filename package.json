@@ -2,7 +2,7 @@
   "name": "vanillas",
   "description": "Dependency-free, low-level JavaScript function helpers",
   "main": "src/index.js",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "private": true,
   "license": "MIT",
   "author": "David Nunez <arizonatribe@gmail.com>",
@@ -31,7 +31,6 @@
   },
   "scripts": {
     "dist": "npm publish build",
-    "build-types": "jsdoc --configure jsd-types.json",
     "docs": "rimraf docs/* && jsdoc --configure jsdoc.json && mv docs/$npm_package_name/$npm_package_version/* docs/ && rimraf docs/$npm_package_name",
     "docs:server": "live-server --open=docs/ --watch=src,docs --port=5000",
     "start": "npm run test:watch",
@@ -65,6 +64,7 @@
     "better-docs": "^1.2.2",
     "chalk": "2.4.1",
     "concurrently": "^5.3.0",
+    "cpy-cli": "^3.1.1",
     "cross-env": "5.1.4",
     "cross-spawn": "6.0.5",
     "eslint": "^5.6.0",
@@ -95,7 +95,6 @@
     "spected": "^0.7.0",
     "tap-nyc": "1.0.3",
     "tape": "4.9.1",
-    "tsd-jsdoc": "^2.5.0",
     "tui-jsdoc-template": "1.2.2",
     "yup": "^0.26.6"
   }

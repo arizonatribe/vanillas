@@ -12,11 +12,11 @@ function getCommands(env, paths) {
     context: { stdio: "inherit", env, shell: true },
     description: "✅ Ran the unit tests"
   }, {
-    name: "building type definitions",
-    command: paths.jsdoc,
-    args: ["--configure", paths.typesJson, "--destination", paths.build],
+    name: "copying type definitions",
+    command: paths.copy,
+    args: [paths.types, paths.build],
     context: { stdio: "inherit", env },
-    description: "✅ Built TypeScript type definitions"
+    description: "✅ Copied TypeScript type definitions"
   }, {
     name: "transpiling (cjs)",
     command: paths.babel,

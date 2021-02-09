@@ -49,6 +49,14 @@
         ],
         "import/no-named-default": "off",
         "import/prefer-default-export": "off",
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            devDependencies: ["**/scripts/**", "**/test/**"],
+            optionalDependencies: false,
+            peerDependencies: false
+          }
+        ],
         "arrow-body-style": "off",
         "no-multi-assign": "off",
         "no-lonely-if": "off",
