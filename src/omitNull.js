@@ -3,7 +3,7 @@
  *
  * @function
  * @name omitNull
- * @param {object} obj An Object from which to copy and remove keys
+ * @param {object} obj An Object from which to copy and remove null/undefined
  * @returns {object} A copy of the original Object, but without any `null` or `undefined` values
  */
 function omitNull(obj) {

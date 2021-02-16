@@ -518,17 +518,17 @@ export function omit(keys: string[], obj: object): object
 
 /**
  * Removes all `null` or `undefined` values from a given object
- * @param obj - An Object from which to copy and remove keys
+ * @param obj - An Object from which to copy and remove null/undefined
  * @returns A copy of the original Object, but without any `null` or `undefined` values
  */
-export function pickNull(obj: object): object
+export function omitNull(obj: object): object
 
 /**
  * Removes all `undefined` values from a given object
- * @param obj - An Object from which to copy and remove keys
+ * @param obj - An Object from which to copy and remove undefined
  * @returns A copy of the original Object, but without any `undefined` values
  */
-export function pickUndefined(obj: object): object
+export function omitUndefined(obj: object): object
 
 /**
  * Removes everything _except_ the specified keys from an object (after cloning the Object).
@@ -653,7 +653,7 @@ export function renameKeys(keyMap: object, obj: object): object
  * @param obj - An object that will be the Proxy's source
  * @returns An Object that will return props on the source Object if they exist but safely handle missing prop paths without throwing errors.
  */
-export function shim(obj: object): Proxy
+export function shim(obj: object): typeof Proxy
 
 /**
  * Checks the length (or size) of many different types of values:

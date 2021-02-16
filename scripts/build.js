@@ -6,6 +6,7 @@ const spawn = require("cross-spawn")
 const pkg = require("../package.json")
 const getPaths = require("./paths")
 const getCommands = require("./commands")
+const { createRootTypeDefinitions } = require("./commands")
 
 require("@babel/register")
 
@@ -20,6 +21,9 @@ function runBuild() {
 
     console.log(chalk.cyan("Clearing out previous build"))
     fse.emptyDirSync(paths.build)
+
+    console.log(chalk.cyan("Creating the root type definition from the individual defs in ./src/*.d.ts"))
+    createRootTypeDefinitions(paths)
 
     console.log(chalk.cyan("Creating a new package.json file for the build"))
     const distPkgJson = merge({
