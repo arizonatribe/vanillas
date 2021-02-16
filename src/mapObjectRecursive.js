@@ -5,6 +5,7 @@ import isObject from "./isObject"
  * Applies a mapping function you provide over every value in a given Object (recursively).
  *
  * @function
+ * @name mapObjectRecursive
  * @param {Function} fn A mapping function that is invoked on every value in the provided Object
  * @param {object} obj An Object whose values will be mapped over (recursively)
  * @returns {object} A new Object that is the result of the mapping operation over all the values in the original Object

@@ -7,6 +7,7 @@ import merge from "./merge"
  * If both values are strings or numbers, a new string will be returned with the second value added onto the first.
  *
  * @function
+ * @name append
  * @param {String|Number|Object<string, any>|Array<*>} firstVal A value that will have another appended onto
  * @param {String|Number|Object<string, any>|Array<*>} secondVal A value to append to the first value
  * @returns {Array<*>|object|String} A new Array, Object, or String that has the characters/values from the second provided value merged _after_ those from the first provided value

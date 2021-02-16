@@ -11,6 +11,7 @@ import filterObject from "./filterObject"
  * If the type of your value is none of the above, the value will be returned as-is.
  *
  * @function
+ * @name filter
  * @param {Function} fn A filtering function that is invoked on the provided value
  * @param {object|Array<*>|String} val An Object/Array/String whose values/chars will be filtered
  * @returns {object|Array<*>|String} A new value that is the result of the filtering operation over all the chars or values in the original String/Object/Array

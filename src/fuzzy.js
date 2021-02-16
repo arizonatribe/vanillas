@@ -6,6 +6,7 @@
  * Please see his original work - called [fuzzy](https://www.npmjs.com/package/fuzzy) MIT - if you need some of his additional options.
  *
  * @function
+ * @name fuzzy
  * @param {Function} propFn A function which will extract all the fields which you wish to fuzzy search on. Omit if the list is a list of strings
  * @param {string} needle The search value itself
  * @param {boolean} [caseSensitive=false] Whether or not to perform a case-sensitive search

@@ -3,6 +3,7 @@
  * This operation is recursive, so you can supply as many arrays as you wish.
  *
  * @function
+ * @name concat
  * @param {Array<*>} firstArr An Array of values (of any type)
  * @param {Array<*>} secondArr An Array of values (of any type)
  * @returns {Array<*>} A new Array with the values from the second array concatenated onto those from the first

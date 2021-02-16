@@ -4,6 +4,7 @@
  * They all still converge into one Function, but the forked function just don't receive the same input values.
  *
  * @function
+ * @name convergeZip
  * @param {Function} fn A Function to converge the results (from executing all the others) into
  * @param {Function} ...forkedFunctions Two or more Functions (should be at least two, otherwise you're using the wrong util; use compose instead) that will later receive the same input
  * @returns {Function} A wrapped Function that is ready to receive multiple values that each correspond to one of the fork functions, converging those results as _arguments_ to the first Function you supplied

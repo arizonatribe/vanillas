@@ -2,6 +2,7 @@
  * Applies a filtering function you provide over every character in a given string.
  *
  * @function
+ * @name filterString
  * @param {Function} fn A filtering function that is invoked on every char in the provided String value
  * @param {String} str A string value to filter over
  * @returns {String} A new String value that is the result of the filtering operation over the original string

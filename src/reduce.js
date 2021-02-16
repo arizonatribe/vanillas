@@ -3,6 +3,7 @@
  * Can also reduce the key/value pairs of an object, if one is supplied in place of an array.
  *
  * @function
+ * @name reduce
  * @param {Function} fn A function to control the reduction of each item in the array|object into the single output value
  * @param {*} defaultVal A starting value for the reduction accumulator
  * @param {Array<*>|object} arr An array of values of any type OR an object containing key/value pairs

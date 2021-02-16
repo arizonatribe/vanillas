@@ -4,6 +4,7 @@ import { _includes } from "./_internal/_includes"
  * Compares two lists of Strings/Numbers and returns the values that are in common (intersect) between the two lists
  *
  * @function
+ * @name intersection
  * @param {Array<String>|Array<Number>} arr1 An Array of Strings/Numbers
  * @param {Array<String>|Array<Number>} arr2 An Array of Strings/Numbers
  * @returns {Array<String>|Array<Number>} The values in common between the two lists

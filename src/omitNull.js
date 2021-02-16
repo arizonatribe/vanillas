@@ -2,10 +2,11 @@
  * Removes all `null` or `undefined` values from a given object
  *
  * @function
+ * @name omitNull
  * @param {object} obj An Object from which to copy and remove keys
  * @returns {object} A copy of the original Object, but without any `null` or `undefined` values
  */
-function pickNull(obj) {
+function omitNull(obj) {
   const newObj = {}
   const keys = Object.keys(obj)
   const numOfKeys = keys.length
@@ -17,4 +18,4 @@ function pickNull(obj) {
   return newObj
 }
 
-export default pickNull
+export default omitNull

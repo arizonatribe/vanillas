@@ -5,6 +5,7 @@ import isObject from "./isObject"
  * Whitespace-only strings are NOT considered empty (use `isBlankString` instead).
  *
  * @function
+ * @name isEmpty
  * @param {*} val A value of any type which may be considered empty
  * @returns {Boolean} Whether or not the value is empty
  */

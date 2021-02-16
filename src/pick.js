@@ -2,6 +2,7 @@
  * Removes everything _except_ the specified keys from an object (after cloning the Object).
  *
  * @function
+ * @name pick
  * @param {Array<String>} keys An array of keys to search for in the Object and include from the output
  * @param {object} obj An Object from which to copy and remove keys
  * @returns {object} A copy of the original Object, but with _only_ the specified keys

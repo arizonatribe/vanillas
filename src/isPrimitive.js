@@ -19,6 +19,7 @@ function _isPrimitiveName(typeName) {
  * Checks if a given value is of a primitive type (ie, Boolean, String, Number, or Symbol).
  *
  * @function
+ * @name isPrimitive
  * @param {*} val A value which may be of a primitive type
  * @returns {Boolean} Whether or not the value is primitive
  */

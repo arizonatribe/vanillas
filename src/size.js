@@ -10,6 +10,7 @@ import isUndefined from "./isUndefined"
  *   - Function (num of params)
  *
  * @function
+ * @name size
  * @param {object|String|Array<*>|Function} val A value of type Object, String, Array or Function
  * @returns {Number} The length of the String or Array, OR the number of keys in the Object
  */

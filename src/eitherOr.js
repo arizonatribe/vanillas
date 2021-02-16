@@ -5,6 +5,7 @@ import curry from "./curry"
  * This function is curried because it doesn't make any sense to even have it unless you have the functions ahead of time but not the value.
  *
  * @function
+ * @name eitherOr
  * @param {function} fnA The first function to be executed on the value
  * @param {function} fnB The second function to be executed on the value
  * @param {*} val A value to be passed into the functions

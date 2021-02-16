@@ -6,6 +6,7 @@ import forIn from "./forIn"
  * Recursively copies the content of an Object into a new Object
  *
  * @function
+ * @name clone
  * @param {object|Array<*>} obj An Object (or Array) from which to create a deep copy
  * @returns {object|Array<*>} The new (cloned) Object (or Array)
  */

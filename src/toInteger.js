@@ -4,6 +4,7 @@
  * If `NaN` then zero will always be returned.
  *
  * @function
+ * @name toInteger
  * @param {String} str A string which may be numeric
  * @returns {Number} Either the successfully converted number or zero (if it was NaN)
  */

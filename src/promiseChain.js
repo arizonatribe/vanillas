@@ -3,6 +3,7 @@
  * The value from the last will be supplied to the next (in case you need it).
  *
  * @function
+ * @name promiseChain
  * @param {Array<Promise<*>>|Array<Function>} requests An array of Promises (or of Functions that return Promises) which need to be executed in sequential order
  * @returns {Promise<*>} A Promise that will resolve when each of the requests completes
  */

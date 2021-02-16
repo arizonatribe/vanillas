@@ -5,6 +5,7 @@ import getType from "./getType"
  * The typeof and (if necessary) constructor names are inspected during this check.
  *
  * @function
+ * @name isSameType
  * @param {*} val1 A value (of any type)
  * @param {*} val2 A value (of any type)
  * @returns {Boolean} Whether or not the two values are of the same type

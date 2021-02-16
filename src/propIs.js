@@ -5,6 +5,7 @@ import is from "./is"
  * Looks for a specified key on an Object you provide and checks to see if its corresponding value is of the type you specifiy.
  *
  * @function
+ * @name propIs
  * @param {Function|String} type A JavaScript type constructor function (ie `Boolean`, `RegExp`, `Date`, `Array`, `Object`, `Number`, `String`, etc) OR a string represention of the type (ie, "boolean", "regexp", "date", "array", "object", "number", "string", etc)
  * @param {String} prop A key to search for on the Object
  * @param {object} obj An object which may contain a specified prop

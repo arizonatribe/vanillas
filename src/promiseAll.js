@@ -4,6 +4,7 @@
  * Addtionally you can pass in a flag to force caught errors to be ignored entirely.
  *
  * @function
+ * @name promiseAll
  * @param {Array<Function>} requests An array of Functions that return Promises
  * @param {Boolean} ignoreErrors Whether or not to ignore errors entirely (this will cause all the results to be returned and any Errors will be returned in place of the results)
  * @returns {Promise<*>} A Promise that will resolve once all of the Promises are resolved/rejected

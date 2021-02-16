@@ -6,6 +6,7 @@ import identity from "./identity"
  * The value that the chain of functions will executed on can be provided later.
  *
  * @function
+ * @name compose
  * @param {Function} ...fns One or more function to execute (in sequential order) on a value that will be supplied later
  * @returns {Function} A single Function that is ready to receive a value and pass it through the composed chain of Functions
  */

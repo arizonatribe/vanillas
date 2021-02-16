@@ -6,6 +6,7 @@
  * Note: you cannot set default values for curried function params (again, you _cannot_ set default values for curried function params)
  *
  * @function
+ * @name curry
  * @param {Function} fn A Function whose signature needs to changed from requiring all at once to providing them one (or more) at a time.
  * @returns {Function} A new Function that will wait until all arguments have been supplied before returning a result (otherwise it will continue to return a new Function that is ready to receive the next argument)
  */

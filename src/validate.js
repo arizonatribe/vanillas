@@ -50,6 +50,7 @@ function _unpackValidator(rawValidators) {
  *   `Validations for "${key}" are broken`
  *
  * @function
+ * @name validate
  * @param {Array<Function>} validations An array of validator functions and their corresponding error message
  * @param {object} values An Object of key value pairs, the keys should correspond to validators and the values are that which is to be validated
  * @returns {object} An object containing the key names of the values and one or more validation error messages (Only key names whose values were found to be invalid will show up on this output Object; an empty Object means everything was valid)

@@ -8,6 +8,7 @@
  * __Note__: if your tranformation is _not_ a function then it will returned as-is in response to a succesfully met condition
  *
  * @function
+ * @name cond
  * @param {Array<Array<Function>>} conditionalTransforms An array of arrays (which have two values: the condition function and the transformation function)
  * @param {*} val A value of any type that will be transformed according to the appropriate condition.
  * @returns {*} The provided value transformed by the appropriate matching conditional transformation

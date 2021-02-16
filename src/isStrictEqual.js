@@ -3,6 +3,7 @@
  * A very simple triple equals is all that is used.
  *
  * @function
+ * @name isStrictEqual
  * @param {*} val1 A value (of any type)
  * @param {*} val2 A value (of any type)
  * @returns {Boolean} Whether or not the two values are strictly equal

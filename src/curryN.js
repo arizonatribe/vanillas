@@ -3,6 +3,7 @@
  * You would use this in cases where it cannot be inferred from the curried function itself.
  *
  * @function
+ * @name curryN
  * @throws {TypeError} if arity is not supplied or is not a positive number
  * @param {Number} arity The number of arguments the curried function will received before being executed
  * @param {Function} fn A Function whose signature needs to changed from requiring all at once to providing them one (or more) at a time.

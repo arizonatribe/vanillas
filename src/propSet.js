@@ -8,6 +8,7 @@ import clone from "./clone"
  * The is performed safely and will not throw an error if somethign on the prop path chain you specify doesn't exist.
  *
  * @function
+ * @name propSet
  * @param {String|Array<String>} prop A top-level key OR a deeply nested prop path (which may be represented as an array or as a single dot-delimited string)
  * @param {*} val A value to be placed at the provided property path
  * @param {object} obj An object which onto which the value will be placed

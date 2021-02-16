@@ -6,6 +6,7 @@
  * When you're ready to receive the actual input Object it will be forked into all the transform Functions and their results will converge into the merge/assign Function you supplied first.
  *
  * @function
+ * @name converge
  * @param {Function} fn A Function to converge the results (from executing all the others) into
  * @param {Function} ...forkedFunctions Two or more Functions (should be at least two, otherwise you're using the wrong util; use compose instead) that will later receive the same input
  * @returns {Function} A wrapped Function that is ready to receive a value(s) and pass it (in parallel) into the other Functions, converging those results as _arguments_ to the first Function you supplied

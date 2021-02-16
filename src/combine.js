@@ -8,6 +8,7 @@ import isObject from "./isObject"
  * In any other case only the first value is returned.
  *
  * @function
+ * @name combine
  * @param {*} val1 The base value to be combined with
  * @param {*} val2 The value to combine
  * @returns {*} If the values are of the same type, this represents the combined value of the two of them. Otherwise only the first value is returned

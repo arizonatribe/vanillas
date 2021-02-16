@@ -2,10 +2,11 @@
  * Removes all `undefined` values from a given object
  *
  * @function
+ * @name omitUndefined
  * @param {object} obj An Object from which to copy and remove keys
  * @returns {object} A copy of the original Object, but without any `undefined` values
  */
-function pickUndefined(obj) {
+function omitUndefined(obj) {
   const newObj = {}
   const keys = Object.keys(obj)
   const numOfKeys = keys.length
@@ -17,4 +18,4 @@ function pickUndefined(obj) {
   return newObj
 }
 
-export default pickUndefined
+export default omitUndefined

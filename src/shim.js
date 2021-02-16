@@ -19,6 +19,7 @@ const getter = {
  * It is not a polyfill but rather a way to keep deep prop paths that may not exist on the source object from throwing an error.
  *
  * @function
+ * @name shim
  * @param {object} obj An object that will be the Proxy's source
  * @returns {Proxy} An Object that will return props on the source Object if they exist but safely handle missing prop paths without throwing errors.
  */

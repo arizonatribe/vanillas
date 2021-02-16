@@ -5,6 +5,7 @@ import isPrimitive from "./isPrimitive"
  * Transforms an object's key/value pairs into an encoded URI string, delimited by ampersands &
  *
  * @function
+ * @name toUriEncoded
  * @param {object|Boolean|Number} obj An object whose key/value pairs need to be serialized into a single string.
  * @returns {String} A new string that represents the key/value pairs on the originating object
  */

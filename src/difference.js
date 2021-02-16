@@ -4,6 +4,7 @@ import { _includes } from "./_internal/_includes"
  * Compares two lists of Strings/Numbers and returns the values that are different between the two lists
  *
  * @function
+ * @name difference
  * @param {Array<String>|Array<Number>} arr1 An Array of Strings
  * @param {Array<String>|Array<Number>} arr2 An Array of Strings
  * @returns {Array<String>|Array<Number>} An array of values that are different between the two lists

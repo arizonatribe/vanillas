@@ -2,6 +2,7 @@
  * Checks to see if a value is undefined
  *
  * @function
+ * @name isUndefined
  * @param {*} val A value (of any type)
  * @returns {Boolean} Whether or not the value is undefined
  */

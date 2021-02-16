@@ -12,6 +12,7 @@ import mapObject from "./mapObject"
  * Also, this mapping operation does _not_ mutate the original value.
  *
  * @function
+ * @name map
  * @param {Function} fn A mapping function that is invoked on the provided value
  * @param {object|Array<*>|String} val An Object/Array/String whose values/chars will be mapped over
  * @returns {object|Array<*>|String} A new value that is the result of the mapping operation over all the chars or values in the original String/Object/Array

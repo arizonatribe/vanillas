@@ -13,6 +13,7 @@ import isObject from "./isObject"
  * Then the actual input object (with the desciption field) will have the matching mapping function from your spec applied to it directly.
  *
  * @function
+ * @name mapSpec
  * @param {object} spec An Object whose keys should correspond to keys in the input Object and whose values are mapping functions that will receive the matching input Object's prop as input
  * @param {object} inputObj The actual input to map over and transform
  * @returns {object} A new Object with all the mapping functions from the spec Object applied to the corresponding values in the input Object (if they exist)

@@ -5,6 +5,7 @@ import forIn from "./forIn"
  * This mutates the original Object.
  *
  * @function
+ * @name assign
  * @param {object} obj An Object to mutate with the values from one (or more) additionally supplied Objects
  * @param {object} ...resOfObjects One or more Objects to extract from and assign onto the first Object
  * @returns {object} The first object mutated with the values from any other object passed in

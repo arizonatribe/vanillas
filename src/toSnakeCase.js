@@ -3,6 +3,7 @@
  * Whitespace and hyphens are replaced with underscores, and uppercase letters are interpreted as boundaries for new underscore-separated words.
  *
  * @function
+ * @name toSnakeCase
  * @param {String} str A string which may contain uppercase characters or hyphens
  * @returns {String} A new string that is an lowercase representation of the original string
  */

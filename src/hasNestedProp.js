@@ -4,6 +4,7 @@ import has from "./has"
  * Checks if a given Object contains a (potentially) nested property of a specified path
  *
  * @function
+ * @name hasNestedProp
  * @param {Array<String>|String} prop A prop name, a dot-separated prop path, or an array of prop path "pieces" to look for in the object
  * @param {object} obj An Object to inspect for a given prop at the specified path
  * @returns {Boolean} Whether the object contains the specified prop path
