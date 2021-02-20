@@ -1,6 +1,3 @@
-import isNil from "./isNil"
-import isUndefined from "./isUndefined"
-
 function isAnythingButAnObject(name) {
   switch (name) {
   case "Function":
@@ -47,11 +44,12 @@ function isAnythingButAnObject(name) {
  * @returns {Boolean} Whether or not the value is an Object
  */
 function isObject(val) {
-  return !isNil(val) &&
-    isUndefined(val.length) && (
-    (!isUndefined(val.constructor) && !isAnythingButAnObject(val.constructor.name)) ||
-      (isUndefined(val.constructor) && isUndefined(val.prototype))
-  )
+  return val != null
+    && typeof val.length !== "number"
+    && (
+      (val.constructor !== undefined && !isAnythingButAnObject(val.constructor.name))
+      || (val.constructor === undefined && val.prototype === undefined)
+    )
 }
 
 export default isObject
