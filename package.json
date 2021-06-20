@@ -40,6 +40,7 @@
     "test": "tape --require=@babel/register test/index.js",
     "benchmark": "node benchmark",
     "benchmark:docs": "node benchmark --update-docs",
+    "benchmark-class": "node --expose-gc benchmark/classMemoryTest.js",
     "lint": "eslint src test benchmark scripts",
     "prepare": "npm run build",
     "build": "node scripts/build"

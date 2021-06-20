@@ -14,6 +14,7 @@
     },
     "rules": {
         "arrow-parens": "off",
+        "no-await-in-loop": "off",
         "no-bitwise": 0,        
         "no-restricted-syntax": "off",
         "class-methods-use-this": "off",
