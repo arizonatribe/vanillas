@@ -84,7 +84,7 @@
     "jsdoc": "^3.6.3",
     "jsdoc-export-default-interop": "^0.3.1",
     "live-server": "1.2.1",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "nodemon": "1.18.7",
     "npm-watch": "0.4.0",
     "nyc": "^14.1.1",
