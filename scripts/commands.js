@@ -7,14 +7,61 @@ const fs = require("fs")
  * @function
  * @name createRootTypeDefinitions
  * @param {Object<string, string|string[]>} paths A set of file and folder paths
+ * @param {boolean} [isRoot] Whether this file is to be at the root of the code repo (otherwise will be created in the build folder
  * @returns {boolean} Whether or not the file was created successfully
  */
-function createRootTypeDefinitions(paths) {
-  const newTypeDefinitionContent = paths.typeDefinitionFiles.map(typeDefinitionFile => {
-    const content = fs.readFileSync(typeDefinitionFile)
-    return content.toString()
-  }).join("\n").replace(/export default function/g, "export function")
-  const rootTypeDefinitionFilePath = path.resolve(process.cwd(), "types.d.ts")
+function createRootTypeDefinitions(paths, isRoot) {
+  let additionalTypes = []
+
+  fs.readdirSync(paths.srcTypes)
+    .filter(filename => !/^index\./.test(filename))
+    .forEach(filename => {
+      const content = fs.readFileSync(path.resolve(paths.srcTypes, filename))
+      const typesConstsInterfaces = content
+        .toString()
+        .split(/\n/)
+        .filter(line => /^export\s/.test(line))
+        .map(line => (
+          line.match(/^(export)(\s+)(type|interface|const)(\s+)([^\s<]+)([\s<]+)/) || []
+        )[5])
+
+      if (typesConstsInterfaces.length) {
+        additionalTypes = [
+          ...additionalTypes,
+          ...typesConstsInterfaces
+        ].filter(Boolean)
+      }
+    })
+
+  let newTypeDefinitionContent = paths.typeDefinitionFiles
+    .map(typeDefinitionFile => {
+      const content = fs.readFileSync(typeDefinitionFile)
+      return content.toString()
+    })
+    .join("\n")
+    .replace(/export default function/g, "export function")
+
+  const importedTypes = []
+  additionalTypes.forEach(aType => {
+    if ((new RegExp(`(\\s|{)(${aType})(,|\\s|})`)).test(newTypeDefinitionContent)) {
+      importedTypes.push(aType)
+    }
+  })
+  if (importedTypes.length) {
+    newTypeDefinitionContent = [
+      `import { ${importedTypes.join(", ")} } from "./${isRoot ? "src/types" : "types/index"}"`,
+      newTypeDefinitionContent
+        .split(/\n/)
+        .filter(line => !/^import/.test(line))
+        .join("\n")
+    ].join("\n")
+  }
+
+  const rootTypeDefinitionFilePath = path.resolve(...[
+    process.cwd(),
+    !isRoot && paths.build,
+    "index.d.ts"
+  ].filter(Boolean))
   if (fs.existsSync(rootTypeDefinitionFilePath)) fs.unlinkSync(rootTypeDefinitionFilePath)
   fs.writeFileSync(rootTypeDefinitionFilePath, newTypeDefinitionContent)
   return fs.existsSync(rootTypeDefinitionFilePath)
@@ -71,12 +118,6 @@ function getCommands(env, paths) {
     args: ["-f", `${paths.src}${path.sep}types${path.sep}*.ts`, paths.buildTypes],
     context: { stdio: "inherit", env },
     description: "✅ Copied additional TypeScript type definitions"
-  }, {
-    name: "copying root type definition",
-    command: paths.copy,
-    args: ["-f", paths.types, paths.build],
-    context: { stdio: "inherit", env },
-    description: "✅ Copied root TypeScript type definitions"
   }, {
     name: "transpiling (esm)",
     command: paths.babel,

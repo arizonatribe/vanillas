@@ -6,7 +6,7 @@ import isPrimitive from "./isPrimitive"
  *
  * @function
  * @name toUriEncoded
- * @param {object | boolean | number} obj An object whose key/value pairs need to be serialized into a single string.
+ * @param {object} obj An object whose key/value pairs need to be serialized into a single string.
  * @returns {string} A new string that represents the key/value pairs on the originating object
  */
 function toUriEncoded(obj = {}) {

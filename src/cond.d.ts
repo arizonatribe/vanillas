@@ -6,8 +6,8 @@
  *   - the second value is the transformation (`Function`) to apply to the value if the condition was matched
  *
  * __Note__: if your tranformation is _not_ a function then it will returned as-is in response to a succesfully met condition
- * @param conditionalTransforms - An array of arrays (which have two values: the condition function and the transformation function)
- * @param val - A value of any type that will be transformed according to the appropriate condition.
- * @returns The provided value transformed by the appropriate matching conditional transformation
+ * @param {Array<Array<function>>} conditionalTransforms - An array of arrays (which have two values: the condition function and the transformation function)
+ * @param {*} val - A value of any type that will be transformed according to the appropriate condition.
+ * @returns {*} The provided value transformed by the appropriate matching conditional transformation
  */
 export default function cond(conditionalTransforms: ((...params: any[]) => void)[][], val: any): any
