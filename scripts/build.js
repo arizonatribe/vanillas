@@ -30,6 +30,7 @@ function runBuild() {
 
     console.log(chalk.cyan("Creating the root type definition from the individual defs in ./src/*.d.ts"))
     createRootTypeDefinitions(paths)
+    createRootTypeDefinitions(paths, true)
 
     console.log(chalk.cyan("Creating a new package.json file for the build"))
     const distPkgJson = merge({

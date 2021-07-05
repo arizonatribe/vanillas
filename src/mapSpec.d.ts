@@ -19,8 +19,11 @@ import { AnyObject, Spec } from "./types"
  *     isAlive: 1,
  *     name: 'john'
  *   })
- * @param spec - An Object whose keys should correspond to keys in the input Object and whose values are mapping functions that will receive the matching input Object's prop as input
- * @param inputObj - The actual input to map over and transform
- * @returns A new Object with all the mapping functions from the spec Object applied to the corresponding values in the input Object (if they exist)
+ * @param {object} spec - An Object whose keys should correspond to keys in the input Object and whose values are mapping functions that will receive the matching input Object's prop as input
+ * @param {object} inputObj - The actual input to map over and transform
+ * @returns {object} A new Object with all the mapping functions from the spec Object applied to the corresponding values in the input Object (if they exist)
  */
-export default function mapSpec(spec: Spec, inputObj: AnyObject): AnyObject
+export default function mapSpec<T extends AnyObject, S extends Spec>(
+  spec: S,
+  inputObj: T
+): T

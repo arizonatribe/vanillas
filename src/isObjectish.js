@@ -1,6 +1,3 @@
-import isNil from "./isNil"
-import isUndefined from "./isUndefined"
-
 /**
  * Checks if a given type's constructor name is not really what we consider an object in-practice
  *
@@ -45,7 +42,9 @@ function withoutTheCurlies(name) {
 }
 
 /**
- * Tests whether or not a given value is object-like
+ * Tests whether or not a given value is object-like.
+ * This means a hashmap, map, weak map, object literal, instantiated custom class,
+ * but _not_ some of the kinds of constructs which JavaScript considers to be technically an object (Error, Array, Null, Function, Date, etc.)
  *
  * @function
  * @name isObjectish
@@ -53,11 +52,12 @@ function withoutTheCurlies(name) {
  * @returns {boolean} Whether or not the value is object-like
  */
 function isObjectish(val) {
-  return !isNil(val) &&
-    isUndefined(val.length) && (
-    (!isUndefined(val.constructor) && !withoutTheCurlies(val.constructor.name)) ||
-      (isUndefined(val.constructor) && isUndefined(val.prototype))
-  )
+  return val != null
+    && val.length === undefined
+    && (
+      (val.constructor !== undefined && !withoutTheCurlies(val.constructor.name))
+      || (val.constructor === undefined && val.prototype === undefined)
+    )
 }
 
 export default isObjectish

@@ -6,4 +6,4 @@ import { AnyObject } from "./types"
  * @param val - A value (of any type)
  * @returns Whether or not the value is an Object
  */
-export default function isObject(val: any): val is AnyObject
+export default function isObject(val: any): val is AnyObject | {}

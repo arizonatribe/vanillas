@@ -6,6 +6,7 @@ const path = require("path")
  *
  * @typedef {object} Paths
  * @property {string} src The path to the vanillas source files
+ * @property {string} srcTypes The path to the additional type definitions from the source folder
  * @property {string} typeDefinitionFiles The path to the vanillas individual type definition files
  * @property {string} build The path to the vanillas build output
  * @property {string} buildTypes The path to the additional type definitions placed into the vanillas build output
@@ -35,13 +36,14 @@ function getPaths() {
 
   return {
     src,
+    srcTypes: resolvePath("src/types"),
     typeDefinitionFiles: typeDefinitionFiles.map(typeDefinitionFile => path.resolve(src, typeDefinitionFile)),
     build: resolvePath("build"),
     buildTypes: resolvePath("build/types"),
     copy: resolvePath("node_modules/.bin/copyfiles"),
     README: resolvePath("README.md"),
     faucet: resolvePath("node_modules/.bin/faucet"),
-    types: resolvePath("types.d.ts"),
+    types: resolvePath("index.d.ts"),
     pkg: resolvePath("build/package.json"),
     babel: resolvePath("node_modules/.bin/babel"),
     jsdoc: resolvePath("node_modules/.bin/jsdoc"),

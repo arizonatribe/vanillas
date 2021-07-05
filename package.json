@@ -2,11 +2,11 @@
   "name": "vanillas",
   "description": "Dependency-free, low-level JavaScript function helpers",
   "main": "src/index.js",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": true,
   "license": "MIT",
   "author": "David Nunez <arizonatribe@gmail.com>",
-  "types": "types.d.ts",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/arizonatribe/vanillas.git"
