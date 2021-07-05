@@ -4,7 +4,7 @@
  * @function
  * @name isPromise
  * @param {*} val A value of any type which may be a promise
- * @returns {Boolean} Whether or not the value is a promise
+ * @returns {boolean} Whether or not the value is a promise
  */
 function isPromise(val) {
   return val !== null && (typeof val === "function" || typeof val === "object") && typeof val.then === "function"

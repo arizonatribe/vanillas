@@ -3,8 +3,8 @@
  *
  * @function
  * @name toTitleCase
- * @param {String} str A string which may contain uppercase characters
- * @returns {String} A new string that is an lowercase representation of the original string
+ * @param {string} str A string which may contain uppercase characters
+ * @returns {string} A new string that is an lowercase representation of the original string
  */
 function toTitleCase(str) {
   return str.split(/\s/)

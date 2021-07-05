@@ -12,6 +12,12 @@ require("@babel/register")
 
 const { clone, each, merge, pick } = require("../src")
 
+/**
+ * Prepares the vanillas package for publishing to NPM
+ *
+ * @function
+ * @name runBuild
+ */
 function runBuild() {
   let exitStatus = 0
   try {

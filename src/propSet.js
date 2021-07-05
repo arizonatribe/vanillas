@@ -9,7 +9,7 @@ import clone from "./clone"
  *
  * @function
  * @name propSet
- * @param {String|Array<String>} prop A top-level key OR a deeply nested prop path (which may be represented as an array or as a single dot-delimited string)
+ * @param {string | Array<string>} prop A top-level key OR a deeply nested prop path (which may be represented as an array or as a single dot-delimited string)
  * @param {*} val A value to be placed at the provided property path
  * @param {object} obj An object which onto which the value will be placed
  * @returns {object} The original object, but modified to have the provided value placed at the specified path it does not exist

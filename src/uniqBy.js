@@ -6,7 +6,7 @@ import { _includes } from "./_internal/_includes"
  *
  * @function
  * @name uniqBy
- * @param {Function|String} pred A predicate function
+ * @param {function | string} pred A predicate function
  * @param {Array<*>} list An array of values which may or may not contain duplicates
  * @returns {Array<*>} A new list containing only the unique values from the original array
  */

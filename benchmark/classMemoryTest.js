@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable jsdoc/require-jsdoc, no-unused-vars, max-classes-per-file */
 
 const eatFood = food => food
 const makeSound = noise => noise
@@ -40,7 +41,6 @@ function testComposition(runs) {
     }
   }
 
-  /* eslint-disable-next-line no-unused-vars */
   let result = ""
   for (let i = 0; i < runs; i++) {
     result += `${composedDog.makeSound()}${composedDog.eatFood()}`

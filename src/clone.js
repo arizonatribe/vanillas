@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import isNil from "./isNil"
 import isObject from "./isObject"
 import forIn from "./forIn"
@@ -13,7 +14,7 @@ import forIn from "./forIn"
 function clone(obj) {
   if (!isNil(obj)) {
     if (Array.isArray(obj)) {
-      return obj.map(v => isObject(v) ? clone(v) : v)
+      return obj.map(v => (isObject(v) ? clone(v) : v))
     }
     if (isObject(obj)) {
       const newObj = {}

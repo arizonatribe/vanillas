@@ -1,3 +1,5 @@
+import { AnyObject, Spec } from "./types"
+
 /**
  * Applies one or more mapping functions to the value in a given Object.
  * But rather than applying the same mapping function to every value in an Object, instead you use a "spec" object to link the appropriate mapping function to the key/val in the input Object.
@@ -21,4 +23,4 @@
  * @param inputObj - The actual input to map over and transform
  * @returns A new Object with all the mapping functions from the spec Object applied to the corresponding values in the input Object (if they exist)
  */
-export default function mapSpec(spec: object, inputObj: object): object
+export default function mapSpec(spec: Spec, inputObj: AnyObject): AnyObject

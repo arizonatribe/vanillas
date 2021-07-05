@@ -3,4 +3,4 @@
  * @param val - A value (of any type)
  * @returns Whether or not the value is a Set or WeakSet
  */
-export default function isSet(val: any): boolean
+export default function isSet(val: any): val is Set | WeakSet

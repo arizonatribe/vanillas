@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/require-jsdoc */
 import R from "ramda"
 import _ from "lodash"
 import { curry } from "../../src"
@@ -40,9 +41,18 @@ const fourArgCurryTests = [
   ["Executing Ramda 4-arg curried function", () => R.curry(combinedVolumes)(12)(10)(17)(4)]
 ]
 const manyArgCurryTests = [
-  ["Executing Vanillas 5+arg curried function", () => curry(whoAreThey)("Brown")("Chisholm")("Bunton")("Halliwell")("Beckham")],
-  ["Executing Lodash 5+arg curried function", () => _.curry(whoAreThey)("Brown")("Chisholm")("Bunton")("Halliwell")("Beckham")],
-  ["Executing Ramda 5+arg curried function", () => R.curry(whoAreThey)("Brown")("Chisholm")("Bunton")("Halliwell")("Beckham")]
+  [
+    "Executing Vanillas 5+arg curried function",
+    () => curry(whoAreThey)("Brown")("Chisholm")("Bunton")("Halliwell")("Beckham")
+  ],
+  [
+    "Executing Lodash 5+arg curried function",
+    () => _.curry(whoAreThey)("Brown")("Chisholm")("Bunton")("Halliwell")("Beckham")
+  ],
+  [
+    "Executing Ramda 5+arg curried function",
+    () => R.curry(whoAreThey)("Brown")("Chisholm")("Bunton")("Halliwell")("Beckham")
+  ]
 ]
 
 export default {

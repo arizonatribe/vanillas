@@ -7,7 +7,7 @@ import isObject from "./isObject"
  * @function
  * @name isEmpty
  * @param {*} val A value of any type which may be considered empty
- * @returns {Boolean} Whether or not the value is empty
+ * @returns {boolean} Whether or not the value is empty
  */
 function isEmpty(val) {
   return val == null ||

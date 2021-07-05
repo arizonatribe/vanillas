@@ -6,7 +6,7 @@ import getConstructorName from "./_internal/getConstructorName"
  * @function
  * @name isMap
  * @param {*} val A value (of any type)
- * @returns {Boolean} Whether or not the value is a Map or WeakMap
+ * @returns {boolean} Whether or not the value is a Map or WeakMap
  */
 function isMap(val) {
   return getConstructorName(val) === "Map" || getConstructorName(val) === "WeakMap"

@@ -42,7 +42,13 @@ test("\"uniqBy\" makes sure a list contains only unique values based on a suppli
   t.deepEqual(
     uniqBy(
       ["x", 0],
-      [{ x: ["one", "two"], id: 1 }, { x: ["one", "three"], id: 2 }, { x: ["one", "three"], id: 3 }, { x: ["two", "three"], id: 4 }, { x: [], id: 5 }]
+      [
+        { x: ["one", "two"], id: 1 },
+        { x: ["one", "three"], id: 2 },
+        { x: ["one", "three"], id: 3 },
+        { x: ["two", "three"], id: 4 },
+        { x: [], id: 5 }
+      ]
     ),
     [{ x: ["one", "two"], id: 1 }, { x: ["two", "three"], id: 4 }, { x: [], id: 5 }],
     "prop path (as an array)"
@@ -50,7 +56,13 @@ test("\"uniqBy\" makes sure a list contains only unique values based on a suppli
   t.deepEqual(
     uniqBy(
       "x.one",
-      [{ x: {one: "two"}, id: 1 }, { x: {one: "three"}, id: 2 }, { x: {one: "three"}, id: 3 }, { x: {two: "three"}, id: 4 }, { x: {}, id: 5 }]
+      [
+        { x: {one: "two"}, id: 1 },
+        { x: {one: "three"}, id: 2 },
+        { x: {one: "three"}, id: 3 },
+        { x: {two: "three"}, id: 4 },
+        { x: {}, id: 5 }
+      ]
     ),
     [{ x: {one: "two"}, id: 1 }, { x: {one: "three"}, id: 2 }, { x: {two: "three"}, id: 4 }],
     "prop path as a dot-separated string"

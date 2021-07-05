@@ -1,3 +1,4 @@
+/* eslint-disable prefer-object-spread */
 import { assign } from "../../src"
 import { hook, sphere, jurrassicPark } from "../../test/__mocks__"
 

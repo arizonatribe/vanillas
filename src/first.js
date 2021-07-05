@@ -3,7 +3,7 @@
  *
  * @function
  * @name first
- * @param {Array<*>} arr An array of values from which to extract the first value
+ * @param {Array<*>} val An array of values from which to extract the first value
  * @returns {*} The value at the first index of the supplied array (which may be undefined)
  */
 function first(val) {

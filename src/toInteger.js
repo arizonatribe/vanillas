@@ -5,8 +5,8 @@
  *
  * @function
  * @name toInteger
- * @param {String} str A string which may be numeric
- * @returns {Number} Either the successfully converted number or zero (if it was NaN)
+ * @param {string} str A string which may be numeric
+ * @returns {number} Either the successfully converted number or zero (if it was NaN)
  */
 function toInteger(str) {
   if (typeof str === "boolean") {

@@ -5,9 +5,9 @@
  * @function
  * @name curryN
  * @throws {TypeError} if arity is not supplied or is not a positive number
- * @param {Number} arity The number of arguments the curried function will received before being executed
- * @param {Function} fn A Function whose signature needs to changed from requiring all at once to providing them one (or more) at a time.
- * @returns {Function} A new Function that will wait until all (arity) arguments have been supplied before returning a result (otherwise it will continue to return a new Function that is ready to receive the next argument)
+ * @param {number} arity The number of arguments the curried function will received before being executed
+ * @param {function} fn A Function whose signature needs to changed from requiring all at once to providing them one (or more) at a time.
+ * @returns {function} A new Function that will wait until all (arity) arguments have been supplied before returning a result (otherwise it will continue to return a new Function that is ready to receive the next argument)
  */
 function curryN(arity, fn) {
   if (typeof arity !== "number" || Number.isNaN(arity) || arity <= 0) {

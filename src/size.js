@@ -11,8 +11,8 @@ import isUndefined from "./isUndefined"
  *
  * @function
  * @name size
- * @param {object|String|Array<*>|Function} val A value of type Object, String, Array or Function
- * @returns {Number} The length of the String or Array, OR the number of keys in the Object
+ * @param {object | string | Array<*> | function} val A value of type Object, String, Array or Function
+ * @returns {number} The length of the String or Array, OR the number of keys in the Object
  */
 function size(val) {
   if (!isUndefined(val.length)) {

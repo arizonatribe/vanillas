@@ -5,10 +5,10 @@ import propAt from "./propAt"
  *
  * @function
  * @name propEquals
- * @param {String} prop A key to search for on the Object
- * @param {Function|String} val A value that the extracted prop will be compared against
+ * @param {string} prop A key to search for on the Object
+ * @param {function | string} val A value that the extracted prop will be compared against
  * @param {object} obj An object which may contain a specified prop
- * @returns {Boolean} Whether or not the requested prop equals the specified value
+ * @returns {boolean} Whether or not the requested prop equals the specified value
  */
 function propEquals(prop, val, obj) {
   return propAt(prop, obj) === val

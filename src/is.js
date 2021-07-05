@@ -8,9 +8,9 @@ import getType from "./getType"
  *
  * @function
  * @name is
- * @param {Function|String} ofType A JavaScript type constructor function (like `Function`, `String`, `RegExp`, `Boolean`, `Array`, `Object`, etc.) or a string value matching the name of one
+ * @param {function | string} ofType A JavaScript type constructor function (like `Function`, `String`, `RegExp`, `Boolean`, `Array`, `Object`, etc.) or a string value matching the name of one
  * @param {*} val A value (of any type)
- * @returns {Boolean} Whether or not the value matches the specified type
+ * @returns {boolean} Whether or not the value matches the specified type
  * @example
  * is('boolean', true)
  * is('array', [1, 2, 3])

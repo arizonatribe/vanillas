@@ -4,4 +4,4 @@
  * @param val - A value of any type which may be considered empty
  * @returns Whether or not the value is empty
  */
-export default function isEmpty(val: any): boolean
+export default function isEmpty(val: any): val is null | undefined | {} | []

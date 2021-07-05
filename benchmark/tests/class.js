@@ -1,3 +1,5 @@
+/* eslint-disable jsdoc/require-jsdoc, func-names, max-classes-per-file */
+
 /**
  * This benchmark isn't related to a function that is part of this package,
  * but it is an important demonstration on why new'ing up classes isn't to be preferred

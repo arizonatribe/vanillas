@@ -7,11 +7,12 @@
  *
  * @function
  * @name converge
- * @param {Function} fn A Function to converge the results (from executing all the others) into
- * @param {Function} ...forkedFunctions Two or more Functions (should be at least two, otherwise you're using the wrong util; use compose instead) that will later receive the same input
- * @returns {Function} A wrapped Function that is ready to receive a value(s) and pass it (in parallel) into the other Functions, converging those results as _arguments_ to the first Function you supplied
+ * @param {function} fn A Function to converge the results (from executing all the others) into
+ * @param {function} ...forkedFunctions Two or more Functions (should be at least two, otherwise you're using the wrong util; use compose instead) that will later receive the same input
+ * @returns {function} A wrapped Function that is ready to receive a value(s) and pass it (in parallel) into the other Functions, converging those results as _arguments_ to the first Function you supplied
  */
 function converge(fn, ...forkedFunctions) {
+  /* eslint-disable-next-line jsdoc/require-jsdoc */
   function inner(...args) {
     return fn(
       ...(Array.isArray(forkedFunctions[0]) ? forkedFunctions[0] : forkedFunctions).map(f => f(...args))

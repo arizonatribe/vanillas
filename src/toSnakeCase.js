@@ -4,8 +4,8 @@
  *
  * @function
  * @name toSnakeCase
- * @param {String} str A string which may contain uppercase characters or hyphens
- * @returns {String} A new string that is an lowercase representation of the original string
+ * @param {string} str A string which may contain uppercase characters or hyphens
+ * @returns {string} A new string that is an lowercase representation of the original string
  */
 function toSnakeCase(str) {
   return str

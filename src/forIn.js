@@ -5,7 +5,7 @@ import has from "./has"
  *
  * @function
  * @name forIn
- * @param {Function} fn A function to execute iteratively, which will receive the `key`, `value`, and `object` (respectively)
+ * @param {function} fn A function to execute iteratively, which will receive the `key`, `value`, and `object` (respectively)
  * @param {object} obj An object whose keys will be iterated over
  */
 function forIn(fn, obj) {

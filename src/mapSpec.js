@@ -15,7 +15,7 @@ import isObject from "./isObject"
  * @function
  * @name mapSpec
  * @param {object} spec An Object whose keys should correspond to keys in the input Object and whose values are mapping functions that will receive the matching input Object's prop as input
- * @param {object} inputObj The actual input to map over and transform
+ * @param {object} obj The actual input to map over and transform
  * @returns {object} A new Object with all the mapping functions from the spec Object applied to the corresponding values in the input Object (if they exist)
  * @example
  *   mapSpec({

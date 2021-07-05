@@ -7,6 +7,17 @@ const isFunction = v => typeof v === "function"
 const brokenValidator = (val, key) => `Validations for "${key}" are broken`
 const defaultMessageHandler = (val, key) => `"${val}" is not valid for "${key}"`
 
+/**
+ * A function which ensures the input is either a singel validator, a list of validators, or possible just the validator function.
+ * This is essentially a tuple whose first indexed value is the actual function which validates the input and whose second indexed value is the error message which is display (or a function which returns the error message) when the validation fails.
+ *
+ * @function
+ * @private
+ * @name _unpackValidator
+ * @param {Array<function|string>|Array<Array<function|string>>|function} rawValidators A single validator, a list of validators or possibly just a validation function.
+ * @returns {object} An object of validation functions which are ready to
+ * receive the value to validate
+ */
 function _unpackValidator(rawValidators) {
   const validators = cond([
     [isFunction, [[rawValidators, defaultMessageHandler]]],
@@ -51,7 +62,7 @@ function _unpackValidator(rawValidators) {
  *
  * @function
  * @name validate
- * @param {Array<Function>} validations An array of validator functions and their corresponding error message
+ * @param {Array<function>} validations An array of validator functions and their corresponding error message
  * @param {object} values An Object of key value pairs, the keys should correspond to validators and the values are that which is to be validated
  * @returns {object} An object containing the key names of the values and one or more validation error messages (Only key names whose values were found to be invalid will show up on this output Object; an empty Object means everything was valid)
  * @example

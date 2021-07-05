@@ -6,7 +6,7 @@ import getConstructorName from "./_internal/getConstructorName"
  * @function
  * @name isSet
  * @param {*} val A value (of any type)
- * @returns {Boolean} Whether or not the value is a Set or WeakSet
+ * @returns {boolean} Whether or not the value is a Set or WeakSet
  */
 function isSet(val) {
   return getConstructorName(val) === "Set" || getConstructorName(val) === "WeakSet"

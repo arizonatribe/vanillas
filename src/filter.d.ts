@@ -1,3 +1,5 @@
+import { AnyObject } from "./types"
+
 /**
  * Applies a filtering function you provide over a value you provide, according to its type.
  * String values will have the filtering function applied over every character in the String.
@@ -8,4 +10,7 @@
  * @param val - An Object/Array/String whose values/chars will be filtered
  * @returns A new value that is the result of the filtering operation over all the chars or values in the original String/Object/Array
  */
-export default function filter(fn: (...params: any[]) => any, val: object | any[] | string): object | any[] | string
+export default function filter(
+  fn: (...params: any[]) => any,
+  val: AnyObject | any[] | string
+): AnyObject | any[] | string

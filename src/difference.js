@@ -5,9 +5,9 @@ import { _includes } from "./_internal/_includes"
  *
  * @function
  * @name difference
- * @param {Array<String>|Array<Number>} arr1 An Array of Strings
- * @param {Array<String>|Array<Number>} arr2 An Array of Strings
- * @returns {Array<String>|Array<Number>} An array of values that are different between the two lists
+ * @param {Array<string>|Array<number>} arr1 An Array of Strings
+ * @param {Array<string>|Array<number>} arr2 An Array of Strings
+ * @returns {Array<string>|Array<number>} An array of values that are different between the two lists
  */
 function difference(arr1, arr2) {
   const diff = []

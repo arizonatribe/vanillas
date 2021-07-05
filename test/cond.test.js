@@ -2,6 +2,7 @@ import tape from "tape"
 import cond from "../src/cond"
 import { hook, sphere, counterCultureIcons, composers } from "./__mocks__"
 
+/* eslint-disable-next-line max-len */
 tape("\"cond\" checks a given value against a set of conditions and applies a corresponding transformation when the first matching condition is met", t => {
   const conditionalTransforms = [
     [v => v.Hoffman === "dustin" && v.Williams === "robin", "Hook was released in 1991"],

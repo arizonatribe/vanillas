@@ -3,8 +3,8 @@
  *
  * @function
  * @name toLowerCase
- * @param {String} str A string which may contain uppercase characters
- * @returns {String} A new string that is an lowercase representation of the original string
+ * @param {string} str A string which may contain uppercase characters
+ * @returns {string} A new string that is an lowercase representation of the original string
  */
 function toLowerCase(str) {
   return str.toLowerCase()

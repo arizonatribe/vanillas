@@ -12,9 +12,9 @@ import filterObject from "./filterObject"
  *
  * @function
  * @name filter
- * @param {Function} fn A filtering function that is invoked on the provided value
- * @param {object|Array<*>|String} val An Object/Array/String whose values/chars will be filtered
- * @returns {object|Array<*>|String} A new value that is the result of the filtering operation over all the chars or values in the original String/Object/Array
+ * @param {function} fn A filtering function that is invoked on the provided value
+ * @param {object | Array<*> | string} val An Object/Array/String whose values/chars will be filtered
+ * @returns {object | Array<*> | string} A new value that is the result of the filtering operation over all the chars or values in the original String/Object/Array
  */
 function filter(fn, val) {
   if (Array.isArray(val)) return val.filter(fn)

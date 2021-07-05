@@ -8,9 +8,9 @@ import merge from "./merge"
  *
  * @function
  * @name append
- * @param {String|Number|Object<string, any>|Array<*>} firstVal A value that will have another appended onto
- * @param {String|Number|Object<string, any>|Array<*>} secondVal A value to append to the first value
- * @returns {Array<*>|object|String} A new Array, Object, or String that has the characters/values from the second provided value merged _after_ those from the first provided value
+ * @param {string | number | Object<string, any> | Array<*>} firstVal A value that will have another appended onto
+ * @param {string | number | Object<string, any> | Array<*>} secondVal A value to append to the first value
+ * @returns {Array<*> | object | string} A new Array, Object, or String that has the characters/values from the second provided value merged _after_ those from the first provided value
  */
 function append(firstVal, secondVal) {
   if ([firstVal, secondVal].every(val => typeof val === "string" || typeof val === "number")) {

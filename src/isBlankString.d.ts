@@ -3,4 +3,4 @@
  * @param val - A value of any type
  * @returns Whether or not the value is a blank string
  */
-export default function isBlankString(val: any): boolean
+export default function isBlankString(val: any): val is string

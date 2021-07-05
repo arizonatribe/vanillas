@@ -6,8 +6,7 @@ import forIn from "./forIn"
  *
  * @function
  * @name merge
- * @param {object|Array<*>} val The first value to merge onto (will not get mutated though)
- * @param {object|Array<*>} val2 A value to merge onto the first
+ * @param {Array<object|Array<*>>} ...val Values to merge together (values with higher precedence should be provided last)
  * @returns {object|Array<*>} A new value that contains the combined values from all the values passed in
  */
 function merge(...vals) {
@@ -15,8 +14,9 @@ function merge(...vals) {
   if (vals[0] === undefined || vals[1] === undefined) {
     return vals[1] !== undefined ? vals[1] : vals[0]
   }
-  if (numOfVals === 2
-    && (typeof vals[1] !== "object" || !vals[1] || vals[1].constructor.name !== "Object")
+  if (
+    numOfVals === 2
+    && (vals[1] == null || typeof vals[1] !== "object" || vals[1].constructor.name !== "Object")
   ) {
     return vals[1]
   }

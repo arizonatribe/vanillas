@@ -4,7 +4,7 @@
  * @function
  * @name isUndefined
  * @param {*} val A value (of any type)
- * @returns {Boolean} Whether or not the value is undefined
+ * @returns {boolean} Whether or not the value is undefined
  */
 function isUndefined(val) {
   return val === undefined

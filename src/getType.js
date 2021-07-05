@@ -8,7 +8,7 @@ import getConstructorName from "./_internal/getConstructorName"
  * @function
  * @name getType
  * @param {*} val A value of any kind
- * @returns {String} The stringified representation of the value's type
+ * @returns {string} The stringified representation of the value's type
  */
 function getType(val) {
   if (isNil(val)) {

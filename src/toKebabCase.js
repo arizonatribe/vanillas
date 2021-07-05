@@ -4,8 +4,8 @@
  *
  * @function
  * @name toKebabCase
- * @param {String} str A string which may contain uppercase characters
- * @returns {String} A new string that is a hyphenated representation of the original string
+ * @param {string} str A string which may contain uppercase characters
+ * @returns {string} A new string that is a hyphenated representation of the original string
  */
 function toKebabCase(str) {
   return str

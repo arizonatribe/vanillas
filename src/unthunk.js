@@ -3,8 +3,8 @@
  *
  * @function
  * @name unthunk
- * @param {Function} thunk A function that returns a function (which may return a function, and so on)
- * @returns {Function} A single function that is ready to receive all the arguments at once
+ * @param {function} thunk A function that returns a function (which may return a function, and so on)
+ * @returns {function} A single function that is ready to receive all the arguments at once
  */
 function unthunk(thunk) {
   return function inner(...args) {

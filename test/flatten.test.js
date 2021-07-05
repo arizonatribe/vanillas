@@ -26,7 +26,16 @@ tape("\"flatten\" creates one array out of all the values in a given array, be t
   )
   t.deepEqual(
     flatten([new Float32Array([972.11, 84.1, 22.5, 743.7]), new Float32Array([902.1, 89.1, 22.5, 743.7])]),
-    [972.1099853515625, 84.0999984741211, 22.5, 743.7000122070312, 902.0999755859375, 89.0999984741211, 22.5, 743.7000122070312],
+    [
+      972.1099853515625,
+      84.0999984741211,
+      22.5,
+      743.7000122070312,
+      902.0999755859375,
+      89.0999984741211,
+      22.5,
+      743.7000122070312
+    ],
     "flatten over the contents of a Float32Array"
   )
   t.deepEqual(

@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/require-jsdoc */
 import R from "ramda"
 import { mapSpec, toTitleCase } from "../../src"
 import { mapSpec as curriedMapSpec } from "../../src/curried"

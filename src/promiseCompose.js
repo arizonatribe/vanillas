@@ -6,7 +6,7 @@ import promiseChain from "./promiseChain"
  *
  * @function
  * @name promiseCompose
- * @param {Array<Promise<*>>|Array<Function>} requests An array of Promises (or of Functions that return Promises) which need to be executed in sequential order
+ * @param {Array<Promise<*>> | Array<function>} requests An array of Promises (or of Functions that return Promises) which need to be executed in sequential order
  * @returns {Promise<*>} A Promise that will resolve when each of the requests completes
  */
 function promiseCompose(...requests) {

@@ -27,6 +27,16 @@ if (!functionNames.length) {
   log(chalk`{white Running benchmark tests for: "${functionNames.join(", ")}"}{red.bold  . . . }\n`)
 }
 
+/**
+ * A function which checks that all functions being benchmarked together do
+ * return the same value,
+ * otherwise it will return a list of messages explaining which onces differ and how.
+ *
+ * @function
+ * @name allTestsReturnSameValue
+ * @param {Array<string|function|Array<*>>} tests A list of benchmark tests, their captions and their args to compare
+ * @returns {undefined|Array<string>} A list of messages explaining which tests failed to return the same value (otherwise `undefined` if they're all the same)
+ */
 function allTestsReturnSameValue(tests = []) {
   let messages
   tests.map(([caption, benchmarkTest, ...args]) => [caption, benchmarkTest(...args)])
@@ -35,7 +45,9 @@ function allTestsReturnSameValue(tests = []) {
         messages = chalk`{red The result for ${
           index > 1 ? caption : "the second test"
         } }{red doesn't match the first test:}`
-        messages += chalk`{green \n  ${JSON.stringify(arr[0][1])}}{yellow \n    vs}{green \n  ${JSON.stringify(result)}\n}`
+        messages += chalk`{green \n  ${
+          JSON.stringify(arr[0][1])
+        }}{yellow \n    vs}{green \n  ${JSON.stringify(result)}\n}`
         return false
       }
       return true
@@ -43,6 +55,12 @@ function allTestsReturnSameValue(tests = []) {
   return messages
 }
 
+/**
+ * A test runner which executes specified benchmark tests and prints out the results
+ *
+ * @function
+ * @name benchmark
+ */
 async function benchmark() {
   try {
     const requests = []
@@ -51,7 +69,7 @@ async function benchmark() {
     /* Check that we'll be able to run all the tests before we start the long wait */
     const validatedTests = functionNames.map(fnName => {
       const benchmarkScriptPath = path.resolve(baseDir, `${fnName}.js`)
-      // eslint-disable-next-line import/no-dynamic-require
+      /* eslint-disable-next-line import/no-dynamic-require, global-require */
       const fnBenchmarks = require(benchmarkScriptPath).default
 
       const suite = Object.values(fnBenchmarks).filter(v => Array.isArray(v))
@@ -65,7 +83,10 @@ async function benchmark() {
           const testsReturnDifferentValues = allTestsReturnSameValue(tests)
           if (testsReturnDifferentValues) {
             log(testsReturnDifferentValues)
-            throw new Error(`Unable to run benchmarks for "${fnName}" because one (or more) of the tests return different values`)
+            throw new Error(`Unable to run benchmarks for "${
+              fnName
+            }" because one (or more) of the tests return different values`
+            )
           }
           return tests
         })

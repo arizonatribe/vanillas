@@ -122,7 +122,11 @@ tape("\"isEmpty\" checks a value to see if it is empty (null, undefined, or empt
   t.equal(isEmpty(), true, "undefined is considered empty")
   t.equal(isEmpty(null), true, "null is considered empty")
   t.equal(isEmpty(""), true, "empty strings are considered empty")
-  t.equal(isEmpty("  "), false, "strings with only whitespace are NOT considered empty (following behavior with Lodash and Ramda)")
+  t.equal(
+    isEmpty("  "),
+    false,
+    "strings with only whitespace are NOT considered empty (following behavior with Lodash and Ramda)"
+  )
   t.equal(isEmpty(), true, "undefined is considered empty")
   t.equal(isEmpty({}), true, "empty objects")
   t.equal(isEmpty([]), true, "empty arrays")
@@ -150,9 +154,17 @@ tape("\"isPromise\" checks a value to see if it is a promise (a deferred object/
   t.equal(isPromise(0), false, "numbers are not a promise")
   t.equal(isPromise({}), false, "empty objects are not promises")
   t.equal(isPromise([]), false, "empty arrays are not a promise")
-  t.equal(isPromise({finally() { }, catch() { }}), false, "object with some of the methods expected on tha promise (but not the important one)")
+  t.equal(
+    isPromise({finally() { }, catch() { }}),
+    false,
+    "object with some of the methods expected on tha promise (but not the important one)"
+  )
   t.equal(isPromise({ then() { return true } }), true, "an object with a .then method is enough")
-  t.equal(isPromise({ then: "return true" }), false, "an object with a .then prop (which is not a method) is not a promise")
+  t.equal(
+    isPromise({ then: "return true" }),
+    false,
+    "an object with a .then prop (which is not a method) is not a promise"
+  )
   const promise = new Promise(resolve => { resolve() })
   t.equal(isPromise(promise), true, "a promise is a promise")
   t.end()

@@ -5,9 +5,9 @@ import merge from "./merge"
  *
  * @function
  * @name prepend
- * @param {Array<*>|object|String|Number} firstVal An Array, Object, String or Number that the will have a new value(s) merged before its own characters/values
- * @param {Array<*>|object|String|Number} secondVal An Array, Object, String or Number that the will merge _before_ those from the first provided value
- * @returns {Array<*>|object|String} A new Array, Object, or String that has the characters/values from the second provided value merged _before_ those from the first provided value
+ * @param {Array<*> | object | string | number} firstVal An Array, Object, String or Number that the will have a new value(s) merged before its own characters/values
+ * @param {Array<*> | object | string | number} secondVal An Array, Object, String or Number that the will merge _before_ those from the first provided value
+ * @returns {Array<*> | object | string} A new Array, Object, or String that has the characters/values from the second provided value merged _before_ those from the first provided value
  */
 function prepend(firstVal, secondVal) {
   if ([firstVal, secondVal].every(val => typeof val === "string" || typeof val === "number")) {

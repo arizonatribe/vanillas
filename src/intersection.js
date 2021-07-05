@@ -5,9 +5,9 @@ import { _includes } from "./_internal/_includes"
  *
  * @function
  * @name intersection
- * @param {Array<String>|Array<Number>} arr1 An Array of Strings/Numbers
- * @param {Array<String>|Array<Number>} arr2 An Array of Strings/Numbers
- * @returns {Array<String>|Array<Number>} The values in common between the two lists
+ * @param {Array<string> | Array<number>} arr1 An Array of Strings/Numbers
+ * @param {Array<string> | Array<number>} arr2 An Array of Strings/Numbers
+ * @returns {Array<string> | Array<number>} The values in common between the two lists
  */
 function intersection(arr1, arr2) {
   const diff = []

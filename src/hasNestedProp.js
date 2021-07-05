@@ -5,9 +5,9 @@ import has from "./has"
  *
  * @function
  * @name hasNestedProp
- * @param {Array<String>|String} prop A prop name, a dot-separated prop path, or an array of prop path "pieces" to look for in the object
+ * @param {Array<string> | string} prop A prop name, a dot-separated prop path, or an array of prop path "pieces" to look for in the object
  * @param {object} obj An Object to inspect for a given prop at the specified path
- * @returns {Boolean} Whether the object contains the specified prop path
+ * @returns {boolean} Whether the object contains the specified prop path
  */
 function hasNestedProp(prop, obj) {
   const paths = typeof prop === "string" ? prop.split(".") : prop

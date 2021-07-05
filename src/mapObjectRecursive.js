@@ -6,7 +6,7 @@ import isObject from "./isObject"
  *
  * @function
  * @name mapObjectRecursive
- * @param {Function} fn A mapping function that is invoked on every value in the provided Object
+ * @param {function} fn A mapping function that is invoked on every value in the provided Object
  * @param {object} obj An Object whose values will be mapped over (recursively)
  * @returns {object} A new Object that is the result of the mapping operation over all the values in the original Object
  */
@@ -14,7 +14,11 @@ function mapObjectRecursive(fn, obj) {
   const newObj = {}
   forIn((key, val, ob) => {
     /* Looks redundant, but is written this way for speed */
-    if (typeof val === "object" && val != null && ((val.constructor && val.constructor.name === "Object") || isObject(val))) {
+    if (
+      typeof val === "object"
+      && val != null
+      && ((val.constructor && val.constructor.name === "Object") || isObject(val))
+    ) {
       newObj[key] = mapObjectRecursive(fn, val)
     } else {
       newObj[key] = fn(val, key, ob)

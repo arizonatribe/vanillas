@@ -3,4 +3,4 @@
  * @param val - A value (of any type)
  * @returns Whether or not the value is undefined
  */
-export default function isUndefined(val: any): boolean
+export default function isUndefined(val: any): val is undefined

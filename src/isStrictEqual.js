@@ -4,9 +4,9 @@
  *
  * @function
  * @name isStrictEqual
- * @param {*} val1 A value (of any type)
- * @param {*} val2 A value (of any type)
- * @returns {Boolean} Whether or not the two values are strictly equal
+ * @param {*} firstVal A value (of any type)
+ * @param {*} secondVal A value (of any type)
+ * @returns {boolean} Whether or not the two values are strictly equal
  */
 function isStrictEqual(firstVal, secondVal) {
   return firstVal === secondVal

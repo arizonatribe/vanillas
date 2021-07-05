@@ -7,12 +7,13 @@ import identity from "./identity"
  *
  * @function
  * @name compose
- * @param {Function} ...fns One or more function to execute (in sequential order) on a value that will be supplied later
- * @returns {Function} A single Function that is ready to receive a value and pass it through the composed chain of Functions
+ * @param {function} ...fns One or more function to execute (in sequential order) on a value that will be supplied later
+ * @returns {function} A single Function that is ready to receive a value and pass it through the composed chain of Functions
  */
 function compose(...fns) {
   let fnlen = fns.length
   if (fnlen === 0 || !areAllFunctions(fns)) return identity
+  /* eslint-disable-next-line jsdoc/require-jsdoc */
   function inner(...args) {
     let result = fns[--fnlen](...args)
     while (--fnlen >= 0) {

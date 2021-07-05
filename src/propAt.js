@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+
 /**
  * Looks for a specified key on an Object you provide.
  * The is performed safely and will not throw an error if something on the prop path chain you specify doesn't exist.
@@ -5,7 +7,7 @@
  *
  * @function
  * @name propAt
- * @param {String|Array<String>} prop A top-level key OR a deeply nested prop path (which may be represented as an array or as a single dot-delimited string)
+ * @param {string | Array<string>} prop A top-level key OR a deeply nested prop path (which may be represented as an array or as a single dot-delimited string)
  * @param {object} obj An object which may contain a specified prop
  * @returns {*|undefined} The value associated with the nested prop path OR undefined if it does not exist
  */

@@ -7,11 +7,11 @@
  *
  * @function
  * @name fuzzy
- * @param {Function} propFn A function which will extract all the fields which you wish to fuzzy search on. Omit if the list is a list of strings
+ * @param {function} propFn A function which will extract all the fields which you wish to fuzzy search on. Omit if the list is a list of strings
  * @param {string} needle The search value itself
  * @param {boolean} [caseSensitive=false] Whether or not to perform a case-sensitive search
- * @param {Array<String>|Array<object>} arr An array of string values or objects which have string values to be searched on
- * @returns {Array<String>|Array<object>} The filtered list of search results
+ * @param {Array<string> | Array<object>} arr An array of string values or objects which have string values to be searched on
+ * @returns {Array<string> | Array<object>} The filtered list of search results
  */
 function fuzzy(propFn, needle, caseSensitive, arr) {
   if (arr == null || !Array.isArray(arr) || arr.length === 0) return []

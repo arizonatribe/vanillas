@@ -2,7 +2,9 @@ import tape from "tape"
 import curry from "../src/curry"
 import { spices } from "./__mocks__"
 
+/* eslint-disable-next-line max-len */
 tape("\"curry\" can transform a function of any arity into a function that can be partially applied until all arguments have been provided", t => {
+  /* eslint-disable-next-line jsdoc/require-jsdoc */
   function fullName(first, last) {
     return `${first} ${last}`
   }
@@ -11,6 +13,7 @@ tape("\"curry\" can transform a function of any arity into a function that can b
   t.equal(getLastName("Washington"), "George Washington", "two arg currying")
   t.equal(getFirstName("George", "Washington"), "George Washington", "two arg currying (both args at once)")
 
+  /* eslint-disable-next-line jsdoc/require-jsdoc */
   function annualSalary(hours, weeks, rate) {
     return hours * weeks * rate
   }
@@ -20,6 +23,7 @@ tape("\"curry\" can transform a function of any arity into a function that can b
   t.equal(getRate(2), 4000, "three arg currying")
   t.equal(getHoursPerWeek(40, 50, 2), 4000, "three arg currying (all args at once)")
 
+  /* eslint-disable-next-line jsdoc/require-jsdoc */
   function combinedVolumes(width, height, depth, count) {
     return width * height * depth * count
   }
@@ -30,6 +34,7 @@ tape("\"curry\" can transform a function of any arity into a function that can b
   t.equal(getCount(4), 8160, "four arg currying")
   t.equal(getWidth(12, 10, 17, 4), 8160, "four arg currying (all args at once)")
 
+  /* eslint-disable-next-line jsdoc/require-jsdoc */
   function whoAreThey(g1, g2, g3, g4, g5) {
     return [g1, g2, g3, g4, g5].every(girl => spices[girl])
       ? "The Spice Girls"
@@ -41,7 +46,11 @@ tape("\"curry\" can transform a function of any arity into a function that can b
   const getGinger = getBaby("Bunton")
   const getPosh = getGinger("Halliwell")
   t.equal(getPosh("Beckham"), "The Spice Girls", "five+ arg currying")
-  t.equal(getScary("Brown", "Chisholm", "Bunton", "Halliwell", "Beckham"), "The Spice Girls", "five+ arg currying (all args at once)")
+  t.equal(
+    getScary("Brown", "Chisholm", "Bunton", "Halliwell", "Beckham"),
+    "The Spice Girls",
+    "five+ arg currying (all args at once)"
+  )
 
   t.end()
 })

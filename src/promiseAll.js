@@ -5,8 +5,8 @@
  *
  * @function
  * @name promiseAll
- * @param {Array<Function>} requests An array of Functions that return Promises
- * @param {Boolean} ignoreErrors Whether or not to ignore errors entirely (this will cause all the results to be returned and any Errors will be returned in place of the results)
+ * @param {Array<function>} requests An array of Functions that return Promises
+ * @param {boolean} ignoreErrors Whether or not to ignore errors entirely (this will cause all the results to be returned and any Errors will be returned in place of the results)
  * @returns {Promise<*>} A Promise that will resolve once all of the Promises are resolved/rejected
  */
 function promiseAll(requests, ignoreErrors) {
@@ -16,6 +16,13 @@ function promiseAll(requests, ignoreErrors) {
   const results = new Array(len)
 
   return new Promise((resolve, reject) => {
+    /**
+     * Resolves or rejects the whole series of promises once the count has been reached (depending on whether we are also ignoring errors or not)
+     *
+     * @function
+     * @private
+     * @name checkForFinalPromise
+     */
     function checkForFinalPromise() {
       if (resolvedRejectedCount === len) {
         if (ignoreErrors || !errors.length) {
@@ -25,11 +32,31 @@ function promiseAll(requests, ignoreErrors) {
         }
       }
     }
+
+    /**
+     * Handles each promise result by adding the it to the list of values to return or incrementing the error count.
+     *
+     * @function
+     * @private
+     * @name handleResult
+     * @param {*} result The value returned by the promise
+     * @param {number} index The index number used to matching this promise to the placement in the original list
+     */
     function handleResult(result, index) {
       resolvedRejectedCount++
       results[index] = result
       checkForFinalPromise()
     }
+
+    /**
+     * Handles an error which occurred during an async call by adding the it to the list of errors and incrementing the error count.
+     *
+     * @function
+     * @private
+     * @name handleError
+     * @param {Error} err The error thrown during the async call
+     * @param {number} index The index number used to matching this error to the placement in the original list
+     */
     function handleError(err, index) {
       resolvedRejectedCount++
       if (ignoreErrors) results[index] = err

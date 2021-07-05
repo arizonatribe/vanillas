@@ -8,7 +8,7 @@ import getType from "./getType"
  * @name isSameType
  * @param {*} val1 A value (of any type)
  * @param {*} val2 A value (of any type)
- * @returns {Boolean} Whether or not the two values are of the same type
+ * @returns {boolean} Whether or not the two values are of the same type
  */
 function isSameType(val1, val2) {
   return getType(val1) === getType(val2)

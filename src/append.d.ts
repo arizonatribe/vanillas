@@ -1,3 +1,5 @@
+import { AnyObject } from "./types"
+
 /**
  * Blends two values together based on their type.
  * If both are objects this would result in a new object with the second value's props merged onto the first's.
@@ -7,4 +9,7 @@
  * @param secondVal - A value to append to the first value
  * @returns A new Array, Object, or String that has the characters/values from the second provided value merged _after_ those from the first provided value
  */
-export default function append(firstVal: string | number | object | any[], secondVal: string | number | object | any[]): any[] | object | number | string
+export default function append(
+  firstVal: string | number | AnyObject | any[],
+  secondVal: string | number | AnyObject | any[]
+): any[] | AnyObject | number | string

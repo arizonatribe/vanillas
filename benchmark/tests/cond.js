@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return, jsdoc/require-jsdoc */
 import R from "ramda"
 import { cond } from "../../src"
 import { composers } from "../../test/__mocks__"

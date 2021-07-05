@@ -7,6 +7,8 @@
  */
 export function any(pred: (...params: any[]) => any, arr: any[]): boolean
 
+import { AnyObject } from "./types"
+
 /**
  * Blends two values together based on their type.
  * If both are objects this would result in a new object with the second value's props merged onto the first's.
@@ -16,7 +18,12 @@ export function any(pred: (...params: any[]) => any, arr: any[]): boolean
  * @param secondVal - A value to append to the first value
  * @returns A new Array, Object, or String that has the characters/values from the second provided value merged _after_ those from the first provided value
  */
-export function append(firstVal: string | number | object | any[], secondVal: string | number | object | any[]): any[] | object | number | string
+export function append(
+  firstVal: string | number | AnyObject | any[],
+  secondVal: string | number | AnyObject | any[]
+): any[] | AnyObject | number | string
+
+import { AnyObject } from "./types"
 
 /**
  * Assigns the values from one or more Objects onto another Object.
@@ -25,14 +32,18 @@ export function append(firstVal: string | number | object | any[], secondVal: st
  * @param ...resOfObjects - One or more Objects to extract from and assign onto the first Object
  * @returns The first object mutated with the values from any other object passed in
  */
-export function assign(obj: object): object
+export function assign(obj: AnyObject): AnyObject
+
+import { AnyObject } from "./types"
 
 /**
  * Recursively copies the content of an Object into a new Object
  * @param obj - An Object (or Array) from which to create a deep copy
  * @returns The new (cloned) Object (or Array)
  */
-export function clone(obj: object | object[]): object | object[]
+export function clone(obj: AnyObject | AnyObject[]): AnyObject | AnyObject[]
+
+import { AnyObject } from "./types"
 
 /**
  * Combines two values of the same type (if it makes sense to combine them).
@@ -42,7 +53,10 @@ export function clone(obj: object | object[]): object | object[]
  * @param val2 - The value to combine
  * @returns If the values are of the same type, this represents the combined value of the two of them. Otherwise only the first value is returned
  */
-export function combine(val1: any, val2: any): any
+export function combine(
+  val1: AnyObject | any[] | number,
+  val2: AnyObject | any[] | number
+): AnyObject | any[] | number
 
 /**
  * Creates a chain of Functions that will be executed in sequnce (from right to left), with the value from the previous Function fed into the next Function.
@@ -150,12 +164,16 @@ export function each(fn: (...params: any[]) => any, arr: any[]): void
  */
 export function eitherOr(fnA: (...params: any[]) => any, fnB: (...params: any[]) => any, val: any): any
 
+import { AnyObject } from "./types"
+
 /**
  * Extracts an Array of key/value pairs from an Object.
  * @param obj - The input object from which to extract prop keys and values
  * @returns An Array of key/value pairs corresponding to those on the input object
  */
-export function entries(obj: object): string[]
+export function entries(obj: AnyObject): (typeof obj[(keyof typeof obj)])[] | (keyof typeof obj)[]
+
+import { AnyObject } from "./types"
 
 /**
  * Applies a filtering function you provide over a value you provide, according to its type.
@@ -167,7 +185,12 @@ export function entries(obj: object): string[]
  * @param val - An Object/Array/String whose values/chars will be filtered
  * @returns A new value that is the result of the filtering operation over all the chars or values in the original String/Object/Array
  */
-export function filter(fn: (...params: any[]) => any, val: object | any[] | string): object | any[] | string
+export function filter(
+  fn: (...params: any[]) => any,
+  val: AnyObject | any[] | string
+): AnyObject | any[] | string
+
+import { AnyObject } from "./types"
 
 /**
  * Applies a filtering function you provide over every value in a given Object.
@@ -175,7 +198,7 @@ export function filter(fn: (...params: any[]) => any, val: object | any[] | stri
  * @param obj - An Object whose values will be filtered
  * @returns A new Object that is the result of the filtering operation over all the values in the original Object
  */
-export function filterObject(fn: (...params: any[]) => any, obj: object): object
+export function filterObject(fn: (...params: any[]) => any, obj: AnyObject): AnyObject
 
 /**
  * Applies a filtering function you provide over every character in a given string.
@@ -215,12 +238,14 @@ export function first(arr: any[]): any
  */
 export function flatten(arr: any[][] | any[]): any[]
 
+import { AnyObject } from "./types"
+
 /**
  * A light wrapper around native `for .. in`, but will only iterate over an Object's own properties.
  * @param fn - A function to execute iteratively, which will receive the `key`, `value`, and `object` (respectively)
  * @param obj - An object whose keys will be iterated over
  */
-export function forIn(fn: (...params: any[]) => any, obj: object): void
+export function forIn(fn: (...params: any[]) => any, obj: AnyObject): void
 
 /**
  * Performs a fuzzy search on a list of strings or objects.
@@ -243,13 +268,17 @@ export function fuzzy(propFn: (...params: any[]) => any, needle: string, caseSen
  */
 export function getType(val: any): string
 
+import { AnyObject } from "./types"
+
 /**
  * Checks if a given Object contains a specified prop name
  * @param key - A prop name to look for in the object
  * @param obj - An Object to inspect for a given prop
  * @returns Whether the object contains the specified prop
  */
-export function has(key: string, obj: object): boolean
+export function has(key: string, obj: AnyObject): boolean
+
+import { AnyObject } from "./types"
 
 /**
  * Checks if a given Object contains a (potentially) nested property of a specified path
@@ -257,7 +286,7 @@ export function has(key: string, obj: object): boolean
  * @param obj - An Object to inspect for a given prop at the specified path
  * @returns Whether the object contains the specified prop path
  */
-export function hasNestedProp(prop: string[] | string, obj: object): boolean
+export function hasNestedProp(prop: string[] | string, obj: AnyObject): boolean
 
 /**
  * A function that always returns the value passed to it
@@ -274,12 +303,14 @@ export function identity(v: any): any
  */
 export function intersection(arr1: string[] | number[], arr2: string[] | number[]): string[] | number[]
 
+import { StringMap } from "./types"
+
 /**
  * Swaps the values for keys in a given object. So the values in that object should be the kind that _can_ be converted to unique string values
  * @param obj - An object whose values _can_ be swapped for keys
  * @returns A new object whose keys were the values from the original object
  */
-export function flipKeyValues(obj: object): object
+export function flipKeyValues(obj: StringMap): StringMap
 
 /**
  * Checks to see if a value is a certain type.
@@ -321,7 +352,7 @@ export function isArrayish(val: any): boolean
  * @param val - A value of any type
  * @returns Whether or not the value is a blank string
  */
-export function isBlankString(val: any): boolean
+export function isBlankString(val: any): val is string
 
 /**
  * Checks if a value is empty. Arrays, Objects, Strings, Sets, and Null/Undefined values are considered empty if their length (or size) prop is zero (or if they are Null or Undefined).
@@ -329,7 +360,7 @@ export function isBlankString(val: any): boolean
  * @param val - A value of any type which may be considered empty
  * @returns Whether or not the value is empty
  */
-export function isEmpty(val: any): boolean
+export function isEmpty(val: any): val is null | undefined | {} | []
 
 /**
  * Checks if two provided values are deeply equal.
@@ -353,14 +384,16 @@ export function isInteger(val: any): boolean
  * @param val - A value (of any type)
  * @returns Whether or not the value is a Map or WeakMap
  */
-export function isMap(val: any): boolean
+export function isMap(val: any): val is Map | WeakMap
 
 /**
  * Checks to see if a value is null OR undefined
  * @param val - A value (of any type)
  * @returns Whether or not the value is null or undefined
  */
-export function isNil(val: any): boolean
+export function isNil(val: any): val is null | undefined
+
+import { AnyObject } from "./types"
 
 /**
  * A high-speed, mostly adequate check of a value which may be an Object.
@@ -368,7 +401,7 @@ export function isNil(val: any): boolean
  * @param val - A value (of any type)
  * @returns Whether or not the value is an Object
  */
-export function isObject(val: any): boolean
+export function isObject(val: any): val is AnyObject
 
 /**
  * Tests whether or not a given value is object-like
@@ -382,14 +415,14 @@ export function isObjectish(val: any): boolean
  * @param val - A value which may be of a primitive type
  * @returns Whether or not the value is primitive
  */
-export function isPrimitive(val: any): boolean
+export function isPrimitive(val: any): val is boolean | number | string | Symbol
 
 /**
  * Checks if a value is a JavaScript Promise. This just means a deferred object/function with a method named `then`.
  * @param val - A value of any type which may be a promise
  * @returns Whether or not the value is a promise
  */
-export function isPromise(val: any): boolean
+export function isPromise(val: any): val is Promise
 
 /**
  * Inspects two values to see if they are the same type.
@@ -405,7 +438,7 @@ export function isSameType(val1: any, val2: any): boolean
  * @param val - A value (of any type)
  * @returns Whether or not the value is a Set or WeakSet
  */
-export function isSet(val: any): boolean
+export function isSet(val: any): val is Set | WeakSet
 
 /**
  * Inspects two values to see if they are strictly equal, meaning no type coercion or deepyly nested equality checks are performed.
@@ -421,7 +454,7 @@ export function isStrictEqual(val1: any, val2: any): boolean
  * @param val - A value (of any type)
  * @returns Whether or not the value is undefined
  */
-export function isUndefined(val: any): boolean
+export function isUndefined(val: any): val is undefined
 
 /**
  * Retrieves the last value from an Array
@@ -443,13 +476,17 @@ export function last(arr: any[]): any
  */
 export function map(fn: (...params: any[]) => any, val: any | any[] | string): any | any[] | string
 
+import { AnyObject } from "./types"
+
 /**
  * Applies a mapping function you provide over every value in a given Object.
  * @param fn - A mapping function that is invoked on every value in the provided Object
  * @param obj - An Object whose values will be mapped over
  * @returns A new Object that is the result of the mapping operation over all the values in the original Object
  */
-export function mapObject(fn: (...params: any[]) => any, obj: object): object
+export function mapObject(fn: (...params: any[]) => any, obj: AnyObject): AnyObject
+
+import { AnyObject } from "./types"
 
 /**
  * Applies a mapping function you provide over every value in a given Object (recursively).
@@ -457,7 +494,9 @@ export function mapObject(fn: (...params: any[]) => any, obj: object): object
  * @param obj - An Object whose values will be mapped over (recursively)
  * @returns A new Object that is the result of the mapping operation over all the values in the original Object
  */
-export function mapObjectRecursive(fn: (...params: any[]) => any, obj: object): object
+export function mapObjectRecursive(fn: (...params: any[]) => any, obj: AnyObject): AnyObject
+
+import { AnyObject, Spec } from "./types"
 
 /**
  * Applies one or more mapping functions to the value in a given Object.
@@ -482,7 +521,7 @@ export function mapObjectRecursive(fn: (...params: any[]) => any, obj: object): 
  * @param inputObj - The actual input to map over and transform
  * @returns A new Object with all the mapping functions from the spec Object applied to the corresponding values in the input Object (if they exist)
  */
-export function mapSpec(spec: object, inputObj: object): object
+export function mapSpec(spec: Spec, inputObj: AnyObject): AnyObject
 
 /**
  * Applies a mapping function you provide over every character in a given string.
@@ -499,14 +538,19 @@ export function mapString(fn: (...params: any[]) => any, str: string): string
  */
 export function memoize(fn: (...params: any[]) => any): (...params: any[]) => any
 
+import { AnyObject } from "./types"
+
 /**
- * Merges the values from 2 or more Objects or Arrays together into a new Object/Array.
+ * Merges the values from 2 or more Objects together into a new Object.
  * Null and Undefined values are handled gracefully, and if the second value is a primitive it will be returned as-is, instead of trying to merge it onto the first.
  * @param val - The first value to merge onto (will not get mutated though)
  * @param val2 - A value to merge onto the first
  * @returns A new value that contains the combined values from all the values passed in
  */
-export function merge(val: any | any[], val2: any | any[]): any | any[]
+export function merge(
+  val: AnyObject | AnyObject[],
+  val2: AnyObject | AnyObject[]
+): AnyObject | AnyObject[]
 
 /**
  * Removes specified keys from an object (after cloning the Object).
@@ -530,13 +574,15 @@ export function omitNull(obj: object): object
  */
 export function omitUndefined(obj: object): object
 
+import { AnyObject } from "./types"
+
 /**
  * Removes everything _except_ the specified keys from an object (after cloning the Object).
  * @param keys - An array of keys to search for in the Object and include from the output
  * @param obj - An Object from which to copy and remove keys
  * @returns A copy of the original Object, but with _only_ the specified keys
  */
-export function pick(keys: string[], obj: object): object
+export function pick(keys: string[], obj: AnyObject): AnyObject
 
 /**
  * Creates a chain of Functions that will be executed in sequnce (from left to right), with the value from the previous Function fed into the next Function.
@@ -638,13 +684,15 @@ export function propSet(prop: string | string[], val: any, obj: object): any
  */
 export function reduce(fn: (...params: any[]) => any, defaultVal: any, arr: any[] | any): any
 
+import { AnyObject, StringMap } from "./types"
+
 /**
  * Renames a set of keys in a given object (removing the old ones)
  * @param keyMap - An object whose keys are the _current_ key names and whose values are the _new_ key names
  * @param obj - An Object whose keys will be renamed
  * @returns A new Object that has all the specified keys renamed to their new names
  */
-export function renameKeys(keyMap: object, obj: object): object
+export function renameKeys(keyMap: StringMap, obj: AnyObject): AnyObject
 
 /**
  * Recursively shims an Object.
@@ -654,6 +702,8 @@ export function renameKeys(keyMap: object, obj: object): object
  * @returns An Object that will return props on the source Object if they exist but safely handle missing prop paths without throwing errors.
  */
 export function shim(obj: object): typeof Proxy
+
+import { AnyObject } from "./types"
 
 /**
  * Checks the length (or size) of many different types of values:
@@ -666,7 +716,7 @@ export function shim(obj: object): typeof Proxy
  * @param val - A value of type Object, String, Array or Function
  * @returns The length of the String or Array, OR the number of keys in the Object
  */
-export function size(val: any | string | any[] | ((...params: any[]) => any)): number
+export function size(val: AnyObject | Set | Map | string | any[] | ((...params: any[]) => any)): number
 
 /**
  * Transforms a string value into one which is hyphenated.
@@ -723,12 +773,14 @@ export function toTitleCase(str: string): string
  */
 export function toUpperCase(str: string): string
 
+import { AnyObject } from "./types"
+
 /**
  * Transforms an object's key/value pairs into an encoded URI string, delimited by ampersands &
  * @param obj - An object whose key/value pairs need to be serialized into a single string.
  * @returns A new string that represents the key/value pairs on the originating object
  */
-export function toUriEncoded(obj: object | boolean | number): string
+export function toUriEncoded(obj: AnyObject | boolean | number): string
 
 /**
  * Filters an array of values down to only those which are unique
@@ -781,9 +833,11 @@ export function unthunk(thunk: (...params: any[]) => any): (...params: any[]) =>
  */
 export function validate(validations: ((...params: any[]) => void)[], values: object): object
 
+import { AnyObject } from "./types"
+
 /**
  * A simple polyfill for Object.values()
  * @param obj - An Object whose values need to be retrieved
  * @returns A list of all the values in the provided Object, ordered by keys
  */
-export function values(obj: object): any[]
+export function values(obj: AnyObject): (typeof obj[(keyof typeof obj)])[]

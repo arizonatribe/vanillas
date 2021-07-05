@@ -1,3 +1,4 @@
+/* eslint-disable prefer-object-spread */
 import _ from "lodash"
 import R from "ramda"
 import { merge } from "../../src"

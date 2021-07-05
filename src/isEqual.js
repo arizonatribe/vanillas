@@ -12,7 +12,7 @@ import isSameType from "./isSameType"
  * @name isEqual
  * @param {*} firstVal A value which may be null, undefined, a JavaScript primitive value, an array of values, an array-like value, or an object
  * @param {*} secondVal A value which may be null, undefined, a JavaScript
- * @returns {Boolean} Whether or not the two values are deeply equal
+ * @returns {boolean} Whether or not the two values are deeply equal
  */
 function isEqual(firstVal, secondVal) {
   if (isStrictEqual(firstVal, secondVal)) return true

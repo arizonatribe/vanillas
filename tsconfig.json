@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "noEmit": false,
+    "strict": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "es6",
+    "declaration": true,
+    "lib": ["ES2019"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "build",
+    "esModuleInterop": true,
+    "baseUrl": "."
+  },
+  "exclude": [
+    "node_modules",
+    "scripts",
+    "benchmark",
+    "docs",
+    "build",
+    "test"
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}

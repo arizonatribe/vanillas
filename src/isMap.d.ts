@@ -3,4 +3,4 @@
  * @param val - A value (of any type)
  * @returns Whether or not the value is a Map or WeakMap
  */
-export default function isMap(val: any): boolean
+export default function isMap(val: any): val is Map | WeakMap

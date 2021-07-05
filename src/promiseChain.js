@@ -4,7 +4,7 @@
  *
  * @function
  * @name promiseChain
- * @param {Array<Promise<*>>|Array<Function>} requests An array of Promises (or of Functions that return Promises) which need to be executed in sequential order
+ * @param {Array<Promise<*>> | Array<function>} requests An array of Promises (or of Functions that return Promises) which need to be executed in sequential order
  * @returns {Promise<*>} A Promise that will resolve when each of the requests completes
  */
 function promiseChain(...requests) {
@@ -16,6 +16,7 @@ function promiseChain(...requests) {
   let chain = Promise.resolve()
   for (let i = 0; i < len; i++) {
     promisesPromises[i] = (
+      /* eslint-disable-next-line no-multi-assign */
       chain = chain.then(val => getNext(reqs[i], val))
     )
   }

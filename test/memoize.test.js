@@ -5,6 +5,7 @@ tape("\"memoize\" can apply a function to an Object, String, or something that i
   let numOfCalls = 0
 
   /* function to memoize (with a side-effect that helps us to unit test it) */
+  /* eslint-disable-next-line jsdoc/require-jsdoc */
   function addWithLogging(a, b) {
     numOfCalls++
     return a + b

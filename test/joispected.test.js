@@ -125,7 +125,11 @@ test("\"joi\"", t => {
   t.end()
 })
 test("\"spected\"", t => {
-  t.deepEqual(spected(vanillaRules, formData), {Scary: true, Sporty: true, Baby: true, Ginger: true, Posh: true}, "spected")
+  t.deepEqual(
+    spected(vanillaRules, formData),
+    {Scary: true, Sporty: true, Baby: true, Ginger: true, Posh: true},
+    "spected"
+  )
   t.end()
 })
 test("\"vanillas\"", t => {

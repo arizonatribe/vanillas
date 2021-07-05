@@ -5,8 +5,8 @@
  *
  * @function
  * @name toCamelCase
- * @param {String} str A string which may contain underscores and hyphens and/or may be title-cased.
- * @returns {String} A new string that is without hyphens and underscores and the first letter of every new word boundary is capitalized, unless preceded by whitespace
+ * @param {string} str A string which may contain underscores and hyphens and/or may be title-cased.
+ * @returns {string} A new string that is without hyphens and underscores and the first letter of every new word boundary is capitalized, unless preceded by whitespace
  */
 function toCamelCase(str) {
   return [
