@@ -82,6 +82,7 @@
     "fuzzy-search": "3.2.1",
     "fuzzyjs": "4.0.4",
     "glob": "7.1.1",
+    "glob-parent": "^5.1.2",
     "is-promise": "^2.2.2",
     "joi": "^14.0.2",
     "jsdoc": "^3.6.7",
