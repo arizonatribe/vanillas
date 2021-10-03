@@ -381,7 +381,7 @@ export function isBlankString(val: any): val is string
  * @param {*} val - A value of any type which may be considered empty
  * @returns {boolean} Whether or not the value is empty
  */
-export function isEmpty(val: any): val is null | undefined | {} | []
+export function isEmpty(val: any): val is null | undefined
 
 /**
  * Checks if two provided values are deeply equal.
