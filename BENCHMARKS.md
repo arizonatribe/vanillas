@@ -110,6 +110,10 @@ Ramda "toPairs" x 4,083,548 ops/sec ±2.40% (95 runs sampled)
 (native) "Object.entries( )" x 13,784,414 ops/sec ±0.16% (95 runs sampled)
 Fastest is (native) "Object.entries( )"
 
+Vanillas "escapeHtml" x 1,029,251 ops/sec ±0.19% (96 runs sampled)
+Lodash "escape" x 1,027,158 ops/sec ±0.31% (96 runs sampled)
+Fastest is Vanillas "escapeHtml",Lodash "escape"
+
 Vanillas "filter" x 6,676,996 ops/sec ±1.45% (94 runs sampled)
 Lodash "filter" x 4,989,178 ops/sec ±0.26% (93 runs sampled)
 Ramda "filter" x 2,559,327 ops/sec ±0.39% (92 runs sampled)
