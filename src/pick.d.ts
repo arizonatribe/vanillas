@@ -6,4 +6,4 @@ import { AnyObject } from "./types"
  * @param {object} obj - An Object from which to copy and remove keys
  * @returns {object} A copy of the original Object, but with _only_ the specified keys
  */
-export default function pick<T extends AnyObject, K extends keyof T>(keys: K[], obj: T): Partial<T>
+export default function pick<T extends AnyObject, K extends keyof T>(keys: K[], obj: T): Pick<T, K>

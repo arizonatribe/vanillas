@@ -1,4 +1,4 @@
-import { AnyObject, Spec, StringMap } from "./src/types"
+import { AnyObject, Prop, Spec, StringMap } from "./src/types"
 /**
  * Check an Array of items (of any type) to see if any item satisfies a given predicate function.
  * Exits when the first match is found.
@@ -597,21 +597,24 @@ export function merge(
  * @param {object} obj - An Object from which to copy and remove keys
  * @returns {object} A copy of the original Object, but without the specified keys
  */
-export function omit<T extends AnyObject, K extends keyof T>(keys: K[], obj: T): Partial<T>
+export function omit<T extends AnyObject, K extends Prop>(keys: K[], obj: T): Pick<T, Exclude<keyof T, K[number]>>
+
+
 
 /**
  * Removes all `null` or `undefined` values from a given object
  * @param obj - An Object from which to copy and remove null/undefined
  * @returns A copy of the original Object, but without any `null` or `undefined` values
  */
-export function omitNull(obj: object): object
+export function omitNull<T extends AnyObject>(obj: T): T
+
 
 /**
  * Removes all `undefined` values from a given object
  * @param obj - An Object from which to copy and remove undefined
  * @returns A copy of the original Object, but without any `undefined` values
  */
-export function omitUndefined(obj: object): object
+export function omitUndefined<T extends AnyObject>(obj: T): T
 
 
 /**
@@ -620,7 +623,7 @@ export function omitUndefined(obj: object): object
  * @param {object} obj - An Object from which to copy and remove keys
  * @returns {object} A copy of the original Object, but with _only_ the specified keys
  */
-export function pick<T extends AnyObject, K extends keyof T>(keys: K[], obj: T): Partial<T>
+export function pick<T extends AnyObject, K extends keyof T>(keys: K[], obj: T): Pick<T, K>
 
 /**
  * Creates a chain of Functions that will be executed in sequnce (from left to right), with the value from the previous Function fed into the next Function.
