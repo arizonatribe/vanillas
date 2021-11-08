@@ -585,10 +585,7 @@ export function memoize(fn: (...params: any[]) => any): (...params: any[]) => an
  * @param {object} val2 - A value to merge onto the first
  * @returns {object} A new value that contains the combined values from all the values passed in
  */
-export function merge(
-  val: AnyObject | AnyObject[],
-  val2: AnyObject | AnyObject[]
-): AnyObject | AnyObject[]
+export function merge<T extends AnyObject>(val: T, val2: T): T
 
 
 /**
