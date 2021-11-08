@@ -7,7 +7,4 @@ import { AnyObject } from "./types"
  * @param {object} val2 - A value to merge onto the first
  * @returns {object} A new value that contains the combined values from all the values passed in
  */
-export default function merge(
-  val: AnyObject | AnyObject[],
-  val2: AnyObject | AnyObject[]
-): AnyObject | AnyObject[]
+export default function merge<T extends AnyObject>(val: T, val2: T): T
