@@ -1,13 +1,16 @@
 # Vanillas
 
-<img
+<div
   style="display: block; padding: 0; border-radius: 50%; border: 5px solid whitesmoke; box-shadow: 1px 1px 2px lightgray inset, 1px 1px 2px gray;"
-  src="https://raw.githubusercontent.com/arizonatribe/vanillas/master/media/logo_sunset.png"
-  alt="Vanillas JS"
-  width="250"
-  height="250"
-  align="right"
-/>
+>
+    <img
+      src="https://raw.githubusercontent.com/arizonatribe/vanillas/master/media/logo_sunset.png"
+      alt="Vanillas JS"
+      width="250"
+      height="250"
+      align="right"
+    />
+</div>
 
 JavaScript utility functions. Comparable to [Lodash](https://lodash.com) or [Ramda](https://ramdajs.com), but faster. In some cases it even outperforms native implementations (or leverages native implementations that are messy to type out).
 
