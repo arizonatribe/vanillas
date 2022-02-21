@@ -1,15 +1,7 @@
 # Vanillas
 
-<style type="text/css">
-img {
-  display: block;
-  padding: 0 !important;
-  border-radius: 50%;
-  border: 5px solid whitesmoke;
-  box-shadow: 1px 1px 2px lightgray inset, 1px 1px 2px gray;
-}
-</style>
 <img
+  style="display: block; padding: 0; border-radius: 50%; border: 5px solid whitesmoke; box-shadow: 1px 1px 2px lightgray inset, 1px 1px 2px gray;"
   src="https://raw.githubusercontent.com/arizonatribe/vanillas/master/media/logo_sunset.png"
   alt="Vanillas JS"
   width="250"
