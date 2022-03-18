@@ -1,30 +1,24 @@
-const fs = require("fs")
 const path = require("path")
 const chalk = require("chalk")
 const readdirRecursive = require("fs-readdir-recursive")
 
 require("@babel/register")
 
-const { errorLog, log } = require("./helpers")
 const { default: runBenchmarks } = require("./run")
 const { default: isEqual } = require("../src/isEqual")
 const { default: promiseChain } = require("../src/promiseChain")
 
-const docs = []
-const logToDocs = (...l) => docs.push(...l)
-
 let functionNames = process.argv.slice(2).filter(arg => !/^--/.test(arg))
-const updateDocs = process.argv.some(arg => arg === "--update-docs")
 const baseDir = path.resolve("benchmark", "tests")
 
 if (!functionNames.length) {
   functionNames = readdirRecursive(baseDir).map(fn => fn.split(".")[0])
-  log(chalk`{white Running all tests}{red.bold :}`)
-  log(chalk`{cyan You can always specify which test(s) to run using this syntax}:\n`)
-  log(chalk`{red $} {yellow npm run benchmark }{white -- }{cyan <file1> <file2> <file3>}{white ...}`)
-  log(chalk`{cyan (You can run one or more or all of the tests in the }{red benchmark/test/} {cyan directory)}\n`)
+  console.log(chalk`{white Running all tests}{red.bold :}`)
+  console.log(chalk`{cyan You can always specify which test(s) to run using this syntax}:\n`)
+  console.log(chalk`{red $} {yellow npm run benchmark }{white -- }{cyan <file1> <file2> <file3>}{white ...}`)
+  console.log(chalk`{cyan (You can run one or more or all of the tests in the }{red benchmark/test/} {cyan directory)}\n`)
 } else if (functionNames.length !== 1) {
-  log(chalk`{white Running benchmark tests for: "${functionNames.join(", ")}"}{red.bold  . . . }\n`)
+  console.log(chalk`{white Running benchmark tests for: "${functionNames.join(", ")}"}{red.bold  . . . }\n`)
 }
 
 /**
@@ -64,7 +58,6 @@ function allTestsReturnSameValue(tests = []) {
 async function benchmark() {
   try {
     const requests = []
-    const logger = updateDocs ? logToDocs : log
 
     /* Check that we'll be able to run all the tests before we start the long wait */
     const validatedTests = functionNames.map(fnName => {
@@ -82,7 +75,7 @@ async function benchmark() {
         suite.map(tests => {
           const testsReturnDifferentValues = allTestsReturnSameValue(tests)
           if (testsReturnDifferentValues) {
-            log(testsReturnDifferentValues)
+            console.log(testsReturnDifferentValues)
             throw new Error(`Unable to run benchmarks for "${
               fnName
             }" because one (or more) of the tests return different values`
@@ -94,21 +87,13 @@ async function benchmark() {
     })
 
     validatedTests.forEach(([fnName, suite]) => {
-      log(chalk`{white Benchmarking "${fnName}"}\n`)
-      requests.push(...suite.map(tests => runBenchmarks(logger, tests)))
+      console.log(chalk`{white Benchmarking }{red.bold "}{cyan.bold ${fnName}}{red.bold "}\n`)
+      requests.push(...suite.map(tests => runBenchmarks(tests)))
     })
 
-    await promiseChain(requests)
-
-    if (docs.length) {
-      fs.writeFileSync(
-        "BENCHMARKS.md",
-        ["```", ...docs, "```"].join("\n"),
-        "utf-8"
-      )
-    }
+    return promiseChain(requests)
   } catch (err) {
-    errorLog(err)
+    console.error(chalk`{red ${err.toString()}}`)
     process.exit(1)
   }
 }

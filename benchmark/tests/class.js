@@ -18,6 +18,10 @@ class AnimalClass {
   eatFood(food) {
     return food
   }
+
+  getQualities(qualities) {
+    return qualities
+  }
 }
 
 class DogClass extends AnimalClass {
@@ -25,6 +29,7 @@ class DogClass extends AnimalClass {
     super()
     this.makeSound = this.makeSound.bind(this, "bark")
     this.eatFood = this.eatFood.bind(this, "kibble")
+    this.getQualities = this.getQualities.bind(this, ["excitable", "loveable", "smelly", "messy", "ain't too proud to beg"])
   }
 }
 
@@ -36,6 +41,10 @@ class AnimalClass2 {
   eatFood() {
     return this.food
   }
+
+  getQualities() {
+    return this.qualities
+  }
 }
 
 class DogClass2 extends AnimalClass2 {
@@ -43,13 +52,15 @@ class DogClass2 extends AnimalClass2 {
     super()
     this.sound = "bark"
     this.food = "kibble"
+    this.qualities = ["excitable", "loveable", "smelly", "messy", "ain't too proud to beg"]
   }
 }
 
 class AnimalClass3 {
-  constructor(sound, food) {
+  constructor(sound, food, qualities) {
     this.sound = sound
     this.food = food
+    this.qualities = qualities
   }
 
   makeSound() {
@@ -59,17 +70,22 @@ class AnimalClass3 {
   eatFood() {
     return this.food
   }
+
+  getQualities() {
+    return this.qualities
+  }
 }
 
 class DogClass3 extends AnimalClass3 {
   constructor() {
-    super("bark", "kibble")
+    super("bark", "kibble", ["excitable", "loveable", "smelly", "messy", "ain't too proud to beg"])
   }
 }
 
-function AnimalConstructor(sound, food) {
+function AnimalConstructor(sound, food, qualities) {
   this.sound = sound
   this.food = food
+  this.qualities = qualities
 }
 
 AnimalConstructor.prototype.makeSound = function() {
@@ -78,24 +94,40 @@ AnimalConstructor.prototype.makeSound = function() {
 AnimalConstructor.prototype.eatFood = function() {
   return this.food
 }
+AnimalConstructor.prototype.getQualities = function() {
+  return this.qualities
+}
 
 function DogConstructor() {
-  AnimalConstructor.call(this, "bark", "kibble")
+  AnimalConstructor.call(
+    this,
+    "bark",
+    "kibble",
+    ["excitable", "loveable", "smelly", "messy", "ain't too proud to beg"]
+  )
 }
 
 DogConstructor.prototype = Object.create(AnimalConstructor.prototype)
 
-const eatFood = food => food
-const makeSound = noise => noise
-
-const dogObj = {
-  makeSound() {
-    return makeSound("bark")
-  },
-  eatFood() {
-    return eatFood("kibble")
+function createDog(sound, food, qualities) {
+  return {
+      makeSound() {
+        return sound
+      },
+      eatFood() {
+        return food
+      },
+      getQualities() {
+        return qualities
+      }
   }
 }
+
+const dogObj = createDog(
+    "bark",
+    "kibble",
+    ["excitable", "loveable", "smelly", "messy", "ain't too proud to beg"]
+)
 
 const singleMethodTests = [
   ["New'ing up a class (setting prop using bind)", () => {
@@ -117,7 +149,7 @@ const singleMethodTests = [
   ["Object composition", () => dogObj.makeSound()]
 ]
 
-const multipleMethodTests = [
+const doubleMethodTests = [
   ["New'ing up a class (setting prop using bind)", () => {
     const dog = new DogClass()
     return dog.makeSound() + dog.eatFood()
@@ -137,4 +169,24 @@ const multipleMethodTests = [
   ["Object composition", () => dogObj.makeSound() + dogObj.eatFood()]
 ]
 
-export default { singleMethodTests, multipleMethodTests }
+const tripleMethodTests = [
+  ["New'ing up a class (setting prop using bind)", () => {
+    const dog = new DogClass()
+    return dog.makeSound() + dog.eatFood() + dog.getQualities()
+  }],
+  ["New'ing up a class (setting shared prop on instance)", () => {
+    const dog = new DogClass2()
+    return dog.makeSound() + dog.eatFood() + dog.getQualities()
+  }],
+  ["New'ing up a class (passing prop via super())", () => {
+    const dog = new DogClass3()
+    return dog.makeSound() + dog.eatFood() + dog.getQualities()
+  }],
+  ["New'ing up a class (ES5 constructor Function)", () => {
+    const dog = new DogConstructor()
+    return dog.makeSound() + dog.eatFood() + dog.getQualities()
+  }],
+  ["Object composition", () => dogObj.makeSound() + dogObj.eatFood() + dogObj.getQualities()]
+]
+
+export default { singleMethodTests, doubleMethodTests, tripleMethodTests }
