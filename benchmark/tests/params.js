@@ -8,8 +8,9 @@ const testProps = Array(1000)
 const testArgs = Object.values(testProps)
 
 function singleArgFn(props) {
-    return `${Object.values(props).join(" + ")} = ${
-      Object.values(props).reduce((acc, val) => acc + val, 0)
+    const vals = Object.values(props)
+    return `${vals.join(" + ")} = ${
+      vals.reduce((acc, val) => acc + val, 0)
     }`
 }
 
