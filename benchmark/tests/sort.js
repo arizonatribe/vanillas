@@ -1,7 +1,7 @@
 function heapify(arr, chunkLength, idx) {
     let indexOfLargest = idx
-    let leftIndex = idx * 2 + 1
-    let rightIndex = leftIndex + 1
+    const leftIndex = idx * 2 + 1
+    const rightIndex = leftIndex + 1
 
     if (leftIndex < chunkLength && arr[leftIndex] > arr[indexOfLargest]) {
         indexOfLargest = leftIndex
@@ -25,7 +25,9 @@ function heapsort(arr) {
     let b = len - 1
 
     while (a >= 0) {
-        heapify(arr, len, a)
+        if (a * 2 < len) {
+            heapify(arr, len, a)
+        }
         a--
     }
 
@@ -68,19 +70,21 @@ function quicksort(arr) {
         return arr
     }
 
-    const pivotIndex = len - 1
+    const pivot = arr[len - 1]
 
     const itemsLower = []
     const itemsHigher = []
     const sortedItems = []
 
     for (let i = 0; i < len; i++) {
-        if (arr[i] < arr[pivotIndex]) {
-            itemsLower.push(arr[i])
-        } else if (arr[i] > arr[pivotIndex]) {
-            itemsHigher.push(arr[i])
+        const item = arr[i]
+
+        if (item < pivot) {
+            itemsLower.push(item)
+        } else if (item > pivot) {
+            itemsHigher.push(item)
         } else {
-            sortedItems.push(arr[i])
+            sortedItems.push(item)
         }
     }
 
@@ -97,6 +101,18 @@ function bubblesort(arr) {
             if (arr[i] < arr[j]) {
                 [arr[i], arr[j]] = [arr[j], arr[i]]
             }
+        }
+    }
+
+    return arr
+}
+
+function insertionsort(arr) {
+    for (let i = 0, len = arr.length; i < len; i++) {
+        let idx = i
+        while (idx > 0 && arr[idx] < arr[idx - 1]) {
+            [arr[idx], arr[idx - 1]] = [arr[idx - 1], arr[idx]]
+            idx--
         }
     }
 
@@ -163,6 +179,10 @@ const sorts = [
     ["quick sort", () => {
         const arrCopy = [...unsortedArray]
         return quicksort(arrCopy)
+    }],
+    ["insertion sort", () => {
+        const arrCopy = [...unsortedArray]
+        return insertionsort(arrCopy)
     }],
     ["bubble sort", () => {
         const arrCopy = [...unsortedArray]
