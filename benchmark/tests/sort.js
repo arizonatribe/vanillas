@@ -166,6 +166,36 @@ function mergesort(arr) {
     )
 }
 
+function radixsort(arr) {
+  const len = arr.length
+  const maxNumOfDigits = `${Math.max(...arr)}`.length
+
+  for (let i = 1; i <= maxNumOfDigits; i++) {
+    let buckets = []
+
+    for (let c = 0; c < 10; c++) {
+        buckets[c] = []
+    }
+
+    for (let j = 0; j < len; j++) {
+      const strNum = `${arr[j]}`
+      const digitIdx = +strNum[strNum.length - i] || 0
+      buckets[digitIdx].push(arr[j])
+    }
+
+    let nextIdx = 0
+
+    for (let a = 0; a < 10; a++) {
+        for (let b = 0, bucketLen = buckets[a].length; b < bucketLen; b++) {
+            arr[nextIdx] = buckets[a][b]
+            nextIdx++
+        }
+    }
+  }
+
+  return arr
+}
+
 const unsortedArray = Array(10000)
     .fill(0)
     .map((_, i) => Math.floor(Math.random() * (10000 + i)))
@@ -192,6 +222,11 @@ const sorts = [
     ["merge sort", () => {
         const arrCopy = [...unsortedArray]
         return mergesort(arrCopy)
+    }],
+    ["radix sort", () => {
+        const arrCopy = [...unsortedArray]
+        radixsort(arrCopy)
+        return arrCopy
     }]
 ]
 
