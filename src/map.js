@@ -1,4 +1,3 @@
-import isArrayish from "./isArrayish"
 import isObject from "./isObject"
 import mapString from "./mapString"
 import mapObject from "./mapObject"
@@ -18,10 +17,17 @@ import mapObject from "./mapObject"
  * @returns {object | Array<*> | string} A new value that is the result of the mapping operation over all the chars or values in the original String/Object/Array
  */
 function map(fn, val) {
-  if (Array.isArray(val)) return val.map(fn)
-  if (isObject(val)) return mapObject(fn, val)
+  if (Array.isArray(val)) {
+    const len = val.length
+    const newArr = Array(len)
+    for (let i = 0; i < len; i++) {
+      newArr[i] = fn(val[i], i)
+    }
+    return newArr
+  }
   if (typeof val === "string") return mapString(fn, val)
-  if (isArrayish(val)) return val.map(fn)
+  if (typeof val.map === "function") return val.map(fn)
+  if (isObject(val)) return mapObject(fn, val)
   return val
 }
 

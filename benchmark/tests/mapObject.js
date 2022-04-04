@@ -1,11 +1,13 @@
 import _ from "lodash"
 import R from "ramda"
+import { mapObject as FxMap } from "fxjs"
 import { mapObject } from "../../src"
 import { hook } from "../../test/__mocks__"
 
 const tests = [
   ["Vanillas \"mapObject\"", () => mapObject(str => str.toUpperCase(), hook)],
   ["Lodash \"mapValues\"", () => _.mapValues(hook, str => str.toUpperCase())],
+  ["FxJs \"map\"", () => FxMap(str => str.toUpperCase(), hook)],
   ["Ramda \"map\"", () => R.map(str => str.toUpperCase(), hook)],
   ["(native) \"Object.keys( ).reduce()\"",
     () => Object.keys(hook).reduce(
