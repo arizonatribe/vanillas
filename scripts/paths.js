@@ -12,7 +12,6 @@ const path = require("path")
  * @property {string} buildTypes The path to the additional type definitions placed into the vanillas build output
  * @property {string} copy The path to the copyfiles binary
  * @property {string} README The path to the vanillas project README (markdown) file
- * @property {string} faucet The path to the faucet binary
  * @property {string} types The path to the combined type defs
  * @property {string} pkg The path to the package.json for the vanillas repo
  * @property {string} babel The path to the babel binary
@@ -42,7 +41,6 @@ function getPaths() {
     buildTypes: resolvePath("build/types"),
     copy: resolvePath("node_modules/.bin/copyfiles"),
     README: resolvePath("README.md"),
-    faucet: resolvePath("node_modules/.bin/faucet"),
     types: resolvePath("index.d.ts"),
     pkg: resolvePath("build/package.json"),
     babel: resolvePath("node_modules/.bin/babel"),

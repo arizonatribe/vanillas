@@ -97,7 +97,7 @@ function getCommands(env, paths) {
   }, {
     name: "testing",
     command: paths.tape,
-    args: ["--require=@babel/register", "test/index.js", ` | ${paths.faucet}`],
+    args: ["--require=@babel/register", "test/index.js"],
     context: { stdio: "inherit", env, shell: true },
     description: "✅ Ran the unit tests"
   }, {

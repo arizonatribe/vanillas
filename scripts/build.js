@@ -2,7 +2,7 @@
 
 const chalk = require("chalk")
 const fse = require("fs-extra")
-const spawn = require("cross-spawn")
+const { spawnSync } = require("child_process")
 const pkg = require("../package.json")
 const getPaths = require("./paths")
 const getCommands = require("./commands")
@@ -59,7 +59,7 @@ function runBuild() {
 
     each(({ command, args, context, description, name }) => {
       console.log(chalk.cyan(`${name} . . .`))
-      const { status, error } = spawn.sync(command, args, context)
+      const { status, error } = spawnSync(command, args, context)
       exitStatus = status
 
       if (error) {
