@@ -1,7 +1,4 @@
 import isObject from "./isObject"
-import isArrayish from "./isArrayish"
-import isStrictEqual from "./isStrictEqual"
-import isSameType from "./isSameType"
 
 /**
  * Checks if two provided values are deeply equal.
@@ -15,27 +12,24 @@ import isSameType from "./isSameType"
  * @returns {boolean} Whether or not the two values are deeply equal
  */
 function isEqual(firstVal, secondVal) {
-  if (isStrictEqual(firstVal, secondVal)) return true
-  if (!isSameType(firstVal, secondVal)) return false
+  if (firstVal === secondVal) return true
+  if (typeof firstVal !== typeof secondVal) return false
 
-  if (Array.isArray(firstVal) && Array.isArray(secondVal)) {
-    const valLen = firstVal.length
-    if (valLen !== secondVal.length) return false
-    for (let i = 0; i < valLen; i++) {
-      if (!isEqual(firstVal[i], secondVal[i])) return false
-    }
-    return true
+  if (
+    typeof firstVal.length === "number"
+    && typeof secondVal.length === "number"
+    && firstVal.length !== secondVal.length
+  ) return false
+
+  if (typeof firstVal.every === "function" && typeof secondVal.every === "function") {
+    return firstVal.every((v, i) => isEqual(v, secondVal[i]))
   }
 
-  if (isObject(firstVal)) {
+  if (isObject(firstVal) && isObject(secondVal)) {
     const firstKeys = Object.keys(firstVal)
     const secondKeys = Object.keys(secondVal)
-    return (firstKeys.length === secondKeys.length) &&
-      firstKeys.every(key => isEqual(firstVal[key], secondVal[key]))
-  }
-
-  if (isArrayish(firstVal)) {
-    return firstVal.every((v, i) => isEqual(v, secondVal[i]))
+    return (firstKeys.length === secondKeys.length)
+      && firstKeys.every(key => isEqual(firstVal[key], secondVal[key]))
   }
 
   return false

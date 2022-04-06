@@ -13,6 +13,7 @@ function difference(arr1, arr2) {
   const diff = []
   const len1 = arr1.length
   const len2 = arr2.length
+
   if (len1 === 0 && len2 === 0) {
     return diff
   } else if (len1 === 0) {
@@ -27,12 +28,7 @@ function difference(arr1, arr2) {
       diff.push(val)
     }
   }
-  for (let j = 0; j < len2; j++) {
-    const val = arr2[j]
-    if (!_includes(val, arr1)) {
-      diff.push(val)
-    }
-  }
+
   return diff
 }
 

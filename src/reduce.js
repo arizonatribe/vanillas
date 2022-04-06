@@ -10,7 +10,7 @@
  * @returns {*} The original Array|Object somehow reduced to one value, according to the supplied function
  */
 function reduce(fn, defaultVal, arr) {
-  return Array.isArray(arr)
+  return typeof arr.reduce === "function"
     ? arr.reduce(fn, defaultVal)
     : Object.keys(arr).reduce((acc, key) => fn(acc, arr[key], key), defaultVal)
 }

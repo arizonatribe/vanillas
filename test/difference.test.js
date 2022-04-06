@@ -17,16 +17,16 @@ tape("\"difference\" gets the values different between two arrays", t => {
   ]
   t.deepEqual(
     difference(hook, sphere),
-    ["robin", "julia", "bob", "samuel", "sharon", "queen"]
+    ["robin", "julia", "bob"]
   )
   t.deepEqual(
     difference([1, 2, 3, 4, 5, 6, 7, 8, 9], [2, 4, 6, 8, 10, 12]),
-    [1, 3, 5, 7, 9, 10, 12],
+    [1, 3, 5, 7, 9],
     "numbers"
   )
   t.deepEqual(
     differenceCurried(hook)(sphere),
-    ["robin", "julia", "bob", "samuel", "sharon", "queen"],
+    ["robin", "julia", "bob"],
     "can be curried"
   )
   t.end()

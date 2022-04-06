@@ -53,12 +53,15 @@ function isAnythingButAnObject(name) {
  * @returns {boolean} Whether or not the value is an Object
  */
 function isObject(val) {
-  return val != null
-    && typeof val.length !== "number"
-    && (
-      (val.constructor !== undefined && !isAnythingButAnObject(val.constructor.name))
-      || (val.constructor === undefined && val.prototype === undefined)
-    )
+  if (val == null || typeof val.length === "number") {
+    return false
+  }
+
+  if (val.constructor !== undefined) {
+    return val.constructor.name === "Object" || !isAnythingButAnObject(val.constructor.name)
+  }
+
+  return val.prototype === undefined
 }
 
 export default isObject
