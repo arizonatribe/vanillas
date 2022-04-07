@@ -34,6 +34,9 @@ jobs:
     - name: Build static bundle
       run: npm run build
 
+    - name: Build static html docs
+      run: npm run docs
+
     - name: Deploy
       run: |
         git config --global user.name $user_name

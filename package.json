@@ -34,7 +34,6 @@
     "dist": "npm publish build",
     "docs": "rimraf docs/* && jsdoc --configure jsdoc.json && mv docs/$npm_package_name/$npm_package_version/* docs/ && rimraf docs/$npm_package_name",
     "start": "npm run test:watch",
-    "start:docs": "npm run docs && \"npm-watch\"",
     "test:watch": "nodemon test/index.js",
     "test": "tape --require=@babel/register test/index.js",
     "benchmark": "rcheck --cwd=test/benchmarks --require @babel/register",
@@ -43,8 +42,8 @@
     "lint:type-check": "tsc --noEmit",
     "prepare": "npm run build",
     "build": "node scripts/build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run docs",
+    "deploy": "gh-pages -d docs"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0",
@@ -83,7 +82,6 @@
     "jsdoc-export-default-interop": "^0.3.1",
     "lodash": "^4.17.21",
     "nodemon": "^2.0.9",
-    "npm-watch": "^0.10.0",
     "ramda": "^0.25.0",
     "reality-check": "^1.0.0",
     "redux": "4.0.0",
