@@ -7,6 +7,7 @@
   "license": "MIT",
   "author": "David Nunez <arizonatribe@gmail.com>",
   "types": "index.d.ts",
+  "homepage": "https://arizonatribe.github.io/vanillas",
   "repository": {
     "type": "git",
     "url": "https://github.com/arizonatribe/vanillas.git"
