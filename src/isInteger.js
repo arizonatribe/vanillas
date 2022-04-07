@@ -1,3 +1,5 @@
+import isNumber from "./isNumber"
+
 /**
  * Checks a value to see if it is an integer.
  *
@@ -7,7 +9,7 @@
  * @returns {boolean} Whether or not the value is an integer
  */
 function isInteger(val) {
-  return typeof val === "number" && Number.isFinite(val) && Math.floor(val) === val
+  return isNumber(val) && Number.isInteger(val)
 }
 
 export default isInteger

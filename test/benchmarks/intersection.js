@@ -9,6 +9,21 @@ import { composers, hook } from "../__mocks__"
 const movie = Object.keys(hook)
 const music = Object.keys(composers)
 
+function intersectionHashmap(arr1, arr2) {
+  const obj = {}
+  for (let i = 0, len = arr1.length; i < len; i++) {
+    obj[arr1[i]] = true
+  }
+
+  const commonItems = []
+  for (let i = 0, len = arr2.length; i < len; i++) {
+    if (obj[arr2[i]]) {
+      commonItems.push(arr2[i])
+    }
+  }
+  return commonItems
+}
+
 test("intersection", benchmark => {
   benchmark(
     () => intersection(movie, music),
@@ -25,6 +40,10 @@ test("intersection", benchmark => {
   benchmark(
     () => Fx.intersection(movie, music),
     "FxJs \"intersection\""
+  )
+  benchmark(
+    () => intersectionHashmap(movie, music),
+    "intersection (using a Hashmap)"
   )
 })
 

@@ -418,11 +418,40 @@ export function isInteger(val: any): val is number
 export function isMap(val: any): val is Map<string, any>
 
 /**
+ * Checks if a given numeric value is a negative integer.
+ *
+ * @function
+ * @name isNegativeInteger
+ * @param {number} val A value to verify is a negative integer
+ * @returns {boolean} Whether or not the given value is a negative integer
+ */
+export function isNegativeInteger(val: number): boolean
+
+/**
+ * Checks if a given numeric value is negative.
+ *
+ * @function
+ * @name isNegativeNumber
+ * @param {number} val A value to verify is a negative number
+ * @returns {boolean} Whether or not the given value is a negative number
+ */
+export function isNegativeNumber(val: number): boolean
+
+/**
  * Checks to see if a value is null OR undefined
  * @param {*} val - A value (of any type)
  * @returns {boolean} Whether or not the value is null or undefined
  */
 export function isNil(val: any): val is null | undefined
+
+/**
+ * Checks if a given value is numeric
+ *
+ * @function
+ * @param {number} val A value to verify is a number
+ * @returns {boolean} Whether or not the given value is a number
+ */
+export function isNumber(val: any): val is number
 
 
 /**
@@ -441,6 +470,37 @@ export function isObject(val: any): val is AnyObject | {}
  * @returns {boolean} Whether or not the value is object-like
  */
 export function isObjectish(val: any): boolean
+
+/**
+ * Checks if a given numeric value is a positive integer.
+ *
+ * @function
+ * @name isPositiveInteger
+ * @param {number} val A value to verify is a positive integer
+ * @returns {boolean} Whether or not the given value is a positive integer
+ */
+export function isPositiveInteger(val: number): boolean
+
+/**
+ * Checks if a given numeric value is positive.
+ *
+ * @function
+ * @name isPositiveNumber
+ * @param {number} val A value to verify is a positive number
+ * @returns {boolean} Whether or not the given value is a positive number
+ */
+export function isPositiveNumber(val: number): boolean
+
+/**
+ * Checks if a given numeric value is a prime number.
+ * This is any integer value divisible only by itself and 1.
+ *
+ * @function
+ * @name isPrime
+ * @param {number} val A value to verify is a prime number
+ * @returns {boolean} Whether or not the given value is a prime number
+ */
+export function isPrime(val: any): boolean
 
 /**
  * Checks if a given value is of a primitive type (ie, Boolean, String, Number, or Symbol).
@@ -487,6 +547,17 @@ export function isStrictEqual(val1: any, val2: any): boolean
  * @returns {boolean} Whether or not the value is undefined
  */
 export function isUndefined(val: any): val is undefined
+
+/**
+ * Checks if a given value is zero or a string representing zero.
+ * For string values, what we want is "0" or "0.0" but not "" or " " (which also coerce to zero).
+ *
+ * @function
+ * @name isZero
+ * @param {number|string} val A value to verify is zero or a zero-like string.
+ * @returns {boolean} Whether or not the given value is zero or a zero-like string.
+ */
+export function isZero(val: any): val is 0 | "0" | "0.0"
 
 /**
  * Retrieves the last value from an Array
@@ -816,6 +887,16 @@ export function toKebabCase(str: string): string
  * @returns {string} A new string that is an lowercase representation of the original string
  */
 export function toLowerCase(str: string): string
+
+/**
+ * Coerces a given string value to a number (if valid).
+ *
+ * @function
+ * @name toNumber
+ * @param {string} val A string value to coerce to a number
+ * @returns {number|undefined} A numeric representation of the original value, or `undefined` if it cannot be coerced to a number.
+ */
+export function toNumber(val: string): number | undefined
 
 /**
  * Transforms a string value into one which is separated by underscores.
