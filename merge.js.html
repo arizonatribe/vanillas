@@ -1,0 +1,154 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> merge.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">Vanillas</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#any">any</a></li><li><a href="global.html#append">append</a></li><li><a href="global.html#assign">assign</a></li><li><a href="global.html#clone">clone</a></li><li><a href="global.html#combine">combine</a></li><li><a href="global.html#compose">compose</a></li><li><a href="global.html#concat">concat</a></li><li><a href="global.html#cond">cond</a></li><li><a href="global.html#contains">contains</a></li><li><a href="global.html#converge">converge</a></li><li><a href="global.html#convergeZip">convergeZip</a></li><li><a href="global.html#curry">curry</a></li><li><a href="global.html#curryN">curryN</a></li><li><a href="global.html#difference">difference</a></li><li><a href="global.html#each">each</a></li><li><a href="global.html#eitherOr">eitherOr</a></li><li><a href="global.html#entries">entries</a></li><li><a href="global.html#escapeHtml">escapeHtml</a></li><li><a href="global.html#filter">filter</a></li><li><a href="global.html#filterObject">filterObject</a></li><li><a href="global.html#filterString">filterString</a></li><li><a href="global.html#find">find</a></li><li><a href="global.html#findIndex">findIndex</a></li><li><a href="global.html#first">first</a></li><li><a href="global.html#flatten">flatten</a></li><li><a href="global.html#flipKeyValues">flipKeyValues</a></li><li><a href="global.html#forIn">forIn</a></li><li><a href="global.html#fuzzy">fuzzy</a></li><li><a href="global.html#getType">getType</a></li><li><a href="global.html#has">has</a></li><li><a href="global.html#hasNestedProp">hasNestedProp</a></li><li><a href="global.html#identity">identity</a></li><li><a href="global.html#intersection">intersection</a></li><li><a href="global.html#is">is</a></li><li><a href="global.html#isArrayish">isArrayish</a></li><li><a href="global.html#isBlankString">isBlankString</a></li><li><a href="global.html#isEmpty">isEmpty</a></li><li><a href="global.html#isEqual">isEqual</a></li><li><a href="global.html#isInteger">isInteger</a></li><li><a href="global.html#isMap">isMap</a></li><li><a href="global.html#isNegativeInteger">isNegativeInteger</a></li><li><a href="global.html#isNegativeNumber">isNegativeNumber</a></li><li><a href="global.html#isNil">isNil</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isObjectish">isObjectish</a></li><li><a href="global.html#isPositiveInteger">isPositiveInteger</a></li><li><a href="global.html#isPositiveNumber">isPositiveNumber</a></li><li><a href="global.html#isPrime">isPrime</a></li><li><a href="global.html#isPrimitive">isPrimitive</a></li><li><a href="global.html#isPromise">isPromise</a></li><li><a href="global.html#isSameType">isSameType</a></li><li><a href="global.html#isSet">isSet</a></li><li><a href="global.html#isStrictEqual">isStrictEqual</a></li><li><a href="global.html#isUndefined">isUndefined</a></li><li><a href="global.html#isZero">isZero</a></li><li><a href="global.html#last">last</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#mapObject">mapObject</a></li><li><a href="global.html#mapObjectRecursive">mapObjectRecursive</a></li><li><a href="global.html#mapSpec">mapSpec</a></li><li><a href="global.html#mapString">mapString</a></li><li><a href="global.html#memoize">memoize</a></li><li><a href="global.html#merge">merge</a></li><li><a href="global.html#omit">omit</a></li><li><a href="global.html#omitNull">omitNull</a></li><li><a href="global.html#omitUndefined">omitUndefined</a></li><li><a href="global.html#pick">pick</a></li><li><a href="global.html#pipe">pipe</a></li><li><a href="global.html#prepend">prepend</a></li><li><a href="global.html#promiseAll">promiseAll</a></li><li><a href="global.html#promiseChain">promiseChain</a></li><li><a href="global.html#promiseCompose">promiseCompose</a></li><li><a href="global.html#propAt">propAt</a></li><li><a href="global.html#propEquals">propEquals</a></li><li><a href="global.html#propIs">propIs</a></li><li><a href="global.html#propOr">propOr</a></li><li><a href="global.html#propSet">propSet</a></li><li><a href="global.html#reduce">reduce</a></li><li><a href="global.html#renameKeys">renameKeys</a></li><li><a href="global.html#shim">shim</a></li><li><a href="global.html#size">size</a></li><li><a href="global.html#toCamelCase">toCamelCase</a></li><li><a href="global.html#toHashCode">toHashCode</a></li><li><a href="global.html#toInteger">toInteger</a></li><li><a href="global.html#toKebabCase">toKebabCase</a></li><li><a href="global.html#toLowerCase">toLowerCase</a></li><li><a href="global.html#toNumber">toNumber</a></li><li><a href="global.html#toSnakeCase">toSnakeCase</a></li><li><a href="global.html#toTitleCase">toTitleCase</a></li><li><a href="global.html#toUpperCase">toUpperCase</a></li><li><a href="global.html#toUriEncoded">toUriEncoded</a></li><li><a href="global.html#uniq">uniq</a></li><li><a href="global.html#uniqBy">uniqBy</a></li><li><a href="global.html#unthunk">unthunk</a></li><li><a href="global.html#validate">validate</a></li><li><a href="global.html#values">values</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>merge.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import forIn from "./forIn"
+
+/**
+ * Merges the values from 2 or more Objects or Arrays together into a new Object/Array.
+ * Null and Undefined values are handled gracefully, and if the second value is a primitive it will be returned as-is, instead of trying to merge it onto the first.
+ *
+ * @function
+ * @name merge
+ * @param {Array&lt;object|Array&lt;*>>} ...val Values to merge together (values with higher precedence should be provided last)
+ * @returns {object|Array&lt;*>} A new value that contains the combined values from all the values passed in
+ */
+function merge(...vals) {
+  const numOfVals = vals.length
+  if (vals[0] === undefined || vals[1] === undefined) {
+    return vals[1] !== undefined ? vals[1] : vals[0]
+  }
+  if (
+    numOfVals === 2
+    &amp;&amp; (vals[1] == null || typeof vals[1] !== "object" || vals[1].constructor.name !== "Object")
+  ) {
+    return vals[1]
+  }
+  const newObj = { }
+  forIn((key, val) => { newObj[key] = val }, vals[0])
+  for (let i = 1; i &lt; numOfVals; i++) {
+    forIn((key, val) => {
+      newObj[key] = merge(newObj[key], val)
+    }, vals[i])
+  }
+  return newObj
+}
+
+export default merge
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>
