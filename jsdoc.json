@@ -21,7 +21,6 @@
     }],
     "better-docs": {
       "name": "Vanillas",
-      "logo": "https://raw.githubusercontent.com/arizonatribe/vanillas/master/media/logo_small.png",
       "title": "Simple and sweet utility functions for JavaScript and TypeScript applications",
       "navigation": [{
         "label": "Github",
