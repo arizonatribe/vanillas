@@ -239,26 +239,31 @@ Several pieces of conditional logic to apply against a value and the _first_ one
 
 ```
 [Vanillas "cond"]
-  - 1,790,634 ops/sec
-  - 90,558 times executed
-  - 98 runs sampled
+  - 1,779,831 ops/sec
+  - 90,226 times executed
+  - 94 runs sampled
+[Lodash "cond"]
+  - 818,253 ops/sec
+  - 43,411 times executed
+  - 92 runs sampled
 [Ramda "cond"]
-  - 777,958 ops/sec
-  - 39,355 times executed
-  - 95 runs sampled
+  - 714,501 ops/sec
+  - 39,016 times executed
+  - 86 runs sampled
 [FxJs "cond"]
-  - 79,169 ops/sec
-  - 4,551 times executed
-  - 87 runs sampled
+  - 88,697 ops/sec
+  - 5,105 times executed
+  - 86 runs sampled
 [(native) "If/Else/ElseIf"]
-  - 1,889,885 ops/sec
-  - 96,595 times executed
-  - 93 runs sampled
+  - 1,817,747 ops/sec
+  - 95,805 times executed
+  - 92 runs sampled
 
 ⏱ Fastest is (native) "If/Else/ElseIf" 🚀
-   - Vanillas "cond" .............. 5.54% slower!
-   - Ramda "cond" ................. 142.93% slower!
-   - FxJs "cond" .................. 2,287.16% slower!
+   - Vanillas "cond" .............. 2.13% slower!
+   - Lodash "cond" ................ 122.15% slower!
+   - Ramda "cond" ................. 154.41% slower!
+   - FxJs "cond" .................. 1,949.39% slower!
 ```
 
 # Contains

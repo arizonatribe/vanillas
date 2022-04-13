@@ -1,6 +1,7 @@
 /* eslint-disable consistent-return, jsdoc/require-jsdoc */
 import { test } from "reality-check"
 import R from "ramda"
+import _ from "lodash"
 import * as Fx from "fxjs"
 import { cond } from "../../src"
 import { composers } from "../__mocks__"
@@ -27,6 +28,10 @@ test("cond", benchmark => {
   benchmark(
     () => cond(conditionalTransforms, composers),
     "Vanillas \"cond\""
+  )
+  benchmark(
+    () => _.cond(conditionalTransforms)(composers),
+    "Lodash \"cond\""
   )
   benchmark(
     () => R.cond(conditionalTransforms)(composers),
