@@ -1,5 +1,9 @@
 # Benchmark tests
 
+| Benchmark Date | Node version | Operating  System |
+| -------------- | ------------ | ----------------- |
+| 04/05/22       | v16.0.0      | Linux Fedora (35) |
+
 This project regularly benchmarks itself against similar projects like [lodash](https://www.npmjs.com/package/lodash), [ramda](https://www.npmjs.com/package/ramda) and [fxjs](https://www.npmjs.com/package/fxjs). In addition to benchmarking against those three main util libraries, there are a few benchmarks against specialized libraries (as is the case for the [fuzzy filter](#fuzzy) and the many [object validator](#validate) libraries out there).
 
 Not every library offers the same functionality, but if you notice any untested util function, please submit an __issue__ so the benchmark test can be added.
