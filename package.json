@@ -82,6 +82,7 @@
     "jsdoc-export-default-interop": "^0.3.1",
     "lodash": "^4.17.21",
     "nodemon": "^2.0.9",
+    "radash": "^7.0.0",
     "ramda": "^0.25.0",
     "reality-check": "^1.0.0",
     "redux": "4.0.0",
