@@ -1,11 +1,26 @@
-import cond from "./cond"
 import forIn from "./forIn"
-import mapObject from "./mapObject"
-import { toFunction } from "./_internal/coerce"
 
-const isFunction = v => typeof v === "function"
-const brokenValidator = (val, key) => `Validations for "${key}" are broken`
-const defaultMessageHandler = (val, key) => `"${val}" is not valid for "${key}"`
+const defaultErrorHandler = (val, key) => `"${val}" is not valid for "${key}"`
+
+/**
+ * Handles error validation messages with either a pre-supplied validator or a default which catches the key and value.
+ *
+ * @function
+ * @private
+ * @name _handleMessage
+ * @param {function|string|undefined} message A message or message handler function
+ * @param {*} val A value being validated
+ * @param {string} key The name of the property being validated
+ * @returns {string} The validation error message
+ */
+function _handleMessage(message, val, key) {
+  if (typeof message === "function") {
+    return message(val, key)
+  } else if (typeof message === "string" && message.trim().length > 0) {
+    return message
+  }
+  return defaultErrorHandler(val, key)
+}
 
 /**
  * A function which ensures the input is either a singel validator, a list of validators, or possible just the validator function.
@@ -13,36 +28,58 @@ const defaultMessageHandler = (val, key) => `"${val}" is not valid for "${key}"`
  *
  * @function
  * @private
- * @name _unpackValidator
+ * @name _createValidator
  * @param {Array<function|string>|Array<Array<function|string>>|function} rawValidators A single validator, a list of validators or possibly just a validation function.
- * @returns {object} An object of validation functions which are ready to
- * receive the value to validate
+ * @returns {object} An object of validation functions which are ready to receive the value to validate
  */
-function _unpackValidator(rawValidators) {
-  const validators = cond([
-    [isFunction, [[rawValidators, defaultMessageHandler]]],
-    [v => Array.isArray(v) && v.length <= 2 && isFunction(v[0]),
-      ([validator, message = defaultMessageHandler]) => [[validator, toFunction(message)]]
-    ],
-    [v => Array.isArray(v) && v.every(kv => Array.isArray(kv)),
-      v => v.map(([validator, message = defaultMessageHandler]) => [validator, toFunction(message)])
-    ],
-    [v => Array.isArray(v),
-      v => v.map(validator => {
-        if (Array.isArray(validator) && isFunction(validator[0])) {
-          return [validator[0], toFunction(validator[1] || defaultMessageHandler)]
-        } else if (isFunction(validator)) {
-          return [validator, defaultMessageHandler]
-        }
-        return [() => true, brokenValidator]
-      })
-    ],
-    [() => true, [[() => false, brokenValidator]]]
-  ], rawValidators)
+function _createValidator(rawValidators) {
+  if (typeof rawValidators === "function") {
+    return (v, k) => {
+      const validationResults = []
 
-  return (v, k) => validators
-    .map(([validator, createErrorMessage]) => validator(v, k) || createErrorMessage(v, k))
-    .filter(kv => kv !== true)
+      const result = rawValidators(v, k)
+      if (!result) {
+        validationResults.push(defaultErrorHandler(v, k))
+      }
+
+      return validationResults
+    }
+  } else if (Array.isArray(rawValidators)) {
+    if (rawValidators.length <= 2 && typeof rawValidators[0] === "function") {
+      return (v, k) => {
+        const validationResults = []
+
+        const result = rawValidators[0](v, k)
+        if (!result) {
+          validationResults.push(_handleMessage(rawValidators[1], v, k))
+        }
+
+        return validationResults
+      }
+    } else if (rawValidators.every((kv) => typeof kv === "function" || Array.isArray(kv))) {
+      return (v, k) => {
+        const validationResults = []
+
+        for (let i = 0, len = rawValidators.length; i < len; i++) {
+          if (typeof rawValidators[i] === "function") {
+            const result = rawValidators[i](v, k)
+            if (!result) {
+              validationResults.push(defaultErrorHandler(v, k))
+            }
+          } else {
+            const result = rawValidators[i][0](v, k)
+            if (!result) {
+              validationResults.push(_handleMessage(rawValidators[i][1], v, k))
+            }
+          }
+        }
+
+        return validationResults
+      }
+    }
+  }
+
+  return (_val, key) => `Validations for "${key}" are broken`
 }
 
 /**
@@ -76,14 +113,19 @@ function _unpackValidator(rawValidators) {
  * ], val)
  */
 function validate(validations, values) {
-  const validators = mapObject(_unpackValidator, validations)
+  const validators = {}
+  forIn((key, val) => {
+    validators[key] = _createValidator(val)
+  }, validations)
+
   const invalids = {}
   forIn((key, val) => {
     const validationResults = val(values[key], key)
-    if (validationResults.length) {
+    if (validationResults.length > 0) {
       invalids[key] = validationResults
     }
   }, validators)
+
   return invalids
 }
 

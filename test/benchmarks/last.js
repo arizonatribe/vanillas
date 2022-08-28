@@ -6,8 +6,8 @@ import { last } from "../../src"
 import { companies } from "../__mocks__"
 
 test("last", (benchmark) => {
-  benchmark(() => last(companies), 'Vanillas "last"')
-  benchmark(() => _.last(companies), 'Lodash "last"')
-  benchmark(() => R.last(companies), 'Ramda "last"')
-  benchmark(() => raw.last(companies), 'Radash "last"')
+  benchmark(() => last(companies), "Vanillas \"last\"")
+  benchmark(() => _.last(companies), "Lodash \"last\"")
+  benchmark(() => R.last(companies), "Ramda \"last\"")
+  benchmark(() => raw.last(companies), "Radash \"last\"")
 })

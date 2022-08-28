@@ -9,6 +9,7 @@ import { composers, hook } from "../__mocks__"
 const movie = Object.keys(hook)
 const music = Object.keys(composers)
 
+/* eslint-disable-next-line jsdoc/require-jsdoc */
 function intersectionHashmap(arr1, arr2) {
   const obj = {}
   for (let i = 0, len = arr1.length; i < len; i++) {

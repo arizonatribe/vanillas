@@ -3,6 +3,7 @@ import { mapString } from "../../src"
 
 const val = "lorem ipsum dolor sit amet. consectetur adipiscing elit."
 
+/* eslint-disable-next-line jsdoc/require-jsdoc */
 function mapStringArr(fn, str) {
   const len = str.length
   const strArr = Array(len)

@@ -10,7 +10,7 @@
 function toSnakeCase(str) {
   return str
     .replace(/([a-z0-9])(?=[A-Z])/g, "$1_")
-    .replace(/[\.\s_-]+/g, "_")
+    .replace(/[\s._-]+/g, "_")
     .toLowerCase()
 }
 

@@ -12,7 +12,7 @@ function toCamelCase(str) {
   return (
     str[0].toLowerCase() +
     str
-      .split(/[\s\._-]/)
+      .split(/[\s._-]/)
       .map((s) => s[0].toUpperCase() + s.slice(1))
       .join("")
       .slice(1)

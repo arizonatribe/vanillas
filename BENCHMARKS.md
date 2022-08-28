@@ -1623,3 +1623,5 @@ A simple polyfill for Object.values()
    - Ramda "values" ................ 1,039.15% slower!
    - FxJs "values" ................. 2,659.58% slower!
 ```
+
+

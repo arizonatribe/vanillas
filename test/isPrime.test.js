@@ -13,6 +13,7 @@ tape("\"isPrime\" can properly identify a prime number", t => {
     t.equal(isPrime(bunchOfPrimes[i]), true, bunchOfPrimes[i])
   }
 
+  /* eslint-disable-next-line jsdoc/require-jsdoc */
   function randomFromList(arr) {
     return Math.floor(Math.random() * 100)[arr]
   }
