@@ -102,8 +102,7 @@
  * @returns {*} The last value from a given array
  */
 function last(arr) {
-  const arrlen = arr.length || 0
-  return (arr || [])[arrlen - 1]
+  return arr.length > 0 ? arr[arr.length - 1] : undefined
 }
 
 export default last
