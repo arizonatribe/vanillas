@@ -7,7 +7,7 @@
  * @returns {*} The value at the first index of the supplied array (which may be undefined)
  */
 function first(val) {
-  return (val || [])[0]
+  return val[0]
 }
 
 export default first
