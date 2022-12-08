@@ -46,7 +46,7 @@
     "deploy": "gh-pages -d docs"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0",
+    "@babel/cli": "7.19.3",
     "@babel/core": "7.0.0",
     "@babel/node": "7.0.0",
     "@babel/plugin-external-helpers": "7.0.0",
